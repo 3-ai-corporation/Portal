@@ -1,0 +1,316 @@
+#main{	
+	position:relative;	
+	display:block;	
+	width:100%;	
+	height:1500px;
+  font-family: "Segoe UI", serif;
+}
+
+#body{	
+	margin:0;	
+	padding: 0;	
+	width:100%;	
+	height:100%;	
+	text-decoration:none;
+}
+
+.submenu {
+	position:absolute;
+	display:none;
+	color:black;
+	left:0;
+	z-index:1000;
+	float:left;
+	min-width:60px;
+	padding:0px;
+	margin-top:-6px;
+	list-style:none;
+	font-size:14px;
+	background-color:#ffffff;
+	border:1px solid #ccc;
+	border:1px solid rgba(0,0,0,.15);
+	background-clip:padding-box;
+}
+
+#filtro{
+	width: 100%;
+	margin-top:-5%;
+	height: 35.5%;
+	margin-left: -0.22%;		
+}
+
+#filtro div {
+	display: inline-block;
+}
+
+#filtro > div{
+	vertical-align: top;
+}
+
+#turma{
+	width: 37.6%;
+	margin-top: 50px;
+	margin-left: 6.37%;
+}
+
+#anoOpcoes{
+	width: 85%;			
+	margin-bottom: 15px;
+	/*float: top;*/
+	display: inline-block;
+}
+
+#lblSeries {			
+	color: #008ACC;
+	margin-left: -18%;
+	font-size: 1.1em;
+	font-weight: bold;	
+}
+
+.anoOpcoesCheck {
+	font-weight: 700;	
+}
+
+#campoCheckBoxes {		
+	width: 110%;		
+	margin-left: 30%;
+	color: #008ACC;			
+	position: relative;
+}
+
+#campoCheckBoxes div{
+	width: 18.56%;	
+	height: 100%;		
+	/*float: center;*/
+	margin-left: 6%;	
+}
+
+#turma_figura {
+	background-color: #008ACC;
+	margin-left : 8.2%;
+}
+
+#turmaOpcoes{
+	width: 100px;
+	height: 331px;	    
+	float: left;
+	margin-top: -16px;
+	/* margin-right: 41px; */
+}
+
+#turmaOpcoes ul{
+	width: 130%;
+	height: 101.5%;	
+	display: block;
+	margin-left: -40%;
+	margin-top:16%;
+}
+
+#turmaOpcoes li{
+	width: 110%;
+	/* height: 82px; */
+	height: 24.77%;
+	float: left;		
+	/* margin-bottom: 1px; */
+	text-align: center;
+}
+
+#turmaOpcoes li h4{
+	font-size: 2em;
+	margin-top: 20.48%;
+}
+
+.buttonCursoBasic {
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	text-decoration:none;		
+	text-shadow:0px 1px 0px #008ACC;
+	-moz-user-select: none;
+	-webkit-user-select:none;
+}
+
+.buttonEtapaClicked:active{
+	margin-top: 1px;
+}
+
+.buttonCursoClicked:active {
+	margin-left: 1px;
+}
+
+.buttonCurso {
+	background-color: #008ACC;	
+}
+
+.buttonCurso:hover {
+	background-color: #26627f;
+}
+
+.buttonCurso:active {	
+	background-color: #003853;
+}
+
+.buttonCursoSelected {
+	background-color: #003853;
+}
+
+.buttonCursoSelected:active {
+	background-color: #003853
+}
+
+#figuraTurma{	/*ERRO  MAROTO*/
+	width: 330px;
+	height: 332px;
+	float: right;
+	margin-left: -1px;
+	background-size: 100% 100%;
+	background-color: #003853;
+}
+
+#turmaLabel {
+	color: white;
+	float: right;
+	margin-top: 91%;
+	padding-right: 1%;
+}
+
+/* img[src = "assets/img/eletronica-icon.png"]{
+	width: 330px;
+	height: 331px;
+} */
+
+#etapa{    /*ERRO  MAROTO*/
+	width: 46.88%;
+	height: 140px;
+	margin-top: 50px;
+	margin-left: 80px;
+}
+
+#etapa div{
+	display: block;
+}
+
+#etapaLabel{
+	width: 16%;
+	height: 21.42%;
+	margin-left: 40px;    
+	margin-top: -20px;
+}
+
+#etapaLabel > h3{
+	text-align: left;
+	color: #008ACC;
+}
+
+#etapaOpcoes {
+	background-color: #003853;
+}
+
+#etapaOpcoes > ul > li{ /*ALTURA DO ETAPASOPCOES TA 0 :o*/
+	width: 17%;
+	height: 80px;
+	float: left;
+	/* margin-right: 1px;	 */
+	margin-top: -5px;
+	color: #ffffff;  
+	-moz-user-select: none;
+	-webkit-user-select:none;
+}
+
+#etapaOpcoes > ul > li > h4{
+	font-size: 2.5em;    
+	text-align: center;
+	margin-top: 12px;
+}
+
+.buttonEtapa {
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	text-align: center;
+	background-color: #008ACC;
+/* 	text-decoration: none;
+	text-shadow: 0px 1px 0px #2f6627;	
+ */}
+
+.buttonEtapa:hover {
+	background-color: #26627f;
+}
+.buttonEtapa:active {	
+	top:1px;
+	background-color: #003853;
+}
+
+#disciplina{
+	width: 79.87%;	
+	height: 92.85%;
+	margin-top: 14.5%;
+	color: #ffffff;
+	padding : 5px;
+}
+ 
+#disciplinaLabel{	
+	width: 19.60%;
+	height: 21.42%;     	
+	margin-left: 6.6%; 
+	margin-top: 90px;
+	color : #008ACC;
+    cursor:hand;
+}
+
+#lstDisciplinas{
+	margin-left:-5px;
+}
+
+input[type="radio"] {
+	-webkit-appearance: checkbox;	
+	-moz-appearance: checkbox;
+	-ms-appearance: checkbox;
+	-o-appearance: checkbox;
+}
+
+.disciplinaBotao {
+	background-color: #008ACC;
+    cursor:pointer;
+}
+
+#disciplinaOpcoes {
+	width:89.28%;
+	height:400px;
+	float:left;
+	-moz-user-select: none;
+	-webkit-user-select:none;
+}
+
+#disciplinaOpcoes ul {
+	color: #ffffff; 
+}
+
+#disciplinaOpcoes li {
+	width:33%;
+	height:100%;
+	display: inline-block;
+	text-align: center;
+	margin-top:-1px;
+}
+
+.disciplinaBotaoSelected {
+	background-color: #003853;
+}
+
+#disciplinaOpcoes > ul > li > h4 {
+	font-size : 1.5em;
+	margin-top:50px;
+}
+
+.disciplinaBotao:hover {
+	background-color: #26627f;
+}
+.disciplinaBotao:active {	
+	top:1px;
+	background-color: #003853;
+}
+
+#tabContainer{
+	padding-left: 25px;
+}

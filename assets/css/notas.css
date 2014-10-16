@@ -1,0 +1,43 @@
+.input_info{
+	background-color:#6D8E9D;
+	border: none;
+	width: 30px;
+}
+
+.input_success{
+	background-color:#AEC4CF ;
+	border: none;	
+	width: 30px;
+}
+
+.input_danger{
+	background-color: #E64A4A;
+	border: none;
+	width: 30px;
+}
+
+.input_active{
+	background-color:#B8B8B8;
+	visibility: hidden;
+	border:none;
+	width: 30px;
+}
+
+.input_media{
+	border-color: #AEC4CF;
+}
+
+
+#calculoMedia{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#borda_abas{
+	width: 1225px;
+	height: 1280px;
+	border: 1px solid #008ACC;
+	margin: 14px 0px 0px 33px;
+}
+
+

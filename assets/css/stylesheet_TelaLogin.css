@@ -1,0 +1,236 @@
+* {
+	font-family: Segoe UI;
+}
+
+body{
+	background-image: url(imgs/beg.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;	
+	background-size: 100%;
+}
+
+input[type=submit]:hover{
+    background:#006699;
+    color:#ffffff;
+}
+
+#dadosLogin
+{
+	border:2px solid #D4D4D4;
+	display:block;	
+	position:relative;
+	width:25%;
+	height:60%;
+	padding-bottom:4%;
+	margin:45.5px auto;
+	background-color:#FFF;
+	min-height:60%;
+	min-width:25%;
+	margin-bottom:0%;
+}
+
+#iSenha
+{
+	margin-bottom:0%;
+	margin-top:10%;
+}
+
+#iSubmit
+{
+	text-align:center;
+}
+
+#esqueceu_senha{
+	display:none;
+	background-color:#FFFFFF;
+	position:absolute;
+	top:50%;
+	left:120%;
+	margin-left:-15%;
+	margin-top:-10%;
+	padding:10%;
+	width:80%;
+	height:40%;
+	border:1px solid #d0d0d0;
+}
+
+#titleEsqueceu
+{
+	width: 100%;
+}
+
+#titulopop-up{
+	background-color:#008ACC;
+	padding-left:0.3%;
+	position:absolute;
+	font-family:Segoe UI;
+	color: #FFFFFF;
+	width:95%;
+	margin : -10%;
+	height : 8.1%;	
+}
+
+#linkClose{
+	background-color:#008ACC;
+	text-align:center;
+	right:0.01%;
+	width :5%;
+	height : 8.1%;
+	top : 0%;
+	padding-left:0.5%;
+	position : absolute;
+	font-family: Segoe UI;
+	color: #FFFFFF;
+}
+
+#linkClose:link{
+	text-decoration: none; 
+}
+
+#iMatricula{
+	position : relative;
+	top : 20px;
+	padding : 0px;
+	margin : 0px;
+}
+
+#aEsquecer
+{
+	text-align:right;
+}
+
+#eEmail{
+	margin-top : 10%;
+	position : relative;
+}
+
+#iSubmit
+{
+	text-align:center;
+	margin-top:10%;
+}
+
+#alert {
+	display: none; 
+	height: 4%;
+	overflow: hidden;
+	position: absolute;
+	z-index: 999999;
+	padding: 2%;
+	color: #fff;
+	width : 96%;
+	top : 0%;
+}
+
+#alert2 {
+	display: none; 
+	height: 7%;
+	overflow: hidden;
+	position: absolute;
+	z-index: 999999;
+	padding: 2%;
+	color: #fff;
+	width : 96.8%;
+	top : 9%;
+	left : 0%;
+}
+
+.listItem li
+{
+	list-style-type:none;
+}
+
+.lblLogin
+{
+	border: 1px solid #FFFFFF;
+	background-color: #008ACC;
+	width: 98%;
+	padding : 0.5%;
+	color: #FFFFFF;
+}
+
+.txtLogin
+{
+	width: 98%;
+}
+
+.imgLogo img
+{
+	width:100%;
+}
+
+.imgLogo {
+	width: 80%;
+	margin: 30px auto;
+}
+
+.lblEsqueceu
+{
+	border: 1px solid #FFFFFF;
+	background-color: #008ACC;
+	width: 100%;
+	padding : 0.5%;
+	color: #FFFFFF;
+}
+
+.txtEsqueceu
+{
+	width: 100%;
+}
+
+.btnEnviar 
+{
+	width: 50%;
+	color: #FFFFFF;
+	background-color:#008ACC;
+	border-style:none;
+}
+
+.linkEsquecer:link,.linkEsquecer:visited
+{
+	color: #008ACC;
+	text-decoration:none;
+}
+
+.linkEsquecer:hover
+{
+	text-decoration: underline; 
+	color: #008ACC;
+
+}
+
+.listItem
+{
+	padding:0;
+	size : 350px 450px;
+}
+
+.listItem  li div
+{
+	width:100%;
+	margin:auto;
+}
+
+.listItem  li
+{
+	width:80%;
+	margin:auto;
+}
+
+.btnProsseguir 
+{
+	margin-top:5%;
+	width: 50%;
+	color: #FFFFFF;
+	background-color:#008ACC;
+	border-style:none;
+}
+
+.alert-error {
+	background-color: #e74c3c;
+}
+
+.alert-success {
+  background-color: #2ecc71;
+}

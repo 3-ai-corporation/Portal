@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+*{
+	font-family: Courier;
+}
+/* . table table-bordered 
+{
+	background-color:blue;
+} */
+
+#tblFrequencia {
+	width: 62%;
+	font-family: sans-serif;
+	color: #ffffff;
+	float: left;
+}
+
+#tblFrequencia_head td{
+	background-color: #10455E;
+	text-align: center;
+}
+
+/*estilização da cor da tabela_frequencia*/
+#tabela_frequencia tbody tr:nth-child(odd){
+   background-color: #AEC4CF;
+}
+
+#tabela_frequencia tbody tr:nth-child(even){
+   background-color: #6D8E9D;
+}
+
+#calendario{
+	width: 37%;
+	float: right;
+	display:inline;
+	padding-left: 5em;
+}
+
+#div_tempos {
+	margin-right: 1px;
+	margin-left: 3px;
+	text-align: center;
+}
+
