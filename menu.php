@@ -1,4 +1,4 @@
-<div id="header"> alskjfdçlasjçfdkajs
+<div id="header">
 	<div id="navbar">
 		<a href = "TelaInicial.php"> <img src="assets/img/fundacao.jpg" />  </a>
 	</div>
