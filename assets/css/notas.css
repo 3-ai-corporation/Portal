@@ -40,4 +40,8 @@
 	margin: 14px 0px 0px 33px;
 }
 
+#rowAluno >tbody>tr>td{
+	color: white;
+}
+
 
