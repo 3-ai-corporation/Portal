@@ -9,7 +9,7 @@
 					<a href = "#TelaInicial.php" > <img class="imgMenu" src="assets/img/home.png" />  </a>
 				</li>
 				<li>
-					<a href = "index12.html" > <img class="imgMenu" src="assets/img/mais.png" />   </a>
+					<a href = "#" > <img class="imgMenu" src="assets/img/mais.png" />   </a>
 					<ul class="submenu">
 						<div class="dropdownContain">
 							<div class="dropOut">
@@ -18,10 +18,10 @@
 								  <a href="Diario.php">Turmas</a>
 								</li>
 								<li>
-								  <a href="index12.html">Recursos Humanos</a>
+								  <a href="#">Recursos Humanos</a>
 								</li>
 								<li>
-								   <a href="index12.html">Alunos</a>
+								   <a href="#">Alunos</a>
 								</li>
 								<li>
 									<a href="Diario.php#tabContainer">Notas</a>
@@ -30,39 +30,39 @@
 									<a href="Diario.php#tabContainer">Frequência</a>
 								</li>
 								<li>
-									<a href="index12.html">Calendário</a>
+									<a href="#">Calendário</a>
 							   </li>
 								<li>
-									<a href="index12.html">Quadro de Horários</a>
+									<a href="#">Quadro de Horários</a>
 								</li>
 								<li>
-								   <a href="index12.html">Upload</a>
+								   <a href="#">Upload</a>
 								</li>
 							</div>
 						</div>
 					</ul>
 				</li>
 				<li>
-					<a href = "index12.html" > <img class="imgMenu" src="assets/img/config.png" />   </a>
+					<a href = "#" > <img class="imgMenu" src="assets/img/config.png" />   </a>
 					<ul class="submenu">
 						<div class="dropdownContain2">
 							<div class="dropOut2">
 								<div class="triangle2"></div>
 								<li>
-									<a href="index12.html">Mudar Senha</a>
+									<a href="#">Mudar Senha</a>
 								</li>
 								<li>
-									<a href="index12.html">Temas</a>
+									<a href="#">Temas</a>
 								</li>
 								<li>
-									<a href="index12.html">Alunos</a>
+									<a href="#">Alunos</a>
 								</li>
 							</div>
 						</div>
 					</ul>
 				</li>
 				<li>
-					<a href = "index12.html" > <img class="imgMenu" src="assets/img/lock.png" />  </a>
+					<a href = "#" > <img class="imgMenu" src="assets/img/lock.png" />  </a>
 					<ul class="submenu">
 						<div class="dropdownContain3">
 							<div class="dropOut3">
@@ -95,60 +95,60 @@
 								<a href = "#" > <img class="imgMenu" src="assets/img/home.png" />  </a>
 							</li>
 							<li>
-								<a href = "index12.html" > <img class="imgMenu" src="assets/img/mais.png" />   </a>
+								<a href = "#" > <img class="imgMenu" src="assets/img/mais.png" />   </a>
 								<ul class="submenu">
 									<div class="dropdownContain">
 										<div class="dropOut">
 											<div class="triangle"></div>
 											<li>
-											  <a href="index12.html">Turmas</a>
+											  <a href="#">Turmas</a>
 											</li>
 											<li>
-											  <a href="index12.html">Recursos Humanos</a>
+											  <a href="#">Recursos Humanos</a>
 											</li>
 											<li>
-											   <a href="index12.html">Alunos</a>
+											   <a href="#">Alunos</a>
 											</li>
 											<li>
-												<a href="index12.html">Notas</a>
+												<a href="#">Notas</a>
 											</li>
 											<li>
-												<a href="index12.html">Frequência</a>
+												<a href="#">Frequência</a>
 											</li>
 											<li>
-												<a href="index12.html">Calendário</a>
+												<a href="#">Calendário</a>
 										   </li>
 											<li>
-												<a href="index12.html">Quadro de Horários</a>
+												<a href="#">Quadro de Horários</a>
 											</li>
 											<li>
-											   <a href="index12.html">Upload</a>
+											   <a href="#">Upload</a>
 											</li>
 										</div>
 									</div>
 								</ul>
 							</li>
 							<li>
-								<a href = "index12.html" > <img class="imgMenu" src="assets/img/config.png" />   </a>
+								<a href = "#" > <img class="imgMenu" src="assets/img/config.png" />   </a>
 								<ul class="submenu">
 									<div class="dropdownContain2">
 										<div class="dropOut2">
 											<div class="triangle2"></div>
 											<li>
-												<a href="index12.html">Mudar Senha</a>
+												<a href="#">Mudar Senha</a>
 											</li>
 											<li>
-												<a href="index12.html">Temas</a>
+												<a href="#">Temas</a>
 											</li>
 											<li>
-												<a href="index12.html">Alunos</a>
+												<a href="#">Alunos</a>
 											</li>
 										</div>
 									</div>
 								</ul>
 							</li>
 							<li>
-								<a href = "index12.html" > <img class="imgMenu" src="assets/img/lock.png" />  </a>
+								<a href = "#" > <img class="imgMenu" src="assets/img/lock.png" />  </a>
 								<ul class="submenu">
 									<div class="dropdownContain3">
 										<div class="dropOut3">
