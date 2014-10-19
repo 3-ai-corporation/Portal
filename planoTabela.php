@@ -8,8 +8,9 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat = "aula in grid.aulas" ng-show="(aula.geminada < 2) || aula.visible">
-			<td ><a ng-style="{'margin-left':aula.geminada > 1? '16px':'0px'}"><i class="glyphicon glyphicon-plus" ng-show="aula.geminada == 1" ng-click="grid.ativarData(aula.dt)"></i></a>{{aula.dt}}</td>
+		<tr ng-repeat = "aula in grid.aulas" ng-show="(aula.geminada < 2) || aula.visible" ng-class="(aula.geminada > 1? 'row-collapsed':'row-showed')">
+			<td ng-show="aula.geminada <= 1"><a ng-style="{'margin-left':aula.geminada > 1? '16px':'0px'}"><i class="glyphicon table-icon" ng-class="'glyphicon-plus'" ng-click="grid.ativarData(aula.dt)" ng-show="aula.geminada == 1" ></i></a>{{aula.dt}}</td>
+            <td ng-show="aula.geminada > 1"/>
 			<td><input class="table-text" type="text" ng-model="aula.conteudo_previsto" ng-change="grid.updatePrevisto(aula)"></td>
 			<td><input class="table-text" type="text" ng-model="aula.conteudo_aplicado" ng-change="grid.updateAplicado(aula)"></td>
 			<td><input type="checkbox" class="checkbox" ng-model="aula.reposicao" ng-change="grid.updateReposicao(aula)"/></td>

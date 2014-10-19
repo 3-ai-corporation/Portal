@@ -2,6 +2,7 @@
 	var app = angular.module('planoAula',[]);
 	app.controller('GridController',function() {
 		this.aulas = aulas;
+
 		this.ativarData = function(data) {
 			for(i = 0; i < this.aulas.length; i++) {
 				if(data == this.aulas[i].dt) {

@@ -14,12 +14,6 @@
 	color: #1E657F;
 }
 
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th,
-.table-striped > tbody > tr:nth-child(odd) > td > .table-text {
-  background-color: #A0D6F5;
-}
-
 .form-control {
 	height: 27px;
 }
@@ -63,47 +57,12 @@ select {
 	text-decoration:none;
 	background: transparent;
 	padding:2px;
-	color: #1E657F;
+	color: #1e657f;
 	margin:10px;
 }
 
-/*
-#tabHeader_4 {
-	margin-left:812px;
-	height:40px;
-}
-
-#tabHeader_4 a{
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-#tabHeader_4 h4{
-	font-size: 1em;
-}
-*/
-
-@font-face {
-  font-family: 'Glyphicons Halflings';
-
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-.glyphicon {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.glyphicon-plus:before {
-  content: "\2b";
+.table-icon {
+    color: #1e657f;
 }
 
 .modelDialog {
@@ -169,4 +128,8 @@ select {
 #btn-exportar a {
   text-decoration: none;
   color: white;
+}
+
+.row-collapsed {
+    color: black;
 }
