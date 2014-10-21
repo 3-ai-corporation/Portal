@@ -1,3 +1,26 @@
+<label> Série: 3</label>
+<label style="margin-left: 15em"> Curso: Informática </label>
+<label style="margin-left: 20em"> Aulas no mês: </label>
+
+<select >
+	<section>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+	</section>
+</select>
+
+<label style="display: block"> Matéria: Tópicos Especiais </label>
+<label style="display:block"> Data: 17/10/2014 </label>		
+
+<button id="AulaAnt"> 
+	<img src="assets/img/arrow-left.png" width="30px" height="30px" color="white">
+</button>
+					
+<button id="AulaProx" style="margin-left: 70.7em"> 
+	<img src="assets/img/arrow-right.png" width="30px" height="30px" color="white">
+</button>
+
 <article id="tabela_frequencia"  ng-controller="frequenciacontroller as freqCtrl"> 
 		<table id="tblFrequencia" class= "table table-bordered">
 			<thead id = "tblFrequencia_head">
@@ -9,6 +32,7 @@
 					<td> Faltas </td>
 				</tr>
 			</thead>
+			<!--Tabela de Frequencia com os respectivos dados de cada aluno-->
 			<tbody class = "freq_alunos" >
 				<tr id="freqRow" class = "freq_row" ng-repeat="obj in freqCtrl.objetos.lst_alunos"> 
 					
@@ -29,23 +53,3 @@
 			</tbody>
 		</table>
 </article>
-
-<script>
-$(document).ready(function() {
-	dateList = ["00/00/0000","06/09/2014","10/09/2014","12/09/2014","14/09/2014","16/09/2014","26/09/2014", "06/10/2014"];
-	$( "#calendario" ).datepicker({ //ADICIONAMOS A FUNÇÃO PELO ID DO CONTAINER
-	beforeShowDay: function(dateToShow){ return [($.inArray($.datepicker.formatDate('dd/mm/yy', dateToShow),dateList) >= 0), ""]; //FORMATA A DATA A E PEGA OS DIAS A SEREM MOSTRADOS
-	},
-	
-	onSelect: function(dateText, inst) { if($.inArray(dateText,dateList))
-	{ 
-			alert('funfou');
-	}
-	}
-	
-});
-});
-</script>
-
-<!-- Essa div 'calendario' faz parar de funcionar as outras duas abas
-<!-- <div id="calendario" /> -->
