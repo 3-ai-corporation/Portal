@@ -1,5 +1,5 @@
 <label> Série: 3</label>
-<label style="margin-left: 15em"> Curso: Informática </label>
+<label style="margin-left: 15em, color: #AEC4CF"> Curso: Informática </label>
 <label style="margin-left: 20em"> Aulas no mês: </label>
 
 <select >
@@ -21,7 +21,7 @@
 	<img src="assets/img/arrow-right.png" width="30px" height="30px" color="white">
 </button>
 
-<article id="tabela_frequencia"  ng-controller="frequenciacontroller as freqCtrl"> 
+<article id="tabela_frequencia" ng-controller="frequenciacontroller as freqCtrl"> 
 		<table id="tblFrequencia" class= "table table-bordered">
 			<thead id = "tblFrequencia_head">
 				<tr> 
@@ -30,6 +30,7 @@
 					<td> Nome do Aluno </td>
 					<td> Tempos </td>
 					<td> Faltas </td>
+					<td> Faltas Bimestrais</td>
 				</tr>
 			</thead>
 			<!--Tabela de Frequencia com os respectivos dados de cada aluno-->
@@ -44,11 +45,12 @@
 					
 					<td id="tempos"> 
 						<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in freqCtrl.objetos.tempos_dia">
-							<input type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED 
+							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED 
 							ng-controller="checkcontroller as checkCtrl" ng-click="checkCtrl.alterarCheckbox(obj, this)"> {{tempos+"º"}}
 						</section>
 					</td>
 					<td id="num_faltas">  {{obj.faltas}} </td>	
+					<td id="faltas_bim">  {{obj.faltasbim}} </td>	
 				</tr>
 			</tbody>
 		</table>
