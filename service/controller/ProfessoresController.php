@@ -24,19 +24,24 @@ class ProfessoresController {
         return $retorno;
     }
 
-    public function retrieveSeries($id) {
+    public function retrieveTurmas($id) {
         $prof_turmas = ProfessorTurmasModel::find("all",array("conditions" => "id_professor = " . $id));
 
-        $series = array();
+        $retorno = array();
         foreach($prof_turmas as $key => $value ) {
             $turmas = TurmasModel::find($value->id);
+            $curso = CursosModel::find($turmas->cursos_id);
 
-            $series[] = $turmas->serie;
+            $result['serie'] = $turmas->serie;
+            $result['cursos'] = $curso->curso;
+
+            $retorno[] = $result;
+
         }
-        return $series;
+        return $retorno;
     }
 
-    public function retrieveMaterias($series = array(), $id) {
+    /*public function retrieveMaterias($series = array(), $id) {
         $prof_turmas = ProfessorTurmasModel::find("all",array("conditions" => "id_professor = " . $id));
 
         $materias = array();
@@ -50,6 +55,6 @@ class ProfessoresController {
         }
 
         return $materias;
-    }
+    }*/
 
 }
