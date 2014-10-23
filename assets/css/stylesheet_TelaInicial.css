@@ -6,6 +6,10 @@ body{
 	text-decoration:none;
 }
 
+#navbar a img{
+	height: 50px;
+}
+
 h4:hover
 {
 	text-decoration:none;
