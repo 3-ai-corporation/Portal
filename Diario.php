@@ -10,7 +10,7 @@
 		<link type="text/css" rel="stylesheet" href="assets/css/tabstyle.css"/> <!-- CSS das abas -->
 		<link rel = "stylesheet" type="text/css" href="assets/css/notas.css"/> <!-- CSS da aba 'Notas' -->
 		<!-- Esse .css relativo à 'frequência' buga tudo qnd eu ativo -->
-		<!-- <link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> -->
+		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
 		
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
 		

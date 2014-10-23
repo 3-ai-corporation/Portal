@@ -1,22 +1,11 @@
-@charset "utf-8";
-
-*{
-	font-family: Courier;
-}
-/* . table table-bordered 
-{
-	background-color:blue;
-} */
-
-#tblFrequencia {
-	width: 62%;
+#tblFrequencia >tbody>tr>td{
 	font-family: sans-serif;
-	color: #ffffff;
-	float: left;
+	color:white;
 }
 
 #tblFrequencia_head td{
 	background-color: #10455E;
+	color: white;
 	text-align: center;
 }
 
@@ -29,16 +18,8 @@
    background-color: #6D8E9D;
 }
 
-#calendario{
-	width: 37%;
-	float: right;
-	display:inline;
-	padding-left: 5em;
-}
-
 #div_tempos {
-	margin-right: 1px;
+	margin-right: 1em;
 	margin-left: 3px;
 	text-align: center;
 }
-
