@@ -14,6 +14,10 @@ $app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567));
 });
 
+$app->get('/disciplinas', function() use ($pcontroller) {
+   echo json_encode($pcontroller->retrieveDisciplinas(2,2,134567));
+});
+
 $app->run();
 
 ?>

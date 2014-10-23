@@ -11,25 +11,31 @@ require_once 'model/UsuariosModel.php';
 require_once 'model/NotificacoesModel.php';
 
 class ProfessoresController {
+
+    // Função responsável por retornar todos os professores
     public function retrieve() {
-        $professores = ProfessoresModel::find('all',array('order' => 'name'));
+        $professores = ProfessoresModel::find('all',array('order' => 'nome'));
         $retorno = array();
         foreach($professores as $key => $value ) {
             $obj['id'] = $value->id;
-            $obj['name'] = $value-name;
-            $obj['price'] = $value->price;
+            $obj['nome'] = $value->nome;
 
             $retorno[] = $obj;
         }
         return $retorno;
     }
 
+    // Função responsável por retornas as turmas lecionadas por um professor
     public function retrieveTurmas($id) {
+        // Vai retornar os registros da tabela tb_professor_turmas de acordo com o Id do professor
         $prof_turmas = ProfessorTurmasModel::find("all",array("conditions" => "id_professor = " . $id));
 
         $retorno = array();
         foreach($prof_turmas as $key => $value ) {
+            // Busca de turmas a partir do id
             $turmas = TurmasModel::find($value->id);
+
+            //Busca
             $curso = CursosModel::find($turmas->cursos_id);
 
             $result['serie'] = $turmas->serie;
@@ -37,6 +43,21 @@ class ProfessoresController {
 
             $retorno[] = $result;
 
+        }
+        return $retorno;
+    }
+
+    public function retrieveDisciplinas($turmaId, $cursoId, $professorId) {
+
+        $materias_turmas = MateriasTurmasModel::find("all",array("conditions" => "id_turma = " . $turmaId . "and id_curso =" . $cursoId));
+
+        $retorno = array();
+        foreach($materias_turmas as $key => $value ) {
+            /* Busca de turmas a partir do id */
+
+            $materias = MateriasModel::find($value->id);
+
+            $result[] = $materias;
         }
         return $retorno;
     }
