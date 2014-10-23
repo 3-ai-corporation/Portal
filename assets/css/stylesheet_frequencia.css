@@ -1,3 +1,17 @@
+.dados_cabecalho{
+	color: #10455E;
+	font-family: sans-serif;
+}
+
+#freq_curso{
+	margin-left: 15em;
+	/*color: #AEC4CF;*/
+}
+
+#freq_aulas{
+	margin-left: 20em;
+}
+
 #tblFrequencia >tbody>tr>td{
 	font-family: sans-serif;
 	color:white;
@@ -9,16 +23,23 @@
 	text-align: center;
 }
 
+#tabela_frequencia{
+	margin-left:0.5em;
+	margin-right:0.5em;
+	width:100%;
+}
+
 /*estilização da cor da tabela_frequencia*/
 #tabela_frequencia tbody tr:nth-child(odd){
    background-color: #AEC4CF;
 }
 
 #tabela_frequencia tbody tr:nth-child(even){
-   background-color: #6D8E9D;
+   background-color: #6D8E9D; 
 }
 
 #div_tempos {
+	margin-left:1em;
 	margin-right: 1em;
 	margin-left: 3px;
 	text-align: center;

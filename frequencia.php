@@ -1,17 +1,16 @@
-<label> Série: 3</label>
-<label style="margin-left: 15em, color: #AEC4CF"> Curso: Informática </label>
-<label style="margin-left: 20em"> Aulas no mês: </label>
+<label class="dados_cabecalho"> Série: 3°</label>
+<label id="freq_curso" class="dados_cabecalho"> Curso: Informática </label>
+<label id="freq_aulas" class="dados_cabecalho"> Aulas no mês: </label>
+	<select >
+		<section>
+			<option class="dados_cabecalho">Aula 1 - 05/10/2014</option>
+			<option class="dados_cabecalho">Aula 2 - 08/10/2014</option>
+			<option class="dados_cabecalho">Aula 3 - 16/10/2014</option>
+		</section>
+	</select>
 
-<select >
-	<section>
-		<option>1</option>
-		<option>2</option>
-		<option>3</option>
-	</section>
-</select>
-
-<label style="display: block"> Matéria: Tópicos Especiais </label>
-<label style="display:block"> Data: 17/10/2014 </label>		
+<label class="dados_cabecalho" style="display: block"> Matéria: Tópicos Especiais </label>
+<label class="dados_cabecalho" style="display:block"> Data: 17/10/2014 </label>		
 
 <button id="AulaAnt"> 
 	<img src="assets/img/arrow-left.png" width="30px" height="30px" color="white">
