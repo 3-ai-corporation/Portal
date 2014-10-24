@@ -3,5 +3,7 @@
  */
  function Aula(d, tps) {
  	this.dia = d;
- 	this.tempos = tps;
+
+ 	for(int i = 0; i < tps.length; i++)
+ 		this.tempos[i] = tps[i];
 }
