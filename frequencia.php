@@ -1,4 +1,26 @@
-<article id="tabela_frequencia"  ng-controller="frequenciacontroller as freqCtrl"> 
+<label class="dados_cabecalho"> Série: 3°</label>
+<label id="freq_curso" class="dados_cabecalho"> Curso: Informática </label>
+<label id="freq_aulas" class="dados_cabecalho"> Aulas no mês: </label>
+	<select >
+		<section>
+			<option class="dados_cabecalho">Aula 1 - 05/10/2014</option>
+			<option class="dados_cabecalho">Aula 2 - 08/10/2014</option>
+			<option class="dados_cabecalho">Aula 3 - 16/10/2014</option>
+		</section>
+	</select>
+
+<label class="dados_cabecalho" style="display: block"> Matéria: Tópicos Especiais </label>
+<label class="dados_cabecalho" style="display:block"> Data: 17/10/2014 </label>		
+
+<button id="AulaAnt"> 
+	<img src="assets/img/arrow-left.png" width="30px" height="30px" color="white">
+</button>
+					
+<button id="AulaProx" style="margin-left: 70.7em"> 
+	<img src="assets/img/arrow-right.png" width="30px" height="30px" color="white">
+</button>
+
+<article id="tabela_frequencia" ng-controller="frequenciacontroller as freqCtrl"> 
 		<table id="tblFrequencia" class= "table table-bordered">
 			<thead id = "tblFrequencia_head">
 				<tr> 
@@ -7,8 +29,10 @@
 					<td> Nome do Aluno </td>
 					<td> Tempos </td>
 					<td> Faltas </td>
+					<td> Faltas Bimestrais</td>
 				</tr>
 			</thead>
+			<!--Tabela de Frequencia com os respectivos dados de cada aluno-->
 			<tbody class = "freq_alunos" >
 				<tr id="freqRow" class = "freq_row" ng-repeat="obj in freqCtrl.objetos.lst_alunos"> 
 					
@@ -20,32 +44,13 @@
 					
 					<td id="tempos"> 
 						<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in freqCtrl.objetos.tempos_dia">
-							<input type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED 
+							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED 
 							ng-controller="checkcontroller as checkCtrl" ng-click="checkCtrl.alterarCheckbox(obj, this)"> {{tempos+"º"}}
 						</section>
 					</td>
 					<td id="num_faltas">  {{obj.faltas}} </td>	
+					<td id="faltas_bim">  {{obj.faltasbim}} </td>	
 				</tr>
 			</tbody>
 		</table>
 </article>
-
-<script>
-$(document).ready(function() {
-	dateList = ["00/00/0000","06/09/2014","10/09/2014","12/09/2014","14/09/2014","16/09/2014","26/09/2014", "06/10/2014"];
-	$( "#calendario" ).datepicker({ //ADICIONAMOS A FUNÇÃO PELO ID DO CONTAINER
-	beforeShowDay: function(dateToShow){ return [($.inArray($.datepicker.formatDate('dd/mm/yy', dateToShow),dateList) >= 0), ""]; //FORMATA A DATA A E PEGA OS DIAS A SEREM MOSTRADOS
-	},
-	
-	onSelect: function(dateText, inst) { if($.inArray(dateText,dateList))
-	{ 
-			alert('funfou');
-	}
-	}
-	
-});
-});
-</script>
-
-<!-- Essa div 'calendario' faz parar de funcionar as outras duas abas
-<!-- <div id="calendario" /> -->

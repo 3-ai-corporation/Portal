@@ -14,14 +14,17 @@
 		setStatus();
 		carlos();
 	});
+
 	
 	app.controller('ColumnController', function(){
-		this.lstColAvs = [{title:"AV1"}];
-		this.setColumn = function(){
+		this.lstColAvs = [{title:"AV1", value:"10"}];
+
+        this.setColumn = function(){
 			// this.column = this.column +1;
 			if ((this.lstColAvs.length ) < 10) {
 				var newAv = {};
 				newAv.title = "AV" + (this.lstColAvs.length + 1);
+                newAv.value = 10;
 				this.lstColAvs.push(newAv);
 			}
 		};
@@ -31,10 +34,20 @@
 				this.lstColAvs.pop();
 			}
 		};
-		
-		this.isSet = function(value){
-			return value === this.column;
-		};
+
+        this.selectedAv = '';
+
+        this.isSet = function(value){
+            if (value.equals(this.selectedAv)){
+                return true;
+            }else{
+                return false;
+            }
+        };
+
+        this.setTooltip = function (value) {
+            this.selectedAv = value;
+        };
 	
 	});
 	
@@ -214,3 +227,10 @@
 	];
 
 })();
+
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode != 46 &&(charCode < 48 || charCode > 57)))
+        return false;
+    return true;
+}

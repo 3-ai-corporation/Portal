@@ -1,5 +1,5 @@
 <div id = "etapaLabel">
-	<h3>Bimestre:</h3>
+	<h3>Bimestres:</h3>
 </div>					
 <div id = "etapaOpcoes">
 	<ul>

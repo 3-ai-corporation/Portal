@@ -25,13 +25,13 @@
 					<li>
 						<div id="iMatricula">
 						<p class="lblLogin">Matrícula: </p>
-						<input class="txtLogin" type="text" name="matricula" onkeydown = " validar_matricula2(matricula);" />
+						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" />
 						</div>
 					</li>
 						<li>
 							<div id="iSenha">
 								<p class="lblLogin" >Senha: </p>
-								<input class="txtLogin" type="password" name="senha" />
+								<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="password" name="senha" onkeypress = "validar_senha(senha);" />
 						</li>
 						<li>
 							<div id ="aEsquecer">

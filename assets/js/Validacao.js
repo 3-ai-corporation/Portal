@@ -9,12 +9,31 @@ function validar_matricula(matricula){
 	 return false;
 }
 
+/**
+ *Created by Yasmim Libório on 24/10/2014
+ * validação que verifica o tamanho de caracteres na matrícula
+*/
 function validar_matricula2(matricula){
 	 var regra = /^[0-9]+$/;
 	 if (!matricula.value.match(regra) && matricula.value != "") {
 		showAlert('error', 'Somente números na matrícula!');
 		Value(matricula);
 	 }
+	 if(matricula.value.length > 5){
+		showAlert('error', 'Digite somente 6 números!');
+		matricula.value = matricula.value.substr(0,6);
+	 }
+}
+/**
+ *Created by Yasmim Libório on 24/10/2014
+ * validação que verifica o tamanho de caracteres na senha
+*/
+function validar_senha(senha){
+	if(senha.value.length > 10){
+		showAlert('error', 'A senha tem no máximo 10 dígitos');
+		senha.value = senha.value.substr(0, 10);
+	}
+
 }
 
 function validar_numero(valor){
@@ -23,6 +42,17 @@ function validar_numero(valor){
         return true;
     }
     return false;
+}
+
+/**
+  * Created by Ruben on 23/10/2014
+  *		Método que faz com que o login também possa ser efetuado ao ser pressionada a tecla Enter.
+  */
+  
+function LoginInput_OnKeyDown(event, user, pass) {
+	if (event.keyCode == 13) {
+		validar(user, pass);
+	}
 }
 
 function Value(number)

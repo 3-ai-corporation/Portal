@@ -12,10 +12,7 @@ class TurmasModel extends ActiveRecord\Model {
     static $has_one = array(
         array("AlunosModel")
     );
-    
-    static $has_many = array(
-        array("ProfessorTurmasModel")
-    );
+
 }
 
 ?>

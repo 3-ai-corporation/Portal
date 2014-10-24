@@ -1,7 +1,7 @@
 <div id = "turma">
 	<div id = "anoOpcoes">
 		<form id = "campoCheckBoxes" onchange = "criandoOpcoes();">
-			<label id = "lblSeries">Séries</label>
+			<label id = "lblSeries">Séries:</label>
 			<div id = 'ckbPrimeiro' class = "anoOpcoesCheck" onchange = "criandoOpcoes();">
 				<input type = "radio" name = "radioAno" id = "checkPrimeiro" class = "checkBoxAno" checked/>
 				<label for = "checkPrimeiro">1° Ano</label>
