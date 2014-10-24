@@ -59,6 +59,25 @@ planoModule.controller('GridController',function() {
 			}
 		}
 	};
+
+	this.concatAulas = function(aulas) {
+		if(aulas.length > 0)
+		{
+			var org = [];
+			for(int i = 0; i < aulas.length; i++)
+			{
+				var actualDate = aulas[i].dt;
+				if(aulas[i].dt == actualDate)
+				{
+					var innerArray += aulas[i];
+				}
+				else
+				{
+					org += innerArray;
+				}
+			}
+		}
+	};
 });
 
 planoModule.controller('ExportController',function() {
