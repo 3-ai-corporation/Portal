@@ -71,7 +71,7 @@
 									<a>Perfil</a>
 								</li>
 								<li>
-									<a href="LoginController.php?acao=sair">Sair</a>
+									<a>Sair</a>
 								</li>
 							</div>
 						</div>
