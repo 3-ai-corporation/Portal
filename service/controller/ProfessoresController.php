@@ -78,4 +78,23 @@ class ProfessoresController {
         return $materias;
     }*/
 
+     public function retrieveNotificacoes($id) {
+        //Retorna os registros de tb_professor_notificacoes correspondentes ao id
+        $prof_notif = ProfessorNotificacoesModel::find("all",array("conditions" => "professor_matricula = " . $id));
+
+        $retorno = array();
+        foreach($prof_notif as $key => $value ) {
+            //pega de tb_notificacoes a noti... correspondente
+            $notificacao = NotificacoesModel::find($value->id);
+            //result recebe todos os dados de cada uma das notificações
+            $result["id"] = $notificacao->id;
+            $result["tipo"] = $notificacao->tipo;
+            $result["mensagem"] = $notificacao->mensagem;
+
+
+            $retorno[] = $result;
+
+        }
+        return $retorno;
+    }
 }
