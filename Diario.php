@@ -67,10 +67,10 @@
 				</div>
 				
 			</div>
-			
-			<?php
-				include ("toggler.php")
-			?>
+
+            <?php
+                include ("toggler.php")
+            ?>
 			
 			<div id="tabContainer">
 				<div id="tabs">

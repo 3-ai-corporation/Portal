@@ -2,7 +2,7 @@
 </div>
 
 <script>
-	$("#toggler").click(function() {
-		$( "#filtro").toggle( "slow" );
-	});
+    $("#toggler").click(function() {
+        $( "#filtro").toggle( "slow" );
+    });
 </script>
