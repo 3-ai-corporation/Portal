@@ -71,7 +71,6 @@
 				</div>
 				
 			</div>
-			
 			<div id="tabContainer">
 				<div id="tabs">
 					<ul>
