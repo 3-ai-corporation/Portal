@@ -44,7 +44,7 @@
 			<?php 
 				include ("menu.php")
 			?>
-			
+
 			<?php
 				include ("toggler.php")
 			?>
@@ -71,7 +71,7 @@
 				</div>
 				
 			</div>
-			
+
 			<div id="tabContainer">
 				<div id="tabs">
 					<ul>
