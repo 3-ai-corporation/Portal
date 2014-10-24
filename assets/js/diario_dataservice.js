@@ -1,4 +1,4 @@
-// Retorna o código-fonte da página passada como url
+// Retorna o cï¿½digo-fonte da pï¿½gina passada como url
 var getPageResponse = function(url) {
 	var getRequest = function(url, success, error) {
 		var req = false;
@@ -47,5 +47,5 @@ var getPageResponse = function(url) {
 };
 
 var getPageData = function(url) {
-	return JSON.decode(getPageResponse(url));
+    return json_decode();
 }
