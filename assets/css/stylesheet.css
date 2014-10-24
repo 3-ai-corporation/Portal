@@ -164,6 +164,11 @@
 	background-color: #003853
 }
 
+/* Classe para indicar que o botao pode ser clickado */
+.buttonCursoActive{
+
+}
+
 #figuraTurma{	/*ERRO  MAROTO*/
 	width: 330px;
 	height: 332px;
