@@ -14,6 +14,12 @@
 	text-decoration:none;
 }
 
+#toggler {
+	margin-left:70px;
+	position:relative;
+	top:10px;
+}
+
 .submenu {
 	position:absolute;
 	display:none;
@@ -36,7 +42,7 @@
 	width: 100%;
 	margin-top:-5%;
 	height: 35.5%;
-	margin-left: -0.22%;		
+	/* margin-left: -0.22%;		 */
 }
 
 #filtro div {
