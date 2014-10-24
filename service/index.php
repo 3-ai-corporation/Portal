@@ -11,11 +11,11 @@ $app = new Slim\Slim();
 $pcontroller = new ProfessoresController;
 
 $app->get('/',function() use ($pcontroller) {
-    echo json_encode($pcontroller->retrieveTurmas(134567));
+    echo json_encode($pcontroller->retrieveTurmas(134567, false));
 });
 
 $app->get('/disciplinas', function() use ($pcontroller) {
-   echo json_encode($pcontroller->retrieveDisciplinas(2,2,134567));
+   echo json_encode($pcontroller->retrieveDisciplinas(134567, true));
 });
 
 $app->run();

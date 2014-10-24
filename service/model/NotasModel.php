@@ -2,8 +2,8 @@
 
 require_once 'settings/config.php';
 
-class AvaliacoesModel extends ActiveRecord\Model {
-	static $table_name = 'tb_avaliacoes';
+class NotasModel extends ActiveRecord\Model {
+	static $table_name = 'tb_notas';
 	
 	static $belongs_to = array(
 	    array("MateriasModel"), array("AlunosModel"), array("AvaliacoesModel")

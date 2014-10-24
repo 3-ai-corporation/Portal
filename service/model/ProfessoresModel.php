@@ -11,8 +11,7 @@ class ProfessoresModel extends ActiveRecord\Model {
 	
 	static $has_many = array(
 	    array("MateriasModel", "through" => "ProfessoresMateriasModel"), 
-	    array("NotificacoesModel", "through" => "ProfessorNotificacoesModel"),
-	    array("TurmasModel", "through" => "ProfessorTurmasModel")
+	    array("NotificacoesModel", "through" => "ProfessorNotificacoesModel")
 	);
 }
 
