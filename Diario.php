@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
 		<script type="text/javascript" src="assets/js/Tempo.js"></script>
-		
+        <script type="text/javascript" src="assets/js/notas.js"></script>
 		<script src="assets/js/angular.js"></script>
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
 		
