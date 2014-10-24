@@ -77,20 +77,5 @@ class ProfessoresController {
 
         return $materias;
     }*/
-    public function retrieveNotificacoes($id) {
-        $prof_notif = ProfessorNotificacoesModel::find("all",array("conditions" => "professor_matricula = " . $id));
 
-        $retorno = array();
-        foreach($prof_notif as $key => $value ) {
-            $notificacao = NotificacoesModel::find($value->id);
-
-            $result["id"] = $notificacao->id;
-            $result["tipo"] = $notificacao->tipo;
-            $result["mensagem"] = $notificacao->mensagem;
-
-            $retorno[] = $result;
-
-        }
-        return $retorno;
-    }
 }
