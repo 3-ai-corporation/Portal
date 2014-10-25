@@ -13,6 +13,7 @@
 		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
 		
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
+		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
 		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
