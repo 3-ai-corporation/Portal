@@ -25,7 +25,7 @@
 					<li>
 						<div id="iMatricula">
 						<p class="lblLogin">Matrícula: </p>
-						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" />
+						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" autofocus/>
 						</div>
 					</li>
 						<li>
