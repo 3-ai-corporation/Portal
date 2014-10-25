@@ -14,9 +14,9 @@ $app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });
 
-$app->get('/disciplinas', function() use ($pcontroller) {
-   echo json_encode($pcontroller->retrieveDisciplinas(134567, true));
-});
+/*$app->get('/',function() use ($pcontroller) {
+    echo json_encode($pcontroller->retrieveNotificacoes(123456));
+});*/
 
 $app->run();
 
