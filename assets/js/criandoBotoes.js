@@ -10,9 +10,9 @@ var criandoOpcoes = function() {
 	}
 
     var serieSelecionada = function() {
-        if (document.getElementById('checkPrimeiro').checked) return 1;
-        if (document.getElementById('checkSegundo').checked) return 2;
-        if (document.getElementById('checkTerceiro').checked) return 3;
+        if (document.getElementById('checkPrimeiro').checked) return 0;
+        if (document.getElementById('checkSegundo').checked) return 1;
+        if (document.getElementById('checkTerceiro').checked) return 2;
         return -1;
     }();
 
