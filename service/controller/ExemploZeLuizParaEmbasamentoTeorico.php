@@ -15,7 +15,7 @@ class ProductsController {
 		$retorno = array();
 		foreach($products as $key => $value ) {
 			$obj['id'] = $value->id;
-			$obj['name'] = $value-name;
+			$obj['name'] = $value->name;
 			$obj['price'] = $value->price;
 			
 			$retorno[] = $obj;
