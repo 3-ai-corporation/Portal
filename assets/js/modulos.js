@@ -84,7 +84,7 @@ planoModule.controller('ExportController',function() {
 	this.turmas = turmas;
 	this.materias = materias;
 });
-
+/*
 var aulas = [
     new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',1,false,false),
     new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',2,false,false),
@@ -97,7 +97,7 @@ var aulas = [
     new Tempo('18/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,false),
     new Tempo('19/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,false),
     new Tempo('20/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,true)];
-
+*/
 var materias = ["Português","Matemática","Linguagem de Programação III","Geografia","Tópicos Especiais"];
 var turmas = ["1AE","1AI","1AM","1AT","2AE","2AI","2AM","2AT","3AE","3AI","3AM","3AT"];
 
