@@ -735,8 +735,10 @@ ul li:hover .dropOut3 { opacity: 1; margin-top: 14px; }
 
 #notif2 img
 {
-	width:55%;
-    margin: 0% 20%;
+	width:60%;
+  margin-left:20%;
+	margin-bottom:0px;
+	margin-top:0px;	
 }
 #notif2:hover
 {
@@ -766,9 +768,11 @@ ul li:hover .dropOut3 { opacity: 1; margin-top: 14px; }
 }
 
 #notif3 img{
-	width:55%;
-    margin: 0% 22.5%;
-	}
+	width:60%;
+  margin-left:20%;
+	margin-bottom:0px;
+	margin-top:0px;
+}
 
 #notif3:hover
 {
