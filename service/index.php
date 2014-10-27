@@ -15,7 +15,7 @@ $pcontroller = new ProfessoresController;
 });*/
 
 $app->get('/',function() use ($pcontroller) {
-    echo json_encode($pcontroller->retrieveNotificacoes(123456));
+    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'alunos'));
 });
 
 $app->run();

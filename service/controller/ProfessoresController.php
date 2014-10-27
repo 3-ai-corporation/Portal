@@ -76,6 +76,7 @@ class ProfessoresController {
 
         return $materias;
     }*/
+	
     public function retrieveNotificacoes($matricula) {
         $prof_notif = ProfessorNotificacoesModel::find("all",array("conditions" => "professor_matricula = " . $matricula));
 
@@ -91,5 +92,18 @@ class ProfessoresController {
 
         }
         return $retorno;
+    }
+	
+	
+	public function getNotificacoesByCategory($m,$categoria) {
+      $todas = $this->retrieveNotificacoes($m);
+	   
+	   $retorno = array();
+	   foreach($todas as $key => $value ) {
+            if($value->tipo == $categoria){
+				$retorno[] = $value;
+			}
+        }
+	   return $retorno;
     }
 }
