@@ -8,6 +8,7 @@
 	<script src="assets/js/angular.js"></script>
     <script src="assets/js/ui_bootstrap.js"></script>
     <script src="assets/js/js_file.js"></script>
+    <script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
 	<meta charset="UTF-8"/>
 	
 	<title>Fundação Nokia - Tela Inicial</title>

@@ -84,7 +84,7 @@ class ProfessoresController {
         foreach($prof_notif as $key => $value ) {
             $notificacao = NotificacoesModel::find($value->notificacao_id);
 
-            $result["matricula"] = $notificacao->id;
+            $result["id"] = $notificacao->id;
             $result["tipo"] = $notificacao->tipo;
             $result["mensagem"] = $notificacao->mensagem;
 
@@ -100,7 +100,7 @@ class ProfessoresController {
 	   
 	   $retorno = array();
 	   foreach($todas as $key => $value ) {
-            if($value->tipo == $categoria){
+            if($value["tipo"] == $categoria){
 				$retorno[] = $value;
 			}
         }
