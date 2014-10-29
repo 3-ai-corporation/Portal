@@ -4,7 +4,15 @@ angular.module('startScreen').controller('notifController', function ($scope, $m
 
   //parte 1
   
-  $scope.items = ['Andrew, Ricardo e outras 2 pessoas deixaram recados para você', 'Agora você pode mudar o tema do seu portal. Descubra como.', 'Você tem mais capacidade de armazenamento no Disco Virtual. Aproveite que este benefício acaba final do ano'];
+  var dados = [];
+  $.ajax({
+          type: "GET",
+          url: 'service/notify-portal',
+          async: false,
+          success: function(data) {
+            $scope.items = jQuery.parseJSON(data);
+          }
+    });
 
   $scope.openPortalNotificacao = function (size) {
 
@@ -14,7 +22,13 @@ angular.module('startScreen').controller('notifController', function ($scope, $m
       size: size,
       resolve: {
         items: function () {
-          return $scope.items;
+          dados = [];
+          var i = 0;
+            for (msg in $scope.items) {
+              dados[i] = $scope.items[i].mensagem;
+              i++;
+          };
+          return dados;
         }
       }
     });
@@ -28,10 +42,15 @@ angular.module('startScreen').controller('notifController', function ($scope, $m
   
   //parte 2
 
-  
-$scope.items2 = ['Alguns dos seus alunos precisam de atenção. Clique aqui para saber mais.', 'Foi feito um pedido de correção de notas. Confira o quanto antes!', 'Você tem mais capacidade de armazenamento no Disco Virtual. Aproveite que este benefício acaba final do ano.'];
-
   $scope.openNotasNotificacao = function (size) {
+    $.ajax({
+          type: "GET",
+          url: 'service/notify-alunos',
+          async: false,
+          success: function(data) {
+            $scope.items = jQuery.parseJSON(data);
+          }
+    });
 
     var modalInstance = $modal.open({
       templateUrl: 'notasModalContent',
@@ -39,7 +58,13 @@ $scope.items2 = ['Alguns dos seus alunos precisam de atenção. Clique aqui para
       size: size,
       resolve: {
         items: function () {
-          return $scope.items2;
+          dados = [];
+          var i = 0;
+            for (msg in $scope.items) {
+              dados[i] = $scope.items[i].mensagem;
+              i++;
+          };
+          return dados;
         }
       }
     });
@@ -52,18 +77,29 @@ $scope.items2 = ['Alguns dos seus alunos precisam de atenção. Clique aqui para
   };
   
   //parte 3
-  
-  $scope.items3 = ['Festa surpresa da prof° Ana Rita no refeitório!', 'Os professores agora têm desconto nos cursos de idioma da Wizard. Saiba mais.'];
 
   $scope.openFundacaoNotificacao = function (size) {
-
+    $.ajax({
+          type: "GET",
+          url: 'service/notify-recados',
+          async: false,
+          success: function(data) {
+            $scope.items = jQuery.parseJSON(data);
+          }
+    });
     var modalInstance = $modal.open({
       templateUrl: 'fundacaoModalContent',
       controller: 'ModalInstanceCtrl',
       size: size,
       resolve: {
         items: function () {
-          return $scope.items3;
+          dados = [];
+          var i = 0;
+            for (msg in $scope.items) {
+              dados[i] = $scope.items[i].mensagem;
+              i++;
+          };
+          return dados;
         }
       }
     });

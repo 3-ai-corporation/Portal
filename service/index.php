@@ -14,8 +14,15 @@ $pcontroller = new ProfessoresController;
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
 
-$app->get('/notificacoes',function() use ($pcontroller) {
+$app->get('/notify-recados',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
+});
+
+$app->get('/notify-alunos',function() use ($pcontroller) {
+    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'alunos'));
+});
+$app->get('/notify-portal',function() use ($pcontroller) {
+    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
 
 $app->run();
