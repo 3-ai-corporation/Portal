@@ -1,8 +1,8 @@
-<div id="toggler" onclick="toggleFiltro();" style="cursor:pointer; width:45px">
+<div id="toggler" onclick="toggleFiltro();" style="cursor:pointer">
 </div>
 
 <script>
     $("#toggler").click(function() {
-        $( "#filtro").toggle( "slow" );
+        $( "#filtro").toggle( "fast" );
     });
 </script>
