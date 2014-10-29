@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-AHAHHAHAHAHA UOU
+
 <html>
 <!-- http://support.cloud9ide.com/entries/21285626-How-do-I-push-my-Cloud9-project-to-GitHub -->
 <!-- https://docs.c9.io/setting_up_github_workspace.html -->
