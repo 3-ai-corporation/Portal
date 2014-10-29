@@ -5,20 +5,20 @@
 //Criando um array estático (Como se o webservice - php - tivesse retornado esses valores);
 var materia = [];
 materia[0] = {};
-materia[0]['ae'] = ['VAZIO'];
-materia[0]['ai'] = ['ED', 'aaa', 'bbb'];
-materia[0]['am'] = ['VAZIO'];
-materia[0]['at'] = ['VAZIO'];
+materia[0]['ae'] = ['EDI'];
+materia[0]['ai'] = ['FI', 'LP', 'LPT'];
+materia[0]['am'] = ['LP'];
+materia[0]['at'] = ['IA'];
 
 materia[1] = {};
-materia[1]['ae'] = ['VAZIO'];
-materia[1]['ai'] = ['VAZIO'];
-materia[1]['am'] = ['VAZIO'];
+materia[1]['ae'] = ['EDII'];
+materia[1]['ai'] = ['BD','LPII','TSI'];
+materia[1]['am'] = ['ED'];
 materia[1]['at'] = ['VAZIO'];
 
 materia[2] = {};
 materia[2]['ae'] = ['VAZIO'];
-materia[2]['ai'] = ['LPIII', 'ccc'];
+materia[2]['ai'] = ['LPIII'];
 materia[2]['am'] = ['VAZIO'];
 materia[2]['at'] = ['CD'];
 
