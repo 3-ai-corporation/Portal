@@ -56,6 +56,6 @@ var highlightTwo = function(highlightId, otherIds) {
 	
 	for(var otherId in otherIds) {
 		var other = document.getElementById(otherIds[otherId]);
-		other.className =  highlighted.className.replace(/(?:^|\s)disciplinaBotaoSelected(?!\S)/g , 'disciplinaBotao');
+		other.className =  other.className.replace(/(?:^|\s)disciplinaBotaoSelected(?!\S)/g , 'disciplinaBotao');
 	}
 };

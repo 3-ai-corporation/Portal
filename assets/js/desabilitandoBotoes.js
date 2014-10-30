@@ -32,7 +32,7 @@ var desativandoChecks = function(){
     var vazio = true;
 
     for (i = 0; i < 3; i++){
-        alert(i);
+        //alert(i);
         if (materia[i]['ae'] !== []){
             vazio = false;
         }
