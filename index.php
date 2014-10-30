@@ -25,13 +25,13 @@
 					<li>
 						<div id="iMatricula">
 						<p class="lblLogin">Matrícula: </p>
-						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" autofocus/>
+						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" maxlength = "6"  autofocus/>
 						</div>
 					</li>
 						<li>
 							<div id="iSenha">
 								<p class="lblLogin" >Senha: </p>
-								<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="password" name="senha" onkeypress = "validar_senha(senha);" />
+								<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="password" name="senha" onkeypress = "validar_senha(senha);" maxlength = "10" />
 						</li>
 						<li>
 							<div id ="aEsquecer">
@@ -53,7 +53,7 @@
 									<input class="txtEsqueceu" type="email" name="email" value=""/>
 								</div>
 								<div id="iSubmit">
-									<input class="btnEnviar" value="Enviar" type="button" style="width: 100px; height: 25px" >
+									<input class="btnEnviar" value="Enviar" type="button" style="width: 100px; height: 25px" />
 								</div>	 
 							</div>	
 						</li>
