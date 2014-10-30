@@ -2,20 +2,27 @@
 var planoModule = angular.module('planoModule',[]);
 planoModule.controller('GridController',function() {
 	this.aulas = aulas;
+
 	this.ativarData = function(data) {
 		for(i = 0; i < this.aulas.length; i++) {
-			if(data == this.aulas[i].dt) {
-				this.aulas[i].visible = !this.aulas[i].visible;
+			if(data == this.aulas[i].dia)
+			{
+				for (j = 0; j < this.aulas[i].tempos.length; j++) {
+					this.aulas[i].tempos[j].visible = true;
+				}
 			}
 		}
 	};
 	
-    this.getIndex = function(aula) {
+    this.getIndex = function(tempo) {
 	    var index = -1;
 		for(i = 0; i < this.aulas.length; i++) {
-			if(aula == this.aulas[i]) {
-				index = i;
-				break;
+			for(j = 0; j < this.aulas[i].tempos.length; j++)
+			{
+				if(tempo == this.aulas[i].tempos[j]) {
+					index = i;
+					break;
+				}
 			}
 		}
 		return index;
@@ -60,23 +67,108 @@ planoModule.controller('GridController',function() {
 		}
 	};
 
-	this.concatAulas = function(aulas) {
-		if(aulas.length > 0)
+	this.concatenatePrevisto = function(aula) {
+		var apc = "";
+		for(i = 0; i < this.aulas.length; i++)
 		{
-			var org = [];
-			for(int i = 0; i < aulas.length; i++)
+			if(this.aulas[i] == aula)
 			{
-				var actualDate = aulas[i].dt;
-				if(aulas[i].dt == actualDate)
-				{
-					var innerArray += aulas[i];
+				if(this.aulas[i].tempos.length == 1)
+				{ 
+					apc = this.aulas[i].tempos[0].conteudo_previsto;
 				}
-				else
+
+				if(this.aulas[i].tempos.length == 2)
 				{
-					org += innerArray;
+					if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[1].conteudo_previsto)
+					{
+						apc = this.aulas[i].tempos[0].conteudo_previsto;
+					}
+					else
+					{
+						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[1].conteudo_previsto;
+					}
 				}
+
+				if(this.aulas[i].tempos.length == 3)
+				{
+					if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[1].conteudo_previsto &&
+						this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[2].conteudo_previsto)
+					{
+						apc = this.aulas[i].tempos[0].conteudo_previsto;
+					}
+					else if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[1].conteudo_previsto &&
+						this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[2].conteudo_previsto)
+					{
+						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[2].conteudo_previsto;
+					}
+					else if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[2].conteudo_previsto &&
+						this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[1].conteudo_previsto)
+					{
+						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[1].conteudo_previsto;
+					}
+					else if(this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[1].conteudo_previsto &&
+						this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[2].conteudo_previsto)
+					{
+						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[1].conteudo_previsto + ", " + this.aulas[i].tempos[2].conteudo_previsto;
+					}
+				}
+				break;
 			}
 		}
+		return apc;
+	};
+
+	this.concatenateAplicado = function(aula) {
+		var aac = "";
+		for(i = 0; i < this.aulas.length; i++)
+		{
+			if(this.aulas[i] == aula)
+			{
+				if(this.aulas[i].tempos.length == 1)
+				{ 
+					aac = this.aulas[i].tempos[0].conteudo_aplicado;
+				}
+
+				if(this.aulas[i].tempos.length == 2)
+				{
+					if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[1].conteudo_aplicado)
+					{
+						aac = this.aulas[i].tempos[0].conteudo_aplicado;
+					}
+					else
+					{
+						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[1].conteudo_aplicado;
+					}
+				}
+
+				if(this.aulas[i].tempos.length == 3)
+				{
+					if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[1].conteudo_aplicado &&
+						this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[2].conteudo_aplicado)
+					{
+						aac = this.aulas[i].tempos[0].conteudo_aplicado;
+					}
+					else if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[1].conteudo_aplicado &&
+						this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[2].conteudo_aplicado)
+					{
+						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[2].conteudo_aplicado;
+					}
+					else if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[2].conteudo_aplicado &&
+						this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[1].conteudo_aplicado)
+					{
+						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[1].conteudo_aplicado;
+					}
+					else if(this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[1].conteudo_aplicado &&
+						this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[2].conteudo_aplicado)
+					{
+						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[1].conteudo_aplicado + ", " + this.aulas[i].tempos[2].conteudo_aplicado;
+					}
+				}
+				break;
+			}
+		}
+		return aac;
 	};
 });
 
@@ -84,20 +176,22 @@ planoModule.controller('ExportController',function() {
 	this.turmas = turmas;
 	this.materias = materias;
 });
-/*
-var aulas = [
-    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',1,false,false),
-    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',2,false,false),
-    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',2,false,false),
-    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',2,false,false),
-    new Tempo('16/08/2014','Curso Windows Phone','Curso Windows Phone',0,false,false),
-    new Tempo('17/08/2014','Curso Windows Phone','Curso Windows Phone',1,false,false),
-    new Tempo('17/08/2014','Curso Windows Phone','Curso Windows Phone',2,false,false),
-    new Tempo('17/08/2014','Curso Windows Phone','Curso Windows Phone',2,false,false),
-    new Tempo('18/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,false),
-    new Tempo('19/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,false),
-    new Tempo('20/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,true)];
-*/
+
+var t1 = [
+    new Tempo('Tempo para implementação do portal','Tempo para implementação do portal',false,false),
+    new Tempo('Tempo para implementação do portal','Tempo para implementação do portal',false,false)];
+var a1 = new Aula("14/05/2014", t1);
+
+var t2 = [
+	new Tempo('Aula do Projeto','Tempo para implementação do projeto',false,false),
+    new Tempo('Aula de WebService','Aula de WebService',false,false)];
+var a2 =  new Aula("14/05/2014", t2);
+
+var totalAula = {a1, a2};
+var aulas = new ListaAulas(totalAula);
+
+
+
 var materias = ["Português","Matemática","Linguagem de Programação III","Geografia","Tópicos Especiais"];
 var turmas = ["1AE","1AI","1AM","1AT","2AE","2AI","2AM","2AT","3AE","3AI","3AM","3AT"];
 
