@@ -4,16 +4,16 @@ require_once 'model/UsuariosModel.php';
 
 class AlunosController{
 
-	/*public function create($product){
-		$product = $this->object_to_array($product);
-		$product = ProductsModel::create($product);
-		return $product->to_array();
-	}
-*/
-	public function read($idTurmaSelecionada){
-		$alunos = UsuariosModel::find('all', array('conditions' => array("SELECT usuario.matricula, usuario.nome FROM tb_usuarios usuario
+	//Função que retorna lista de alunos de acordo com a turma
+	public function retrieveAlunos($turmaId){
+		/* $alunos = UsuariosModel::find('all', array('conditions' => array("SELECT usuario.matricula, usuario.nome FROM tb_usuarios usuario
 																		WHERE usuario.matricula = tb_alunos.matricula
-																		AND tb_alunos.turma_id = ?", $idTurmaSelecionada), "order"=>"usuario.nome"));
+																		AND tb_alunos.turma_id = ?", $turmaId), "order"=>"usuario.nome")); */
+																		
+		$alunos = UsuariosModel::find('all', array('select' => array("matricula, nome"),
+													'conditions' => array("matricula = tb_alunos.matricula
+																		   AND tb_alunos.turma_id = ?", $turmaId),
+													'order'=>"nome"));
 		
 		$retorno = array();
 		foreach ($alunos as $key => $value) {

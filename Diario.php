@@ -22,6 +22,8 @@
         <script type="text/javascript" src="assets/js/notas.js"></script>
 		<script src="assets/js/angular.js"></script>
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
+		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
+		 <script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
 		
 		<!-- <script type = "text/javascript" src = "assets/js/notas.js"></script> -->
 		<!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
@@ -83,7 +85,7 @@
 					</ul>
 				</div>
 				<div id="tabscontent">
-			      <div class="tabpage" id="tabpage_1">
+			      <div class="tabpage" id="tabpage_1" ng-app="frequencia">
 			        <?php
 						include ("frequencia.php")
 					?>
