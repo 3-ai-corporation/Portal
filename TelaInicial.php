@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+
+<?php
+	
+	if(empty($_SESSION['matricula']))
+	{
+		header('location:index.php');
+	}
+	
+?>
+
 <html ng-app="startScreen">
 
 <head>
