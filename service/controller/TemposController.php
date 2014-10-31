@@ -4,39 +4,39 @@ require_once 'model/TemposModel.php';
 
 class TemposController
 {
-	public function create($nota) 
+	public function create($tempos) 
 	{
-		$nota = $this->object_to_array($nota);
-		$nota = TemposModel::create($nota);
-		return $nota->to_array();
+		$tempos = $this->object_to_array($tempos);
+		$tempos = TemposModel::create($tempos);
+		return $tempos->to_array();
 	}
 
 	public function retrieve () 
 	{
 		$retorno = array();
-		$notas = TemposModel::find('all',array('order' => 'id'));
-		foreach($notas as $key => $value) {
+		$tempos = TemposModel::find('all',array('order' => 'id'));
+		foreach($tempos as $key => $value) {
 			$obj['id'] = $value->id;
-			$obj['valor'] = $value->valor;
-			$obj['materia_id'] = $value->materia_id;
-			$obj['aluno_id'] = $value->aluno_id;
-			$obj['avaliacao_id'] = $value->avaliacao_id;
+			$obj['conteudo_previsto'] = $value->conteudo_previsto;
+			$obj['conteudo_lancado'] = $value->conteudo_lancado;
+			$obj['reposicao'] = $value->reposicao;
+			$obj['indice'] = $value->indice;
 			$retorno[] = $obj;
 		}
 		return $retorno;
 	}
 
-	public function update($nota)
+	public function update($tempo)
 	{
-		$model = TemposModel::find('all',$nota['id']);
-		$model->update_attributes($nota);
+		$model = TemposModel::find('all',$tempos['id']);
+		$model->update_attributes($tempos);
 		return $model->to_array();
 	}
 
 	public function delete($id)
 	{
-		$nota = TemposModel::find($id);
-		return $nota.delete();
+		$tempos = TemposModel::find($id);
+		return $tempos.delete();
 	}
 
 	private function object_to_array($Class)
