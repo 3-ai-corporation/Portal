@@ -263,16 +263,6 @@ notasModule.controller('ColumnController', function(){
 			}
 		}
 	};
-	
-	var arredondar = function(value){
-		if ((value - Math.floor(value)) >= 0.25 && ((value - Math.floor(value)) <= 0.5)) {
-			value= Math.floor(value) + 0.5; 
-		} else if ((value - Math.floor(value)) >= 0.75) {
-			value = Math.floor(value) + 1;
-		} else {
-			value = Math.floor(value);
-		}
-	};
 
 	var setmediaparcial = function(value){
 			 for (i = 0; i < alunos.length; i++){
