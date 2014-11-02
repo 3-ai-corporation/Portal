@@ -11,10 +11,8 @@
 		<link rel = "stylesheet" type="text/css" href="assets/css/notas.css"/> <!-- CSS da aba 'Notas' -->
 		<!-- Esse .css relativo à 'frequência' buga tudo qnd eu ativo -->
 		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
-		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
-		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
-		
+		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
@@ -40,7 +38,7 @@
 		<title>Diário Escolar</title>
 	</head>
 	
-	<body onload="highlightAE();desativandoChecks(); criandoOpcoes();setFiltroVisible(true);beginTabs();">
+	<body onload="highlightAE(); desativandoChecks(); desativandoButtons();criandoOpcoes();setFiltroVisible(true);beginTabs(); ">
 		<div id = "main">
 			<?php 
 				include ("menu.php")
