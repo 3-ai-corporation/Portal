@@ -4,11 +4,17 @@ set_include_path(implode(PATH_SEPARATOR, array(realpath(dirname(__FILE__) . '/li
 
 require_once 'Slim/Slim/Slim.php';
 require_once 'controller/ProfessoresController.php';
+require_once 'controller/AlunosController.php';
+require_once 'controller/TemposController.php';
+require_once 'controller/DiasLetivosController.php';
 
 \Slim\Slim::registerAutoloader();
 $app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
+$alunocontroller = new AlunosController;
+$temposcontroller = new TemposController;
+$aulascontroller = new DiasLetivosController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
@@ -24,6 +30,11 @@ $app->get('/notify-alunos',function() use ($pcontroller) {
 $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
+
+$app->get('/temposaula',function() use ($aulascontroller) {
+    echo json_encode($aulascontroller->retrive());
+});
+
 
 $app->run();
 

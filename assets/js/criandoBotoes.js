@@ -46,7 +46,7 @@ var criandoOpcoes = function() {
 
         if (first) {
             first = false;
-            classValue += ' disciplinaBotaoSelected';
+            classValue = 'disciplinaBotaoSelected';
         }
 
         var otherIds = '';
@@ -54,10 +54,10 @@ var criandoOpcoes = function() {
         for (var botaoId2 in botoesVetor) {
             if (botaoId2 !== botaoId) {
                 if (otherIds === '') {
-                    otherIds = '"' + botoesVetor[botaoId2] + '"';
+                    otherIds = '"' + botoesVetor[botaoId2].id + '"';
                 }
                 else {
-                    otherIds = ',"' + botoesVetor[botaoId2] + '"';
+                    otherIds += ',"' + botoesVetor[botaoId2].id + '"';
                 }
             }
         }

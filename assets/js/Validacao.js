@@ -97,6 +97,8 @@ function validar(user,pass){
 						}
 						else
 						{
+						
+							
 							if((matricula[0] === mtrForm) && (senha[0] === passForm))
 							{
 								window.location.href = "TelaInicial.php";
