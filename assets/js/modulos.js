@@ -432,7 +432,36 @@ var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria u
 		this.objetos = dias[2];	
 		
 	});
-	
+//--------------------------------
+function TemposAulaCtrl($scope, $http)
+{
+	var 
+		$ = jQuery,
+		ng = $scope,
+		aj = $http
+	;
+	ng.init = function(){
+		ng.chamaraulas();
+		ng.chamaralunos();
+	};
+	ng.chamaraulas() = function(){ aj.get('./service/temposaula').success ( 
+	function ( data ) 
+	{ 
+		ng.temposaulaList = data;
+		ng.atualizar();
+	}	); };
+	ng.atualizar() = function()
+	{
+		ng.temposaula = ng.tempoaulaList;
+	};
+	ng.chamaralunos() = function(){ aj.get('./service/alunos').success ( 
+	function ( data ) 
+	{
+		ng.alunosList = data;
+	} ); };
+	ng.init();
+}
+//--------------------------------	
 	
 	frequenciaModule.controller('checkcontroller', function() {
 		this.alterarCheckbox = function(obj, elem, elemParent) { 
