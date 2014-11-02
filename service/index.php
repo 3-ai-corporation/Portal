@@ -15,9 +15,9 @@ $tcontroller = new TemposController;
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
 
-/*$app->post('/',function($id) use ($tcontroller) {
+$app->post('/service/plano-aula/update/',function($id) use ($tcontroller) {
     echo json_encode($tcontroller->retrieve($id));
-});*/
+});
 
 $app->get('/notify-recados',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
