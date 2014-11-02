@@ -34,7 +34,9 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 $app->get('/temposaula',function() use ($aulascontroller) {
     echo json_encode($aulascontroller->retrive());
 });
-
+$app->get('/alunos',function($id) use ($alunocontroller) {
+    echo json_encode($alunocontroller->read($id));
+});
 
 $app->run();
 
