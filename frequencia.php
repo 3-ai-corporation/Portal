@@ -2,10 +2,9 @@
 <label id="freq_curso" class="dados_cabecalho"> Curso: Informática </label>
 <label id="freq_aulas" class="dados_cabecalho"> Aulas no mês: </label>
 	<select >
-		<section>
-			<option class="dados_cabecalho">Aula 1 - 05/10/2014</option>
-			<option class="dados_cabecalho">Aula 2 - 08/10/2014</option>
-			<option class="dados_cabecalho">Aula 3 - 16/10/2014</option>
+		<section ng-controller="TemposAulaCtrl" ng-repeat="aulas in temposaula">
+			<option class="dados_cabecalho" >Aula 1 - 05/10/2014</option>
+			<option class="dados_cabecalho">Aula {{aulas.numero_dia}} - {{aulas.data}}</option>
 		</section>
 	</select>
 
