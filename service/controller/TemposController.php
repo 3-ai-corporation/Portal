@@ -11,10 +11,12 @@ class TemposController
 		return $tempos->to_array();
 	}
 
-	public function retrieve () 
+	public function retrieve (&id) 
 	{
 		$retorno = array();
-		$tempos = TemposModel::find('all',array('order' => 'id'));
+		$tempos = TemposModel::where([" id = ? ", $id]);
+		//tenho q receber um id por parâmetro 
+		//pegar todos do banco que tenham esse id
 		foreach($tempos as $key => $value) {
 			$obj['id'] = $value->id;
 			$obj['conteudo_previsto'] = $value->conteudo_previsto;
