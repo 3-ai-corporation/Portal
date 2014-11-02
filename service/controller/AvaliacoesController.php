@@ -1,5 +1,6 @@
 <?php
 
+require 'vendor/autoload.php';
 require_once 'model/AvaliacoesModel.php';
 
 class AvaliacoesController {
@@ -49,6 +50,18 @@ class AvaliacoesController {
 		}
 		
 		return $Class
+	}
+	
+	function getConn()
+	{
+		return new PDO('mysql:host=db4free.net:3306;dbname=fn3ai2014portal','fn3ai2014portal','#6tRkX6`VRz<Yu_?SbfzqD+vB#U5KKn9',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+	}
+
+	public function getAvByBimestre($BimestreId, $MateriaId)
+	{
+		$stmt = getConn()->query("SELECT avaliacoes FROM tb_avaliacoes WHERE tb_avaliacoes.bimestres_id = ".$BimestreId."and tb_avaliacoes.materia_id =".$MateriaId);
+		$avaliacoes = $stmt->fetchAll(PDO::FETCH_OBJ);
+		return $avaliacoes;
 	}
 }
 

@@ -9,10 +9,15 @@ require_once 'controller/ProfessoresController.php';
 $app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
+$tcontroller = new TemposController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
+
+$app->post('/service/plano-aula/update/',function($id) use ($tcontroller) {
+    echo json_encode($tcontroller->retrieve($id));
+});
 
 $app->get('/notify-recados',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
