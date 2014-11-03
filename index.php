@@ -9,7 +9,8 @@
 <head>
 	<meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
 	 <script src = "assets/js/Validacao.js"></script>
-	 <script src = "assets/js/jquery-2.1.1.js"></script>	
+	 <script src = "assets/js/jquery-2.1.1.js"></script>
+	 <script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
      <link type="text/css" rel="stylesheet" href="assets/css/stylesheet_TelaLogin.css">
      <TITLE>Login Portal</TITLE>
 </head>

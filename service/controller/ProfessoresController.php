@@ -14,11 +14,12 @@ class ProfessoresController {
 
     // Função responsável por retornar todos os professores
     public function retrieve() {
-        $professores = ProfessoresModel::find('all',array('order' => 'nome'));
+        $professores = ProfessoresModel::find('all');
         $retorno = array();
         foreach($professores as $key => $value ) {
-            $obj['id'] = $value->id;
-            $obj['nome'] = $value->nome;
+			$usuario = UsuariosModel::find($value->matricula);
+            $obj['matricula'] = $usuario->matricula;
+            $obj['senha'] = $usuario->senha;
 
             $retorno[] = $obj;
         }
