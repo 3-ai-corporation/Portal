@@ -1,22 +1,3 @@
-var materia = [];
-materia[0] = {};
-materia[0]['ae'] = ['VAZIO'];
-materia[0]['ai'] = ['VAZIO'];
-materia[0]['am'] = ['VAZIO'];
-materia[0]['at'] = ['VAZIO'];
-
-materia[1] = {};
-materia[1]['ae'] = ['VAZIO'];
-materia[1]['ai'] = ['VAZIO'];
-materia[1]['am'] = ['VAZIO'];
-materia[1]['at'] = ['VAZIO'];
-
-materia[2] = {};
-materia[2]['ae'] = ['VAZIO'];
-materia[2]['ai'] = ['VAZIO'];
-materia[2]['am'] = ['VAZIO'];
-materia[2]['at'] = ['VAZIO'];
-
 //Criando uma função que tem como parâmetros 'série' e 'turma', retornando disciplina;
 var getMateriasByTurma = function(s, t){
     return materia[s][t];

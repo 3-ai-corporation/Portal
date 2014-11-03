@@ -12,6 +12,9 @@
 		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
+
+		<script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
+
 		<script src="assets/js/diario_dataservice.js"></script>
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
 		
@@ -32,8 +35,6 @@
 		
 		<!--Relacionado ao calendário-->
 		<!-- <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.8.24/themes/base/jquery-ui.css"/> -->
-		<!-- <script type="text/javascript" src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script> -->
-		<!-- <script type="text/javascript" src="assets/jquery-ui-1.8.24/ui/jquery-ui.js"></script> -->
 		
 		<link rel="stylesheet" type="text/css" href="assets/angular/docs/components/bootstrap-3.1.1/css/bootstrap.min.css" />
 		
