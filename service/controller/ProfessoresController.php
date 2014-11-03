@@ -42,7 +42,7 @@ class ProfessoresController {
             $result['ano'] = $turma->ano;
             
             $curso = CursosModel::find($turma->cursos_id);
-            $result['cursos'] = $curso->curso;
+            $result['cursos'] = $curso->id;
 
             if($returnDisciplina)
             {

@@ -1,12 +1,7 @@
-/**
- * Created by AnaKa on 24/10/2014.
- */
-
-//Criando um array estático (Como se o webservice - php - tivesse retornado esses valores);
 var materia = [];
 materia[0] = {};
 materia[0]['ae'] = ['VAZIO'];
-materia[0]['ai'] = ['ED', 'aaa', 'bbb'];
+materia[0]['ai'] = ['VAZIO'];
 materia[0]['am'] = ['VAZIO'];
 materia[0]['at'] = ['VAZIO'];
 
@@ -18,9 +13,9 @@ materia[1]['at'] = ['VAZIO'];
 
 materia[2] = {};
 materia[2]['ae'] = ['VAZIO'];
-materia[2]['ai'] = ['LPIII', 'ccc'];
+materia[2]['ai'] = ['VAZIO'];
 materia[2]['am'] = ['VAZIO'];
-materia[2]['at'] = ['CD'];
+materia[2]['at'] = ['VAZIO'];
 
 //Criando uma função que tem como parâmetros 'série' e 'turma', retornando disciplina;
 var getMateriasByTurma = function(s, t){
@@ -69,7 +64,3 @@ var desativandoBotoes = function(){
         }
     }
 }
-
-
-
-

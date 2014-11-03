@@ -12,21 +12,22 @@
 		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
+		<script src="assets/js/diario_dataservice.js"></script>
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
 		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
 		<script type="text/javascript" src="assets/js/Tempo.js"></script>
-        <script type="text/javascript" src="assets/js/notas.js"></script>
+        <!--<script type="text/javascript" src="assets/js/notas.js"></script>-->
 		<script src="assets/js/angular.js"></script>
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
 		
 		<!-- <script type = "text/javascript" src = "assets/js/notas.js"></script> -->
 		<!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
 		<!-- <script type = "text/javascript" src = "assets/js/frequencia.js"></script> -->
-		<script src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
-		
+		<!-- <script src="assets/js/modulos.js"></script> --> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
+
 		<script src="assets/js/jquery-1.10.2.js"></script> <!-- Relativo ao 'toggler' -->
 		
 		<!--Relacionado ao calendário-->
@@ -39,7 +40,7 @@
 		<title>Diário Escolar</title>
 	</head>
 	
-	<body onload="highlightAE();desativandoChecks(); criandoOpcoes();setFiltroVisible(true);beginTabs();">
+	<body ng-controller="FiltroController" onload="highlightAE(); desativandoChecks(); criandoOpcoes();setFiltroVisible(true);beginTabs();">
 		<div id = "main">
 			<?php 
 				include ("menu.php")
@@ -60,7 +61,7 @@
 					?>
 				</div>
 				
-				<div id="planoaula-exportar" class="modelDialog" ng-controller="ExportController as export">
+				<div id="planoaula-exportar" class="modelDialog" > <!--ng-controller="ExportController as export"-->
 				<?php
 					include ("planoExportar.php")
 				?>
@@ -71,7 +72,7 @@
 			<?php
                 include ("toggler.php")
             ?>			
-			
+			<!--
 			<div id="tabContainer">
 				<div id="tabs">
 					<ul>
@@ -99,7 +100,7 @@
 			      </div>
 			    </div>
 			</div>
-			
+			-->
 		</div>
 	</body>
 </html>

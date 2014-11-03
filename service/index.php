@@ -10,9 +10,9 @@ $app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
 
-/*$app->get('/',function() use ($pcontroller) {
+$app->get('/diario-turmas',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
-});*/
+});
 
 $app->get('/notify-recados',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
