@@ -12,8 +12,8 @@ class DiasLetivosController
 	public function retrieve () 
 	{
 		$retorno = array();
-		$tdias = DiasLetivosModel::find('all',array('order' => 'id'));
-		foreach($tdias as $key => $value) {
+	   $diaaula = DiasLetivosModel::find('all', array('order' => 'id'));
+		foreach($diaaula as $key => $value) {
 			$obj['id'] = $value->id;
 			$obj['data'] = $value->data;
 			$obj['numero_dia'] = $value->numero_dia;
@@ -21,7 +21,6 @@ class DiasLetivosController
 		}
 		return $retorno;
 	}
-
 
 
 	private function object_to_array($Class)

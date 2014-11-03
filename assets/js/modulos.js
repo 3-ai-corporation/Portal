@@ -444,16 +444,15 @@ function TemposAulaCtrl($scope, $http)
 		ng.chamaraulas();
 		ng.chamaralunos();
 	};
-	ng.chamaraulas() = function(){ aj.get('./service/temposaula').success ( 
+	ng.chamaraulas() = function(){ aj.get('./service/temposaula').success (
 	function ( data ) 
 	{ 
 		ng.temposaulaList = data;
 		ng.atualizar();
-	}	); };
-	ng.atualizar() = function()
-	{
-		ng.temposaula = ng.tempoaulaList;
+	}	); 
 	};
+	ng.atualizar() = function()
+	{ng.temposaula = ng.tempoaulaList;};
 	ng.chamaralunos() = function(){ aj.get('./service/alunos').success ( 
 	function ( data ) 
 	{

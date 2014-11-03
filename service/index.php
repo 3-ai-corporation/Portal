@@ -32,7 +32,7 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 });
 
 $app->get('/temposaula',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrive());
+    echo json_encode($aulascontroller->retrieve());
 });
 $app->get('/alunos',function($id) use ($alunocontroller) {
     echo json_encode($alunocontroller->read($id));
