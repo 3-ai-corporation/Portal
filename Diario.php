@@ -10,22 +10,26 @@
 		<link rel = "stylesheet" type="text/css" href="assets/css/notas.css"/> <!-- CSS da aba 'Notas' -->
 		<!-- Esse .css relativo à 'frequência' buga tudo qnd eu ativo -->
 		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
+		<script type="text/javascript" src="assets/js/angular.js"></script>
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
-		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
+		<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
+		
+		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>
+		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
 		<script type="text/javascript" src="assets/js/Tempo.js"></script>
         <script type="text/javascript" src="assets/js/notas.js"></script>
-		<script src="assets/js/angular.js"></script>
-		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
+		
+		<script type="text/javascript" src = "assets/angular/angular-route.min.js"></script>
 		
 		<!-- <script type = "text/javascript" src = "assets/js/notas.js"></script> -->
 		<!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
 		<!-- <script type = "text/javascript" src = "assets/js/frequencia.js"></script> -->
-		<script src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
+		<script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
 		
-		<script src="assets/js/jquery-1.10.2.js"></script> <!-- Relativo ao 'toggler' -->
+		 <!-- Relativo ao 'toggler' -->
 		
 		<!--Relacionado ao calendário-->
 		<!-- <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.8.24/themes/base/jquery-ui.css"/> -->
@@ -76,8 +80,8 @@
 						<li id="tabHeader_1">Frequência</li>
 				        <li id="tabHeader_2">Notas</li>
 				        <li id="tabHeader_3">Plano</li>
-				        <li id="tabHeader_4"><a href="#planoaula-exportar">Exportar</a></li>
 					</ul>
+					<a id="tabExportar" href="#planoaula-exportar">Exportar</a>
 				</div>
 				<div id="tabscontent">
 			      <div class="tabpage" id="tabpage_1">
