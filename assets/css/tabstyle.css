@@ -9,6 +9,28 @@
 	border-radius: 4px; 
 }
 
+#tabExportar {
+	text-decoration: none;
+	padding:6px 40px;
+	display:block;
+	float:right;
+	color:#FFF;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background: #008ACC; /*#C9C9C9; /* old browsers */
+}
+
+#tabExportar, #tabExportar:visited, #tabExportar:active {
+  color: #FFFFFF;
+}
+
+#tabExportar:hover {
+	background: #26627f;
+	cursor:pointer;
+	color: #333;
+}
+
 #tabs{
 	height:30px;
 	margin-left: -40px;
@@ -19,6 +41,7 @@
 	font: 1em;
 	list-style:none;
 }
+
 
 #tabs ul li{
 	/*margin:0 2px 0 0;*/
