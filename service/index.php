@@ -29,7 +29,7 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 });
 
 $app->get('/alunosTurma',function() use ($acontroller) {
-    echo json_encode($acontroller->retrieveAlunos(1));
+    echo json_encode($acontroller->retrieveAlunos(33));	
 });
 
 $app->run();

@@ -3,7 +3,6 @@
 <html lang="en">
 	<head>
 		<meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
-		1
 		<link type="text/css" rel="stylesheet" href="assets/css/stylesheet_Menu.css"/> <!-- CSS do Diário -->
 		<link type="text/css" rel="stylesheet" href="assets/css/stylesheet.css"/> <!-- CSS do Diário -->
 		<link type = "text/css" rel = "stylesheet"  href = "assets/css/stylesheetPlano.css"/> <!-- CSS da aba 'Plano de aula' -->
@@ -11,19 +10,22 @@
 		<link rel = "stylesheet" type="text/css" href="assets/css/notas.css"/> <!-- CSS da aba 'Notas' -->
 		<!-- Esse .css relativo à 'frequência' buga tudo qnd eu ativo -->
 		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
-		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>
-		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
-		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
 		
+		<!--<script type="text/javascript" src="assets/angular/angular.min.js"></script>-->
+		<script src="assets/js/angular.js"></script>
+		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>		
+		
+		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
+		
+		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>		
+		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
 		<script type="text/javascript" src="assets/js/Tempo.js"></script>
-        <script type="text/javascript" src="assets/js/notas.js"></script>
-		<script src="assets/js/angular.js"></script>
-		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
-		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
+        <!--<script type="text/javascript" src="assets/js/notas.js"></script> Por que duas referências desta m#rda? -->		
 		 <script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
+		 <script type="text/javascript" src="assets/angular/docs/components/jquery-1.10.2/jquery.min.js"></script>
 		
 		<!-- <script type = "text/javascript" src = "assets/js/notas.js"></script> -->
 		<!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
@@ -85,7 +87,7 @@
 					</ul>
 				</div>
 				<div id="tabscontent">
-			      <div class="tabpage" id="tabpage_1" ng-app="frequencia">
+			      <div class="tabpage" id="tabpage_1" >
 			        <?php
 						include ("frequencia.php")
 					?>

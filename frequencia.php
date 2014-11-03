@@ -1,3 +1,5 @@
+<section ng-app="frequencia">
+
 <label class="dados_cabecalho"> Série: 3°</label>
 <label id="freq_curso" class="dados_cabecalho"> Curso: Informática </label>
 <label id="freq_aulas" class="dados_cabecalho"> Aulas no mês: </label>
@@ -16,11 +18,13 @@
 	<img src="assets/img/arrow-left.png" width="30px" height="30px" color="white">
 </button>
 					
+
+					
 <button id="AulaProx" style="margin-left: 70.7em"> 
 	<img src="assets/img/arrow-right.png" width="30px" height="30px" color="white">
 </button>
 
-<article id="tabela_frequencia" ng-controller="FrequenciaCtrl"> 
+<article id="tabela_frequencia" ng-controller="AlunosCtrl"> 
 		<table id="tblFrequencia" class= "table table-bordered">
 			<thead id = "tblFrequencia_head">
 				<tr> 
@@ -55,3 +59,5 @@
 			</tbody>
 		</table>
 </article>
+
+</section>

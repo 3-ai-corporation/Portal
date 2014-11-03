@@ -1,7 +1,6 @@
-angular.module('frequencia', [ngRoute]);
+var frequenciaModule = angular.module('frequencia', ['ngRoute']);
 
-function FrequenciaCtrl($scope, $http){
-	
+frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	var 
 		$ = jQuery,
 		ng = $scope,
@@ -22,4 +21,4 @@ function FrequenciaCtrl($scope, $http){
 
 	ng.init();
 
-}
+});
