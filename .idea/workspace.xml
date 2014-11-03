@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="79293f26-95c8-4986-ad20-033a50a43f21" name="Default" comment="" />
-=======
-    <list default="true" id="79293f26-95c8-4986-ad20-033a50a43f21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Diario.php" afterPath="$PROJECT_DIR$/Diario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/stylesheet.css" afterPath="$PROJECT_DIR$/assets/css/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
->>>>>>> refs/remotes/origin/master
     <ignored path="Portal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -32,13 +24,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-<<<<<<< HEAD
-<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/index.php">
-=======
-=======
->>>>>>> master
       <file leaf-file-name="stylesheet.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,11 +41,6 @@
           <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
-<<<<<<< HEAD
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="799">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="34" />
-=======
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="799">
               <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="34" />
@@ -69,41 +51,16 @@
       </file>
       <file leaf-file-name="criandoBotoes.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/criandoBotoes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
->>>>>>> master
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="criandoBotoes.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/criandoBotoes.js">
->>>>>>> refs/remotes/origin/master
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="595">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
->>>>>>> refs/remotes/origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="Diario.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Diario.php">
-=======
-      <file leaf-file-name="button-selection.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/button-selection.js">
->>>>>>> refs/remotes/origin/master
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state vertical-scroll-proportion="0.14480409" vertical-offset="544" max-vertical-offset="1853">
               <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
               <folding />
@@ -126,45 +83,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-11.423077" vertical-offset="128" max-vertical-offset="799">
               <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-=======
-      <file leaf-file-name="button-selection.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/button-selection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1139">
-              <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
->>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="stylesheet.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="5387" max-vertical-offset="6069">
               <caret line="329" column="6" selection-start-line="329" selection-start-column="6" selection-end-line="329" selection-end-column="6" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1139">
-              <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="desabilitandoBotoes.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/desabilitandoBotoes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1377">
-              <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
->>>>>>> refs/remotes/origin/master
-=======
-      <file leaf-file-name="desabilitandoBotoes.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/desabilitandoBotoes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1377">
-              <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
->>>>>>> master
               <folding />
             </state>
           </provider>
@@ -192,34 +120,19 @@
         <option value="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css.map" />
         <option value="$PROJECT_DIR$/assets/js/DesabilitandoChecks.js" />
         <option value="$USER_HOME$/Ana Karol/FN/Área Técnica/diarioEscolar/index.html" />
-<<<<<<< HEAD
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/assets/js/criandoBotoes.js" />
-=======
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> master
         <option value="$PROJECT_DIR$/service/model/NotificacoesModel.php" />
         <option value="$PROJECT_DIR$/service/model/ProfessoresModel.php" />
         <option value="$PROJECT_DIR$/service/controller/ProfessoresController.php" />
-<<<<<<< HEAD
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/service/index.php" />
         <option value="$PROJECT_DIR$/turmaFiltro.php" />
         <option value="$PROJECT_DIR$/assets/js/desabilitandoBotoes.js" />
         <option value="$PROJECT_DIR$/Diario.php" />
-=======
-=======
->>>>>>> master
         <option value="$PROJECT_DIR$/assets/js/button-selection.js" />
         <option value="$PROJECT_DIR$/assets/js/desabilitandoBotoes.js" />
         <option value="$PROJECT_DIR$/assets/js/criandoBotoes.js" />
         <option value="$PROJECT_DIR$/Diario.php" />
         <option value="$PROJECT_DIR$/assets/css/stylesheet.css" />
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> master
       </list>
     </option>
   </component>
