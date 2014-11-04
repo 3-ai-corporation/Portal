@@ -24,9 +24,10 @@ $app->get('/notify-alunos',function() use ($pcontroller) {
 $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
-$app->get('/Login',function() use ($pcontroller) {
-    echo json_encode($pcontroller->retrieve());
-});
-$app->run();
 
+$app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
+	echo json_encode($pcontroller->login($matricula,$senha));
+});
+
+$app->run();
 ?>

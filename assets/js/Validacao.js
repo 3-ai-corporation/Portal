@@ -1,4 +1,3 @@
-
 function validar_matricula(matricula){
 	 var regra = /^[0-9]+$/;
 	 if (!matricula.value.match(regra) && matricula.value != "") {
@@ -19,7 +18,7 @@ function validar_matricula2(matricula){
 		showAlert('error', 'Somente números na matrícula!');
 		Value(matricula);
 	 }
-	 if(matricula.value.length > 5){
+	 if(matricula.value.length > 6){
 		showAlert('error', 'Digite somente 6 números!');
 		matricula.value = matricula.value.substr(0,6);
 	 }
@@ -68,7 +67,7 @@ function Value(number)
     }
     number.value = aux;
 }
-
+	
 function validar(user,pass){
 	var mtrForm = user;
 	var passForm = pass;
@@ -88,7 +87,6 @@ function validar(user,pass){
 		else{
 		  if(passForm === ""){
 		     showAlert('error','Digite a senha!');
-			 window.location.href = "TelaInicial.php";
 		  }
 		  else{
 			if (!mtrForm.match(regra)) {
@@ -96,23 +94,16 @@ function validar(user,pass){
 				validar_matricula(mtrForm.value);
 			    teste = true;
 			}else{
-				var retorno;
+				var usuario;
 				$.ajax({
 					type: "GET",
-					url: 'service/Login',
-					async: false,
+					url: 'service/Login/' + mtrForm + '/' + passForm,	
 					success: function(data) {
-						retorno = jQuery.parseJSON(data);
-						usuario = false;
-						for(i=0;i<retorno.length;i++){
-							if((retorno[i].matricula == mtrForm) && (retorno[i].senha == passForm)){
-								window.location.href = "TelaInicial.php";
-								usuario = true;
-								break;
-							}
-						}
-						if(!usuario){
-							showAlert('error', 'Matrícula ou senha incorreta!');
+						usuario = jQuery.parseJSON(data);
+						if(usuario){
+							window.location.href = "TelaInicial.php";
+						}else{
+						  showAlert('error', 'Matrícula ou senha incorreta!');
 						}
 					}
 				});

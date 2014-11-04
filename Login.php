@@ -1,11 +1,10 @@
 <?php
-
-	session_start();
-
+	$matricula = $_POST['matricula'];
 	switch($_REQUEST['acao'])
 	{
 		case 'logar':
 		{
+			session_start();
 			$_SESSION['matricula'] = $matricula;
 			header('location:TelaInicial.php');
 		}
