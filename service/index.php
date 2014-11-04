@@ -5,6 +5,7 @@ set_include_path(implode(PATH_SEPARATOR, array(realpath(dirname(__FILE__) . '/li
 require_once 'Slim/Slim/Slim.php';
 require_once 'controller/ProfessoresController.php';
 require_once 'controller/AlunosController.php';
+require_once 'controller/TemposController.php';
 
 \Slim\Slim::registerAutoloader();
 $app = new Slim\Slim();

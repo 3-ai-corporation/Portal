@@ -11,7 +11,7 @@ class TemposController
 		return $tempos->to_array();
 	}
 
-	public function retrieve (&id) 
+	public function retrieve ($id) 
 	{
 		$retorno = array();
 		$tempos = TemposModel::where([" id = ? ", $id]);
