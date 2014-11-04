@@ -433,33 +433,41 @@ var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria u
 		
 	});
 //--------------------------------
-function TemposAulaCtrl($scope, $http)
-{
-	var 
-		$ = jQuery,
-		ng = $scope,
-		aj = $http
-	;
-	ng.init = function(){
-		ng.chamaraulas();
-		ng.chamaralunos();
-	};
-	ng.chamaraulas() = function(){ aj.get('./service/temposaula').success (
-	function ( data ) 
-	{ 
-		ng.temposaulaList = data;
-		ng.atualizar();
-	}	); 
-	};
-	ng.atualizar() = function()
-	{ng.temposaula = ng.tempoaulaList;};
-	ng.chamaralunos() = function(){ aj.get('./service/alunos').success ( 
-	function ( data ) 
-	{
-		ng.alunosList = data;
-	} ); };
-	ng.init();
-}
+	frequenciaModule.controller("TemposAulaCtrl", function($scope, $http)
+		{
+			var 
+				$ = jQuery,
+				ng = $scope,
+				aj = $http
+				;
+			ng.init = function()
+				{
+					ng.chamaraulas();
+					ng.chamaralunos();
+				};
+			ng.chamaraulas() = function(){ aj.get('./service/temposaula').success (
+					function ( data ) 
+						{ 
+							ng.temposaulaList = data;
+							ng.atualizar();
+						}
+				); 
+			};	
+			value.Id = 1;
+			ng.atualizar() = function(){ng.temposaula = ng.tempoaulaList;};
+			ng.chamaralunos() = function(value){ aj.get('./service/alunos'+value.Id).success ( 
+					function ( data ) 
+						{
+							ng.alunosList = data;
+						} 
+				); 
+			};
+			
+			ng.init();
+			
+		}
+	);
+
 //--------------------------------	
 	
 	frequenciaModule.controller('checkcontroller', function() {
