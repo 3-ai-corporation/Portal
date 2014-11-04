@@ -21,29 +21,37 @@ var toggleFiltro = function() {
 }
 
 var highlight = function(highlightId, otherIds, imageId) {
-	var highlighted = document.getElementById(highlightId);
-	highlighted.className = highlighted.className.replace(/(?:^|\s)buttonCurso(?!\S)/g , 'buttonCursoSelected');
-	
-	for(var otherId in otherIds) {
-		var other = document.getElementById(otherIds[otherId]);
-		other.className =  highlighted.className.replace(/(?:^|\s)buttonCursoSelected(?!\S)/g , 'buttonCurso');
-	}
-	
-	if (imageId !== '') {
-		var figuraTurma = document.getElementById('figuraTurma');
-		figuraTurma.style.backgroundImage = "url('assets/img/" + imageId + "')";
-		
-		var turmaLabel = document.getElementById("turmaLabel");
-		turmaLabel.innerHTML = (function() {
-			switch (highlightId) {
-				case 'btnAE': return "Eletrônica";
-				case 'btnAI': return "Informática";
-				case 'btnAM': return "Mecatrônica";
-				case 'btnAT': return "Telecomunicações";
-				default: return "button-selection.js???";
-			}
-		})();
-	}
+    if(hasClash(document.getElementById(highlightId),'buttonAtivado')){
+        var highlighted = document.getElementById(highlightId);
+        //highlighted.className = highlighted.className.replace(/(?:^|\s)buttonCurso(?!\S)/g , 'buttonCursoSelected');
+
+        for(var otherId in otherIds) {
+            var other = document.getElementById(otherIds[otherId]);
+            if(hasClash(other,'buttonAtivado'))
+                other.className =  highlighted.className.replace(/(?:^|\s)buttonCursoSelected(?!\S)/g , 'buttonCurso');
+        }
+
+        if (imageId !== '') {
+            var figuraTurma = document.getElementById('figuraTurma');
+            figuraTurma.style.backgroundImage = "url('assets/img/" + imageId + "')";
+
+            var turmaLabel = document.getElementById("turmaLabel");
+            turmaLabel.innerHTML = (function () {
+                switch (highlightId) {
+                    case 'btnAE':
+                        return "Eletrônica";
+                    case 'btnAI':
+                        return "Informática";
+                    case 'btnAM':
+                        return "Mecatrônica";
+                    case 'btnAT':
+                        return "Telecomunicações";
+                    default:
+                        return "button-selection.js???";
+                }
+            })();
+        }
+    }
 };
 
 var highlightAE = function() {

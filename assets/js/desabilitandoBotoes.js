@@ -5,21 +5,21 @@
 //Criando um array estático (Como se o webservice - php - tivesse retornado esses valores);
 var materia = [];
 materia[0] = {};
-materia[0]['ae'] = ['VAZIO'];
+materia[0]['ae'] = [];
 materia[0]['ai'] = ['ED', 'aaa', 'bbb'];
-materia[0]['am'] = ['VAZIO'];
-materia[0]['at'] = ['VAZIO'];
+materia[0]['am'] = [];
+materia[0]['at'] = [];
 
 materia[1] = {};
-materia[1]['ae'] = ['VAZIO'];
-materia[1]['ai'] = ['VAZIO'];
-materia[1]['am'] = ['VAZIO'];
-materia[1]['at'] = ['VAZIO'];
+materia[1]['ae'] = [];
+materia[1]['ai'] = [];
+materia[1]['am'] = [];
+materia[1]['at'] = [];
 
 materia[2] = {};
-materia[2]['ae'] = ['VAZIO'];
+materia[2]['ae'] = [];
 materia[2]['ai'] = ['LPIII', 'ccc'];
-materia[2]['am'] = ['VAZIO'];
+materia[2]['am'] = [];
 materia[2]['at'] = ['CD'];
 
 //Criando uma função que tem como parâmetros 'série' e 'turma', retornando disciplina;
@@ -32,7 +32,6 @@ var desativandoChecks = function(){
     var vazio = true;
 
     for (i = 0; i < 3; i++){
-        //alert(i);
         if (materia[i]['ae'] !== []){
             vazio = false;
         }
@@ -50,7 +49,6 @@ var desativandoChecks = function(){
                 document.getElementById('ckbPrimeiro').isDisabled = true;
             } else {
                 if (i === 1){
-                    alert("Oi");
                     document.getElementById('ckbSegundo').isDisabled = true;
                 } else{
                     document.getElementById('ckbTerceiro').isDisabled = true;
@@ -61,15 +59,54 @@ var desativandoChecks = function(){
     }
 }
 
-var desativandoBotoes = function(){
+var desativandoButtons = function(serie) {
     var vazio = true;
-    for (i = 0; i < 3; i++){
-        if (materia[i]['ae']){
+    var serieSelecionada;
 
-        }
+    if (serie.id === 'checkPrimeiro')
+        serieSelecionada = 0;
+
+    if (serie.id === 'checkSegundo')
+        serieSelecionada = 1;
+
+    if (serie.id === 'checkTerceiro')
+        serieSelecionada = 2;
+
+    if (materia[serieSelecionada]['ae'].length > 0) {
+        var turma = document.getElementById('btnAE');
+        //turma.className = turma.className.replace(/(?:^|\s)botaoDesativado(?!\S)/g , 'botaoAtivado');
+        turma.className = "buttonCursoBasic buttonAtivado";
+    }
+    else {
+        var turma = document.getElementById('btnAE');
+        turma.className = "buttonCursoBasic buttonDesativado";
+    }
+
+    if (materia[serieSelecionada]['ai'].length > 0) {
+        var turma = document.getElementById('btnAI');
+        turma.className = "buttonCursoBasic buttonAtivado";
+    }
+    else {
+        var turma = document.getElementById('btnAI');
+        turma.className = "buttonCursoBasic buttonDesativado";
+    }
+
+    if (materia[serieSelecionada]['am'].length > 0) {
+        var turma = document.getElementById('btnAM');
+        turma.className = "buttonCursoBasic buttonAtivado";
+    }
+    else {
+        var turma = document.getElementById('btnAM');
+        turma.className = "buttonCursoBasic buttonDesativado";
+    }
+
+    if (materia[serieSelecionada]['at'].length > 0) {
+        var turma = document.getElementById('btnAT');
+        turma.className = "buttonCursoBasic buttonAtivado";
+    }
+    else {
+        var turma = document.getElementById('btnAT');
+        //turma.className = turma.className.replace(/(?:^|\s)botaoAtivado(?!\S)/g , 'botaoDesativado');
+        turma.className = "buttonCursoBasic buttonDesativado";
     }
 }
-
-
-
-
