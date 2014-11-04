@@ -32,26 +32,26 @@ var desativandoChecks = function(){
     var vazio = true;
 
     for (i = 0; i < 3; i++){
-        if (materia[i]['ae'] !== []){
+        if (materia[i]['ae'].length > 0){
             vazio = false;
         }
-        if (materia[i]['ai'] !== []){
+        if (materia[i]['ai'].length > 0){
             vazio = false;
         }
-        if (materia[i]['am'] !== []){
+        if (materia[i]['am'].length > 0){
             vazio = false;
         }
-        if (materia[i]['at'] !== []){
+        if (materia[i]['at'].length > 0){
             vazio = false;
         }
-        if (vazio){
+        if (vazio === true){
             if (i === 0){
-                document.getElementById('ckbPrimeiro').isDisabled = true;
+                document.getElementById('checkPrimeiro').disabled = true;
             } else {
-                if (i === 1){
-                    document.getElementById('ckbSegundo').isDisabled = true;
-                } else{
-                    document.getElementById('ckbTerceiro').isDisabled = true;
+                if (i === 1){                    
+                    document.getElementById('checkSegundo').disabled = true;
+                } else{                    
+                    document.getElementById('checkTerceiro').disabled = true;
                 }
             }
         }

@@ -41,7 +41,8 @@
 		<title>Diário Escolar</title>
 	</head>
 	
-	<body onload="highlightAE();desativandoChecks(); criandoOpcoes();setFiltroVisible(true);beginTabs();">
+	<body onload="highlightAE();desativandoChecks(); criandoOpcoes();setFiltroVisible(true);beginTabs(); 
+					desativandoButtons(document.getElementById('checkPrimeiro'));">
 		<div id = "main">
 			<?php 
 				include ("menu.php")
