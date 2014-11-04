@@ -339,4 +339,26 @@ input[type="radio"] {
 	padding-left: 25px;
 }
 
+.buttonAtivado {
+	background-color: #008ACC;	
+}
 
+.buttonAtivado:hover {
+	background-color: #26627f;
+}
+
+.buttonAtivado:active {	
+	background-color: #003853;
+}
+
+.buttonDesativado {
+	background-color: #CCCCCC;	
+}
+
+.buttonDesativado:hover {
+	background-color: #CCCCCC;
+}
+
+.buttonDesativado:active {
+	background-color: #CCCCCC;
+}
