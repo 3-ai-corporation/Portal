@@ -3,6 +3,7 @@
 require_once 'settings/config.php';
 
 class TurmasModel extends ActiveRecord\Model {
+
 	static $table_name = 'tb_turmas';
     
     static $belongs_to = array(
@@ -14,5 +15,4 @@ class TurmasModel extends ActiveRecord\Model {
     );
 
 }
-
 ?>
