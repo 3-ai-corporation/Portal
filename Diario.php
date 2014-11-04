@@ -15,8 +15,7 @@
 		<script type="text/javascript" src="assets/js/angular.js"></script>
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
-		
-		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>
+				
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
