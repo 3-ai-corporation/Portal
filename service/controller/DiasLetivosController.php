@@ -15,7 +15,7 @@ class DiasLetivosController
 	   $diaaula = DiasLetivosModel::find('all', array('order' => 'id'));
 		foreach($diaaula as $key => $value) {
 			$obj['id'] = $value->id;
-			$obj['data'] = $value->data;
+			$obj['data'] = $value->data.date;
 			$obj['numero_dia'] = $value->numero_dia;
 			$retorno[] = $obj;
 		}

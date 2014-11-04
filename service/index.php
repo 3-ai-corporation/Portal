@@ -20,8 +20,8 @@ $aulascontroller = new DiasLetivosController;
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
 
-$app->post('/service/plano-aula/update/',function($id) use ($tcontroller) {
-    echo json_encode($tcontroller->retrieve($id));
+$app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
+    echo json_encode($temposcontroller->retrieve($id));
 });
 
 $app->get('/notify-recados',function() use ($pcontroller) {

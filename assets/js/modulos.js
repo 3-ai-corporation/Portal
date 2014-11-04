@@ -453,16 +453,16 @@ var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria u
 						}
 				); 
 			};	
-			value.Id = 1;
+//			this.value.Id = 1;
 			ng.atualizar() = function(){ng.temposaula = ng.tempoaulaList;};
-			ng.chamaralunos() = function(value){ aj.get('./service/alunos'+value.Id).success ( 
+/*			ng.chamaralunos() = function(value){ aj.get('./service/alunos'+value.Id).success ( 
 					function ( data ) 
 						{
 							ng.alunosList = data;
 						} 
 				); 
 			};
-			
+			*/
 			ng.init();
 			
 		}
