@@ -1,7 +1,5 @@
-
-(function(){
-	var app = angular.module('Diario_Notas', []);
-	
+(function(){ 
+	var app = angular.module('Notas', []);
 	
 	app.controller('AppController', function(){
 		var calculoMedia = '(AV1)';
@@ -45,9 +43,9 @@
             }
         };
 
-        this.setTooltip = function (value) {
+        /* this.setTooltip = function (value) {
             this.selectedAv = value;
-        };
+        }; */
 	
 	});
 	
@@ -226,7 +224,7 @@
 	{ numero: 28, matricula: 120380, nome: 'YASMIM GABRIELLA DOS SANTOS LIBORIO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '}
 	];
 
-})();
+})(); 
 
 function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode

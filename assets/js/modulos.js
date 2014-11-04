@@ -59,6 +59,25 @@ planoModule.controller('GridController',function() {
 			}
 		}
 	};
+
+	this.concatAulas = function(aulas) {
+		if(aulas.length > 0)
+		{
+			var org = [];
+			for(var i = 0; i < aulas.length; i++)
+			{
+				var actualDate = aulas[i].dt;
+				if(aulas[i].dt == actualDate)
+				{
+					var innerArray = innerArray + aulas[i];
+				}
+				else
+				{
+					org = org+ innerArray;
+				}
+			}
+		}
+	};
 });
 
 planoModule.controller('ExportController',function() {
@@ -101,12 +120,13 @@ notasModule.controller('AppController', function(){
 });
 
 notasModule.controller('ColumnController', function(){
-	this.lstColAvs = [{title:"AV1"}];
+	this.lstColAvs = [{title:"AV1", value:"10"}];
 	this.setColumn = function(){
-		// this.column = this.column +1;
+		//this.column = this.column +1;
 		if ((this.lstColAvs.length ) < 10) {
 			var newAv = {};
 			newAv.title = "AV" + (this.lstColAvs.length + 1);
+			newAv.value = 10;
 			this.lstColAvs.push(newAv);
 		}
 	};
@@ -117,9 +137,15 @@ notasModule.controller('ColumnController', function(){
 		}
 	};
 	
+	this.selectedAv = '';
+	
 	this.isSet = function(value){
 		return value === this.column;
 	};
+	
+	this.setTooltip = function (value) {
+            this.selectedAv = value;
+    };
 
 });
 
@@ -191,6 +217,7 @@ notasModule.controller('ColumnController', function(){
 	this.isSet = function(value){
 		return value === this.button;
 		};
+		
 		
 	var carlos = function(){
 		alunos[4].status = 'active';
@@ -301,7 +328,7 @@ var alunos = [
 //Fim do módulo de notas
 
 //Início do módulo de frequência
-var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria um módulo e associa a aplicacao
+/*var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria um módulo e associa a aplicacao
 		// rotas: como numerospaces do C#
 	
 	frequenciaModule.controller('frequenciacontroller', function() {
@@ -350,12 +377,12 @@ var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria u
 					linhaAluno.bgcolor = "#6D8E9D";
 				}
 			}
-		}; */
+		}; 
 	});
 	
 	frequenciaModule.controller('faltacontroller', function() {
 		this.changeColor = function(obj, elem) { 
-			/* var linhaAluno = document.getElementById('freqRow'); 	 */
+			/* var linhaAluno = document.getElementById('freqRow'); 	 
 			if(obj.faltas !== 0) {
 				elem.bgcolor = "#FF7F50";
 			}
@@ -419,7 +446,7 @@ var alunosFreq = [
 var diasLetivos = [
 	{idMateria: 1, idProfessor: 200872, lstDias: dias}
 ];
-
+*/
 //Fim do módulo de frequência
 
 //Responsável por fazer as trocas entre módulos:
