@@ -140,6 +140,27 @@ function validar(user,pass){
 			}
 		}	
 }
+
+function ValidarEsqueceuSenha(user, email)
+{
+	var usuario
+	$.ajax(
+	{
+		type:"GET",
+		url: '/service/EsqueceuSenha/' + user + '/' + email,
+		success: function(data) {
+			usuario = JQuery.parseJSON(data);
+			if(usuario != "")
+			{
+			}
+			else
+			{
+				showAlert('erro', 'Matrícula ou e-mail incorreto');
+			}
+		}
+	});
+}
+
 function showAlert2(type,message) {
 		$('#alert2').addClass('alert-' + type).html( message ).fadeIn();
 		setTimeout("closeAlert(2)", 4000);
