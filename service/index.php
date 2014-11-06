@@ -15,11 +15,6 @@ $pcontroller = new ProfessoresController;
 $alunocontroller = new AlunosController;
 $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
-
-/*$app->get('/',function() use ($pcontroller) {
-    echo json_encode($pcontroller->retrieveTurmas(134567, true));
-});*/
-
 $app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
