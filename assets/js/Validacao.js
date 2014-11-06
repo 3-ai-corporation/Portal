@@ -158,7 +158,7 @@ function ValidarEsqueceuSenha(user, email)
 				showAlert('erro', 'Matrícula ou e-mail incorreto');
 			}
 		}
-	});                     
+	});
 }
 
 function showAlert2(type,message) {

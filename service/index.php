@@ -40,7 +40,7 @@ $app->get('/alunosTurma',function() use ($acontroller) {
 
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($acontroller) {
     echo json_encode($acontroller->retrieveSenha($matricula, $senha));	
-});              
+});
 
 $app->run();
 

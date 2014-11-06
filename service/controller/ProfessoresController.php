@@ -116,7 +116,7 @@ class ProfessoresController {
 		}
 		else
 		{
-			return "";               
+			return "";
 		}
     }
 }
