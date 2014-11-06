@@ -54,7 +54,7 @@
 								</div>
 								<div id="iSubmit">
 									<input class="btnEnviar" value="Enviar" onclick = "ValidarEsqueceuSenha(ematricula.value, email.value)" type="button" style="width: 100px; height: 25px" />
-								</div>	 
+								</div>	  
 							</div>	
 						</li>
 						<li>                        
