@@ -55,6 +55,30 @@ function LoginInput_OnKeyDown(event, user, pass) {
 	}
 }
 
+/**
+ *Created by Yasmim Libório on 06/11/2014
+ * Método que faz a validação do email
+*/
+
+function IsMail($email){
+    $er = "/^(([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}){0,1}$/";
+    if (preg_match($er, $email)){
+    return true;
+    } else {
+    return false;
+    }
+	
+	/*$email = "email@dominio.com.br";
+    usar na validação de verificação do email do usuario
+    if (isMail($email)){
+    echo "É um e-mail válido.";
+    } else {
+    echo "E-mail inválido.";
+    }*/
+}
+
+
+
 function Value(number)
 {
     var aux = "";

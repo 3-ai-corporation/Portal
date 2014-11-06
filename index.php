@@ -50,7 +50,7 @@
 								</div>
 								<div id="eEmail">
 									<p class="lblEsqueceu" >Email: </p>
-									<input class="txtEsqueceu" type="email" name="email" value=""/>
+									<input class="txtEsqueceu" type="email" name="email" value="" onkeydown = "IsMail($email);"/>
 								</div>
 								<div id="iSubmit">
 									<input class="btnEnviar" value="Enviar" onclick = "ValidarEsqueceuSenha(ematricula.value, email.value)" type="button" style="width: 100px; height: 25px" />
