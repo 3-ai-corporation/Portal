@@ -53,8 +53,8 @@
 									<input class="txtEsqueceu" type="email" name="email" value=""/>
 								</div>
 								<div id="iSubmit">
-									<input class="btnEnviar" value="Enviar" type="button" style="width: 100px; height: 25px" />
-								</div>	 
+									<input class="btnEnviar" value="Enviar" onclick = "ValidarEsqueceuSenha(ematricula.value, email.value)" type="button" style="width: 100px; height: 25px" />
+								</div>
 							</div>	
 						</li>
 						<li>                        
