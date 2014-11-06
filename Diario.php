@@ -17,6 +17,7 @@
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>		
 		
 		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
+		<script type = "text/javascript" src = "assets/js/js_notas.js"></script>
 		
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"/>		
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
