@@ -2,27 +2,20 @@
 var planoModule = angular.module('planoModule',[]);
 planoModule.controller('GridController',function() {
 	this.aulas = aulas;
-
 	this.ativarData = function(data) {
 		for(i = 0; i < this.aulas.length; i++) {
-			if(data == this.aulas[i].dia)
-			{
-				for (j = 0; j < this.aulas[i].tempos.length; j++) {
-					this.aulas[i].tempos[j].visible = true;
-				}
+			if(data == this.aulas[i].dt) {
+				this.aulas[i].visible = !this.aulas[i].visible;
 			}
 		}
 	};
 	
-    this.getIndex = function(tempo) {
+    this.getIndex = function(aula) {
 	    var index = -1;
 		for(i = 0; i < this.aulas.length; i++) {
-			for(j = 0; j < this.aulas[i].tempos.length; j++)
-			{
-				if(tempo == this.aulas[i].tempos[j]) {
-					index = i;
-					break;
-				}
+			if(aula == this.aulas[i]) {
+				index = i;
+				break;
 			}
 		}
 		return index;
@@ -67,108 +60,23 @@ planoModule.controller('GridController',function() {
 		}
 	};
 
-	this.concatenatePrevisto = function(aula) {
-		var apc = "";
-		for(i = 0; i < this.aulas.length; i++)
+	this.concatAulas = function(aulas) {
+		if(aulas.length > 0)
 		{
-			if(this.aulas[i] == aula)
+			var org = [];
+			for(var i = 0; i < aulas.length; i++)
 			{
-				if(this.aulas[i].tempos.length == 1)
-				{ 
-					apc = this.aulas[i].tempos[0].conteudo_previsto;
-				}
-
-				if(this.aulas[i].tempos.length == 2)
+				var actualDate = aulas[i].dt;
+				if(aulas[i].dt == actualDate)
 				{
-					if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[1].conteudo_previsto)
-					{
-						apc = this.aulas[i].tempos[0].conteudo_previsto;
-					}
-					else
-					{
-						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[1].conteudo_previsto;
-					}
+					var innerArray = innerArray + aulas[i];
 				}
-
-				if(this.aulas[i].tempos.length == 3)
+				else
 				{
-					if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[1].conteudo_previsto &&
-						this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[2].conteudo_previsto)
-					{
-						apc = this.aulas[i].tempos[0].conteudo_previsto;
-					}
-					else if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[1].conteudo_previsto &&
-						this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[2].conteudo_previsto)
-					{
-						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[2].conteudo_previsto;
-					}
-					else if(this.aulas[i].tempos[0].conteudo_previsto == this.aulas[i].tempos[2].conteudo_previsto &&
-						this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[1].conteudo_previsto)
-					{
-						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[1].conteudo_previsto;
-					}
-					else if(this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[1].conteudo_previsto &&
-						this.aulas[i].tempos[0].conteudo_previsto != this.aulas[i].tempos[2].conteudo_previsto)
-					{
-						apc = this.aulas[i].tempos[0].conteudo_previsto + ", " + this.aulas[i].tempos[1].conteudo_previsto + ", " + this.aulas[i].tempos[2].conteudo_previsto;
-					}
+					org = org+ innerArray;
 				}
-				break;
 			}
 		}
-		return apc;
-	};
-
-	this.concatenateAplicado = function(aula) {
-		var aac = "";
-		for(i = 0; i < this.aulas.length; i++)
-		{
-			if(this.aulas[i] == aula)
-			{
-				if(this.aulas[i].tempos.length == 1)
-				{ 
-					aac = this.aulas[i].tempos[0].conteudo_aplicado;
-				}
-
-				if(this.aulas[i].tempos.length == 2)
-				{
-					if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[1].conteudo_aplicado)
-					{
-						aac = this.aulas[i].tempos[0].conteudo_aplicado;
-					}
-					else
-					{
-						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[1].conteudo_aplicado;
-					}
-				}
-
-				if(this.aulas[i].tempos.length == 3)
-				{
-					if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[1].conteudo_aplicado &&
-						this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[2].conteudo_aplicado)
-					{
-						aac = this.aulas[i].tempos[0].conteudo_aplicado;
-					}
-					else if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[1].conteudo_aplicado &&
-						this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[2].conteudo_aplicado)
-					{
-						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[2].conteudo_aplicado;
-					}
-					else if(this.aulas[i].tempos[0].conteudo_aplicado == this.aulas[i].tempos[2].conteudo_aplicado &&
-						this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[1].conteudo_aplicado)
-					{
-						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[1].conteudo_aplicado;
-					}
-					else if(this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[1].conteudo_aplicado &&
-						this.aulas[i].tempos[0].conteudo_aplicado != this.aulas[i].tempos[2].conteudo_aplicado)
-					{
-						aac = this.aulas[i].tempos[0].conteudo_aplicado + ", " + this.aulas[i].tempos[1].conteudo_aplicado + ", " + this.aulas[i].tempos[2].conteudo_aplicado;
-					}
-				}
-				break;
-			}
-		}
-		return aac;
 	};
 });
 
@@ -177,20 +85,18 @@ planoModule.controller('ExportController',function() {
 	this.materias = materias;
 });
 
-var t1 = [
-    new Tempo('Tempo para implementação do portal','Tempo para implementação do portal',false,false),
-    new Tempo('Tempo para implementação do portal','Tempo para implementação do portal',false,false)];
-var a1 = new Aula("14/05/2014", t1);
-
-var t2 = [
-	new Tempo('Aula do Projeto','Tempo para implementação do projeto',false,false),
-    new Tempo('Aula de WebService','Aula de WebService',false,false)];
-var a2 =  new Aula("14/05/2014", t2);
-
-var totalAula = {a1, a2};
-var aulas = new ListaAulas(totalAula);
-
-
+var aulas = [
+    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',1,false,false),
+    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',2,false,false),
+    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',2,false,false),
+    new Tempo('15/08/2014','Tempo para implementação do portal','Tempo para implementação do portal',2,false,false),
+    new Tempo('16/08/2014','Curso Windows Phone','Curso Windows Phone',0,false,false),
+    new Tempo('17/08/2014','Curso Windows Phone','Curso Windows Phone',1,false,false),
+    new Tempo('17/08/2014','Curso Windows Phone','Curso Windows Phone',2,false,false),
+    new Tempo('17/08/2014','Curso Windows Phone','Curso Windows Phone',2,false,false),
+    new Tempo('18/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,false),
+    new Tempo('19/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,false),
+    new Tempo('20/08/2014','Tempo para implementação do projeto','Tempo para implementação do projeto',0,false,true)];
 
 var materias = ["Português","Matemática","Linguagem de Programação III","Geografia","Tópicos Especiais"];
 var turmas = ["1AE","1AI","1AM","1AT","2AE","2AI","2AM","2AT","3AE","3AI","3AM","3AT"];
@@ -214,12 +120,13 @@ notasModule.controller('AppController', function(){
 });
 
 notasModule.controller('ColumnController', function(){
-	this.lstColAvs = [{title:"AV1"}];
+	this.lstColAvs = [{title:"AV1", value:"10"}];
 	this.setColumn = function(){
-		// this.column = this.column +1;
+		//this.column = this.column +1;
 		if ((this.lstColAvs.length ) < 10) {
 			var newAv = {};
 			newAv.title = "AV" + (this.lstColAvs.length + 1);
+			newAv.value = 10;
 			this.lstColAvs.push(newAv);
 		}
 	};
@@ -230,9 +137,15 @@ notasModule.controller('ColumnController', function(){
 		}
 	};
 	
+	this.selectedAv = '';
+	
 	this.isSet = function(value){
 		return value === this.column;
 	};
+	
+	this.setTooltip = function (value) {
+            this.selectedAv = value;
+    };
 
 });
 
@@ -261,16 +174,6 @@ notasModule.controller('ColumnController', function(){
 			} else {
 				alunos[i].mfinal= Math.floor(alunos[i].mfinal);
 			}
-		}
-	};
-	
-	var arredondar = function(value){
-		if ((value - Math.floor(value)) >= 0.25 && ((value - Math.floor(value)) <= 0.5)) {
-			value= Math.floor(value) + 0.5; 
-		} else if ((value - Math.floor(value)) >= 0.75) {
-			value = Math.floor(value) + 1;
-		} else {
-			value = Math.floor(value);
 		}
 	};
 
@@ -314,6 +217,7 @@ notasModule.controller('ColumnController', function(){
 	this.isSet = function(value){
 		return value === this.button;
 		};
+		
 		
 	var carlos = function(){
 		alunos[4].status = 'active';
@@ -424,7 +328,7 @@ var alunos = [
 //Fim do módulo de notas
 
 //Início do módulo de frequência
-var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria um módulo e associa a aplicacao
+/*var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria um módulo e associa a aplicacao
 		// rotas: como numerospaces do C#
 	
 	frequenciaModule.controller('frequenciacontroller', function() {
@@ -479,13 +383,11 @@ var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria u
 					obj.faltas = obj.faltas+1;
 					elem.checked = true;
 					celulaFaltas = obj.faltas;
-					obj.faltasbim = obj.faltasbim + 1;
 				} 
 				else{  
 					elem.checked = false;
 				   obj.faltas = obj.faltas-1;
 				   celulaFaltas = obj.faltas;
-				   obj.faltasbim = obj.faltasbim - 1;
 				} 
 			} 
 			else {
@@ -493,10 +395,8 @@ var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria u
 					elem.checked = true;
 					obj.faltas = obj.faltas+1;
 					celulaFaltas = obj.faltas;
-					obj.faltasbim = obj.faltasbim + 1;
 				} 
 			}
-			celulaFaltasBim = obj.faltasbim;
 		};
 				
 		
@@ -513,12 +413,12 @@ var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria u
 					linhaAluno.bgcolor = "#6D8E9D";
 				}
 			}
-		}; */
+		}; 
 	});
 	
 	frequenciaModule.controller('faltacontroller', function() {
 		this.changeColor = function(obj, elem) { 
-			/* var linhaAluno = document.getElementById('freqRow'); 	 */
+			/* var linhaAluno = document.getElementById('freqRow'); 	 
 			if(obj.faltas !== 0) {
 				elem.bgcolor = "#FF7F50";
 			}
@@ -549,40 +449,40 @@ for(i=1; i<31; i++){
 };
 	
 var alunosFreq = [
-	{ numero: 1, RA: 120802, nome: 'AMANDA COSTA CUNHA', faltas:0, faltasbim:0},
-	{ numero: 2, RA: 120376, nome: 'ANA CLARA ALBUQUERQUE MARQUES', faltas:0, faltasbim:0},
-	{ numero: 3, RA: 110045, nome: 'ANA KAROLINY MACHADO MACEDO', faltas:0, faltasbim:0},
-	{ numero: 4, RA: 120398, nome: 'CAMILA VALENTE SMITH', faltas:0, faltasbim:0},
-	{ numero: 5, RA: 110206, nome: 'CARLOS ADRIANO LIMA DOS SANTOS', faltas:0, faltasbim:0},
-	{ numero: 6, RA: 120385, nome: 'CAROLINA DA ROCHA REIS', faltas:0, faltasbim:0},
-	{ numero: 7, RA: 120384, nome: 'EVERSON COSTA DANTAS', faltas:0, faltasbim:0},
-	{ numero: 8, RA: 120381, nome: 'GABRIEL PEREIRA DA COSTA', faltas:0, faltasbim:0},
-	{ numero: 9, RA: 120393, nome: 'GIOVANNA OLIVEIRA DA SILVEIRA', faltas:0, faltasbim:0},
-	{ numero: 10, RA: 120382, nome: 'HAYDE CRISTHINE DE ALMEIDA MACHADO', faltas:0, faltasbim:0},
-	{ numero: 11, RA: 120390, nome: 'HELOISA RIBEIRO ALVES', faltas:0, faltasbim:0},
-	{ numero: 12, RA: 120807, nome: 'IVO MACHADO DE SOUZA', faltas:0, faltasbim:0},
-	{ numero: 13, RA: 120394, nome: 'JONATAS RODRIGUES REIS', faltas:0, faltasbim:0},
-	{ numero: 14, RA: 110076, nome: 'JONATHAN MAIA FERREIRA', faltas:0, faltasbim:0},
-	{ numero: 15, RA: 120387, nome: 'JULIANA CASTRO DA SILVA', faltas:0, faltasbim:0},
-	{ numero: 16, RA: 120392, nome: 'JULIANY RODRIGUES RAIOL', faltas:0, faltasbim:0},
-	{ numero: 17, RA: 120373, nome: 'LUAN SILVA SEMINARIO', faltas:0, faltasbim:0},
-	{ numero: 18, RA: 120378, nome: 'MAX WILLIAMS NOGUEIRA BATISTA', faltas:0, faltasbim:0},
-	{ numero: 19, RA: 120379, nome: 'NATHALIA LARISSA SOUZA DE OLIVEIRA', faltas:0, faltasbim:0},
-	{ numero: 20, RA: 120834, nome: 'ODILOMAR REBELO ROCHA JUNIOR', faltas:0, faltasbim:0},
-	{ numero: 21, RA: 120827, nome: 'OLAVO PONTES SANTANA', faltas:0, faltasbim:0},
-	{ numero: 22, RA: 120388, nome: 'OLGA DE SA LEAO', faltas:0, faltasbim:0},
-	{ numero: 23, RA: 110051, nome: 'PATRICIA DE PAULA BARROS MORAES', faltas:0, faltasbim:0},
-	{ numero: 24, RA: 120389, nome: 'RUBEN JOZAFA SILVA BELEM', faltas:0, faltasbim:0},
-	{ numero: 25, RA: 120374, nome: 'SERGILLAM BARROSO OLIVEIRA', faltas:0, faltasbim:0},
-	{ numero: 26, RA: 120801, nome: 'THIAGO SANTOS FIGUEIRA', faltas:0, faltasbim:0},
-	{ numero: 27, RA: 120391, nome: 'TIMOTEO FONSECA SANTOS', faltas:0, faltasbim:0},
-	{ numero: 28, RA: 120380, nome: 'YASMIM GABRIELLA DOS SANTOS LIBORIO', faltas:0, faltasbim:0}
+	{ numero: 1, RA: 120802, nome: 'AMANDA COSTA CUNHA', faltas:0},
+	{ numero: 2, RA: 120376, nome: 'ANA CLARA ALBUQUERQUE MARQUES', faltas:0},
+	{ numero: 3, RA: 110045, nome: 'ANA KAROLINY MACHADO MACEDO', faltas:0},
+	{ numero: 4, RA: 120398, nome: 'CAMILA VALENTE SMITH', faltas:0},
+	{ numero: 5, RA: 110206, nome: 'CARLOS ADRIANO LIMA DOS SANTOS', faltas:0},
+	{ numero: 6, RA: 120385, nome: 'CAROLINA DA ROCHA REIS', faltas:0},
+	{ numero: 7, RA: 120384, nome: 'EVERSON COSTA DANTAS', faltas:0},
+	{ numero: 8, RA: 120381, nome: 'GABRIEL PEREIRA DA COSTA', faltas:0},
+	{ numero: 9, RA: 120393, nome: 'GIOVANNA OLIVEIRA DA SILVEIRA', faltas:0},
+	{ numero: 10, RA: 120382, nome: 'HAYDE CRISTHINE DE ALMEIDA MACHADO', faltas:0},
+	{ numero: 11, RA: 120390, nome: 'HELOISA RIBEIRO ALVES', faltas:0},
+	{ numero: 12, RA: 120807, nome: 'IVO MACHADO DE SOUZA', faltas:0},
+	{ numero: 13, RA: 120394, nome: 'JONATAS RODRIGUES REIS', faltas:0},
+	{ numero: 14, RA: 110076, nome: 'JONATHAN MAIA FERREIRA', faltas:0},
+	{ numero: 15, RA: 120387, nome: 'JULIANA CASTRO DA SILVA', faltas:0},
+	{ numero: 16, RA: 120392, nome: 'JULIANY RODRIGUES RAIOL', faltas:0},
+	{ numero: 17, RA: 120373, nome: 'LUAN SILVA SEMINARIO', faltas:0},
+	{ numero: 18, RA: 120378, nome: 'MAX WILLIAMS NOGUEIRA BATISTA', faltas:0},
+	{ numero: 19, RA: 120379, nome: 'NATHALIA LARISSA SOUZA DE OLIVEIRA', faltas:0},
+	{ numero: 20, RA: 120834, nome: 'ODILOMAR REBELO ROCHA JUNIOR', faltas:0},
+	{ numero: 21, RA: 120827, nome: 'OLAVO PONTES SANTANA', faltas:0},
+	{ numero: 22, RA: 120388, nome: 'OLGA DE SA LEAO', faltas:0},
+	{ numero: 23, RA: 110051, nome: 'PATRICIA DE PAULA BARROS MORAES', faltas:0},
+	{ numero: 24, RA: 120389, nome: 'RUBEN JOZAFA SILVA BELEM', faltas:0},
+	{ numero: 25, RA: 120374, nome: 'SERGILLAM BARROSO OLIVEIRA', faltas:0},
+	{ numero: 26, RA: 120801, nome: 'THIAGO SANTOS FIGUEIRA', faltas:0},
+	{ numero: 27, RA: 120391, nome: 'TIMOTEO FONSECA SANTOS', faltas:0},
+	{ numero: 28, RA: 120380, nome: 'YASMIM GABRIELLA DOS SANTOS LIBORIO', faltas:0}
 ];
 
 var diasLetivos = [
 	{idMateria: 1, idProfessor: 200872, lstDias: dias}
 ];
-
+*/
 //Fim do módulo de frequência
 
 //Responsável por fazer as trocas entre módulos:

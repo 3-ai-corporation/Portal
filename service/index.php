@@ -9,12 +9,17 @@ require_once 'controller/TemposController.php';
 require_once 'controller/DiasLetivosController.php';
 
 \Slim\Slim::registerAutoloader();
+
 $app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
 $alunocontroller = new AlunosController;
 $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
+
+/*$app->get('/',function() use ($pcontroller) {
+    echo json_encode($pcontroller->retrieveTurmas(134567, true));
+});*/
 $app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
@@ -29,13 +34,12 @@ $app->get('/notify-alunos',function() use ($pcontroller) {
 $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
-
 $app->get('/temposaula',function() use ($aulascontroller) {
     echo json_encode($aulascontroller->retrieve());
 });
 $app->get('/alunos',function($id) use ($alunocontroller) {
     echo json_encode($alunocontroller->read($id));
-});
+
 
 $app->run();
 

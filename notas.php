@@ -1,4 +1,4 @@
-<section ng-app="Diario_Notas">
+<section ng-app="notasModule">
 <section class="quadroNotas" ng-controller="AppController as appCtrl">
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<tr class="warning">
