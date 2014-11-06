@@ -20,5 +20,5 @@ frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	};
 
 	ng.init();
-
 });
+

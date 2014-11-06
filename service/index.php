@@ -15,6 +15,8 @@ $tcontroller = new TemposController;
 
 $acontroller = new AlunosController;
 
+$NController = new NotasController;
+
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
@@ -36,6 +38,10 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 
 $app->get('/alunosTurma',function() use ($acontroller) {
     echo json_encode($acontroller->retrieveAlunos(33));	
+});
+
+$app->get('/notas', function() use ($NController)) {
+    echo json_encode(&NController->retrieve());
 });
 
 $app->run();

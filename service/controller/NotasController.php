@@ -18,7 +18,7 @@ class NotasController {
 		//}
 	}
 	
-	public function retrieve ($notas){
+	public function retrieve (){
 		$notas = NotasModel::find('all', array('order' => 'id'); 
 		$retorno = array();
 		

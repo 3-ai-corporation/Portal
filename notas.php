@@ -1,5 +1,9 @@
 <section ng-app="notasModule">
 <section class="quadroNotas" ng-controller="AppController as appCtrl">
+
+<select ng-controller="NotasCtrl" >
+
+
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<tr class="warning">
 			<th>#</th>
