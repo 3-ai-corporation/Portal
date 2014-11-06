@@ -29,9 +29,9 @@ function validar_matricula2(matricula){
  * validação que verifica o tamanho de caracteres na senha
 */
 function validar_senha(senha){
-	if(senha.value.length > 10){
+	if(senha.value.length > 9){
 		showAlert('error', 'A senha tem no máximo 10 dígitos');
-		senha.value = senha.value.substr(0, 10);
+		senha.value = senha.value.substr(0, 9);
 	}
 
 }
