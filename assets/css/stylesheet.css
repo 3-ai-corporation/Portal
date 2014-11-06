@@ -346,6 +346,7 @@ input[type="radio"] {
 .buttonDesativado {
 	background-color: #CCCCCC;
     list-style: none;
+    color: white;
 }
 
 .buttonDesativado:hover {
