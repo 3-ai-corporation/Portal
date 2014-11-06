@@ -1,6 +1,6 @@
 /**
  * Created by AnaKa on 24/10/2014.
- */
+*/
 
 //Criando um array estático (Como se o webservice - php - tivesse retornado esses valores);
 var materia = [];
@@ -23,8 +23,8 @@ materia[2]['am'] = [];
 materia[2]['at'] = ['CD'];
 
 //Criando uma função que tem como parâmetros 'série' e 'turma', retornando disciplina;
-var getMateriasByTurma = function(s, t){
-    return materia[s][t];
+var getMateriasByTurma = function(s, c){
+    return materia[s][c];
 }
 
 //pegar o ano selecionado, o curso selecionado. Pegar o vetor de matéria e verificar se o array é vazio ou não.
@@ -74,39 +74,37 @@ var desativandoButtons = function(serie) {
 
     if (materia[serieSelecionada]['ae'].length > 0) {
         var turma = document.getElementById('btnAE');
-        //turma.className = turma.className.replace(/(?:^|\s)botaoDesativado(?!\S)/g , 'botaoAtivado');
-        turma.className = "buttonCursoBasic buttonAtivado";
+        turma.className = "buttonCursoBasic";
     }
     else {
         var turma = document.getElementById('btnAE');
-        turma.className = "buttonCursoBasic buttonDesativado";
+        turma.className = "buttonDesativado";
     }
 
     if (materia[serieSelecionada]['ai'].length > 0) {
         var turma = document.getElementById('btnAI');
-        turma.className = "buttonCursoBasic buttonAtivado";
+        turma.className = "buttonCursoBasic";
     }
     else {
         var turma = document.getElementById('btnAI');
-        turma.className = "buttonCursoBasic buttonDesativado";
+        turma.className = "buttonDesativado";
     }
 
     if (materia[serieSelecionada]['am'].length > 0) {
         var turma = document.getElementById('btnAM');
-        turma.className = "buttonCursoBasic buttonAtivado";
+        turma.className = "buttonCursoBasic";
     }
     else {
         var turma = document.getElementById('btnAM');
-        turma.className = "buttonCursoBasic buttonDesativado";
+        turma.className = "buttonDesativado";
     }
 
     if (materia[serieSelecionada]['at'].length > 0) {
         var turma = document.getElementById('btnAT');
-        turma.className = "buttonCursoBasic buttonAtivado";
+        turma.className = "buttonCursoBasic";
     }
     else {
         var turma = document.getElementById('btnAT');
-        //turma.className = turma.className.replace(/(?:^|\s)botaoAtivado(?!\S)/g , 'botaoDesativado');
-        turma.className = "buttonCursoBasic buttonDesativado";
+        turma.className = "buttonDesativado";
     }
 }

@@ -159,18 +159,15 @@
 
 .buttonCursoSelected {
 	background-color: #003853;
+    color: white;
+    list-style: none;
 }
 
 .buttonCursoSelected:active {
 	background-color: #003853
 }
 
-/* Classe para indicar que o botao pode ser clickado */
-.buttonCursoActive{
-
-}
-
-#figuraTurma{	/*ERRO  MAROTO*/
+#figuraTurma{
 	width: 330px;
 	height: 332px;
 	float: right;
@@ -185,11 +182,6 @@
 	margin-top: 91%;
 	padding-right: 1%;
 }
-
-/* img[src = "assets/img/eletronica-icon.png"]{
-	width: 330px;
-	height: 331px;
-} */
 
 #etapa{    /*ERRO  MAROTO*/
 	width: 46.88%;
@@ -352,7 +344,8 @@ input[type="radio"] {
 }
 
 .buttonDesativado {
-	background-color: #CCCCCC;	
+	background-color: #CCCCCC;
+    list-style: none;
 }
 
 .buttonDesativado:hover {

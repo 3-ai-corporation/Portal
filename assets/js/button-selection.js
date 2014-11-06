@@ -3,16 +3,13 @@ var filtroVisible = true;
 var setFiltroVisible = function(visible) {
 	var filtro = document.getElementById("filtro");
 	var toggler = document.getElementById("toggler");
-	
 	var img = '<img width="45px" height="45px" src=';
 	
-	if (filtroVisible = visible) {
-		//filtro.style.display = "";
-		toggler.innerHTML = img + '"assets/img/arrow-up.png" />';
+	if (filtroVisible === visible) {
+		toggler.innerHTML = img + '"assets/img/arrow-up.png"/>';
 	}
 	else {
-		//filtro.style.display = "none";
-		toggler.innerHTML = img + '"assets/img/arrow-down.png" />';
+		toggler.innerHTML = img + '"assets/img/arrow-down.png"/>';
 	}
 }
 
@@ -21,14 +18,14 @@ var toggleFiltro = function() {
 }
 
 var highlight = function(highlightId, otherIds, imageId) {
-    if(hasClash(document.getElementById(highlightId),'buttonAtivado')){
+    if ( ! hasClash(document.getElementById(highlightId),'buttonDesativado')){
         var highlighted = document.getElementById(highlightId);
-        //highlighted.className = highlighted.className.replace(/(?:^|\s)buttonCurso(?!\S)/g , 'buttonCursoSelected');
+        highlighted.className = highlighted.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
 
         for(var otherId in otherIds) {
             var other = document.getElementById(otherIds[otherId]);
-            if(hasClash(other,'buttonAtivado'))
-                other.className =  highlighted.className.replace(/(?:^|\s)buttonCursoSelected(?!\S)/g , 'buttonCurso');
+            if( ! hasClash(other,'buttonDesativado'))
+                other.className =  highlighted.className.replace(/buttonCursoSelected(?!\S)/g , 'buttonCursoBasic');
         }
 
         if (imageId !== '') {
@@ -47,7 +44,7 @@ var highlight = function(highlightId, otherIds, imageId) {
                     case 'btnAT':
                         return "Telecomunicações";
                     default:
-                        return "button-selection.js???";
+                        return "button-selection.js";
                 }
             })();
         }
