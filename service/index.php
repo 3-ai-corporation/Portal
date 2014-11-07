@@ -42,6 +42,8 @@ $app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($
     echo json_encode($acontroller->retrieveSenha($matricula, $senha));	
 });
 
+$app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
+	echo json_encode($pcontroller->login($matricula,$senha));
+});
 $app->run();
-
 ?>
