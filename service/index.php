@@ -44,7 +44,7 @@ $app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($
 
 $app->get('/TrocarSenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller)
 {
-	echo json_encode($pcontroller->changePassword($matricula, $senha))
+	echo json_encode($pcontroller->changePassword($matricula, $senha));
 }
 )
 
