@@ -9,6 +9,7 @@ function validar_matricula(matricula){
 	 return false;
 }
 
+
 /**
  *Created by Yasmim Libório on 24/10/2014
  * validação que verifica o tamanho de caracteres na matrícula
@@ -176,6 +177,20 @@ function ValidarEsqueceuSenha(user, email)
 			usuario = JQuery.parseJSON(data);
 			if(usuario != "")
 			{
+				var usual
+				$.ajax(
+				{
+					type:"GET",
+					url: '/sevice/TrocarSenha/' + user + '/' + Math.random(),
+					success: function(data)
+					{
+						usual = JQuery.parseJSON(data);
+						if(usual)
+						{
+							//mandar e-mail
+						}
+					}
+				})
 			}
 			else
 			{

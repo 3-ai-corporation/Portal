@@ -119,4 +119,19 @@ class ProfessoresController {
 			return "";
 		}
     }
+	
+	public function changePassword($matricula, $senha)
+	{
+		$change = UsuariosModel::find("all", array("conditions" => "matricula = ?",$matricula));
+		if($change != null)
+		{
+			$change->senha = $senha;
+			$change->update_attributes($change);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
