@@ -190,7 +190,7 @@ function ValidarEsqueceuSenha(user, email)
 							//mandar e-mail
 						}
 					}
-				})
+				});
 			}
 			else
 			{
