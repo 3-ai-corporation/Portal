@@ -7,26 +7,28 @@ require_once 'model/MateriasModel.php';
 
 class DiasLetivosController
 {
-
-
 	public function retrieve () 
 	{
+		$sel = 'tb_dia_letivos.id AS id, tb_dia_letivos.data AS data, tb_dia_letivos.numero_dia AS numero_dia';
+		$diaaula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'data'));
 		$retorno = array();
-	   $diaaula = DiasLetivosModel::find('all', array('order' => 'id'));
 		foreach($diaaula as $key => $value) {
 			$obj['id'] = $value->id;
-			$obj['data'] = $value->data.date;
+			$obj['data'] = $value->data->date;
 			$obj['numero_dia'] = $value->numero_dia;
 			$retorno[] = $obj;
 		}
 		return $retorno;
 	}
-	  	public function retrieveByIds ($Idsestrangeiro) 
+		// Função que retorna os tempos -> ajeitar posteriormente
+	  	/*
+		public function retrieveByIds ($Idsestrangeiro) 
 	{
 		$retorno = array();
 		$tempos = TemposModel::find('all',
-		array('conditions' => array("SELECT * FROM tb_tempos WHERE ( materia_turma_id = ? AND planos_id = ? )", $Idsestrangeiro.materia_turma_id, Idsestrangeiro.planos_id),
-		  "order"=>"indice"));
+			array('conditions' => array("SELECT * FROM tb_tempos WHERE materia_turma_id = ? AND planos_id = ? ", 
+												$Idsestrangeiro.materia_turma_id, Idsestrangeiro.planos_id),
+										"order"=>"indice"));
 		foreach($tempos as $key => $value) {
 			$obj['id'] = $value->id;
 			$obj['conteudo_previsto'] = $value->conteudo_previsdo;
@@ -41,6 +43,7 @@ class DiasLetivosController
 		}
 		return $retorno;
 	}
+	*/
 
 
 	private function object_to_array($Class)

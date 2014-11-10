@@ -17,7 +17,7 @@
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>		
 		
 		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
-		<script type = "text/javascript" src = "assets/js/ApoioFreq.js"></script>
+		<!--<script type = "text/javascript" src = "assets/js/ApoioFreq.js"></script>-->
 		
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
@@ -34,7 +34,7 @@
 		<!-- <script type = "text/javascript" src = "assets/js/frequencia.js"></script> -->
 		<script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
 		
-		 <!-- Relativo ao 'toggler' -->
+		<!-- Relativo ao 'toggler' -->
 		
 		<!--Relacionado ao calendário-->
 		<!-- <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.8.24/themes/base/jquery-ui.css"/> -->
@@ -46,7 +46,7 @@
 		<title>Diário Escolar</title>
 	</head>
 	
-	<body onload="highlightAE(); desativandoChecks(); desativandoBotoes();criandoOpcoes();setFiltroVisible(true);beginTabs(); IniciarSelecao();">
+	<body onload="highlightAE(); desativandoChecks(); desativandoBotoes();criandoOpcoes();setFiltroVisible(true);beginTabs();">
 		<div id = "main">
 			<?php 
 				include ("menu.php")

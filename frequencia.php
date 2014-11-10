@@ -3,11 +3,11 @@
 <label class="dados_cabecalho"> Série: 3°</label>
 <label id="freq_curso" class="dados_cabecalho"> Curso: Informática </label>
 <label id="freq_aulas" class="dados_cabecalho"> Aulas no mês: </label>
-<select ng-controller="TemposAulaCtrl" >
-		<section ng-repeat="aulas in temposaulaList">
-			<option class="dados_cabecalho">Aula {{aulas.numero_dia}} - {{aulas.data}}</option>
-		</section>
-</select>
+	<select ng-controller="TemposAulaCtrl">
+			<section ng-repeat="aulas in temposaulaList">
+				<option class="dados_cabecalho">Aula {{aulas.numero_dia}} - {{aulas.data}}</option>
+			</section>
+	</select>
 
 <label class="dados_cabecalho" style="display: block"> Matéria: Tópicos Especiais </label>
 <label class="dados_cabecalho" style="display:block"> Data: 17/10/2014 </label>		

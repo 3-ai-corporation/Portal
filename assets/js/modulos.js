@@ -328,7 +328,7 @@ var alunos = [
 //Fim do módulo de notas
 
 //Início do módulo de frequência
-var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria um módulo e associa a aplicacao
+/*var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria um módulo e associa a aplicacao
 		// rotas: como numerospaces do C#
 	
 	frequenciaModule.controller('frequenciacontroller', function() {
