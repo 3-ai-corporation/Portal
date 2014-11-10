@@ -3,15 +3,15 @@
 		<form id = "campoCheckBoxes" onchange = "criandoOpcoes();"/>
 			<label id = "lblSeries">Séries:</label>
 			<div id = 'ckbPrimeiro' class = "anoOpcoesCheck" onchange = "criandoOpcoes();">
-				<input type = "radio" name = "radioAno" id = "checkPrimeiro" class = "checkBoxAno" onclick="desativandoButtons(this);" checked/>
+				<input type = "radio" name = "radioAno" id = "checkPrimeiro" class = "checkBoxAno" onclick="desativandoButtonsCurso(this);" checked/>
 				<label for = "checkPrimeiro">1° Ano</label>
 			</div>
 			<div id = 'ckbSegundo' class = "anoOpcoesCheck" onchange = "criandoOpcoes();">
-				<input type = "radio" name = "radioAno" id = "checkSegundo" class = "checkBoxAno" onclick="desativandoButtons(this);"/>
+				<input type = "radio" name = "radioAno" id = "checkSegundo" class = "checkBoxAno" onclick="desativandoButtonsCurso(this);"/>
 				<label for = "checkSegundo">2° Ano</label>
 			</div>	
 			<div id = 'ckbTerceiro' class = "anoOpcoesCheck" onchange = "criandoOpcoes();">
-				<input type = "radio" name = "radioAno" id = "checkTerceiro" class = "checkBoxAno" onclick="desativandoButtons(this);"/>
+				<input type = "radio" name = "radioAno" id = "checkTerceiro" class = "checkBoxAno" onclick="desativandoButtonsCurso(this);"/>
 				<label for = "checkTerceiro">3° Ano</label>
 			</div>
 		</form>

@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="assets/js/angular.js"></script>
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>
+		<script type="text/javascript" src="assets/js/desabilitandoComponentes.js"></script>
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
@@ -27,7 +27,7 @@
     </head>
 	
 	<body onload="highlightAE(); desativandoChecks(); criandoOpcoes(); setFiltroVisible(true); beginTabs();
-	                desativandoButtons(document.getElementById('checkPrimeiro'));">
+	                desativandoButtonsCurso(document.getElementById('checkPrimeiro'));">
 		<div id = "main">
 			<?php 
 				include ("menu.php")
@@ -87,7 +87,6 @@
 			      </div>
 			    </div>
 			</div>
-			
 		</div>
 	</body>
 </html>

@@ -59,7 +59,7 @@ var desativandoChecks = function(){
     }
 }
 
-var desativandoButtons = function(serie) {
+var desativandoButtonsCurso = function(serie) {
     var vazio = true;
     var serieSelecionada;
 
@@ -107,4 +107,21 @@ var desativandoButtons = function(serie) {
         var turma = document.getElementById('btnAT');
         turma.className = "buttonDesativado";
     }
+}
+
+
+(function(){
+    //Crinado um módulo e associando a aplicação;
+    var desabilitandoBotoesModule = angular.module('desabilitandoBotoes', ['ngRoute']);
+
+    desabilitandoBotoesModule.controller('desabilitandoBotoesController', function(){
+
+    });
+
+});
+
+//Criando método responsável por desabilitar os botões de "Bimestres" posteriores ao que o professor se encontra;
+//Passo a passo: verificar qual o bimestre vigente;
+var desativandoButtonsBimestre = function(){
+
 }

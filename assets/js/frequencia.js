@@ -4,8 +4,7 @@
 	
 	frequenciaModule.controller('frequenciacontroller', function() {
 		dias[2].lst_alunos = alunos;
-		this.objetos = dias[2];	
-		
+		this.objetos = dias[2];
 	});
 	
 	
