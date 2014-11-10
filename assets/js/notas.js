@@ -3,6 +3,27 @@
 	
 	app.controller('AppController', function(){
 		var calculoMedia = '(AV1)';
+		
+		var 
+		$ = jQuery, 
+		ng = $scope,
+		aj = $http
+		;
+	
+	ng.alunos = {};
+		
+	ng.init = function(){
+		ng.read();
+	};
+
+	ng.read = function(){
+		aj.get('service/notas').success(function(data){
+			ng.notasList = data;
+		});		
+	};
+	
+	ng.init();
+	
 		this.alunos = alunos;
 		generateNotas();
 		setmediaparcial();

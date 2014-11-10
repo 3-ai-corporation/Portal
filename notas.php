@@ -22,14 +22,14 @@
 			<th>MF</th>
 		</tr> -->
 		
-		<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as notasCtrl">
+		<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as NotasCtrl">
 		<tr class="warning">
 			<th>#</th>
 			<th>RA</th>
 			<th>Nome</th>
-			<th ng-repeat="notas in notasCtrl.notasList" ng-click="notasCtrl.setTooltip({{av.title}})"><a class="tooltips">{{av.title}}<span ng-show="notasCtrl.isSet({{av.title}})"><input ng-model="av.value" onkeypress="return isNumberKey(event)" type="text" maxlength="4"></span></th>
-			<th ng-click="notasCtrl.setColumn()"><a class="btnNewCollumn"> <img class="imgMenu" src="assets/img/adicionar.png" style="height: 24px; width:24px"/> </a></th>
-			<th ng-click="notasCtrl.unsetColumn()"><a class="btnDelCollumn"> <img class="imgMenu" src="assets/img/minus.png" style="height: 24px; width:24px"/> </a></th>
+			<th ng-repeat="notas in NotasCtrl.notasList" ng-click="NotasCtrl.setTooltip({{av.title}})"><a class="tooltips">{{av.title}}<span ng-show="NotasCtrl.isSet({{av.title}})"><input ng-model="av.value" onkeypress="return isNumberKey(event)" type="text" maxlength="4"></span></th>
+			<th ng-click="NotasCtrl.setColumn()"><a class="btnNewCollumn"> <img class="imgMenu" src="assets/img/adicionar.png" style="height: 24px; width:24px"/> </a></th>
+			<th ng-click="NotasCtrl.unsetColumn()"><a class="btnDelCollumn"> <img class="imgMenu" src="assets/img/minus.png" style="height: 24px; width:24px"/> </a></th>
 			<th>MP</th>
 			<th>Paralela</th>
 			<th>MF</th>
@@ -39,7 +39,7 @@
 			<td>{{obj.numero}}</td>
 			<td>{{obj.matricula}}</td>
 			<td>{{obj.nome}}</td>
-			<td ng-repeat="notas in notasCtrl.lstColAvs" class={{obj.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="obj.nota1" class="{{obj.statusInputNota1}}"> </input></td>
+			<td ng-repeat="notas in NotasCtrl.notasList" class={{obj.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="obj.nota1" class="{{obj.statusInputNota1}}"> </input></td>
 			<td style="width: 24px"></td>
 			<td style="width: 24px"></td>
 			<td class={{obj.statusM}}>{{obj.mparcial}}</td>
