@@ -1,0 +1,20 @@
+<?php
+
+require_once 'model/BimestresModel.php';
+
+class BimestresController {
+
+
+    public function retrieve($data){
+        $bimestre = BimestresModel::find('all');
+
+        foreach($bimestre as $key => $value) {
+            $inicio = DiasLetivosModel::find($value->data_inicio_id);
+            $fim = DiasLetivosModel::find($value->data_fim_id);
+
+            if( ($inicio->data >= $data) && ($data <= $fim->data) )
+                return $value;
+        }
+    }
+}
+?>
