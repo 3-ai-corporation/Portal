@@ -106,4 +106,32 @@ class ProfessoresController {
         }
 	   return $retorno;
     }
+	
+	public function retrieveSenha($matricula, $email) {
+		$esqueceu = UsuariosModel::find("all", array("conditions" => "matricula = ? AND email = ? ",$matricula, $email));
+		
+		if($esqueceu != null)
+		{
+			return $esqueceu->nome;
+		}
+		else
+		{
+			return "";
+		}
+    }
+	
+	public function changePassword($matricula, $senha)
+	{
+		$change = UsuariosModel::find("all", array("conditions" => "matricula = ?",$matricula));
+		if($change != null)
+		{
+			$change->senha = $senha;
+			$change->update_attributes($change);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

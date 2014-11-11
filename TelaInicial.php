@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html ng-app="startScreen">
 
 <head>
