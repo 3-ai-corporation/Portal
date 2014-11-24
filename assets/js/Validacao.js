@@ -134,7 +134,7 @@ function validar(user,pass){
 						}else{
 							showAlert('error', 'Matrícula ou senha incorreta!');
 						}
-					}					    
+					}	                   				    
 				  });			
 				}
 			}
