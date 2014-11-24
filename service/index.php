@@ -12,9 +12,7 @@ $app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
 $tcontroller = new TemposController;
-
 $acontroller = new AlunosController;
-
 $NController = new NotasController;
 
 /*$app->get('/',function() use ($pcontroller) {
