@@ -126,13 +126,17 @@ function validar(user,pass){
 							
 							if((matricula[0] === mtrForm) && (senha[0] === passForm))
 							{
-								window.location.href = "TelaInicial.php";
+								$.post( "Login.php?acao=logar", { ematricula:  matricula[0] })
+									.done(function (data) {
+										if ( data == 'ok' )
+											window.location.href = 'TelaInicial.php';
+									});								
 							}
 							else
 							{
 								if((matricula[1] === mtrForm) && (senha[1] === passForm))
 								{
-									window.location.href = "TelaInicial.php";
+									window.location.href = "Login.php?acao=sair";
 								}
 								else
 								{
