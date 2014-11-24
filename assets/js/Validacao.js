@@ -57,6 +57,30 @@ function LoginInput_OnKeyDown(event, user, pass) {
 }
 
 /**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz com que o login também possa ser efetuado ao ser pressionada a tecla Enter.
+*/
+function ConfirmarInput_OnKeyDown(event, codigo, pass, confirmPass) {
+if (event.keyCode == 13) {
+		validarSenha(codigo, newpass, ConfirmNewPass);
+	}
+}
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz a validação do codigo digitado pelo usuario 
+*/
+function validar_codigo(codigo){
+		return true;
+}
+
+
+
+
+
+
+
+/**
  *Created by Yasmim Libório on 06/11/2014
  * Método que faz a validação do email
 */
@@ -66,6 +90,7 @@ function IsMail($email){
     if (preg_match($er, $email)){
     return true;
     } else {
+	
     return false;
     }
 	
@@ -73,10 +98,27 @@ function IsMail($email){
     usar na validação de verificação do email do usuario
     if (isMail($email)){
     echo "É um e-mail válido.";
-    } else {
-    echo "E-mail inválido.";
-    }*/
+     else {
+    showAlert('error', 'A senha tem no máximo 10 dígitos');
+    }
+	}*/
+	
+	
 }
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz a validação do codigo, nova senha e confirmacao da nova senha digitado pelo usuario 
+*/
+function validarSenha(codigo, newpass, ConfirmNewPass){
+
+
+
+
+}
+
+
+
 
 
 
@@ -206,6 +248,8 @@ function ValidarEsqueceuSenha(user, email)
 						if(usual)
 						{
 							//mandar e-mail
+							alert("Verifique o código enviado para o seu email");
+							window.location.href = "file:///C:/Users/3aimaq20/Desktop/Portal/index.php/Confirmacao_Senha.php";
 						}
 					}
 				});
