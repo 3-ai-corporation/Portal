@@ -1,3 +1,12 @@
+<?php
+	session_start();
+
+	if( isset($_SESSION['ematricula']))
+	{
+		header('location:TelaInicial.php');
+	}
+?>
+
 <!DOCTYPE html>
 
 <html>
