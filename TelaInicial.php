@@ -2,6 +2,16 @@
 
 <html ng-app="startScreen">
 
+<?php
+	session_start();
+
+	if(! isset($_SESSION['ematricula']))
+	{
+		header('location:index.php');
+	}
+?>
+
+
 <head>
 	<link type="text/css" rel="stylesheet" href="assets/css/stylesheet_TelaInicial.css">
 	<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">	
