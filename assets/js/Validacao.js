@@ -129,8 +129,13 @@ function validar(user,pass){
 					url: 'service/Login/' + mtrForm + '/' + passForm,
 					success: function(data) {
 					usuario = data;
-						if(usuario){			
-							window.location.href = "TelaInicial.php";
+						if(usuario){		
+
+							$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
+									.done(function (data) {
+										if ( data == 'ok' )
+											window.location.href = 'TelaInicial.php';
+									});	
 						}else{
 							showAlert('error', 'Matrícula ou senha incorreta!');
 						}
