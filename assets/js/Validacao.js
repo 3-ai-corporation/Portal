@@ -100,13 +100,14 @@ function validar(user,pass){
 	var regra = /^[0-9]+$/;
 	
 	if(mtrForm === "" && passForm === ""){
-	   showAlert('error','Preencha todos os campos!');
+		showAlert('error','Preencha todos os campos!');
 	}
 	else
 	{
 		if(mtrForm === ""){
 			showAlert('error','Digite a matrícula!');
 		}
+		//verificar
 		else{	
 		  if(mtrForm.length < 6){
 			 showAlert('error','Formato da matrícula incorreta!');
@@ -128,7 +129,7 @@ function validar(user,pass){
 					type: "GET",
 					url: 'service/Login/' + mtrForm + '/' + passForm,
 					success: function(data) {
-					usuario = data;
+					usuario = jQuery.parseJSON(data);
 						if(usuario){		
 
 							$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
@@ -145,6 +146,41 @@ function validar(user,pass){
 			}                                    
 		  }
 		}	
+		/* Verificar se estar mais correto.		
+		else{ 
+			if(mtrForm.length < 6){
+				showAlert('error','Formato da matrícula incorreta!');
+			}
+			else
+			{
+				if(passForm === ""){
+					showAlert('error','Digite a senha!');
+				}
+				else
+				{
+					if (!mtrForm.match(regra)) {
+						 showAlert('error', 'Somente números na matrícula!');
+						 validar_matricula(mtrForm.value);
+					}
+					else{
+						var usuario;		
+						$.ajax({
+							type: "GET",
+							url: 'service/Login/' + mtrForm + '/' + passForm,	
+							success: function(data) {
+								usuario = jQuery.parseJSON(data);
+								if(usuario){
+									window.location.href = "TelaInicial.php";
+								}else{
+									showAlert('error', 'Matrícula ou senha incorreta!');
+								}
+							}
+						});	
+					}
+				}	
+			}
+		}
+		>>>>>>> origin/issue4*/
 	}
 }
 

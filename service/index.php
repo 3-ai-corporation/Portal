@@ -41,15 +41,13 @@ $app->get('/alunosTurma',function() use ($acontroller) {
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($pcontroller) {
     echo json_encode($pcontroller->retrieveSenha($matricula, $senha));	
 });
-
 $app->get('/TrocarSenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller)
 {
 	echo json_encode($pcontroller->changePassword($matricula, $senha));
 }
-)
+);
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->login($matricula,$senha));
 });
 $app->run();
-
 ?>
