@@ -1,3 +1,4 @@
+
 // Início do módulo de plano de aula
 var planoModule = angular.module('planoModule',[]);
 planoModule.controller('GridController',function() {

@@ -1,5 +1,4 @@
 <?php
-
 require_once 'model/TemposModel.php';
 require_once 'model/DiasLetivosModel.php';
 require_once 'model/TurmasModel.php';
@@ -9,13 +8,16 @@ class DiasLetivosController
 {
 	public function retrieve () 
 	{
-		$sel = 'tb_dia_letivos.id AS id, tb_dia_letivos.data AS data, tb_dia_letivos.numero_dia AS numero_dia';
-		$diaaula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'data'));
+	
+		$sel = 'tb_dia_letivos.id AS id, tb_dia_letivos.data AS datas, tb_dia_letivos.numero_dia AS numero_dia';
+		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'data'));
 		$retorno = array();
-		foreach($diaaula as $key => $value) {
+		
+		foreach($diaAula as $key => $value) {
 			$obj['id'] = $value->id;
-			$obj['data'] = $value->data->date;
-			$obj['numero_dia'] = $value->numero_dia;
+			$obj['datas'] = $value->datas;
+			$obj['numero_dia'] = $value->numero_dia;						
+			
 			$retorno[] = $obj;
 		}
 		return $retorno;

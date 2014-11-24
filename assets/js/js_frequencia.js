@@ -1,4 +1,4 @@
-var frequenciaModule = angular.module('frequencia', ['ngRoute']);
+var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']);
 
 frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 	{
@@ -15,9 +15,8 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 
 		ng.chamaraulas = function(){ 
 			aj.get('service/temposAula').success(function (data) { 
-				alert("hey! i'm here! be happy");
-				ng.temposaulaList = data;
-				alert(data);
+				ng.aulaList = data;
+				
 			}); 
 		};	
 		
