@@ -118,8 +118,18 @@ var desativandoButtonsCurso = function(serie) {
     });
 });
 
+var bimestres = [];
+bimestres[1] = ['2010', '01/02/2010', '01/04/2010'];
+bimestres[2] = ['2010', '02/04/2010', '02/06/2010'];
+bimestres[3] = ['2010', '03/06/2010', '03/08/2010'];
+bimestres[4] = ['2010', '04/08/2010', '04/10/2010'];
+bimestres[5] = ['2010', '05/10/2010', '10/10/2010'];
+
 //Criando método responsável por desabilitar os botões de "Bimestres" posteriores ao que o professor se encontra;
-//Passo a passo: verificar qual o bimestre vigente;
-var desativandoButtonsBimestres = function(){
-    //Pegar do JS o valor de todos os bimestres.
+//Logo, se a data atual for anterior à considerada data de intervalo do bimestre atual, os bimestres anteriores
+//têm que ter seus buttons desativados;
+var desativandoButtonsBimestres = function(indice){
+    bimestres[indice];
+
+
 }
