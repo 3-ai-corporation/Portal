@@ -7,6 +7,7 @@ body{
 	background-repeat: no-repeat;
 	background-position: center;	
 	background-size: 100%;
+	
 }
 
 input[type=submit]:hover{
@@ -114,6 +115,8 @@ input[type=submit]:hover{
 	size : 350px 450px;
 	text-align: left;
 	margin: auto; 
+	
+	
 }
 
 .listItem  li div
