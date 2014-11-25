@@ -37,8 +37,13 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 $app->get('/temposAula',function() use ($aulascontroller) {
     echo json_encode($aulascontroller->retrieve());
 });
+<<<<<<< HEAD
 $app->get('/alunosTurma',function() use ($acontroller) {
     echo json_encode($acontroller->retrieveAlunos(33));	
+=======
+$app->get('/alunosTurma',function() use ($alunocontroller) {
+    echo json_encode($alunocontroller->retrieveAlunos(33));
+>>>>>>> refs/heads/iss15
 });
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($pcontroller) {
     echo json_encode($pcontroller->retrieveSenha($matricula, $senha));	
@@ -52,5 +57,3 @@ $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroll
 });
 
 $app->run();
-
-?>
