@@ -3,6 +3,7 @@ require_once 'model/TemposModel.php';
 require_once 'model/DiasLetivosModel.php';
 require_once 'model/TurmasModel.php';
 require_once 'model/MateriasModel.php';
+require_once 'model/BimestresModel.php';
 
 class DiasLetivosController
 {
@@ -10,12 +11,12 @@ class DiasLetivosController
 	{
 	
 		$sel = 'tb_dia_letivos.id AS id, tb_dia_letivos.data AS datas, tb_dia_letivos.numero_dia AS numero_dia';
-		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'data'));
+		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'datas'));
 		$retorno = array();
 		
 		foreach($diaAula as $key => $value) {
 			$obj['id'] = $value->id;
-			$obj['datas'] = $value->datas;
+			$obj['datas'] = $value->datas.date("d.m.a");
 			$obj['numero_dia'] = $value->numero_dia;						
 			
 			$retorno[] = $obj;
