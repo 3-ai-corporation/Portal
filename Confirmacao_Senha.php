@@ -2,7 +2,12 @@
 
 <html>
 <head>
-  <title>Confirmar Senha</title>
+    <meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
+	<script src = "assets/js/Validacao.js"></script>
+	<script src = "assets/js/jquery-2.1.1.js"></script>	
+    <link type="text/css" rel="stylesheet" href="assets/css/stylesheet_confirmacaoSenha.css">
+	
+    <title>Confirmar Senha</title>
 </head>
 
 <body>
