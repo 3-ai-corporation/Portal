@@ -172,13 +172,12 @@ function validar(user,pass){
 					url: 'service/Login/' + mtrForm + '/' + passForm,
 					success: function(data) {
 					usuario = jQuery.parseJSON(data);
-						if(usuario){		
-
+						if(usuario){	
 							$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
 									.done(function (data) {
 										if ( data == 'ok' )
 											window.location.href = 'TelaInicial.php';
-									});	
+									});
 						}else{
 							showAlert('error', 'Matrícula ou senha incorreta!');
 						}
@@ -188,41 +187,6 @@ function validar(user,pass){
 			}                                    
 		  }
 		}	
-		/* Verificar se estar mais correto.		
-		else{ 
-			if(mtrForm.length < 6){
-				showAlert('error','Formato da matrícula incorreta!');
-			}
-			else
-			{
-				if(passForm === ""){
-					showAlert('error','Digite a senha!');
-				}
-				else
-				{
-					if (!mtrForm.match(regra)) {
-						 showAlert('error', 'Somente números na matrícula!');
-						 validar_matricula(mtrForm.value);
-					}
-					else{
-						var usuario;		
-						$.ajax({
-							type: "GET",
-							url: 'service/Login/' + mtrForm + '/' + passForm,	
-							success: function(data) {
-								usuario = jQuery.parseJSON(data);
-								if(usuario){
-									window.location.href = "TelaInicial.php";
-								}else{
-									showAlert('error', 'Matrícula ou senha incorreta!');
-								}
-							}
-						});	
-					}
-				}	
-			}
-		}
-		>>>>>>> origin/issue4*/
 	}
 }
 
