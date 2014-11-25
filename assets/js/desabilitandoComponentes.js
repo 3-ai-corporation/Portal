@@ -109,7 +109,6 @@ var desativandoButtonsCurso = function(serie) {
     }
 }
 
-
 (function(){
     //Crinado um módulo e associando a aplicação;
     var desabilitandoBotoesModule = angular.module('desabilitandoBotoes', ['ngRoute']);
@@ -117,11 +116,10 @@ var desativandoButtonsCurso = function(serie) {
     desabilitandoBotoesModule.controller('desabilitandoBotoesController', function(){
 
     });
-
 });
 
 //Criando método responsável por desabilitar os botões de "Bimestres" posteriores ao que o professor se encontra;
 //Passo a passo: verificar qual o bimestre vigente;
-var desativandoButtonsBimestre = function(){
-
+var desativandoButtonsBimestres = function(){
+    //Pegar do JS o valor de todos os bimestres.
 }
