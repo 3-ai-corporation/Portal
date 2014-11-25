@@ -97,8 +97,6 @@ var alunos = [
 	{ numero: 28, RA: 120380, nome: 'YASMIM GABRIELLA DOS SANTOS LIBORIO', faltas:0, cor:''}
 ];
 
-for(var j=1; j<=alunos.length;j++){
-};
 var diasLetivos = [
 	{idMateria: 1, idProfessor: 200872, lstDias: dias}
 ];
