@@ -20,6 +20,22 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 			}); 
 		};	
 		
+		
+		ng.changeColor = function(obj) {
+			var linhaAluno = document.getElementById('freqRow'); 	
+			if(obj.faltas!= 0) {
+				linhaAluno.bgcolor = "#FF7F50";
+			}
+			else{
+				if(obj.numero%2 != 0){
+					linhaAluno.bgcolor = "#AEC4CF";
+				}
+				else{
+					linhaAluno.bgcolor = "#6D8E9D";
+				}
+			}
+		};
+		
 		ng.init();
 			
 	}
