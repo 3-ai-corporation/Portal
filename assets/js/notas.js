@@ -232,3 +232,40 @@ function isNumberKey(evt){
         return false;
     return true;
 }
+
+	app.controller("OperationButtonControlle", function(){
+		this.soma = function(){
+			var value = "+";
+			document.forms[0].fid_1.value += value;
+		};
+		
+		this.subtracao = function(){
+			var value = "-";
+			document.forms[0].fid_1.value += value;
+		};
+		
+		this.multiplicacao = function(){
+			var value = "*"
+			document.forms[0].fid_1.value += value;
+		};
+		
+		this.divisao = function(){
+			var value = "/";
+			document.forms[0].fid_1.value += value;
+		};
+		
+		this.radiciacao = function(){
+			var value = "sqrrt";
+			document.forms[0].fid_1.value += value;
+		};
+		
+		this.parent_abre = function(){
+			var value = "(";
+			document.forms[0].fid_1.value += value;
+		};
+		
+		this.parent_fecha = function(){
+			var value = ")";
+			document.forms[0].fid_1.value += value;
+		};
+	});

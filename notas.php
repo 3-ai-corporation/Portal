@@ -1,5 +1,45 @@
 <section ng-app="notasModule">
-<section class="quadroNotas" ng-controller="AppController as appCtrl">
+
+<section id="calculoMedia" ng-controller="RbuttonController as RController" >
+	<section>
+		<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
+		<form>
+			<input name="fid_1" id="fid_1" disabled value="">
+		</form>
+	</section>
+	
+	<section style="color:black; margin-top: 10px; margin-left: 5px;" ng-controller="ColumnController as colCtrl">
+		<button ng-repeat="av in colCtrl.lstColAvs" text="{{av.title}}" class="btnAvs"/>
+	</section>
+	
+	<section style="color:black; margin-top: 10px; margin-left: 5px;" ng-controller="OperationButtonControlle as OpController">
+		<button id="soma" ng-click="OpController.soma()">
+			<img src="assets/img/soma.png"/>
+		</button>
+		<button id="subtracao" ng-click="OpController.subtracao()">
+			<img src="assets/img/subtracao.png"/>
+		</button>
+		<button id="multiplicacao" ng-click="OpController.multiplicacao()">
+			<img src="assets/img/multiplicacao.png"/>
+		</button>
+		<button id="divisao" ng-click="OpController.divisao()">
+			<img src="assets/img/divisao.png"/>
+		</button>
+		<button id="radiciacao" ng-click="OpController.radiciacao()">
+			<img src="assets/img/radiciacao.png"/>
+		</button>
+		<button id="parent_abre" ng-click="OpController.parent_abre()">
+			<img src="assets/img/parent_abre.png"/>
+		</button>
+		<button id="parent_fecha" ng-click="OpController.parent_fecha()">
+			<img src="assets/img/parent_fecha.png"/>
+		</button>
+		<button id="limpar">Limpar
+		</button>
+	</section>
+</section>
+
+<section class="quadroNotas" ng-controller="AppController as appCtrl" style="margin-top: 15px;">
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<tr class="warning">
 			<th>#</th>
@@ -25,17 +65,5 @@
 			<td class={{obj.statusMF}}> {{obj.mfinal}} </td>
 		</tr>	
 	</table>					
-</section>
-
-<section id="calculoMedia" ng-controller="RbuttonController as RController" style="float:right;">
-	<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
-	<div style="color:black;">
-		<tr class="warning">
-			<th style="width:50px;"> <input value="(AV1)"/></th>
-		</tr>
-		<tr>
-			<button type="button"> OK </button>
-		</tr>
-	</div>	
 </section>
 </section>
