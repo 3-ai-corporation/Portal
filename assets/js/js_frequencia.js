@@ -1,5 +1,6 @@
 var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']);
 
+
 frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 	{
 		var 
@@ -8,8 +9,7 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 			aj = $http
 		;
 
-		var Ids_selected = require('./ApoioFreq.js');
-		console.log(Ids_selected.IdCurso); 		
+			
 		ng.init = function()
 		{
 			ng.chamaraulas();
