@@ -71,7 +71,7 @@
 	});
 	
 	
-		var generateNotas = function(){
+		/* var generateNotas = function(){
 			for (var i = 0; i < alunos.length; i++){
 				alunos[i].nota1 = Math.floor((Math.random() * 9)) + 1.75;
 				alunos[i].nota2= Math.floor((Math.random() * 9)) + 1.75;
@@ -84,7 +84,7 @@
 					alunos[i].mparalela= Math.floor((Math.random() * 9)) + 1.75;
 				}
 			}
-		};
+		}; */
 		
 		var arredondar = function(){
 			for (var i = 0; i < alunos.length; i++){

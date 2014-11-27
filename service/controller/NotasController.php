@@ -9,6 +9,29 @@ require_once 'model/NotasModel.php';
 
 class NotasController {
 
+	//Função que retorna notas de alunos de acordo com a turma
+	public function retrieveNotas($turmaId){
+		/* $alunos = UsuariosModel::find('all', array('conditions' => array("SELECT usuario.matricula, usuario.nome FROM tb_usuarios usuario
+																		WHERE usuario.matricula = tb_alunos.matricula
+																		AND tb_alunos.turma_id = ?", $turmaId), "order"=>"usuario.nome")); */					
+				
+		$join = 'JOIN tb_alunos ON tb_notas.aluno_id = tb_alunos.matricula';
+		$sel = 'tb_notas.valor AS valor, tb_alunos.matricula AS matricula';
+		$alunos = UsuariosModel::find('all', array('joins' => $join, 
+						'select' => $sel, 
+						'conditions' => array('tb_alunos.turma_id = ?', $turmaId),
+						'order' => 'valor'));																															
+		
+		$retorno = array();
+		foreach ($alunos as $key => $value) {
+			$obj['matricula'] = $value->matricula;
+			$obj['valor'] = $value->valor;			
+			$retorno[] = $obj;
+		}
+		
+		return $retorno;
+	}
+
 	public function create ($notas){
 		//if(AvaliacoesController.create($avalicacao)){
 			$notas = $this->object_to_array($notas);
@@ -16,23 +39,6 @@ class NotasController {
 		
 			return $notas->to_array();
 		//}
-	}
-	
-	public function retrieve (){
-		$notas = NotasModel::find('all', array('order' => 'id'); 
-		$retorno = array();
-		
-		foreach($notas as $key => $value){
-			$obj['id'] = $value->id;
-			$obj['valor'] = $value->valor;
-			$obj['status'] = $value->status;
-			$obj['materia_id'] = $value->materia_id;
-			$obj['aluno_id'] = $value->aluno_id;
-			$obj['avalicacao_id'] = $value->avalicacao_id;
-			
-			$retorno[] = $obj;
-		}
-		return $retorno;	
 	}
 	
 	public function update ($notas){
