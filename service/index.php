@@ -7,8 +7,8 @@ require_once 'controller/ProfessoresController.php';
 require_once 'controller/AlunosController.php';
 require_once 'controller/TemposController.php';
 
-\Slim\Slim::registerAutoloader();
-$app = new Slim\Slim();
+//\Slim\Slim::registerAutoloader();
+//$app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
 $tcontroller = new TemposController;
