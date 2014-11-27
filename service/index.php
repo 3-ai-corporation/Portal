@@ -41,15 +41,19 @@ $app->get('/temposAula',function() use ($aulascontroller) {
 $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
 });
-$app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($pcontroller) {
-    echo json_encode($pcontroller->retrieveSenha($matricula, $senha));	
+$app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
+    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
+	echo $email;
 });
-$app->get('/TrocarSenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller)
+$app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller)
 {
-	echo json_encode($pcontroller->changePassword($matricula, $senha));
+	echo json_encode($pcontroller->changePassword($matricula,$email,$senha));
 });
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->login($matricula,$senha));
 });
 
+$app->get('/teste',function() use ($pcontroller) {
+	echo json_encode($pcontroller->teste());
+});
 $app->run();
