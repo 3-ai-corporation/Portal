@@ -1,3 +1,13 @@
+<?php
+	session_start();
+
+	if(! isset($_SESSION['ematricula']))
+	{
+		header('location:index.php');
+	}
+?>
+
+
 <!DOCTYPE html>
 
 <html ng-app="startScreen">

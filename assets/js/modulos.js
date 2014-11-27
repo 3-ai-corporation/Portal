@@ -1,7 +1,8 @@
+
 // Início do módulo de plano de aula
 var planoModule = angular.module('planoModule',[]);
 planoModule.controller('GridController',function() {
-	this.aulas = aulas;
+	//this.aulas = aulas;
 	this.ativarData = function(data) {
 		for(i = 0; i < this.aulas.length; i++) {
 			if(data == this.aulas[i].dt) {
@@ -336,7 +337,10 @@ var alunos = [
 		this.objetos = dias[2];	
 		
 	});
-	
+//--------------------------------
+
+
+//--------------------------------	
 	
 	frequenciaModule.controller('checkcontroller', function() {
 		this.alterarCheckbox = function(obj, elem, elemParent) { 
@@ -363,7 +367,7 @@ var alunos = [
 			}
 		};
 				
-		
+		});
 		/* this.changeColor = function(obj) {
 			var linhaAluno = document.getElementById('freqRow'); 	
 			if(obj.faltas!= 0) {
@@ -378,7 +382,7 @@ var alunos = [
 				}
 			}
 		}; 
-	});
+	
 	
 	frequenciaModule.controller('faltacontroller', function() {
 		this.changeColor = function(obj, elem) { 

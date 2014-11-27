@@ -3,6 +3,8 @@ require_once 'model/TemposModel.php';
 require_once 'model/DiasLetivosModel.php';
 require_once 'model/TurmasModel.php';
 require_once 'model/MateriasModel.php';
+require_once 'model/BimestresModel.php';
+
 
 class DiasLetivosController
 {
@@ -15,6 +17,13 @@ class DiasLetivosController
 		
 		foreach($diaAula as $key => $value) {
 			$obj['id'] = $value->id;
+
+		$sel = 'tb_dia_letivos.id AS id, 	DATE_FORMAT(tb_dia_letivos.data, "%d-%m-%Y") AS datas, tb_dia_letivos.numero_dia AS numero_dia';
+		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'datas'));
+		$retorno = array();
+		
+		foreach($diaAula as $key => $value) {
+			$obj['id'] = $value->id; 
 			$obj['datas'] = $value->datas;
 			$obj['numero_dia'] = $value->numero_dia;						
 			
@@ -22,6 +31,7 @@ class DiasLetivosController
 		}
 		return $retorno;
 	}
+
 		// Função que retorna os tempos -> ajeitar posteriormente
 	  	/*
 		public function retrieveByIds ($Idsestrangeiro) 
@@ -47,6 +57,26 @@ class DiasLetivosController
 	}
 	*/
 
+	public function retrieve_by_filtro ( $obj ) 
+	{
+	
+		$sel = 'tb_dia_letivos.id AS id, DATE_FORMAT(tb_dia_letivos.data, "%Y-%m-%d") AS datas, tb_dia_letivos.numero_dia AS numero_dia';
+		$diaAula = DiasLetivosModel::find( 'all', 
+			array(
+					'select'=>$sel,
+					'conditions' => array( 'name=? or id > ?', $obj.name, $obj.id ),
+					 'order'=>'datas'));
+		$retorno = array();
+		
+		foreach($diaAula as $key => $value) {
+			$obj[ 'id' ] = $value->id; 
+			$obj[ 'datas' ] = $value->datas;//.date("d - m - y") ;
+			$obj[ 'numero_dia' ] = $value->numero_dia;						
+			
+			$retorno[] = $obj;
+		}
+		return $retorno;
+	}
 
 	private function object_to_array($Class)
 	{
@@ -59,5 +89,6 @@ class DiasLetivosController
 			}
 		}
 		return $Class;
+	}
 	}
 }

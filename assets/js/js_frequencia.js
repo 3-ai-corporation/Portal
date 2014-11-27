@@ -7,7 +7,7 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 			ng = $scope,
 			aj = $http
 		;
-		
+
 		ng.init = function()
 		{
 			ng.chamaraulas();

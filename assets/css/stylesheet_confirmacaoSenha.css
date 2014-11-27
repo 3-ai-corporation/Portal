@@ -3,11 +3,11 @@
 }
 
 body{
-	background-image: url(imgs/beg.png);
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;	
 	background-size: 100%;
+	
 }
 
 input[type=submit]:hover{
@@ -15,7 +15,7 @@ input[type=submit]:hover{
     color:#ffffff;
 }
 
-#dadosLogin
+#dadosSenha
 {
 	border:2px solid #D4D4D4;
 	display:block;	
@@ -30,82 +30,28 @@ input[type=submit]:hover{
 	margin-bottom:0%;
 }
 
-#iSenha
+#iNovaSenha
 {
 	margin-bottom:0%;
 	margin-top:10%;
 }
 
-#iSubmit
+#iSubmiter
 {
 	text-align:center;
 }
 
-#esqueceu_senha{
-	display:none;
-	background-color:#FFFFFF;
-	position:absolute;
-	top:50%;
-	left:120%;
-	margin-left:-15%;
-	margin-top:-10%;
-	padding:10%;
-	width:80%;
-	height:40%;
-	border:1px solid #d0d0d0;
-}
 
-#titleEsqueceu
-{
-	width: 100%;
-}
 
-#titulopop-up{
-	background-color:#008ACC;
-	padding-left:0.3%;
-	position:absolute;
-	font-family:Segoe UI;
-	color: #FFFFFF;
-	width:95%;
-	margin : -10%;
-	height : 8.1%;	
-}
-
-#linkClose{
-	background-color:#008ACC;
-	text-align:center;
-	right:0.01%;
-	width :5%;
-	height : 8.1%;
-	top : 0%;
-	padding-left:0.5%;
-	position : absolute;
-	font-family: Segoe UI;
-	color: #FFFFFF;
-}
-
-#linkClose:link{
-	text-decoration: none; 
-}
-
-#iMatricula{
+#iCodigo{
 	position : relative;
 	top : 20px;
 	padding : 0px;
-	margin : 0px;
+	margin : 100px;
 }
 
-#aEsquecer
-{
-	text-align:right;
-}
 
-#eEmail{
-	margin-top : 10%;
-	position : relative;
-}
-
-#iSubmit
+#iSubmiter
 {
 	text-align:center;
 	margin-top:10%;
@@ -141,44 +87,20 @@ input[type=submit]:hover{
 	list-style-type:none;
 }
 
-.lblLogin
+.lblConfirmar_Senha
 {
 	border: 1px solid #FFFFFF;
 	background-color: #008ACC;
 	padding : 0.5%;
 	color: #FFFFFF;
+	
 }
 
-.txtLogin
+.txtConfirmar_Senha
 {
 	width: 98%;
 }
-
-.imgLogo img
-{
-	width:100%;
-}
-
-.imgLogo {
-	width: 80%;
-	margin: 30px auto;
-}
-
-.lblEsqueceu
-{
-	border: 1px solid #FFFFFF;
-	background-color: #008ACC;
-	width: 100%;
-	padding : 0.5%;
-	color: #FFFFFF;
-}
-
-.txtEsqueceu
-{
-	width: 100%;
-}
-
-.btnEnviar 
+.btnConfirmar_Senha 
 {
 	width: 50%;
 	color: #FFFFFF;
@@ -186,38 +108,39 @@ input[type=submit]:hover{
 	border-style:none;
 }
 
-.linkEsquecer:link,.linkEsquecer:visited
-{
-	color: #008ACC;
-	text-decoration:none;
-}
-
-.linkEsquecer:hover
-{
-	text-decoration: underline; 
-	color: #008ACC;
-
-}
-
 .listItem
 {
-	padding:0;
+    width:60%;
+	padding:0.5%;
 	size : 350px 450px;
+	text-align: left;
+	margin: auto; 
+	
+	
 }
 
 .listItem  li div
 {
-	width:100%;
+	width:60%;
 	margin:auto;
 }
 
 .listItem  li
 {
-	width:80%;
+	width:60%;
 	margin:auto;
 }
 
-.btnProsseguir 
+#iCodigo{
+	margin-bottom:10%;
+}
+
+#iNovaSenha
+{
+	margin-top:0;
+}
+
+.btnConfirmar 
 {
 	margin-top:5%;
 	width: 50%;
