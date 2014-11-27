@@ -44,7 +44,7 @@ $app->get('/alunosTurma',function() use ($alunocontroller) {
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula, $email));	
 });
-$app->get('/TrocarSenha/:matricula/:email/:senha', function($matricula,$email,$senha) use ($pcontroller)
+$app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller)
 {
 	echo json_encode($pcontroller->changePassword($matricula,$email,$senha));
 });

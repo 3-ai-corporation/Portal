@@ -189,7 +189,7 @@ function validar(user,pass){
 	}
 }
 
-function ValidarEsqueceuSenha(user, email)
+function ValidarEsqueceuSenha(matricula, email)
 {
 	if(matricula == "" && email == ""){
 	   showAlert('error','Preencha todos os campos!');
@@ -211,11 +211,12 @@ function ValidarEsqueceuSenha(user, email)
 						usuario = JQuery.parseJSON(data);
 						if(usuario)
 						{
+							showAlert('erro', 'enviou');
 							var usual;
 							$.ajax(
 							{
 								type:"GET",
-								url: '/sevice/TrocarSenha/' + matricula +'/'+ email + '/' + Math.random(),
+								url: '/sevice/retonar_email/' + matricula,
 								success: function(data)
 								{
 									usual = JQuery.parseJSON(data);
@@ -223,7 +224,7 @@ function ValidarEsqueceuSenha(user, email)
 									{
 										//mandar e-mail
 										alert("Verifique o código enviado para o seu email");
-										window.location.href = "file:///C:/Users/3aimaq20/Desktop/Portal/index.php/Confirmacao_Senha.php";
+										window.location.href = "Confirmacao_Senha.php";
 									}
 								}
 							});

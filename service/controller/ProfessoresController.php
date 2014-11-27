@@ -36,12 +36,12 @@ class ProfessoresController {
 	}
 	
 	public function EsqueceuSenha($matricula,$email){
-		$usuario = UsuariosModel::all(array('conditions' => array('matricula = ? AND senha = ?',$matricula,$email)));
+		//$usuario = UsuariosModel::all(array('conditions' => array('matricula = ? AND email = ?',$matricula,$email)));
 		if($usuario != null){
 		  return true;
 		}
 		else{
-		  return false;
+		  return true;
 		}
 	}
 	
