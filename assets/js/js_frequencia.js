@@ -7,7 +7,12 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 			ng = $scope,
 			aj = $http
 		;
+<<<<<<< HEAD
 		
+=======
+		var Ids_selected = require('./ApoioFreq.js');
+		console.log(Ids_selected.IdCurso); 		
+>>>>>>> refs/remotes/origin/iss15
 		ng.init = function()
 		{
 			ng.chamaraulas();

@@ -17,9 +17,12 @@ $alunocontroller = new AlunosController;
 $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
 
+<<<<<<< HEAD
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
+=======
+>>>>>>> refs/remotes/origin/iss15
 $app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
@@ -53,3 +56,7 @@ $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroll
 });
 
 $app->run();
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/iss15
