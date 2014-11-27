@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-var IdSerie;
-var IdBimestre;
-var IdCurso;
-var IdMateria;
-function IniciarSelecao()
-{};
-=======
-
 var Ids_pegar = {};
 module.exports = Ids_pegar;
 function IniciarSelecao()
@@ -36,4 +27,3 @@ function Selected_Bimestre()
 {
 	Ids_pegar.IdBimestre = 1;
 }
->>>>>>> refs/remotes/origin/iss15
