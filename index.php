@@ -1,19 +1,3 @@
-<?php
-
-set_include_path(implode(PATH_SEPARATOR, array(realpath(dirname(__FILE__) . '/library'), get_include_path())));
-
-require_once 'Slim/Slim/Slim.php';
-require_once 'controller/ProfessoresController.php';
-require_once 'controller/AlunosController.php';
-require_once 'controller/TemposController.php';
-require_once 'controller/DiasLetivosController.php';
-	session_start();
-
-	if( isset($_SESSION['ematricula']))
-	{
-		header('location:TelaInicial.php');
-	}
-?>
 
 <!DOCTYPE html>
 
