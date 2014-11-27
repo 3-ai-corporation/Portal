@@ -165,7 +165,7 @@ function validar(user,pass){
 					validar_matricula(mtrForm.value);
 				}
 				else{
-				   var usuario;
+				   /*var usuario;
 				   $.ajax({
 					type: "GET",
 					url: 'service/Login/' + mtrForm + '/' + passForm,
@@ -181,7 +181,12 @@ function validar(user,pass){
 							showAlert('error', 'Matrícula ou senha incorreta!');
 						}
 					}	                   		     		    
-				  });			
+				  });*/		
+					$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
+									.done(function (data) {
+										if ( data == 'ok' )
+											window.location.href = 'TelaInicial.php';
+									});
 				}
 			}                                    
 		  }
