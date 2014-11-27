@@ -11,7 +11,11 @@
 </head>
 
 <body>
+  <div id= "main">
 	<div id= "DadosSenha">
+	    <div class="imgLogo">
+		     <img class="P"src = "assets/img/Logo_Fundacao.jpg"></img>
+		</div>
 	  <form>
 		<ul class= "listItem">
 			<li>
@@ -41,7 +45,7 @@
 	  <div id="alert"></div>
 	  </form>
 	</div>
-
+  </div>
 
 </body>
 
