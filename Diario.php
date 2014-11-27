@@ -26,7 +26,7 @@
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>		
 		
 		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
-		<!--<script type = "text/javascript" src = "assets/js/ApoioFreq.js"></script>-->
+		<script type = "text/javascript" src = "assets/js/ApoioFreq.js"></script>
 		
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
@@ -55,7 +55,7 @@
 		<title>Diário Escolar</title>
 	</head>
 	
-	<body onload="highlightAE(); desativandoChecks(); desativandoBotoes();criandoOpcoes();setFiltroVisible(true);beginTabs();">
+	<body onload="highlightAE(); desativandoChecks(); desativandoBotoes();criandoOpcoes();setFiltroVisible(true);beginTabs(); IniciarSelecao();">
 		<div id = "main">
 			<?php 
 				include ("menu.php")

@@ -74,7 +74,23 @@ function validar_codigo(codigo){
 		return true;
 }
 
+/**
+*Created by Yasmim Libório on 27/11/2014
+ * Método que faz a validação da nova senha digitada pelo usuario 
+*/
 
+function validar_novaSenha(novaSenha){
+ //fazer a funcao
+}
+
+/**
+*Created by Yasmim Libório on 27/11/2014
+ * Método que faz a validação da nova senha digitada pelo usuario 
+*/
+
+function validar_confirmacaoSenha(confirmarSenha){
+ //fazer a funcao
+}
 
 
 
