@@ -3,6 +3,7 @@ require_once 'model/TemposModel.php';
 require_once 'model/DiasLetivosModel.php';
 require_once 'model/TurmasModel.php';
 require_once 'model/MateriasModel.php';
+require_once 'model/BimestresModel.php';
 
 class DiasLetivosController
 {
@@ -67,7 +68,7 @@ class DiasLetivosController
 		}
 		return $retorno;
 	}
-	
+
 
 	private function object_to_array($Class)
 	{

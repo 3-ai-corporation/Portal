@@ -1,3 +1,12 @@
+<?php
+	session_start();
+
+	if( isset($_SESSION['ematricula']))
+	{
+		header('location:TelaInicial.php');
+	}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -11,6 +20,7 @@
 	 <script src = "assets/js/Validacao.js"></script>
 	 <script src = "assets/js/jquery-2.1.1.js"></script>	
      <link type="text/css" rel="stylesheet" href="assets/css/stylesheet_TelaLogin.css">
+	
      <TITLE>Login Portal</TITLE>
 </head>
 
@@ -25,7 +35,7 @@
 					<li>
 						<div id="iMatricula">
 						<p class="lblLogin">Matrícula: </p>
-						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" maxlength = "6"  autofocus/>
+						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" maxlength = "6"/>
 						</div>
 					</li>
 						<li>
@@ -46,20 +56,20 @@
 								</div>
 								<div id="eMatricula">
 									<p class="lblEsqueceu">Matrícula: </p>
-									<input class="txtEsqueceu" type="text" name="ematricula" value="" onkeydown = " validar_matricula2(ematricula);">
+									<input class="txtEsqueceu" type="text" name="ematricula" value="" onkeydown = " validar_matricula2(ematricula);" maxlength = "6"/>
 								</div>
 								<div id="eEmail">
 									<p class="lblEsqueceu" >Email: </p>
-									<input class="txtEsqueceu" type="email" name="email" value=""/>
+									<input class="txtEsqueceu" type="email" name="email" value="" onkeydown = "IsMail($email);"/>
 								</div>
 								<div id="iSubmit">
-									<input class="btnEnviar" value="Enviar" type="button" style="width: 100px; height: 25px" />
-								</div>	 
+									<input class="btnEnviar" value="Enviar" onclick = "ValidarEsqueceuSenha(ematricula.value, email.value)" type="button" style="width: 100px; height: 25px" />
+								</div>
 							</div>	
 						</li>
 						<li>                        
 							<div id="iSubmit">
-								<input onclick = "validar(matricula.value, senha.value);" class="btnProsseguir" type = "button" value="Prosseguir"  style="width: 150px; height: 25px" >
+								<input onclick = "validar(matricula.value, senha.value);" class="btnProsseguir" type = "button" value="Prosseguir"  style="width: 150px; height: 25px" />
 							</div>
 						</li>
 				</ul>

@@ -13,9 +13,7 @@
 <button id="AulaAnt"> 
 	<img src="assets/img/arrow-left.png" width="30px" height="30px" color="white">
 </button>
-					
-
-					
+			
 <button id="AulaProx" style="margin-left: 70.7em"> 
 	<img src="assets/img/arrow-right.png" width="30px" height="30px" color="white">
 </button>
