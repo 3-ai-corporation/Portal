@@ -6,21 +6,23 @@ require_once 'Slim/Slim/Slim.php';
 require_once 'controller/ProfessoresController.php';
 require_once 'controller/AlunosController.php';
 require_once 'controller/TemposController.php';
+require_once 'controller/DiasLetivosController.php';
 
 \Slim\Slim::registerAutoloader();
+
 $app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
-$tcontroller = new TemposController;
-$acontroller = new AlunosController;
 $NController = new NotasController;
+$alunocontroller = new AlunosController;
+$temposcontroller = new TemposController;
+$aulascontroller = new DiasLetivosController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
-
-$app->post('/service/plano-aula/update/',function($id) use ($tcontroller) {
-    echo json_encode($tcontroller->retrieve($id));
+$app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
+    echo json_encode($temposcontroller->retrieve($id));
 });
 
 $app->get('/notify-recados',function() use ($pcontroller) {
@@ -33,9 +35,11 @@ $app->get('/notify-alunos',function() use ($pcontroller) {
 $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
-
-$app->get('/alunosTurma',function() use ($acontroller) {
-    echo json_encode($acontroller->retrieveAlunos(33));	
+$app->get('/temposAula',function() use ($aulascontroller) {
+    echo json_encode($aulascontroller->retrieve());
+});
+$app->get('/alunosTurma',function() use ($alunocontroller) {
+    echo json_encode($alunocontroller->retrieveAlunos(33));
 });
 
 $app->get('/notas', function() use ($NController)) {
@@ -45,3 +49,4 @@ $app->get('/notas', function() use ($NController)) {
 $app->run();
 
 ?>
+

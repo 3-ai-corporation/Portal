@@ -5,19 +5,11 @@ require_once 'model/TurmasModel.php';
 require_once 'model/MateriasModel.php';
 require_once 'model/BimestresModel.php';
 
-
 class DiasLetivosController
 {
 	public function retrieve () 
 	{
 	
-		$sel = 'tb_dia_letivos.id AS id, tb_dia_letivos.data AS datas, tb_dia_letivos.numero_dia AS numero_dia';
-		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'data'));
-		$retorno = array();
-		
-		foreach($diaAula as $key => $value) {
-			$obj['id'] = $value->id;
-
 		$sel = 'tb_dia_letivos.id AS id, 	DATE_FORMAT(tb_dia_letivos.data, "%d-%m-%Y") AS datas, tb_dia_letivos.numero_dia AS numero_dia';
 		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'datas'));
 		$retorno = array();
@@ -91,4 +83,5 @@ class DiasLetivosController
 		return $Class;
 	}
 	}
+
 }

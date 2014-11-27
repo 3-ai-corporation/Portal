@@ -86,38 +86,3 @@ require_once 'controller/DiasLetivosController.php';
 		</div>
 	</div>
 </body>
-
-\Slim\Slim::registerAutoloader();
-
-$app = new Slim\Slim();
-
-$pcontroller = new ProfessoresController;
-$alunocontroller = new AlunosController;
-$temposcontroller = new TemposController;
-$aulascontroller = new DiasLetivosController;
-
-/*$app->get('/',function() use ($pcontroller) {
-    echo json_encode($pcontroller->retrieveTurmas(134567, true));
-});*/
-$app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
-    echo json_encode($temposcontroller->retrieve($id));
-});
-
-$app->get('/notify-recados',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
-});
-
-$app->get('/notify-alunos',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'alunos'));
-});
-$app->get('/notify-portal',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
-});
-$app->get('/temposAula',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieve());
-});
-$app->get('/alunosTurma',function() use ($alunocontroller) {
-    echo json_encode($alunocontroller->retrieveAlunos(33));
-});
-
-$app->run();
