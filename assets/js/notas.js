@@ -1,33 +1,13 @@
 (function(){ 
-	var app = angular.module('Notas', []);
+	var app = angular.module('Notas', ['ngRoute']);
 	
 	app.controller('AppController', function(){
 		var calculoMedia = '(AV1)';
-		
-		var 
-		$ = jQuery, 
-		ng = $scope,
-		aj = $http
-		;
-	
-	ng.alunos = {};
-		
-	ng.init = function(){
-		ng.read();
-	};
-
-	ng.read = function(){
-		aj.get('service/notas').success(function(data){
-			ng.notasList = data;
-		});		
-	};
-	
-	ng.init();
-	
+			
 		this.alunos = alunos;
-		generateNotas();
+		//generateNotas();
 		setmediaparcial();
-		generateParalelas();
+		//generateParalelas();
 		setmediafinal(1);
 		arredondar();
 		setStatus();
@@ -237,7 +217,7 @@
 	{ numero: 20, matricula: 120834, nome: 'ODILOMAR REBELO ROCHA JUNIOR',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 21, matricula: 120827, nome: 'OLAVO PONTES SANTANA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 22, matricula: 120388, nome: 'OLGA DE SÁ LEÃO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', status: ' '},
-	{ numero: 23, matricula: 10.0051, nome: 'PATRICIA DE PAULA BARROS MORAES',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
+	{ numero: 23, matricula: 110051, nome: 'PATRICIA DE PAULA BARROS MORAES',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 24, matricula: 120389, nome: 'RÚBEN JOZAFÁ SILVA BELÉM',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 25, matricula: 120374, nome: 'SERGILLAM BARROSO OLIVEIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 26, matricula: 120801, nome: 'THIAGO SANTOS FIGUEIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},

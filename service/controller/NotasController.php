@@ -10,14 +10,10 @@ require_once 'model/NotasModel.php';
 class NotasController {
 
 	//Função que retorna notas de alunos de acordo com a turma
-	public function retrieveNotas($turmaId){
-		/* $alunos = UsuariosModel::find('all', array('conditions' => array("SELECT usuario.matricula, usuario.nome FROM tb_usuarios usuario
-																		WHERE usuario.matricula = tb_alunos.matricula
-																		AND tb_alunos.turma_id = ?", $turmaId), "order"=>"usuario.nome")); */					
-				
+	public function retrieveNotas($turmaId){				
 		$join = 'JOIN tb_alunos ON tb_notas.aluno_id = tb_alunos.matricula';
 		$sel = 'tb_notas.valor AS valor, tb_alunos.matricula AS matricula';
-		$alunos = UsuariosModel::find('all', array('joins' => $join, 
+		$alunos = NotasModel::find('all', array('joins' => $join, 
 						'select' => $sel, 
 						'conditions' => array('tb_alunos.turma_id = ?', $turmaId),
 						'order' => 'valor'));																															

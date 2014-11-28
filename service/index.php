@@ -13,7 +13,7 @@ require_once 'controller/DiasLetivosController.php';
 $app = new Slim\Slim();
 
 $pcontroller = new ProfessoresController;
-$NController = new NotasController;
+$ncontroller = new NotasController;
 $alunocontroller = new AlunosController;
 $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
@@ -41,11 +41,51 @@ $app->get('/temposAula',function() use ($aulascontroller) {
 $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
 });
+<<<<<<< HEAD
 
-$app->get('/notas', function() use ($NController)) {
-    echo json_encode(&NController->retrieve());
+<<<<<<< HEAD
+$app->get('/notas', function() use ($ncontroller)) {
+    echo json_encode($ncontroller->retrieveNotas(33));
 });
 
+$app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
+    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
+ 	echo $email;
+});
+
+ $app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller)
+ {
+ 	echo json_encode($pcontroller->changePassword($matricula,$email,$senha));
+ });
+ $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
+	echo json_encode($pcontroller->login($matricula, $senha));
+  });
+  
+ $app->get('/teste',function() use ($pcontroller) {
+ 	echo json_encode($pcontroller->teste());
+ });
+
+=======
+$app->get('/notas', function() use ($NController)) {
+    echo json_encode(&NController->retrieve());
+=======
+$app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
+    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
+	echo $email;
+});
+$app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller)
+{
+	echo json_encode($pcontroller->changePassword($matricula,$email,$senha));
+});
+$app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
+	echo json_encode($pcontroller->login($matricula,$senha));
+>>>>>>> master
+});
+
+$app->get('/teste',function() use ($pcontroller) {
+	echo json_encode($pcontroller->teste());
+});
+>>>>>>> origin/iss25
 $app->run();
 
 ?>

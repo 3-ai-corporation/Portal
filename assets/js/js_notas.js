@@ -1,4 +1,4 @@
-var notasModule = angular.module('Notas', []);
+var notasModule = angular.module('Notas', ['ngRoute']);
 
 notasModule.controller('NotasCtrl', function($scope, $http) {
 	var 

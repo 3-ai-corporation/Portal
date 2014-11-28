@@ -35,6 +35,29 @@ class ProfessoresController {
 		}
 	}
 	
+	public function EsqueceuSenha($matricula,$email){
+		$usuario = UsuariosModel::all(array('conditions' => array('matricula = ? AND email = ?',$matricula,$email)));
+		if($usuario != null){
+		  return true;
+		}
+		else{
+		  return true;
+		}
+	}
+	
+	public function teste() {
+        $professores = ProfessoresModel::find('all');
+        $retorno = array();
+        foreach($professores as $key => $value ) {
+			$usuario = UsuariosModel::find($value->matricula);
+            $obj['matricula'] = $usuario->matricula;
+            $obj['senha'] = $usuario->senha;
+			$obj['email'] = $usuario->email;
+			
+            $retorno[] = $obj;
+        }
+        return $retorno;
+    }
     // Função responsável por retornas as turmas lecionadas por um professor
     public function retrieveTurmas($matriculaProfessor, $returnDisciplina) {
         // Vai retornar os registros da tabela tb_professor_turmas de acordo com a Matricula do professor
