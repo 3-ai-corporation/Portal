@@ -1,4 +1,3 @@
-
 function validar_matricula(matricula){
 	 var regra = /^[0-9]+$/;
 	 if (!matricula.value.match(regra) && matricula.value != "") {
@@ -8,7 +7,6 @@ function validar_matricula(matricula){
 	 }
 	 return false;
 }
-
 
 /**
  *Created by Yasmim Libório on 24/10/2014
@@ -25,6 +23,7 @@ function validar_matricula2(matricula){
 		matricula.value = matricula.value.substr(0,6);
 	 }
 }
+
 /**
  *Created by Yasmim Libório on 24/10/2014
  * validação que verifica o tamanho de caracteres na senha
@@ -182,7 +181,7 @@ function validar(user,pass){
 					validar_matricula(mtrForm.value);
 				}
 				else{
-				   var usuario;
+				   /*var usuario;
 				   $.ajax({
 					type: "GET",
 					url: 'service/Login/' + mtrForm + '/' + passForm,
@@ -197,8 +196,13 @@ function validar(user,pass){
 						}else{
 							showAlert('error', 'Matrícula ou senha incorreta!');
 						}
-					}	                   		     		    
-				  });			
+					}		    
+				  });*/
+				  $.post( "Login.php?acao=logar", { ematricula: mtrForm  })
+									.done(function (data) {
+										if ( data == 'ok' )
+											window.location.href = 'TelaInicial.php';
+									});
 				}
 			}                                    
 		  }
@@ -206,40 +210,55 @@ function validar(user,pass){
 	}
 }
 
-function ValidarEsqueceuSenha(user, email)
+function ValidarEsqueceuSenha(matricula, email)
 {
-	var usuario
-	$.ajax(
-	{
-		type:"GET",
-		url: '/service/EsqueceuSenha/' + user + '/' + email,
-		success: function(data) {
-			usuario = JQuery.parseJSON(data);
-			if(usuario != "")
-			{
-				var usual
+	if(matricula == "" && email == ""){
+	   showAlert('error','Preencha todos os campos!');
+	}
+	else{
+		if(matricula == ""){
+			showAlert('error','Digite a matrícula!');
+		}else{
+			if(email == ""){
+			   showAlert('error','Digite o email!');
+			}
+			else{
+				var usuario;
 				$.ajax(
 				{
 					type:"GET",
-					url: '/sevice/TrocarSenha/' + user + '/' + Math.random(),
-					success: function(data)
-					{
-						usual = JQuery.parseJSON(data);
-						if(usual)
+					url: '/service/EsqueceuSenha/' + matricula + '/' + email,
+					success: function(data) {
+						usuario = JQuery.parseJSON(data);
+						if(usuario)
 						{
-							//mandar e-mail
-							alert("Verifique o código enviado para o seu email");
-							window.location.href = "file:///C:/Users/3aimaq20/Desktop/Portal/index.php/Confirmacao_Senha.php";
+							showAlert('erro', 'enviou');
+							/*var usual;
+							$.ajax(
+							{
+								type:"GET",
+								url: '/sevice/retonar_email/' + matricula,
+								success: function(data)
+								{
+									usual = JQuery.parseJSON(data);
+									if(usual)
+									{
+										//mandar e-mail
+										alert("Verifique o código enviado para o seu email");
+										window.location.href = "Confirmacao_Senha.php";
+									}
+								}
+							});*/
+						}
+						else
+						{
+							showAlert('erro', 'Matrícula ou e-mail incorreto');
 						}
 					}
-				});
-			}
-			else
-			{
-				showAlert('erro', 'Matrícula ou e-mail incorreto');
+				});	
 			}
 		}
-	});
+	}
 }
 
 function showAlert2(type,message) {
