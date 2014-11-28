@@ -92,35 +92,6 @@ function validar_confirmacaoSenha(confirmarSenha){
 }
 
 
-
-
-
-/**
- *Created by Yasmim Libório on 06/11/2014
- * Método que faz a validação do email
-*/
-
-function IsMail($email){
-    $er = "/^(([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}){0,1}$/";
-    if (preg_match($er, $email)){
-    return true;
-    } else {
-	
-    return false;
-    }
-	
-	/*$email = "email@dominio.com.br";
-    usar na validação de verificação do email do usuario
-    if (isMail($email)){
-    echo "É um e-mail válido.";
-     else {
-    showAlert('error', 'A senha tem no máximo 10 dígitos');
-    }
-	}*/
-	
-	
-}
-
 /**
 *Created by Yasmim Libório on 24/11/2014
  * Método que faz a validação do codigo, nova senha e confirmacao da nova senha digitado pelo usuario 
@@ -131,11 +102,6 @@ function validarSenha(codigo, newpass, ConfirmNewPass){
 
 
 }
-
-
-
-
-
 
 function Value(number)
 {
@@ -164,7 +130,7 @@ function validar(user,pass){
 		if(mtrForm === ""){
 			showAlert('error','Digite a matrícula!');
 		}
-		//verificar
+		
 		else{	
 		  if(mtrForm.length < 6){
 			 showAlert('error','Formato da matrícula incorreta!');
@@ -218,31 +184,41 @@ function ValidarEsqueceuSenha(user, mail)
 	if(matricula == "" && email == ""){
 	   showAlert('error','Preencha todos os campos!');
 	}
-	else{
+	else{	
 		if(matricula == ""){
 			showAlert('error','Digite a matrícula!');
 		}else{
-			if(email == ""){
+			if(email == ""){			
 			   showAlert('error','Digite o email!');
 			}
 			else{
-				var usuario;
-				$.ajax(
-				{
-				type:"GET",
-				url: 'service/EsqueceuSenha/' + matricula + '/' + email,
-				success: function(data) {
-				usuario = jQuery.parseJSON(data);
-				  if(usuario)
-				  {
-					showAlert('erro', 'O e-mail foi enviado com sucesso!');
-				  }
-				  else
-				  {
-					showAlert('erro', 'Matrícula ou e-mail incorreto!');
-			      }           
-				}
-				});	
+				$.post( "email.php", { email: mail })
+									.done(function (data) {
+										if ( data == 'ok' )
+										{
+											var usuario;
+												$.ajax(
+												{
+													type:"GET",
+													url: 'service/EsqueceuSenha/' + matricula + '/' + email,
+													success: function(data) {
+													usuario = jQuery.parseJSON(data);
+													  if(usuario)
+													  {
+														showAlert('erro', 'O e-mail foi enviado com sucesso!');
+													  }
+													  else
+													  {		  
+														showAlert('erro', 'Matrícula ou e-mail não cadastrado no banco!');
+													  }           
+												}
+												});	
+										}
+										else
+										{		
+											showAlert('erro', 'E-mail inválido!');
+										}
+				});
 			}
 		}
 	}
