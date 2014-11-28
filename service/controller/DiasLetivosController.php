@@ -7,21 +7,59 @@ require_once 'model/BimestresModel.php';
 
 class DiasLetivosController
 {
-	public function retrieve () 
+	public function retrieve ($id_bim) 
 	{
-
-		$sel = 'tb_dia_letivos.id AS id, 	DATE_FORMAT(tb_dia_letivos.data, "%d-%m-%Y") AS datas, tb_dia_letivos.numero_dia AS numero_dia';
-		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'datas'));
-		$retorno = array();
+		/*inicio e fim do bimestre*/
+		$sel_bim = 'tb_bimestres.data_inicio_id AS inicio, tb_bimestres.data_fim_id AS fim';
+		$bimestre = BimestresModel::find('all', 
+			array('select'=>$sel_bim,'conditions'=>array('tb_bimestres.id = ?', $id_bim)));
+			
+			
+		foreach($bimestre as $key=> $value){
+			$objBimestre['inicio'] = $value->inicio;
+			$objBimestre['fim'] = $value->fim;			
+		}
+		
+		
+		
+		//dia letivo de inicio e fim
+		$sel_intervalo = 'DATE_FORMAT(tb_dia_letivos.data, "%d-%m-%Y") AS dt';
+		$inicio = DiasLetivosModel::find('all', array('select'=>$sel_intervalo, 'conditions'=>array('tb_dia_letivos.id = ?', $objBimestre['inicio'])));
+		$fim = DiasLetivosModel::find('all', array('select'=>$sel_intervalo, 'conditions'=>array('tb_dia_letivos.id = ?', $objBimestre['fim'])));
+		
+		foreach($inicio as $key=> $value){
+			$objInit['dt'] = $value->dt;	
+		}
+		
+		$dtI = explode('-', $objInit['dt'] );
+		$dtI = implode ('_',$dtI);
+	
+		
+		foreach($fim as $key=> $value){
+			$objEnd['dt'] = $value->dt;		
+		}
+		$dtF = explode ('-',$objEnd['dt']);
+		$dtF = implode('_',$dtF);
+	
+		//todos os dias letivos
+		$sel_dias = 'tb_dia_letivos.id AS id, 	DATE_FORMAT(tb_dia_letivos.data, "%d-%m-%Y") AS datas, tb_dia_letivos.numero_dia AS numero_dia';
+		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel_dias, 'order'=>'datas'));
+		$retorno_dias = array();
 		
 		foreach($diaAula as $key => $value) {
 			$obj['id'] = $value->id; 
 			$obj['datas'] = $value->datas;
-			$obj['numero_dia'] = $value->numero_dia;						
+			$obj['numero_dia'] = $value->numero_dia;	
+
+			$data = explode('-',$obj['datas']);
+			$data = implode('_',$data);			
 			
-			$retorno[] = $obj;
+			if((strtotime($data)>=strtotime($dtI))
+				&&(strtotime($data)<=strtotime($dtF))){
+				$retorno_dias[] = $obj;
+			}
 		}
-		return $retorno;
+		return $retorno_dias;
 	}
 	
 		// Função que retorna os tempos -> ajeitar posteriormente
