@@ -1,6 +1,4 @@
 
-var Ids_pegar = {};
-module.exports = Ids_pegar;
 function IniciarSelecao()
 {
 	Ids_pegar.IdSerie = 1 ;

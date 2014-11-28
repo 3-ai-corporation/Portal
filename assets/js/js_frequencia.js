@@ -6,9 +6,7 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 			$ = jQuery,
 			ng = $scope,
 			aj = $http
-		;
-		var Ids_selected = require('./ApoioFreq.js');
-		console.log(Ids_selected.IdCurso); 		
+		;	
 		ng.init = function()
 		{
 			ng.chamaraulas();
