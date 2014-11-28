@@ -21,6 +21,7 @@ $aulascontroller = new DiasLetivosController;
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
+
 $app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
@@ -41,9 +42,7 @@ $app->get('/temposAula',function() use ($aulascontroller) {
 $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
 });
-<<<<<<< HEAD
 
-<<<<<<< HEAD
 $app->get('/notas', function() use ($ncontroller)) {
     echo json_encode($ncontroller->retrieveNotas(33));
 });
@@ -53,10 +52,10 @@ $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($p
  	echo $email;
 });
 
- $app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller)
- {
+ $app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller) {
  	echo json_encode($pcontroller->changePassword($matricula,$email,$senha));
  });
+ 
  $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->login($matricula, $senha));
   });
@@ -72,13 +71,13 @@ $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($p
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
 	echo $email;
 });
-$app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller)
-{
+
+$app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->changePassword($matricula,$email,$senha));
 });
+
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->login($matricula,$senha));
->>>>>>> master
 });
 
 $app->get('/teste',function() use ($pcontroller) {

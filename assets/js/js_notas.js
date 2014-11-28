@@ -1,4 +1,4 @@
-var notasModule = angular.module('Notas', ['ngRoute']);
+var notasModule = angular.module('notas', ['ngRoute']);
 
 notasModule.controller('NotasCtrl', function($scope, $http) {
 	var 
@@ -6,8 +6,6 @@ notasModule.controller('NotasCtrl', function($scope, $http) {
 		ng = $scope,
 		aj = $http
 	;
-
-	ng.alunos = {};
 
 	ng.init = function(){
 		ng.read();
