@@ -17,11 +17,11 @@
 			<td>{{obj.numero}}</td>
 			<td>{{obj.matricula}}</td>
 			<td>{{obj.nome}}</td>
-			<td ng-repeat="av in colCtrl.lstColAvs" class={{obj.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="obj.nota1" class="{{obj.statusInputNota1}}"> </input></td>
+			<td ng-repeat="av in colCtrl.lstColAvs" class={{obj.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event); mudarCorNotas(this)" type="text" ng-model="obj.nota1" class="{{obj.statusInputNota1}}"> </input></td>
 			<td style="width: 24px"></td>
 			<td style="width: 24px"></td>
 			<td class={{obj.statusM}}>{{obj.mparcial}}</td>
-			<td class={{obj.statusMP}}><input maxlength="4" onkeypress="return isNumberKey(event)" value="{{obj.mparalela}}" class = "{{obj.statusInputMP}}"/></td>
+			<td class={{obj.statusMP}}><input maxlength="4" onkeypress="return isNumberKey(event); mudarCorNotas(this) " value="{{obj.mparalela}}" class = "{{obj.statusInputMP}}"/></td>
 			<td class={{obj.statusMF}}> {{obj.mfinal}} </td>
 		</tr>	
 	</table>					

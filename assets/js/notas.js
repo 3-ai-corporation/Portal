@@ -48,7 +48,31 @@
         }; */
 	
 	});
-	
+		var mudarCorNotas = function(){
+				if(aluno[i].nota1 < 6){
+					alunos[i].statusNota1 = 'danger';
+					alunos[i].statusInputNota1 = 'input_danger'; 
+				}
+				else if(aluno[i].nota2 < 6){
+					alunos[i].statusNota2 = 'danger';
+					alunos[i].statusInputNota2 = 'input_danger';  
+				}
+				else if(aluno[i].nota1 >= 6){
+					if(i % 2 != 0){
+						alunos[i].statusLinha = 'info';
+						alunos[i].statusNota1 = 'info';
+						alunos[i].statusInputNota1 = 'input_info';
+					}
+				}
+				else if(aluno[i].nota2 >= 6){
+					if(i % 2 == 0){
+						alunos[i].statusLinha = 'info';
+						alunos[i].statusNota2 = 'info';
+						alunos[i].statusInputNota2 = 'input_info';
+					}
+				}
+			
+		}
 	
 		var generateNotas = function(){
 			for (var i = 0; i < alunos.length; i++){
