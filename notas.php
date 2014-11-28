@@ -18,7 +18,7 @@
 		
 	<!-- notas -->	
 <article ng-controller="NotasCtrl">	
-		<tr ng-repeat="obj in appCtrl.alunos" class="{{obj.statusLinha}}" >
+		<tr ng-repeat="notas in notasList" class="{{obj.statusLinha}}" >
 			<td>{{obj.numero}}</td>
 			<td>{{obj.matricula}}</td>
 			<td>{{obj.nome}}</td>

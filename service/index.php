@@ -7,6 +7,7 @@ require_once 'controller/ProfessoresController.php';
 require_once 'controller/AlunosController.php';
 require_once 'controller/TemposController.php';
 require_once 'controller/DiasLetivosController.php';
+require_once 'controller/NotasController.php';
 
 \Slim\Slim::registerAutoloader();
 
