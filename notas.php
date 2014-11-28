@@ -1,5 +1,16 @@
 <section ng-app="notasModule">
-<article class="quadroNotas" ng-controller="AppController as appCtrl">
+
+<section id="calculoMedia" ng-controller="RbuttonController as RController" >
+	<section>
+		<span style="color:black;font-size:1.2em;"> Cálculo da Média: </span>
+		<form style="margin-top: 15px;">
+			<input type="Radio" Name="Operacao" Value="Soma" style="margin-left: 5px;">Somatória</input>
+			<input type="Radio" Name="Operacao" Value="MediaAritm" style="margin-left: 5px;">Média aritmética</input>
+		</form>
+	</section>
+</section>
+
+<article class="quadroNotas" ng-controller="AppController as appCtrl" style="margin-top: 15px;">
 
 	<!-- tabela -->
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
@@ -13,12 +24,10 @@
 			<th>MP</th>
 			<th>Paralela</th>
 			<th>MF</th>
-		</tr>
-</article>		
+		</tr>		
 		
 	<!-- notas -->	
-<article ng-controller="NotasCtrl">	
-		<tr ng-repeat="notas in notasList" class="{{obj.statusLinha}}" >
+		<tr ng-repeat="obj in appCtrl.alunos" class="{{obj.statusLinha}}" >
 			<td>{{obj.numero}}</td>
 			<td>{{obj.matricula}}</td>
 			<td>{{obj.nome}}</td>
@@ -28,22 +37,9 @@
 			<td class={{obj.statusM}}>{{obj.mparcial}}</td>
 			<td class={{obj.statusMP}}><input maxlength="4" onkeypress="return isNumberKey(event)" value="{{obj.mparalela}}" class = "{{obj.statusInputMP}}"/></td>
 			<td class={{obj.statusMF}}> {{obj.mfinal}} </td>
-		</tr>
-</article>	
+		</tr>	
 	</table>					
-
-
-<!-- <section id="calculoMedia" ng-controller="RbuttonController as RController" style="float:right;">
-	<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
-	<div style="color:black;">
-		<tr class="warning">
-			<th style="width:50px;"> <input value="(AV1)"/></th>
-		</tr>
-		<tr>
-			<button type="button"> OK </button>
-		</tr>
-	</div>	
-</section> -->
+</article>
 
 </section>
 

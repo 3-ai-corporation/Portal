@@ -28,14 +28,14 @@ class NotasController {
 		return $retorno;
 	}
 
-	public function create ($notas){
+	/* public function create ($notas){
 		//if(AvaliacoesController.create($avalicacao)){
 			$notas = $this->object_to_array($notas);
 			$notas = NotasModel::create($notas);
 		
 			return $notas->to_array();
 		//}
-	}
+	}  */
 	
 	public function update ($notas){
 		$model = NotasModel::find($notas['id']);
