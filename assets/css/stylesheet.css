@@ -332,28 +332,28 @@ input[type="radio"] {
 }
 
 .buttonAtivado {
-	background-color: #008ACC;	
+    background-color: #008ACC;
 }
 
 .buttonAtivado:hover {
-	background-color: #26627f;
+    background-color: #26627f;
 }
 
-.buttonAtivado:active {	
-	background-color: #003853;
+.buttonAtivado:active {
+    background-color: #003853;
 }
 
 .buttonDesativado {
-		background-color: #CCCCCC;
- 		list-style: none;
-		color: white;
-	
+    background-color: #CCCCCC;
+    list-style: none;
+    color: white;
 }
 
 .buttonDesativado:hover {
-	background-color: #CCCCCC;
+    background-color: #CCCCCC;
 }
 
 .buttonDesativado:active {
-	background-color: #CCCCCC;
+    background-color: #CCCCCC;
 }
+
