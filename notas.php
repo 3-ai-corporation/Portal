@@ -3,40 +3,12 @@
 <section id="calculoMedia" ng-controller="RbuttonController as RController" >
 	<section>
 		<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
-		<form>
-			<input name="fid_1" id="fid_1" disabled value="">
+		<form style="margin-top: 15px;">
+			<input type="Radio" Name="Operacao" Value="Soma" style="margin-left: 5px;">Somatória</input>
+			<input type="Radio" Name="Operacao" Value="MediaAritim" style="margin-left: 5px;">Média aritmética</input>
 		</form>
 	</section>
 	
-	<section style="color:black; margin-top: 10px; margin-left: 5px;" ng-controller="ColumnController as colCtrl">
-		<button ng-repeat="av in colCtrl.lstColAvs" text="{{av.title}}" class="btnAvs"/>
-	</section>
-	
-	<section style="color:black; margin-top: 10px; margin-left: 5px;" ng-controller="OperationButtonControlle as OpController">
-		<button id="soma" ng-click="OpController.soma()">
-			<img src="assets/img/soma.png"/>
-		</button>
-		<button id="subtracao" ng-click="OpController.subtracao()">
-			<img src="assets/img/subtracao.png"/>
-		</button>
-		<button id="multiplicacao" ng-click="OpController.multiplicacao()">
-			<img src="assets/img/multiplicacao.png"/>
-		</button>
-		<button id="divisao" ng-click="OpController.divisao()">
-			<img src="assets/img/divisao.png"/>
-		</button>
-		<button id="radiciacao" ng-click="OpController.radiciacao()">
-			<img src="assets/img/radiciacao.png"/>
-		</button>
-		<button id="parent_abre" ng-click="OpController.parent_abre()">
-			<img src="assets/img/parent_abre.png"/>
-		</button>
-		<button id="parent_fecha" ng-click="OpController.parent_fecha()">
-			<img src="assets/img/parent_fecha.png"/>
-		</button>
-		<button id="limpar">Limpar
-		</button>
-	</section>
 </section>
 
 <section class="quadroNotas" ng-controller="AppController as appCtrl" style="margin-top: 15px;">

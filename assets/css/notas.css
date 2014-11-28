@@ -96,6 +96,6 @@ a.tooltips span> input{
     border-color: transparent;
 }
 
-input[type="text"]:disabled {
+input[type="text"]:readonly {
      background: #dddddd;
  } 
