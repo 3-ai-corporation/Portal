@@ -1,4 +1,4 @@
-
+var Ids_pegar = { IdSerie: 1, IdBimestre: 1, IdCurso: 1, IdMateria:1};
 function IniciarSelecao()
 {
 	Ids_pegar.IdSerie = 1 ;
@@ -14,7 +14,8 @@ function Selected_Serie()
 
 function Selected_Materia()
 {
-	Ids_pegar.IdMateria = 1;		
+	Ids_pegar.IdMateria = 1;
+
 }
 
 function Selected_Curso()
