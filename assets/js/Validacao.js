@@ -240,7 +240,7 @@ function ValidarEsqueceuSenha(user, mail)
 				  else
 				  {
 					showAlert('erro', 'Matrícula ou e-mail incorreto!');
-			      }       
+			      }           
 				}
 				});	
 			}
