@@ -210,8 +210,11 @@ function validar(user,pass){
 	}
 }
 
-function ValidarEsqueceuSenha(matricula, email)
+function ValidarEsqueceuSenha(user, mail)
 {
+    var matricula = user;
+	var email = mail;
+	
 	if(matricula == "" && email == ""){
 	   showAlert('error','Preencha todos os campos!');
 	}
@@ -226,35 +229,19 @@ function ValidarEsqueceuSenha(matricula, email)
 				var usuario;
 				$.ajax(
 				{
-					type:"GET",
-					url: '/service/EsqueceuSenha/' + matricula + '/' + email,
-					success: function(data) {
-						usuario = JQuery.parseJSON(data);
-						if(usuario)
-						{
-							showAlert('erro', 'enviou');
-							/*var usual;
-							$.ajax(
-							{
-								type:"GET",
-								url: '/sevice/retonar_email/' + matricula,
-								success: function(data)
-								{
-									usual = JQuery.parseJSON(data);
-									if(usual)
-									{
-										//mandar e-mail
-										alert("Verifique o código enviado para o seu email");
-										window.location.href = "Confirmacao_Senha.php";
-									}
-								}
-							});*/
-						}
-						else
-						{
-							showAlert('erro', 'Matrícula ou e-mail incorreto');
-						}
-					}
+				type:"GET",
+				url: 'service/EsqueceuSenha/' + matricula + '/' + email,
+				success: function(data) {
+				usuario = jQuery.parseJSON(data);
+				  if(usuario)
+				  {
+					showAlert('erro', 'O e-mail foi enviado com sucesso!');
+				  }
+				  else
+				  {
+					showAlert('erro', 'Matrícula ou e-mail incorreto!');
+			      }
+				}
 				});	
 			}
 		}
