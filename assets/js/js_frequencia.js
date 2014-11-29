@@ -27,7 +27,7 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 );
 lol = function()
 {
- ng.chamaraulas();
+ //ng.chamaraulas();
 };
 frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	var 
