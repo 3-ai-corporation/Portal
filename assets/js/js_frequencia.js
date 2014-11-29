@@ -11,20 +11,24 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 		{
 			ng.chamaraulas();
 		};
-
-	  alert(String(Ids_pegar[ "IdSerie" ]));
+//alert(String(Ids_pegar[ "IdSerie" ]));
 		ng.chamaraulas = function(){ 
+					
 			aj.get('service/temposAula').success(function (data) { 
 				ng.aulaList = data;
 				
-			}); 
+			});
+ 
 		};	
 		
 		ng.init();
 			
 	}
 );
-
+lol = function()
+{
+ ng.chamaraulas();
+};
 frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	var 
 		$ = jQuery,
