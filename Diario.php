@@ -1,67 +1,77 @@
+<?php
+session_start();
+
+if(! isset($_SESSION['ematricula']))
+{
+    header('location:index.php');
+}
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
-	<head>
-		<meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
-		<link type="text/css" rel="stylesheet" href="assets/css/stylesheet_Menu.css"/> <!-- CSS do Diário -->
-		<link type="text/css" rel="stylesheet" href="assets/css/stylesheet.css"/> <!-- CSS do Diário -->
-		<link type = "text/css" rel = "stylesheet"  href = "assets/css/stylesheetPlano.css"/> <!-- CSS da aba 'Plano de aula' -->
-		<link type="text/css" rel="stylesheet" href="assets/css/tabstyle.css"/> <!-- CSS das abas -->
-		<link rel = "stylesheet" type="text/css" href="assets/css/notas.css"/> <!-- CSS da aba 'Notas' -->
-		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
-		<script type="text/javascript" src="assets/js/angular.js"></script>
-		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="assets/js/desabilitandoComponentes.js"></script>
-    	<script src="assets/js/angular.js"></script>
-		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
-		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
-		<script type="text/javascript" src="assets/js/button-selection.js"></script>
-		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
-		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
-		<script type="text/javascript" src="assets/js/Tempo.js"></script>
-		<script type="text/javascript" src = "assets/angular/angular-route.min.js"></script>
-		<script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Os arquivos notas.js, app.js e frequencia.js estão unidos neste 'modulos.js' -->
+    <head>
+        <meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
+        <link type="text/css" rel="stylesheet" href="assets/css/stylesheet_Menu.css"/> <!-- CSS do Diário -->
+        <link type="text/css" rel="stylesheet" href="assets/css/stylesheet.css"/> <!-- CSS do Diário -->
+        <link type = "text/css" rel = "stylesheet"  href = "assets/css/stylesheetPlano.css"/> <!-- CSS da aba 'Plano de aula' -->
+        <link type="text/css" rel="stylesheet" href="assets/css/tabstyle.css"/> <!-- CSS das abas -->
+        <link rel = "stylesheet" type="text/css" href="assets/css/notas.css"/> <!-- CSS da aba 'Notas' -->
+        <link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
+        <script type="text/javascript" src="assets/js/angular.js"></script>
+        <script type="text/javascript" src="assets/angular/angular.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="assets/js/desabilitandoComponentes.js"></script>
+        <script src="assets/js/angular.js"></script>
+        <script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
+        <script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
+        <script type = "text/javascript" src = "assets/js/ApoioFreq.js"></script>
+        <script type="text/javascript" src="assets/js/button-selection.js"></script>
+        <script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
+        <script type="text/javascript" src="assets/js/tabs_old.js"></script>
+        <script type="text/javascript" src="assets/js/Tempo.js"></script>
+        <script type="text/javascript" src = "assets/angular/angular-route.min.js"></script>
+        <script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Os arquivos notas.js, app.js e frequencia.js estão unidos neste 'modulos.js' -->
         <script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
-		<script type="text/javascript" src="assets/angular/docs/components/jquery-1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
-		<link rel="stylesheet" type="text/css" href="assets/angular/docs/components/bootstrap-3.1.1/css/bootstrap.min.css" />
-		<title>Diário Escolar</title>
+        <script type="text/javascript" src="assets/angular/docs/components/jquery-1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
+        <link rel="stylesheet" type="text/css" href="assets/angular/docs/components/bootstrap-3.1.1/css/bootstrap.min.css" />
+        <title>Diário Escolar</title>
     </head>
-    <body onload="highlightAE(); desativandoChecks(); criandoOpcoes(); setFiltroVisible(true); beginTabs();
-	                desativandoButtonsCurso(document.getElementById('checkPrimeiro')); desativandoButtonsBimestres();">
+    <body onload="highlightAE(); desativandoChecks(); criandoOpcoes(); setFiltroVisible(true);
+            beginTabs(); desativandoButtonsCurso(document.getElementById('checkPrimeiro'));
+            desativandoButtonsBimestres(); IniciarSelecao();">
         <div id = "main">
+            <?php
+            include ("menu.php")
+            ?>
+
+            <div id = "filtro">
                 <?php
-                    include ("menu.php")
+                include("turmaFiltro.php")
                 ?>
 
-                <div id = "filtro">
+                <div id = "etapa">
                     <?php
-                        include("turmaFiltro.php")
+                    include("bimestres.php")
                     ?>
 
-                    <div id = "etapa">
-                        <?php
-                            include("bimestres.php")
-                        ?>
-
-                        <?php
-                            include("disciplinas.php")
-                        ?>
-                    </div>
-
-                    <div id="planoaula-exportar" class="modelDialog" ng-controller="ExportController as export">
                     <?php
-                        include ("planoExportar.php")
+                    include("disciplinas.php")
                     ?>
-                    </div>
-
                 </div>
 
-                <?php
-                    include ("toggler.php")
-                ?>
+                <div id="planoaula-exportar" class="modelDialog" ng-controller="ExportController as export">
+                    <?php
+                    include ("planoExportar.php")
+                    ?>
 
+                    </div>
+                    <?php
+                    include ("toggler.php")
+                    ?>
+
+                </div>
                 <div id="tabContainer">
                     <div id="tabs">
                         <ul>
@@ -72,23 +82,25 @@
                         <a id="tabExportar" href="#planoaula-exportar">Exportar</a>
                     </div>
                     <div id="tabscontent">
-                      <div class="tabpage" id="tabpage_1">
-                        <?php
+                        <div class="tabpage" id="tabpage_1">
+                            <?php
                             include ("frequencia.php")
-                        ?>
-                      </div>
-                      <div class="tabpage" id="tabpage_2" >
-                        <?php
+                            ?>
+                        </div>
+                        <div class="tabpage" id="tabpage_2" >
+                            <?php
                             include ("notas.php")
-                        ?>
-                      </div>
-                      <div class="tabpage" id="tabpage_3" >
-                        <?php
+                            ?>
+                        </div>
+                        <div class="tabpage" id="tabpage_3" >
+                            <?php
                             include ("planoTabela.php")
-                        ?>
-                      </div>
+                            ?>
+                        </div>
                     </div>
                 </div>
+            </div>
         </div>
-	</body>
+    </body>
 </html>
+

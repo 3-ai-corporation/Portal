@@ -3,7 +3,7 @@
 </div>					
 <div id = "etapaOpcoes">
 	<ul>
-		<li id = "btnUm" class = "buttonCursoSelected buttonCursoBasic buttonEtapaClicked" onclick="highlight('btnUm', ['btnDois', 'btnTres', 'btnQuatro','btnRec'], '');">
+		<li id = "btnUm" class = "buttonCurso buttonCursoBasic buttonEtapaClicked" onclick="highlight('btnUm', ['btnDois', 'btnTres', 'btnQuatro','btnRec'], '');">
 				<h4>1</h4>								
 		</li>
 		<li id = "btnDois" class = "buttonCurso buttonCursoBasic buttonEtapaClicked" onclick="highlight('btnDois', ['btnUm', 'btnTres', 'btnQuatro','btnRec'], '');">

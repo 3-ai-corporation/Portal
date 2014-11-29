@@ -2,7 +2,6 @@
  * Created by AnaKa on 24/10/2014.
 */
 
-//Criando um array estático (Como se o webservice - php - tivesse retornado esses valores);
 var materia = [];
 materia[0] = {};
 materia[0]['ae'] = [];
@@ -22,12 +21,10 @@ materia[2]['ai'] = ['LPIII', 'ccc'];
 materia[2]['am'] = [];
 materia[2]['at'] = ['CD'];
 
-//Criando uma função que tem como parâmetros 'série' e 'turma', retornando disciplina;
 var getMateriasByTurma = function(s, c){
     return materia[s][c];
 };
 
-//pegar o ano selecionado, o curso selecionado. Pegar o vetor de matéria e verificar se o array é vazio ou não.
 var desativandoChecks = function(){
     var vazio = true;
 
@@ -106,5 +103,47 @@ var desativandoButtonsCurso = function(serie) {
     else {
         var turma = document.getElementById('btnAT');
         turma.className = "buttonDesativado";
+    }
+};
+
+var desativandoButtonsBimestres = function(){
+
+    bimestreAtualID = 1;
+
+    switch (bimestreAtualID){
+        case 1:
+            var btnBim01 = document.getElementById('btnUm');
+            var btnBim02 = document.getElementById('btnDois');
+            var btnBim03 = document.getElementById('btnTres');
+            var btnBim04 = document.getElementById('btnQuatro');
+            var btnBim05 = document.getElementById('btnRec');
+            btnBim01.className = btnBim01.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
+            btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+            btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+            btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+        case 2:
+            var btnBim02 = document.getElementById('btnDois');
+            var btnBim03 = document.getElementById('btnTres');
+            var btnBim04 = document.getElementById('btnQuatro');
+            var btnBim05 = document.getElementById('btnRec');
+            btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
+            btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+            btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+        case 3:
+            var btnBim03 = document.getElementById('btnTres');
+            var btnBim04 = document.getElementById('btnQuatro');
+            var btnBim05 = document.getElementById('btnRec');
+            btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
+            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+            btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+        case 4:
+            var btnBim04 = document.getElementById('btnQuatro');
+            var btnRec = document.getElementById('btnRec');
+            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
+            btnRec.className = btnRec.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
+        case 5:
+        default:
     }
 };
