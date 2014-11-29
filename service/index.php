@@ -40,5 +40,15 @@ $app->get('/temposAula',function() use ($aulascontroller) {
 $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
 });
-
+//serviço que retorna o email do usuário através da matrícula
+$app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
+{
+    echo json_encode($pcontroller->getEmail($matricula));
+});
+$app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
+    echo json_encode($pcontroller->login($matricula,$senha));
+});
+$app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
+    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));
+});
 $app->run();
