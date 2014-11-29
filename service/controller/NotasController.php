@@ -1,6 +1,5 @@
 <?php
 
-require 'vendor/autoload.php';
 require_once 'model/NotasModel.php';
 //require 'AvaliacoesController.php';
 
@@ -57,7 +56,7 @@ class NotasController {
 			}
 		}
 		
-		return $Class
+		return $Class;
 	}
 	
 	function getConn()

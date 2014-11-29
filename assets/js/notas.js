@@ -3,15 +3,29 @@
 	
 	app.controller('AppController', function(){
 		var calculoMedia = '(AV1)';
+		var 
+		$ = jQuery, 
+		ng = $scope,
+		aj = $http ;
 			
 		this.alunos = alunos;
-		//generateNotas();
+		
+		ng.init = function(){
+			ng.read();
+		};
+
+		ng.read = function(){
+			aj.get('service/notas').success(function(data){
+				ng.notasList = data;
+			});		
+		};
+
 		setmediaparcial();
-		//generateParalelas();
 		setmediafinal(1);
 		arredondar();
 		setStatus();
 		carlos();
+		ng.init();
 	});
 
 	
@@ -43,29 +57,8 @@
                 return false;
             }
         };
-
-        /* this.setTooltip = function (value) {
-            this.selectedAv = value;
-        }; */
-	
 	});
-	
-	
-		/* var generateNotas = function(){
-			for (var i = 0; i < alunos.length; i++){
-				alunos[i].nota1 = Math.floor((Math.random() * 9)) + 1.75;
-				alunos[i].nota2= Math.floor((Math.random() * 9)) + 1.75;
-			}
-		};
-		
-		var generateParalelas = function(){
-			for (var i = 0; i < alunos.length; i++){
-				if (alunos[i].mparcial < 6) {
-					alunos[i].mparalela= Math.floor((Math.random() * 9)) + 1.75;
-				}
-			}
-		}; */
-		
+			
 		var arredondar = function(){
 			for (var i = 0; i < alunos.length; i++){
 				if ((alunos[i].mfinal - Math.floor(alunos[i].mfinal)) >= 0.25 && ((alunos[i].mfinal - Math.floor(alunos[i].mfinal)) <= 0.5)) {
@@ -79,16 +72,16 @@
 		};
 	
 		var setmediaparcial = function(value){
-				 for (i = 0; i < alunos.length; i++){
+			for (i = 0; i < alunos.length; i++){
 					
-					alunos[i].mparcial = alunos[i].nota1;
+				alunos[i].mparcial = alunos[i].nota1;
 					
-					if (alunos[i].mparcial >= 6) {
-						alunos[i].mfinal = alunos[i].mparcial;
-						alunos[i].mparalela = null;
-					}
+				if (alunos[i].mparcial >= 6) {
+					alunos[i].mfinal = alunos[i].mparcial;
+					alunos[i].mparalela = null;
+				}
 					
-				}	
+			}	
 			
 		};
 	

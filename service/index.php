@@ -44,7 +44,7 @@ $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
 });
 
-$app->get('/notas', function() use ($ncontroller)) {
+$app->get('/notas', function() use ($ncontroller) {
     echo json_encode($ncontroller->retrieveNotas(33));
 });
 
@@ -65,8 +65,9 @@ $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($p
  	echo json_encode($pcontroller->teste());
  });
 
-$app->get('/notas', function() use ($ncontroller)) {
-    echo json_encode(&ncontroller->retrieveNotas(33));
+$app->get('/notas', function() use ($ncontroller) {
+    echo json_encode($ncontroller->retrieveNotas(33));
+});
 
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	

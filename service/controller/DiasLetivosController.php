@@ -82,6 +82,4 @@ class DiasLetivosController
 		}
 		return $Class;
 	}
-	}
-
 }
