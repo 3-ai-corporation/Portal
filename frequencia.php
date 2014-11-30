@@ -10,7 +10,7 @@
 	<label id="freq_curso" class="dados_cabecalho"> Curso: Informática </label>
 	<label id="freq_aulas" class="dados_cabecalho"> Aulas no mês: </label>
 
-	<select >
+	<select>
 		<option ng-repeat="aula in aulaList" class="dados_cabecalho">Aula {{aula.numero_dia}} - {{aula.datas}}</option>		
 	</select>
 

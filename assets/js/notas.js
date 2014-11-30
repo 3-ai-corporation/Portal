@@ -1,65 +1,32 @@
-(function(){ 
-	var app = angular.module('Notas', ['ngRoute']);
+	var notasModule = angular.module('notasModule', ['ngRoute']);
 	
-	app.controller('AppController', function(){
-		var calculoMedia = '(AV1)';
+	notasModule.controller('NotasCtrl', function($scope, $http){
 		var 
 		$ = jQuery, 
 		ng = $scope,
-		aj = $http ;
-			
+		aj = $http;
+		var calculoMedia = '(AV1)';
 		this.alunos = alunos;
-		
-		ng.init = function(){
-			ng.read();
-		};
-
-		ng.read = function(){
-			aj.get('service/notas').success(function(data){
-				ng.notasList = data;
-			});		
-		};
-
 		setmediaparcial();
 		setmediafinal(1);
 		arredondar();
 		setStatus();
 		carlos();
-		ng.init();
-	});
-
 	
-	app.controller('ColumnController', function(){
-		this.lstColAvs = [{title:"AV1", value:"10"}];
+	ng.init = function(){
+		ng.read();
+		ng.alunosList = alunos;
+	};
 
-        this.setColumn = function(){
-			// this.column = this.column +1;
-			if ((this.lstColAvs.length ) < 10) {
-				var newAv = {};
-				newAv.title = "AV" + (this.lstColAvs.length + 1);
-                newAv.value = 10;
-				this.lstColAvs.push(newAv);
-			}
-		};
-		
-		this.unsetColumn = function(){
-			if ((this.lstColAvs.length ) > 1) {
-				this.lstColAvs.pop();
-			}
-		};
+	ng.read = function(){
+		aj.get('service/notas').success(function(data){
+			ng.notasList = data;
+		});		
+	};
 
-        this.selectedAv = '';
-
-        this.isSet = function(value){
-            if (value.equals(this.selectedAv)){
-                return true;
-            }else{
-                return false;
-            }
-        };
-	});
-			
-		var arredondar = function(){
+	ng.init();
+ 
+	var arredondar = function(){
 			for (var i = 0; i < alunos.length; i++){
 				if ((alunos[i].mfinal - Math.floor(alunos[i].mfinal)) >= 0.25 && ((alunos[i].mfinal - Math.floor(alunos[i].mfinal)) <= 0.5)) {
 					alunos[i].mfinal= Math.floor(alunos[i].mfinal) + 0.5; 
@@ -110,7 +77,7 @@
 		
 		this.isSet = function(value){
 			return value === this.button;
-			};
+		};
 			
 		var carlos = function(){
 			alunos[4].status = 'active';
@@ -128,7 +95,7 @@
 			alunos[4].mparalela = 0.0;
 			alunos[4].mparcial = 0.0;
 			alunos[4].mfinal = 0.0;
-		}
+		};
 	
 		var setStatus = function(){
 			for (i = 0; i<28; i++){
@@ -187,42 +154,45 @@
 			}
 		};
 	
-	var alunos = [
-	{ numero: 1, matricula: 120802, nome: 'AMANDA COSTA CUNHA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 2, matricula: 120376, nome: 'ANA CLARA ALBUQUERQUE MARQUES',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 3, matricula: 110045, nome: 'ANA KAROLINY MACHADO MACEDO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: ' ', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 4, matricula: 120398, nome: 'CAMILA VALENTE SMITH',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 5, matricula: 120206, nome: 'CARLOS ADRIANO LIMA DOS SANTOS',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 6, matricula: 120385, nome: 'CAROLINA DA ROCHA REIS',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 7, matricula: 120384, nome: 'EVERSON COSTA DANTAS',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 8, matricula: 120381, nome: 'GABRIEL PEREIRA DA COSTA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 9, matricula: 120393, nome: 'GIOVANNA OLIVEIRA DA SILVEIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 10, matricula: 120382, nome: 'HAYDÊ CRISTHINE DE ALMEIDA MACHADO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 11, matricula: 120390, nome: 'HELOISA RIBEIRO ALVES',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 12, matricula: 120807, nome: 'IVO MACHADO DE SOUZA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 13, matricula: 120394, nome: 'JONATAS RODRIGUES REIS',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 14, matricula: 10076, nome: 'JONATHAN MAIA FERREIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 15, matricula: 120387, nome: 'JULIANA CASTRO DA SILVA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 16, matricula: 120392, nome: 'JULIANY RODRIGUES RAIOL',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 17, matricula: 120373, nome: 'LUAN SILVA SEMINARIO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 18, matricula: 120378, nome: 'MAX WILLIAMS NOGUEIRA BATISTA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 19, matricula: 120379, nome: 'NATHALIA LARISSA SOUZA DE OLIVEIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 20, matricula: 120834, nome: 'ODILOMAR REBELO ROCHA JUNIOR',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 21, matricula: 120827, nome: 'OLAVO PONTES SANTANA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 22, matricula: 120388, nome: 'OLGA DE SÁ LEÃO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', status: ' '},
-	{ numero: 23, matricula: 110051, nome: 'PATRICIA DE PAULA BARROS MORAES',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 24, matricula: 120389, nome: 'RÚBEN JOZAFÁ SILVA BELÉM',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 25, matricula: 120374, nome: 'SERGILLAM BARROSO OLIVEIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 26, matricula: 120801, nome: 'THIAGO SANTOS FIGUEIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 27, matricula: 120391, nome: 'TIMOTEO FONSECA SANTOS',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
-	{ numero: 28, matricula: 120380, nome: 'YASMIM GABRIELLA DOS SANTOS LIBORIO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '}
-	];
-
-})(); 
-
-function isNumberKey(evt){
+});
+		
+ function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
     if (charCode > 31 && (charCode != 46 &&(charCode < 48 || charCode > 57)))
         return false;
     return true;
-}
+}; 
+
+	notasModule.controller('ColumnController', function($scope, $http){
+	var 
+		$ = jQuery, 
+		ng = $scope,
+		aj = $http;
+		this.lstColAvs = [{title:"AV1", value:"10"}];
+
+        this.setColumn = function(){
+			this.column = this.column +1;
+			if ((this.lstColAvs.length ) < 10) {
+				var newAv = {};
+				newAv.title = "AV" + (this.lstColAvs.length + 1);
+                newAv.value = 10;
+				this.lstColAvs.push(newAv);
+			}
+		};
+		
+		this.unsetColumn = function(){
+			if ((this.lstColAvs.length ) > 1) {
+				this.lstColAvs.pop();
+			}
+		};
+
+        this.selectedAv = '';
+
+        this.isSet = function(value){
+            if (value.equals(this.selectedAv)){
+                return true;
+            }else{
+                return false;
+            }
+        };
+	});
