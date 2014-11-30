@@ -1,7 +1,11 @@
 <?php
 
+require 'vendor/autoload.php';
 require_once 'model/NotasModel.php';
 //require 'AvaliacoesController.php';
+
+//library\Slim\Slim::registerAutoloader();
+//$app = new library\Slim\Slim(array('templates.path' => 'templates'));
 
 class NotasController {
 
@@ -53,6 +57,19 @@ class NotasController {
 		
 		return $Class
 	}
+	
+	function getConn()
+	{
+		return new PDO('mysql:host=db4free.net:3306;dbname=fn3ai2014portal','fn3ai2014portal','#6tRkX6`VRz<Yu_?SbfzqD+vB#U5KKn9',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+	}
+
+	public function getNotasByAvID($avaliacaoId)
+	{
+		$stmt = getConn()->query("SELECT notas FROM tb_notas WHERE tb_notas.avaliacao_id = ".$avaliacaoId);
+		$notas = $stmt->fetchAll(PDO::FETCH_OBJ);
+		return $notas;
+	}
+
 }
 
 ?>
