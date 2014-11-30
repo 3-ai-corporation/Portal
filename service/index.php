@@ -17,7 +17,7 @@ $pcontroller = new ProfessoresController;
 $alunocontroller = new AlunosController;
 $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
-$bimestrescontroller = new BimestresController;
+$bimcontroller = new BimestresController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
@@ -25,7 +25,6 @@ $bimestrescontroller = new BimestresController;
 $app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
-
 $app->get('/notify-recados',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
 });
@@ -49,15 +48,19 @@ $app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
     echo json_encode($pcontroller->login($matricula,$senha));
 });
+$app->get('/teste',function() use ($pcontroller) {
+    echo json_encode($pcontroller->teste());
+});
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));
 });
-
-$app->get('/Bimestres/:data',function($date) use ($bimestrescontroller,$app) {   
-    //$data = new ActiveRecord\DateTime('2014-03-27 03:04:05') ;
-    echo json_encode($bimestrescontroller->retrieve($date));
+//Chamada no bd, por meio de um método controller;
+//Get e uma função Slim, pedindo2 parãmetros:1 - string com endereço do http....
+//2-função que conrreponde à outra função do doc. controller.
+$app->get('/bimestres/:data', function($data) use ($bimcontroller){
+    echo json_encode($bimcontroller->retrieve($data));
 });
-
-
-
+$app->get('/bimestresall', function() use ($bimcontroller){
+    echo json_encode($bimcontroller->retrieve_all());
+});
 $app->run();
