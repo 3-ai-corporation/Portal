@@ -143,7 +143,6 @@ $.ajax( {
 var desativandoButtonsBimestres = function(){
     jQuery.ajax();
     alert(bimestreAtualID);
-    //bimestreAtualID = 1;
     switch (bimestreAtualID){
         case 1:
             var btnBim01 = document.getElementById('btnUm');

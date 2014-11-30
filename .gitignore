@@ -4,3 +4,7 @@ Diario.php
 Diario.php
 service/controller/DiasLetivosController.php
 service/index.php
+service/controller/BimestresController.php
+service/controller/BimestresController.php
+turmaFiltro.php
+service/index.php
