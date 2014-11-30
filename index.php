@@ -18,6 +18,7 @@
 <head>
 	<meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
 	 <script src = "assets/js/Validacao.js"></script>
+    <script src = "assets/js/ApoioFreq.js.js"></script>
 	 <script src = "assets/js/jquery-2.1.1.js"></script>	
      <link type="text/css" rel="stylesheet" href="assets/css/stylesheet_TelaLogin.css">
 	
@@ -63,7 +64,7 @@
 									<input class="txtEsqueceu" type="email" name="email" value="" onkeydown = "IsMail($email);"/>
 								</div>
 								<div id="iSubmit">
-									<input class="btnEnviar" value="Enviar" onclick = "ValidarEsqueceuSenha(ematricula.value, email.value)" type="button" style="width: 100px; height: 25px" />
+									<input class="btnEnviar" value="Enviar" onclick = "ValidarEsqueceuSenha(ematricula.value, email.value); lol();" type="button" style="width: 100px; height: 25px" />
 								</div>
 							</div>	
 						</li>
