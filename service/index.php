@@ -7,6 +7,7 @@ require_once 'controller/ProfessoresController.php';
 require_once 'controller/AlunosController.php';
 require_once 'controller/TemposController.php';
 require_once 'controller/DiasLetivosController.php';
+require_once 'controller/BimestresController.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -16,6 +17,7 @@ $pcontroller = new ProfessoresController;
 $alunocontroller = new AlunosController;
 $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
+$bimestrescontroller = new BimestresController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
@@ -51,4 +53,12 @@ $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroll
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));
 });
+
+$app->get('/Bimestres/:data',function($date) use ($bimestrescontroller,$app) {   
+    //$data = new ActiveRecord\DateTime('2014-03-27 03:04:05') ;
+    echo json_encode($bimestrescontroller->retrieve($date));
+});
+
+
+
 $app->run();

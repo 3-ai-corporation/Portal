@@ -2,6 +2,7 @@
  * Created by AnaKa on 24/10/2014.
 */
 
+
 var materia = [];
 materia[0] = {};
 materia[0]['ae'] = [];
@@ -20,6 +21,8 @@ materia[2]['ae'] = [];
 materia[2]['ai'] = ['LPIII', 'ccc'];
 materia[2]['am'] = [];
 materia[2]['at'] = ['CD'];
+
+var bimestreAtualID;
 
 var getMateriasByTurma = function(s, c){
     return materia[s][c];
@@ -106,10 +109,42 @@ var desativandoButtonsCurso = function(serie) {
     }
 };
 
+var getTodayDate = function() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd
+    } 
+
+    if(mm<10) {
+        mm='0'+mm
+    } 
+    //alert(yyyy+'-'+mm+'-'+dd);alert("oi");
+    //alert(yyyy+'-'+mm+'-'+dd + ' 00:00:00');
+    //var date = new DateTime(yyyy+'-'+mm+'-'+dd + ' 00:00:00');
+    //alert(date);
+    //alert(yyyy+'-'+mm+'-'+dd + ' 00:00:00');
+    return yyyy+'-'+mm+'-'+dd + ' 00:00:00';// mm+'/'+dd+'/'+yyyy;
+}
+
+$.ajax( { 
+    type:'Get',
+    url:'service/Bimestres' + '/' +getTodayDate() /* + '/' + '2014-03-27 03:04:05'*/,
+    data:{date: getTodayDate()},
+    async: false,
+    success:function(data) {
+        alert(data);
+        bimestreAtualID = data;        
+    }    
+});
+
 var desativandoButtonsBimestres = function(){
-
-    bimestreAtualID = 1;
-
+    jQuery.ajax();
+    alert(bimestreAtualID);
+    //bimestreAtualID = 1;
     switch (bimestreAtualID){
         case 1:
             var btnBim01 = document.getElementById('btnUm');
