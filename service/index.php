@@ -29,7 +29,6 @@ $app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
 $app->get('/notify-recados',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
 });
-
 $app->get('/notify-alunos',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'alunos'));
 });

@@ -60,7 +60,6 @@ var desativandoChecks = function(){
 };
 
 var desativandoButtonsCurso = function(serie) {
-    var vazio = true;
     var serieSelecionada;
 
     if (serie.id === 'checkPrimeiro')
