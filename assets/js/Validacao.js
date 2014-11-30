@@ -1,4 +1,3 @@
-
 function validar_matricula(matricula){
 	 var regra = /^[0-9]+$/;
 	 if (!matricula.value.match(regra) && matricula.value != "") {
@@ -24,14 +23,15 @@ function validar_matricula2(matricula){
 		matricula.value = matricula.value.substr(0,6);
 	 }
 }
+
 /**
  *Created by Yasmim Libório on 24/10/2014
  * validação que verifica o tamanho de caracteres na senha
 */
 function validar_senha(senha){
-	if(senha.value.length > 10){
+	if(senha.value.length > 9){
 		showAlert('error', 'A senha tem no máximo 10 dígitos');
-		senha.value = senha.value.substr(0, 10);
+		senha.value = senha.value.substr(0, 9);
 	}
 
 }
@@ -55,6 +55,88 @@ function LoginInput_OnKeyDown(event, user, pass) {
 	}
 }
 
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz com que o login também possa ser efetuado ao ser pressionada a tecla Enter.
+*/
+function ConfirmarInput_OnKeyDown(event, codigo, pass, confirmPass) {
+if (event.keyCode == 13) {
+		validarSenha(codigo, newpass, ConfirmNewPass);
+	}
+}
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz a validação do codigo digitado pelo usuario 
+*/
+function validar_codigo(codigo){
+		return true;
+}
+
+/**
+*Created by Yasmim Libório on 27/11/2014
+ * Método que faz a validação da nova senha digitada pelo usuario 
+*/
+
+function validar_novaSenha(novaSenha){
+ //fazer a funcao
+}
+
+/**
+*Created by Yasmim Libório on 27/11/2014
+ * Método que faz a validação da nova senha digitada pelo usuario 
+*/
+
+function validar_confirmacaoSenha(confirmarSenha){
+ //fazer a funcao
+}
+
+
+
+
+
+/**
+ *Created by Yasmim Libório on 06/11/2014
+ * Método que faz a validação do email
+*/
+
+function IsMail($email){
+    $er = "/^(([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}){0,1}$/";
+    if (preg_match($er, $email)){
+    return true;
+    } else {
+	
+    return false;
+    }
+	
+	/*$email = "email@dominio.com.br";
+    usar na validação de verificação do email do usuario
+    if (isMail($email)){
+    echo "É um e-mail válido.";
+     else {
+    showAlert('error', 'A senha tem no máximo 10 dígitos');
+    }
+	}*/
+	
+	
+}
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz a validação do codigo, nova senha e confirmacao da nova senha digitado pelo usuario 
+*/
+function validarSenha(codigo, newpass, ConfirmNewPass){
+
+
+
+
+}
+
+
+
+
+
+
 function Value(number)
 {
     var aux = "";
@@ -68,78 +150,117 @@ function Value(number)
     }
     number.value = aux;
 }
-
+//showAlert('error','Matricula ou Senha incorreta!');
 function validar(user,pass){
-	var matricula = ["123456", "123456"];
-	var senha = ["masterkey", "professor"];
 	var mtrForm = user;
 	var passForm = pass;
-	var teste = false;
 	var regra = /^[0-9]+$/;
 	
 	if(mtrForm === "" && passForm === ""){
-			showAlert('error','Preencha todos os campos!');
+		showAlert('error','Preencha todos os campos!');
+	}
+	else
+	{
+		if(mtrForm === ""){
+			showAlert('error','Digite a matrícula!');
 		}
-		else
-		{
-			if(mtrForm === ""){
-				showAlert('error','Digite a matrícula!');
+		//verificar
+		else{	
+		  if(mtrForm.length < 6){
+			 showAlert('error','Formato da matrícula incorreta!');
+		  }
+		  else
+		  {
+			if(passForm === ""){
+			  showAlert('error','Digite a senha!');
 			}
-			else{ 
-			   if(!teste){	
-				   if(mtrForm.length < 6){
-					showAlert('error','Formato da matrícula incorreta!');
-				   }
-				   else
-				   {
-						if(passForm === ""){
-							showAlert('error','Digite a senha!');
+			else
+			{
+			    if (!mtrForm.match(regra)) {
+					showAlert('error', 'Somente números na matrícula!');
+					validar_matricula(mtrForm.value);
+				}
+				else{
+				   /*var usuario;
+				   $.ajax({
+					type: "GET",
+					url: 'service/Login/' + mtrForm + '/' + passForm,
+					success: function(data) {
+					usuario = jQuery.parseJSON(data);
+						if(usuario){	
+							$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
+									.done(function (data) {
+										if ( data == 'ok' )
+											window.location.href = 'TelaInicial.php';
+									});
+						}else{
+							showAlert('error', 'Matrícula ou senha incorreta!');
+						}
+					}		    
+				  });*/
+				  $.post( "Login.php?acao=logar", { ematricula: mtrForm  })
+									.done(function (data) {
+										if ( data == 'ok' )
+											window.location.href = 'TelaInicial.php';
+									});
+				}
+			}                                    
+		  }
+		}	
+	}
+}
+
+function ValidarEsqueceuSenha(matricula, email)
+{
+	if(matricula == "" && email == ""){
+	   showAlert('error','Preencha todos os campos!');
+	}
+	else{
+		if(matricula == ""){
+			showAlert('error','Digite a matrícula!');
+		}else{
+			if(email == ""){
+			   showAlert('error','Digite o email!');
+			}
+			else{
+				var usuario;
+				$.ajax(
+				{
+					type:"GET",
+					url: '/service/EsqueceuSenha/' + matricula + '/' + email,
+					success: function(data) {
+						usuario = JQuery.parseJSON(data);
+						if(usuario)
+						{
+							showAlert('erro', 'enviou');
+							/*var usual;
+							$.ajax(
+							{
+								type:"GET",
+								url: '/sevice/retonar_email/' + matricula,
+								success: function(data)
+								{
+									usual = JQuery.parseJSON(data);
+									if(usual)
+									{
+										//mandar e-mail
+										alert("Verifique o código enviado para o seu email");
+										window.location.href = "Confirmacao_Senha.php";
+									}
+								}
+							});*/
 						}
 						else
 						{
-						
-							
-							if((matricula[0] === mtrForm) && (senha[0] === passForm))
-							{
-								window.location.href = "TelaInicial.php";
-							}
-							else
-							{
-								if((matricula[1] === mtrForm) && (senha[1] === passForm))
-								{
-									window.location.href = "TelaInicial.php";
-								}
-								else
-								{
-									if (!mtrForm.match(regra)) {
-										 showAlert('error', 'Somente números na matrícula!');
-										 validar_matricula(mtrForm.value);
-										 teste = true;
-									 }
-									 else{
-										var tot = false;
-										for(var uss = 0; uss < matricula.length; uss++)
-										{
-											if((matricula[uss] === mtrForm) && (senha[uss] === passForm))
-											{
-												tot = true;
-											}
-										}
-										
-										if(!tot)
-										{								
-											showAlert('error','Matricula ou Senha incorreta!');
-										}
-									}
-								}
-							}
+							showAlert('erro', 'Matrícula ou e-mail incorreto');
 						}
-						
-				   }
-				}
+					}
+				});	
 			}
-		}	
+		}
+	}
 }
+
 function showAlert2(type,message) {
 		$('#alert2').addClass('alert-' + type).html( message ).fadeIn();
 		setTimeout("closeAlert(2)", 4000);

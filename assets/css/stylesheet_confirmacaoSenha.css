@@ -1,0 +1,154 @@
+* {
+	font-family: Segoe UI;
+}
+
+body{
+    background-image: url(imgs/beg.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;	
+	background-size: 100%;
+	
+	
+}
+
+input[type=submit]:hover{
+    background:#006699;
+    color:#ffffff;
+}
+
+#DadosSenha
+{
+	border:2px solid #D4D4D4;
+	display:block;	
+	position:relative;
+	width:25%;
+	height:60%;
+	padding-bottom:2%;
+	margin:45.5px auto;
+	background-color:#FFF;
+	min-height:60%;
+	min-width:25%;
+	margin-bottom:0%;
+	
+}
+
+#iNovaSenha
+{
+	margin-bottom:0%;
+	margin-top:10%;
+}
+
+#iSubmiter
+{
+	text-align:center;
+}
+
+
+
+#iCodigo{
+	position : relative;
+	top : 20px;
+	padding : 0px;
+	margin : 0px;
+}
+
+
+#iSubmiter
+{
+	text-align:center;
+	margin-top:10%;
+}
+
+#alert {
+	display: none; 
+	height: 4%;
+	overflow: hidden;
+	position: absolute;
+	z-index: 999999;
+	padding: 2%;
+	color: #fff;
+	width : 96%;
+	top : 0%;
+}
+
+#alert2 {
+	display: none; 
+	height: 7%;
+	overflow: hidden;
+	position: absolute;
+	z-index: 999999;
+	padding: 2%;
+	color: #fff;
+	width : 96.8%;
+	top : 9%;
+	left : 0%;
+}
+
+.imgLogo img
+{
+	width:100%;
+}
+
+.imgLogo {
+	width: 80%;
+	margin: 30px auto;
+}
+
+.listItem li
+{
+	list-style-type:none;
+}
+
+.lblConfirmar_Senha
+{
+	border: 1px solid #FFFFFF;
+	background-color: #008ACC;
+	padding : 0.5%;
+	color: #FFFFFF;
+	
+}
+
+.txtConfirmar_Senha
+{
+	width: 98%;
+}
+
+
+.listItem
+{
+    padding:0;
+	size : 350px 450px;
+	
+}
+
+.listItem  li div
+{
+	width:100%;
+	margin:auto;
+}
+
+.listItem  li
+{
+	width:80%;
+	margin:auto;
+}
+
+
+
+.btnConfirmar 
+{
+	margin-top:0%;
+	width: 50%;
+	color: #FFFFFF;
+	background-color:#008ACC;
+	border-style:none;
+}
+
+.alert-error {
+	background-color: #e74c3c;
+}
+
+.alert-success {
+  background-color: #2ecc71;
+}

@@ -1,3 +1,12 @@
+<?php
+	session_start();
+
+	if(! isset($_SESSION['ematricula']))
+	{
+		header('location:index.php');
+	}
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,6 +25,8 @@
     	<script src="assets/js/angular.js"></script>
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
 		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
+		<script type = "text/javascript" src = "assets/js/ApoioFreq.js"></script>
+		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
@@ -61,7 +72,6 @@
                 <?php
                     include ("toggler.php")
                 ?>
-
                 <div id="tabContainer">
                     <div id="tabs">
                         <ul>

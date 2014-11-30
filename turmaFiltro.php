@@ -19,23 +19,25 @@
 	<div id="turma_figura">
 		<div id = "turmaOpcoes">
 			<ul>
-				<li id = "btnAE" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlightAE();" criandoOpcoes();">
+				<li id = "btnAE" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado"
+                    onclick="highlightAE();criandoOpcoes();">
 					<h4>AE</h4>
 				</li>
-				<li id = "btnAI" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlight('btnAI', ['btnAE', 'btnAM', 'btnAT'], 'informatica-icon.png'); criandoOpcoes();">
+				<li id = "btnAI" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado"
+                    onclick="highlight('btnAI', ['btnAE', 'btnAM', 'btnAT'], 'informatica-icon.png');criandoOpcoes();">
 					<h4>AI</h4>
 				</li>
 				<li id = "btnAM" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlight('btnAM', ['btnAE', 'btnAI', 'btnAT'], 'mecatronica-icon.png');criandoOpcoes();">
 					<h4>AM</h4>
 				</li>
-				<li id = "btnAT" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlight('btnAT', ['btnAE', 'btnAM', 'btnAI'], 'telecomunicacao-icon.png');criandoOpcoes();">
+				<li id = "btnAT" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado"
+                    onclick="highlight('btnAT', ['btnAE', 'btnAM', 'btnAI'], 'telecomunicacao-icon.png');criandoOpcoes();">
 					<h4>AT</h4>
 				</li>
 			</ul>					
-		</div>				
-		
+		</div>
 		<div id = "figuraTurma">
 			<h2 id="turmaLabel"></h2>
 		</div>
 	</div>
-</div>
+</div>]

@@ -1,7 +1,8 @@
+
 // Início do módulo de plano de aula
 var planoModule = angular.module('planoModule',[]);
 planoModule.controller('GridController',function() {
-	this.aulas = aulas;
+	//this.aulas = aulas;
 	this.ativarData = function(data) {
 		for(i = 0; i < this.aulas.length; i++) {
 			if(data == this.aulas[i].dt) {

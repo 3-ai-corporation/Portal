@@ -25,6 +25,39 @@ class ProfessoresController {
         return $retorno;
     }
 
+	public function login($matricula,$senha){
+		$professor = UsuariosModel::all(array('conditions' => array('matricula = ? AND senha = ?',$matricula,$senha)));
+		if($professor != null){
+		  return true;
+		}
+		else{
+		  return false;
+		}
+	}
+	
+	public function EsqueceuSenha($matricula,$email){
+		$usuario = UsuariosModel::all(array('conditions' => array('matricula = ? AND email = ?',$matricula,$email)));
+		if($usuario != null){
+		  return true;
+		}
+		else{
+		  return true;
+		}
+	}
+	
+	public function teste() {
+        $professores = ProfessoresModel::find('all');
+        $retorno = array();
+        foreach($professores as $key => $value ) {
+			$usuario = UsuariosModel::find($value->matricula);
+            $obj['matricula'] = $usuario->matricula;
+            $obj['senha'] = $usuario->senha;
+			$obj['email'] = $usuario->email;
+			
+            $retorno[] = $obj;
+        }
+        return $retorno;
+    }
     // Função responsável por retornas as turmas lecionadas por um professor
     public function retrieveTurmas($matriculaProfessor, $returnDisciplina) {
         // Vai retornar os registros da tabela tb_professor_turmas de acordo com a Matricula do professor
@@ -106,4 +139,32 @@ class ProfessoresController {
         }
 	   return $retorno;
     }
+	
+	public function retrieveSenha($matricula, $email) {
+		$esqueceu = UsuariosModel::find("all", array("conditions" => "matricula = ? AND email = ? ",$matricula, $email));
+		
+		if($esqueceu != null)
+		{
+			return $esqueceu->nome;
+		}
+		else
+		{
+			return "";
+		}
+    }
+	
+	public function changePassword($matricula, $senha)
+	{
+		$change = UsuariosModel::find("all", array("conditions" => "matricula = ?",$matricula));
+		if($change != null)
+		{
+			$change->senha = $senha;
+			$change->update_attributes($change);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
