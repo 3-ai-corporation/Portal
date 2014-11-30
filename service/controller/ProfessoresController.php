@@ -41,7 +41,7 @@ class ProfessoresController {
 		  return true;
 		}
 		else{
-		  return true;
+		  return false;
 		}
 	}
 	
@@ -153,18 +153,15 @@ class ProfessoresController {
 		}
     }
 	
-	public function changePassword($matricula, $senha)
+	public function getEmail($matricula)
 	{
-		$change = UsuariosModel::find("all", array("conditions" => "matricula = ?",$matricula));
-		if($change != null)
-		{
-			$change->senha = $senha;
-			$change->update_attributes($change);
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		$usuario = UsuariosModel::all(array("conditions" => array('matricula = ?',$matricula)));
+		$retorno = Array();
+		foreach($usuario as $key => $value ) {
+            $obj['email'] = $value->email;
+
+            $retorno[] = $obj;
+        }
+		return $retorno;
 	}
 }
