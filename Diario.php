@@ -58,6 +58,7 @@
 	
 	<body onload="highlightAE(); desativandoChecks(); desativandoBotoes();criandoOpcoes();setFiltroVisible(true);beginTabs();IniciarSelecao();">
 		<div id = "main">
+			<p id="ids_freqd" hidden>1111</p>
 			<?php 
 				include ("menu.php")
 			?>
