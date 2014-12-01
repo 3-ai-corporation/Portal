@@ -10,6 +10,7 @@ require_once 'controller/DiasLetivosController.php';
 require_once 'controller/BimestresController.php';
 require_once 'controller/FrequenciasController.php';
 require_once 'controller/CursosController.php';
+require_once 'controller/TurmasController.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -22,6 +23,7 @@ $aulascontroller = new DiasLetivosController;
 $bimcontroller = new BimestresController;
 $frequenciascontroller = new FrequenciasController;
 $cursoscontroller = new CursosController;
+$turmascontroller  = new TurmasController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
@@ -42,11 +44,15 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 });
 
 $app->get('/temposAula',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieveByIds(1,33,2));
+    echo json_encode($aulascontroller->retrieveByIds(2,33,2));
 });
 
 $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
+});
+
+$app->get('/cabecalhoFreq', function() use ($turmascontroller){
+	echo json_encode($turmascontroller->retrieveCabecalho(2,33));
 });
 
 $app->get('/filtrarTempos',function() use ($temposcontroller) {
@@ -102,6 +108,12 @@ $app->get('/teste',function() use ($pcontroller) {
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
 });
+
+$app->get('/temposAula/', 'updateTempo'); 
+function updateTempo( $tempo ){ 
+	echo json_encode($temposcontroller->update( $tempo ));
+}
+
 //Chamada no bd, por meio de um método controller;
 //Get e uma função Slim, pedindo2 parãmetros:1 - string com endereço do http....
 //2-função que conrreponde à outra função do doc. controller.
@@ -110,5 +122,8 @@ $app->get('/bimestres/:data', function($data) use ($bimcontroller){
 });
 $app->get('/bimestresall', function() use ($bimcontroller){
     echo json_encode($bimcontroller->retrieve_all());
+});
+$app->get('/sendMail/:nome/:email/:codigo', function($nome, $email,$codigo) use ($pcontroller){
+    echo json_encode($pcontroller->sendMail($nome, $email,$codigo));
 });
 $app->run();
