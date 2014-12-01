@@ -39,13 +39,13 @@
 			<tbody class = "freq_alunos" >
 				<tr id="freqRow" class = "freq_row" ng-repeat="aluno in alunosList"> 
 					
-					<td> {{$index+1}} </td>
+					<td> 1 </td>
 					
 					<td> {{aluno.matricula}} </td>							
 					
 					<td> {{aluno.nome}} </td>
 					
-					<td id="tempos"> 
+					<td id="tempos" ng-repeat="tempo in temposList"> 
 						<!--<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in freqCtrl.objetos.tempos_dia">
 							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED 
 							ng-controller="checkcontroller as checkCtrl" ng-click="checkCtrl.alterarCheckbox(obj, this)"> {{tempos+"º"}}
