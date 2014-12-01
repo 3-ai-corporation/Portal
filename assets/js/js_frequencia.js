@@ -36,6 +36,27 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 	}
 );
 
+frequenciaModule.controller('TemposCtrl', function($scope, $http) {
+	var 
+		$ = jQuery,
+		ng = $scope,
+		aj = $http
+	;
+
+	ng.init = function(){
+		ng.read();
+	};
+
+	ng.read = function(){
+		aj.get('service/filtrarTempos').success(function(data){
+			ng.temposList = data;
+		});	
+	};
+
+	ng.init();
+
+});
+
 frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	var 
 		$ = jQuery,

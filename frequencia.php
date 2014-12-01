@@ -45,12 +45,10 @@
 					
 					<td> {{aluno.nome}} </td>
 					
-					<td id="tempos" ng-repeat="tempo in temposList" > 
-						<!--<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in freqCtrl.objetos.tempos_dia">
-							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED 
-							ng-controller="checkcontroller as checkCtrl" ng-click="checkCtrl.alterarCheckbox(obj, this)"> {{tempos+"º"}}
-							</section> -->
-						tempos :D
+					<td id="tempos" ng-controller="TemposCtrl" > 
+						<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in temposList">
+							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED > {{tempos.indice+"º"}}
+						</section>
 					</td>
 					<td id="num_faltas">0</td>	
 					<td id="faltas_bim">  1 </td>	

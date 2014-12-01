@@ -46,6 +46,7 @@ $app->get('/notify-alunos',function() use ($pcontroller) {
 $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory($login,'portal'));
 });
+
 $app->get('/temposAula',function() use ($aulascontroller) {
     echo json_encode($aulascontroller->retrieveByIds($bimestre,$turma,$materia));
 });
@@ -54,8 +55,8 @@ $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos($turma));
 });
 
-$app->get('/filtrarTempos',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieveByIds(1));
+$app->get('/filtrarTempos',function() use ($temposcontroller) {
+    echo json_encode($temposcontroller->retrievebyDay(1));
 });
 
 $app->get('/frequenciasAula',function() use ($frequenciascontroller) {
