@@ -108,6 +108,12 @@ $app->get('/teste',function() use ($pcontroller) {
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
 });
+
+$app->get('/temposAula/', 'updateTempo'); 
+function updateTempo( $tempo ){ 
+	echo json_encode($temposcontroller->update( $tempo ));
+}
+
 //Chamada no bd, por meio de um método controller;
 //Get e uma função Slim, pedindo2 parãmetros:1 - string com endereço do http....
 //2-função que conrreponde à outra função do doc. controller.
