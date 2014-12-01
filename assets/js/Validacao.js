@@ -68,17 +68,6 @@ if (event.keyCode == 13) {
 
 /**
 *Created by Yasmim Libório on 24/11/2014
- * Método que faz a validação do codigo digitado pelo usuario 
-*/
-function validar_codigo(codigo){
-		return true;
-}
-//djsaokd
-
-
-
-/**
-*Created by Yasmim Libório on 24/11/2014
  * Método que faz a validação do codigo, nova senha e confirmacao da nova senha digitado pelo usuario 
 */
 function validarSenha(matricula, novaSenha, senha){
@@ -310,3 +299,33 @@ function sendMail(matricula,email) {
 			return foi;
 		}		    
 	  });
+}
+
+function getCookie(cname) { //função do W3 Schools que retorna o cookie a partir do nome. Ver mais em: http://www.w3schools.com/js/js_cookies.asp
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz a validação do codigo digitado pelo usuario 
+*/
+function validar_codigo(codigo){
+	var code = getCookie("recoveryCode");
+    if (code !== "") { //quer dizer que o COOKIE do código está preenchido
+        if(codigo == parseInt(code)){
+			document.cookie = "recoveryCode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+			return true;
+		}else{
+			return false;
+		}
+    } else {
+       showalert('erro','O código não existe ou expirou. Por favor, solicite novo envio e insira o código dentro de 15 minutos.');
+    }
+}
