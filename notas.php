@@ -21,6 +21,7 @@
 			<th>MP</th>
 			<th>Paralela</th>
 			<th>MF</th>
+
 		</thead>
 	<article ng-controller = "notasCtrl">
 		<tbody ng-repeat="aluno in alunos" class="{{obj.statusLinha}}">
