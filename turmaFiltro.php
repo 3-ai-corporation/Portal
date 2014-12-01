@@ -32,8 +32,7 @@
 					<h4>AT</h4>
 				</li>
 			</ul>					
-		</div>				
-		
+		</div>
 		<div id = "figuraTurma">
 			<h2 id="turmaLabel"></h2>
 		</div>

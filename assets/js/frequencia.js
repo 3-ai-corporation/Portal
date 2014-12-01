@@ -1,17 +1,14 @@
 (function() { //função de escopo global, todo o js é uma função
 	var frequenciaModule = angular.module('frequencia', ['ngRoute']); //cria um módulo e associa a aplicacao
 		// rotas: como numerospaces do C#
-	
+
 	frequenciaModule.controller('frequenciacontroller', function() {
 		dias[2].lst_alunos = alunos;
 		this.objetos = dias[2];
 	});
-	
-	
 	frequenciaModule.controller('checkcontroller', function() {
 		this.alterarCheckbox = function(obj, elem, elemParent) { 
-			var celulaFaltas = document.getElementById('num_faltas'); 			
-			
+			var celulaFaltas = document.getElementById('num_faltas');
 			if(obj.faltas > 0) { 
 				if(!elem.checked) {  
 					obj.faltas = obj.faltas+1;
@@ -19,9 +16,9 @@
 					celulaFaltas = obj.faltas;
 				} 
 				else{  
-					elem.checked = false;
-				   obj.faltas = obj.faltas-1;
-				   celulaFaltas = obj.faltas;
+				    elem.checked = false;
+				    obj.faltas = obj.faltas-1;
+				    celulaFaltas = obj.faltas;
 				} 
 			} 
 			else {
@@ -48,8 +45,6 @@
 				}
 			}
 		};
-		
-		
 	});
 	
 	

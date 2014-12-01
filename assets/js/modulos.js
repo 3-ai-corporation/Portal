@@ -191,7 +191,6 @@ notasModule.controller('ColumnController', function(){
 			}	
 		
 	};
-
 	
 	var setmediafinal = function(value){
 		if (value === 1){
@@ -365,9 +364,8 @@ var alunos = [
 					celulaFaltas = obj.faltas;
 				} 
 			}
-		};
-				
-		});
+		};			
+	});
 		/* this.changeColor = function(obj) {
 			var linhaAluno = document.getElementById('freqRow'); 	
 			if(obj.faltas!= 0) {

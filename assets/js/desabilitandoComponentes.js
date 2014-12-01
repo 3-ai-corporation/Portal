@@ -25,7 +25,7 @@ materia[2]['at'] = ['CD'];
 //Criando uma função que tem como parâmetros 'série' e 'turma', retornando disciplina;
 var getMateriasByTurma = function(s, c){
     return materia[s][c];
-}
+};
 
 //pegar o ano selecionado, o curso selecionado. Pegar o vetor de matéria e verificar se o array é vazio ou não.
 var desativandoChecks = function(){
@@ -57,7 +57,7 @@ var desativandoChecks = function(){
         }
         vazio = true;
     }
-}
+};
 
 var desativandoButtonsCurso = function(serie) {
     var vazio = true;
@@ -107,29 +107,4 @@ var desativandoButtonsCurso = function(serie) {
         var turma = document.getElementById('btnAT');
         turma.className = "buttonDesativado";
     }
-}
-
-(function(){
-    //Crinado um módulo e associando a aplicação;
-    var desabilitandoBotoesModule = angular.module('desabilitandoBotoes', ['ngRoute']);
-
-    desabilitandoBotoesModule.controller('desabilitandoBotoesController', function(){
-
-    });
-});
-
-var bimestres = [];
-bimestres[1] = ['2010', '01/02/2010', '01/04/2010'];
-bimestres[2] = ['2010', '02/04/2010', '02/06/2010'];
-bimestres[3] = ['2010', '03/06/2010', '03/08/2010'];
-bimestres[4] = ['2010', '04/08/2010', '04/10/2010'];
-bimestres[5] = ['2010', '05/10/2010', '10/10/2010'];
-
-//Criando método responsável por desabilitar os botões de "Bimestres" posteriores ao que o professor se encontra;
-//Logo, se a data atual for anterior à considerada data de intervalo do bimestre atual, os bimestres anteriores
-//têm que ter seus buttons desativados;
-var desativandoButtonsBimestres = function(indice){
-    bimestres[indice];
-
-
-}
+};

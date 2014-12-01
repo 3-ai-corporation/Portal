@@ -1,3 +1,4 @@
+
 angular.module('startScreen', ['ui.bootstrap']);
 
 angular.module('startScreen').controller('notifController', function ($scope, $modal, $log) {

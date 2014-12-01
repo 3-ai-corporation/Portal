@@ -6,7 +6,6 @@ function IniciarSelecao()
 	Ids_pegar.IdCurso = 1;
 	Ids_pegar.IdMateria = 1;		
 };
-
 function Selected_Serie(serie)
 {
 	 if (serie.id === 'checkPrimeiro')
