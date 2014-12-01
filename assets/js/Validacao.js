@@ -312,10 +312,6 @@ function getCookie(cname) { //função do W3 Schools que retorna o cookie a part
     return "";
 }
 
-/**
-*Created by Yasmim Libório on 24/11/2014
- * Método que faz a validação do codigo digitado pelo usuario 
-*/
 function validar_codigo(codigo){
 	var code = getCookie("recoveryCode");
     if (code !== "") { //quer dizer que o COOKIE do código está preenchido
@@ -323,7 +319,7 @@ function validar_codigo(codigo){
 			document.cookie = "recoveryCode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 			return true;
 		}else{
-			return false;
+			return false;              
 		}
     } else {
        showalert('erro','O código não existe ou expirou. Por favor, solicite novo envio e insira o código dentro de 15 minutos.');
