@@ -23,12 +23,6 @@ $bimcontroller = new BimestresController;
 $frequenciascontroller = new FrequenciasController;
 $cursoscontroller = new CursosController;
 
-//parâmetros
-$turma = 33;
-$materia = 5;
-$bimestre = 1;
-$login = 123456;
-
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
@@ -37,22 +31,22 @@ $app->post('/plano-aula',function($id) use ($temposcontroller) {
 });
 
 $app->get('/notify-recados',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory($login,'recados'));
+    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
 });
 
 $app->get('/notify-alunos',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory($login,'alunos'));
+    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'alunos'));
 });
 $app->get('/notify-portal',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory($login,'portal'));
+    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
 
 $app->get('/temposAula',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieveByIds($bimestre,$turma,$materia));
+    echo json_encode($aulascontroller->retrieveByIds(1,33,2));
 });
 
 $app->get('/alunosTurma',function() use ($alunocontroller) {
-    echo json_encode($alunocontroller->retrieveAlunos($turma));
+    echo json_encode($alunocontroller->retrieveAlunos(33));
 });
 
 $app->get('/filtrarTempos',function() use ($temposcontroller) {

@@ -1,8 +1,7 @@
 var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']);
 
 
-frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
-	{
+frequenciaModule.controller('TemposAulaCtrl', function($scope, $http) {
 		var 
 			$ = jQuery,
 			ng = $scope,
@@ -33,8 +32,7 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 		};
 			
 		ng.init();
-	}
-);
+});
 
 frequenciaModule.controller('TemposCtrl', function($scope, $http) {
 	var 
@@ -91,19 +89,16 @@ frequenciaModule.controller('checkcontroller', function() {
 			if(!elem.checked) {  
 				obj.faltas = obj.faltas+1;
 				elem.checked = true;
-				celulaFaltas = obj.faltas;
 			} 
 			else{  
 				elem.checked = false;
 			   obj.faltas = obj.faltas-1;
-			   celulaFaltas = obj.faltas;
 			} 
 		} 
 		else {
 			if(!elem.checked) { 
 				elem.checked = true;
 				obj.faltas = obj.faltas+1;
-				celulaFaltas = obj.faltas;
 			} 
 		}
 	};			

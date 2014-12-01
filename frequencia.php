@@ -45,7 +45,7 @@
 					
 					<td> {{aluno.nome}} </td>
 					
-					<td id="tempos" ng-controller="TemposCtrl" > 
+					<td id="tempos" ng-controller="TemposCtrl"> 
 						<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in temposList">
 							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED > {{tempos.indice+"º"}}
 						</section>

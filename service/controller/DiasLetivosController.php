@@ -8,10 +8,6 @@ require_once 'model/MateriaTurmasModel.php';
 
 class DiasLetivosController
 {
-<<<<<<< HEAD
-=======
-	
->>>>>>> origin/master
 	public function retrieveByIds ($id_bim,$id_turma,$id_materia)
 	{
 		/*inicio e fim do bimestre*/
@@ -58,12 +54,14 @@ class DiasLetivosController
 		//pesquisa de materia_turma_id
 		$sel_materia_turma = 'tb_materia_turmas.id AS id';
 		$materiaTurma = MateriaTurmasModel::find('all',array('select'=>$sel_materia_turma,'conditions'=>array('tb_materia_turmas.materia_id = ? AND tb_materia_turmas.turma_id = ?',$id_materia,$id_turma)));
+				
+		
 		
 		foreach($materiaTurma as $key => $value){
 			$objMateriaTurma['id'] = $value->id;
 		}
 		/*---------------------------------------*/
-	
+		
 		//pesquisa dos tempos que possuam o id de Materia_turmas pesquisado
 		$sel_tempos = 'tb_tempos.id AS id, tb_tempos.letivos_id AS dia_letivo';
 		$tempos = TemposModel::find('all',array('select'=>$sel_tempos,'conditions'=>array('tb_tempos.materia_turma_id = ?',$objMateriaTurma['id'])));
