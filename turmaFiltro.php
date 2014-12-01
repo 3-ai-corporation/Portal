@@ -40,4 +40,4 @@
 			<h2 id="turmaLabel"></h2>
 		</div>
 	</div>
-</div>]
+</div>
