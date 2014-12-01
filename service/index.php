@@ -111,4 +111,7 @@ $app->get('/bimestres/:data', function($data) use ($bimcontroller){
 $app->get('/bimestresall', function() use ($bimcontroller){
     echo json_encode($bimcontroller->retrieve_all());
 });
+$app->get('/sendMail/:nome/:email/:codigo', function($nome, $email,$codigo) use ($pcontroller){
+    echo json_encode($pcontroller->sendMail($nome, $email,$codigo));
+});
 $app->run();
