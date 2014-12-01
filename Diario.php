@@ -28,6 +28,7 @@
 		<script type = "text/javascript" src = "assets/angular/angular-route.min.js"></script>
 		<script type = "text/javascript" src = "assets/js/js_frequencia.js"></script>
 		<script type = "text/javascript" src = "assets/js/ApoioFreq.js"></script>
+		<script type = "text/javascript" src = "assets/js/js_simulacao.js"></script>
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>
 		<script type="text/javascript" src="assets/js/criandoBotoes.js"></script>
@@ -44,6 +45,7 @@
     <body onload="highlightAE(); desativandoChecks(); criandoOpcoes(); setFiltroVisible(true); beginTabs();
 	                desativandoButtonsCurso(document.getElementById('checkPrimeiro')); desativandoButtonsBimestres();">
         <div id = "main">
+        <p id="ids_diario" hidden>1111</p>
                 <?php
                     include ("menu.php")
                 ?>

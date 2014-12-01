@@ -165,6 +165,7 @@ class ProfessoresController {
 		{
 			return false;
 		}
+	}	
 	public function getEmail($matricula)
 	{
 		$usuario = UsuariosModel::all(array("conditions" => array('matricula = ?',$matricula)));

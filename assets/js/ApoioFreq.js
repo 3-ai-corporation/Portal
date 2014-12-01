@@ -5,7 +5,7 @@ function IniciarSelecao()
 	Ids_pegar.IdBimestre = 1;
 	Ids_pegar.IdCurso = 1;
 	Ids_pegar.IdMateria = 1;		
-};
+}
 function Selected_Serie(serie)
 {
 	 if (serie.id === 'checkPrimeiro')
@@ -16,12 +16,11 @@ function Selected_Serie(serie)
 
     if (serie.id === 'checkTerceiro')
         	Ids_pegar.IdSerie =  3;
-    		alert(String(Ids_pegar["IdSerie"]));
 }
 
 function Selected_Materia(materia)
 {
-	Ids_pegar.IdMateria = 1;
+    Ids_pegar.IdMateria = materia.value;
 }
 
 function Selected_Curso(curso)
@@ -36,13 +35,18 @@ function Selected_Curso(curso)
         	Ids_pegar.IdCurso =  3;
     if (curso.id === 'btnAT')
        	Ids_pegar.IdCurso =  4;
-       	
-    		alert(String(Ids_pegar["IdCurso"]));
 }
 
 function Selected_Bimestre(bimestre)
 {
+    if (bimestre.id === 'btnUm')
 	Ids_pegar.IdBimestre = 1;
-	alert(String(bimestre.id));
-	Ids_pegar.IdBimestre = 1;
+    if (bimestre.id === 'btnDois')
+        Ids_pegar.IdBimestre = 2;
+    if (bimestre.id === 'btnTres')
+        Ids_pegar.IdBimestre = 3;
+    if (bimestre.id === 'btnQuatro')
+        Ids_pegar.IdBimestre = 4;
+    if (bimestre.id === 'btnRec')
+        Ids_pegar.IdBimestre = 5;
 }

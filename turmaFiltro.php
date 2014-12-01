@@ -17,9 +17,9 @@
 		</form>
 	</div>			
 	<div id="turma_figura">
-		<div id = "turmaOpcoes">
+		<div id = "turmaOpcoes" ng-app="simulacaoModule" ng-controller="simulacaoCtrl">
 			<ul>
-				<li id = "btnAE" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlightAE(); criandoOpcoes();Selected_Curso(this);">
+				<li id = "btnAE" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlightAE(); criandoOpcoes();Selected_Curso(this);" ng-click="hey();">
 					<h4>AE</h4>
 				</li>
 				<li id = "btnAI" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlight('btnAI', ['btnAE', 'btnAM', 'btnAT'], 'informatica-icon.png'); criandoOpcoes();Selected_Curso(this);">
