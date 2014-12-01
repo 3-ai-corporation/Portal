@@ -169,22 +169,20 @@ class ProfessoresController {
 	{
 		$update = UsuariosModel::find($matricula);
 		if($update != null)
-		{
+		{    
 			$update->senha = $senha;
 			$update->save();
 			
 			if($this->Login($matricula, $senha))
 			{
-				$val = true;
+				return true;
 			}
 			else{
-				$val = false;
+				return false;
 			}
 		}
 		else{
-			$val = false;
+			return false;
 		}
-		
-		return $val;
 	}
 }

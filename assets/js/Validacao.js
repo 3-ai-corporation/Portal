@@ -134,7 +134,7 @@ function validarSenha(matricula, novaSenha, senha){
 								$.ajax(
 									{
 										type:"GET",
-										url: 'service/mudarSenha/' + matricula + '/' + senha,
+										url: 'service/Mudarsenha/' + matricula + '/' + senha,
 										success: function(data) {
 											usuario = jQuery.parseJSON(data);
 											if(usuario)

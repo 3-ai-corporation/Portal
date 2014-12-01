@@ -89,8 +89,7 @@ $app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
 {
 	echo json_encode($pcontroller->getEmail($matricula));
 });
-$app->get('/mudarSenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller)
-{
+$app->get('/Mudarsenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller){
 	echo json_encode($pcontroller->updateSenha($matricula, $senha));
 });
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
