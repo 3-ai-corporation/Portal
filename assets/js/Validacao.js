@@ -176,7 +176,7 @@ function ValidarEsqueceuSenha(user, mail)
 			   showAlert('error','Digite o email!');
 			}
 			else{
-				$.post( "email.php", { email: mail })
+				.post( "email.php", { email: mail })
 									.done(function (data) {
 										if ( data == 'ok' )
 										{
@@ -189,7 +189,12 @@ function ValidarEsqueceuSenha(user, mail)
 													usuario = jQuery.parseJSON(data);
 													  if(usuario)
 													  {
-														showAlert('erro', 'O e-mail foi enviado com sucesso!');
+														if(sendMail(matricula,email)){
+															showAlert('erro','Email enviado com sucesso!')
+															window.location.href = 'Confirmacao_Senha.php';
+														}else{
+															showAlert('erro','Houve problema no envio do email. Tente novamente mais tarde')
+														}
 													  }
 													  else
 													  {		  
@@ -204,7 +209,7 @@ function ValidarEsqueceuSenha(user, mail)
 										}
 				});
 			}
-		}
+		}$
 	}
 }
 
@@ -225,3 +230,26 @@ function showAlert(type,message) {
 	function closeAlert(tipo) {
 	  $('#alert' + tipo).fadeOut();
 	}
+
+function sendMail(matricula,email) {
+	int code = Math.floor((Math.random()*9999999999)+1000000000;
+
+	  $.ajax({
+		type: "GET",
+		url: 'service/sendMail/' + 'nome' + '/' +email + '/' + code,
+		success: function(data) {
+			var foi = jQuery.parseJSON(data);
+			if(foi){
+				var d = new Date();
+			    d.setTime(d.getTime() + (1000*15*60));
+			    var expires = "expires="+d.toUTCString();
+			    
+				document.cookie = "recoveryCode="+code+";"+expires;
+			}
+			return foi;
+		}		    
+	  });
+
+
+
+}
