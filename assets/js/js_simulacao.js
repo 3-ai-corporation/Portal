@@ -1,6 +1,5 @@
 var simulacaoModule = angular.module('simulacaoModule', ['ngRoute']);
 
-
 simulacaoModule.controller('simulacaoCtrl', function($scope, $http)
     {
         var
@@ -22,7 +21,6 @@ simulacaoModule.controller('simulacaoCtrl', function($scope, $http)
         ng.chamardados = function(){
             aj.get('Lists/DiasletivosList.html').success(function (data) {
                 ng.dadosList = data;
-                console.log(data);
             });
         };
         ng.comecar();

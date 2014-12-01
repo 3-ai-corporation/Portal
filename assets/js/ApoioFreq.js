@@ -4,7 +4,8 @@ function IniciarSelecao()
 	Ids_pegar.IdSerie = 1 ;
 	Ids_pegar.IdBimestre = 1;
 	Ids_pegar.IdCurso = 1;
-	Ids_pegar.IdMateria = 1;		
+	Ids_pegar.IdMateria = 1;
+    atualizar_ids();
 }
 function Selected_Serie(serie)
 {
@@ -16,11 +17,13 @@ function Selected_Serie(serie)
 
     if (serie.id === 'checkTerceiro')
         	Ids_pegar.IdSerie =  3;
+    atualizar_ids();
 }
 
 function Selected_Materia(materia)
 {
     Ids_pegar.IdMateria = materia.value;
+    atualizar_ids();
 }
 
 function Selected_Curso(curso)
@@ -35,6 +38,7 @@ function Selected_Curso(curso)
         	Ids_pegar.IdCurso =  3;
     if (curso.id === 'btnAT')
        	Ids_pegar.IdCurso =  4;
+    atualizar_ids();
 }
 
 function Selected_Bimestre(bimestre)
@@ -49,4 +53,18 @@ function Selected_Bimestre(bimestre)
         Ids_pegar.IdBimestre = 4;
     if (bimestre.id === 'btnRec')
         Ids_pegar.IdBimestre = 5;
+    atualizar_ids();
+}
+function atualizar_ids()
+{
+    var stringid = String(Ids_pegar.IdSerie) +
+	String(Ids_pegar.IdBimestre) +
+	String(Ids_pegar.IdCurso) +
+        String(Ids_pegar.IdMateria);
+    //pega o elemento html invisíviel do diario.php
+    //este elemento guarda os ids selecionados:
+	//ordem serie>bimestre>curso>materia;
+    $('#ids_diario').html(stringid);
+	indices = $('#ids_diario').html();
+    alert(indices);
 }
