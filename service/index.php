@@ -35,7 +35,7 @@ $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
 $app->get('/temposAula',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieve(1,2,1));
+    echo json_encode($aulascontroller->retrieve(1,33,5));
 });
 
 $app->get('/alunosTurma',function() use ($alunocontroller) {
