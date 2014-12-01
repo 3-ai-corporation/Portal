@@ -50,7 +50,7 @@
 							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED > {{tempos.indice+"º"}}
 						</section>
 					</td>
-					<td id="num_faltas">  1 </td>	
+					<td id="num_faltas">0</td>	
 					<td id="faltas_bim">  1 </td>	
 				</tr>
 			</tbody>

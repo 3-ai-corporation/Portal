@@ -19,7 +19,16 @@ class FrequenciasController{
 		}		
 		return $retorno;
 	}	
-
+	
+	//Função que retorna a frequencia dos alunos junto com seu numero de faltas
+	public function retrieve($bimestre, $turma){
+		
+		
+	
+	}
+	
+	
+	
 	private function object_to_array(stdClass $Class){
 		$Class = (array)$Class;
 		foreach($Class as $key => $value){

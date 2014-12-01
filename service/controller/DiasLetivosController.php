@@ -8,7 +8,10 @@ require_once 'model/MateriaTurmasModel.php';
 
 class DiasLetivosController
 {
+<<<<<<< HEAD
+=======
 	
+>>>>>>> origin/master
 	public function retrieveByIds ($id_bim,$id_turma,$id_materia)
 	{
 		/*inicio e fim do bimestre*/
@@ -92,6 +95,8 @@ class DiasLetivosController
 				$listDias[] = $objDia;
 			}
 		}
+		/*---------------------------------------------*/
+		
 		
 		//filtragem por tempos
 		$retorno = array();
