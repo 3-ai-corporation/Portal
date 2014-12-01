@@ -72,7 +72,7 @@ if (event.keyCode == 13) {
 function validar_codigo(codigo){
 		return true;
 }
-
+//djsaokd
 
 
 
