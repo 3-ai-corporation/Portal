@@ -1,5 +1,6 @@
 var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']);
 
+
 frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 	{
 		var 
@@ -15,13 +16,23 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 
 		ng.chamaraulas = function(){ 
 			aj.get('service/temposAula').success(function (data) { 
-				ng.aulaList = data;
-				
-			}); 
+				ng.aulaList = data;				
+			});  
 		};	
 		
-		ng.init();
+		ng.pegarData = function(){
+			var selectbox = document.getElementById("index").selectedIndex;
+			var selectText = document.getElementById("index").options;			
 			
+			alert("INDEX: " + selectText[selectbox].index + "  ID: " + selectText[selectbox].value);
+			
+			aj.get('service/filtrarTempos/:selectText[selectbox].value').success(function (data) { 
+			
+			});
+			
+		};
+			
+		ng.init();
 	}
 );
 
@@ -41,9 +52,15 @@ frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	ng.read = function(){
 		aj.get('service/alunosTurma').success(function(data){
 			ng.alunosList = data;
-		});		
+		});	
+
+
+		
 	};
 
 	ng.init();
 
 });
+
+
+
