@@ -34,12 +34,26 @@ class TemposController
 		$model->update_attributes($tempos);
 		return $model->to_array();
 	}
-
-	public function delete($id)
+	
+	public function retrievebyDay ($id_dia) 
 	{
-		$tempos = TemposModel::find($id);
-		return $tempos.delete();
-	}
+
+		$sel_tempos = 'tb_tempos.id AS id, tb_tempos.conteudo_previsto AS previsto, tb_tempos.conteudo_lancado AS lancado, tb_tempos.indice AS indice';
+		$tempos = TemposModel::find ('all',array('select'=>$sel_tempos,'conditions'=>array('tb_tempos.letivos_id = ?',$id_dia)));
+		$retorno = array();
+		
+		foreach($tempos as $key=>$value){
+			$objTempo['id'] = $value->id;
+			$objTempo['previsto']=$value->previsto;
+			$objTempo['lancado']=$value->lancado;
+			$objTempo['indice']=$value->indice;
+			
+			$retorno[] = $objTempo;
+		}
+		
+		return $retorno;
+	}	
+
 
 	private function object_to_array($Class)
 	{
