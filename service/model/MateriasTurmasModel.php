@@ -3,7 +3,7 @@
 require_once 'settings/config.php';
 
 class MateriasTurmasModel extends ActiveRecord\Model {
-	static $table_name = 'tb_materia_turmas';
+	static $table_name = 'tb_materias_turmas';
 	
 	static $belongs_to = array (
 	    array("MateriasModel"), array("TurmasModel")
