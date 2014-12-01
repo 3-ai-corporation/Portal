@@ -43,9 +43,7 @@ function Selected_Curso(curso)
 
 function Selected_Bimestre(bimestre)
 {
-
-
-	Ids_pegar.IdBimestre = ?;
+	Ids_pegar.IdBimestre = 1;
 	alert(String(bimestre.id));
 	Ids_pegar.IdBimestre = 1;
 }

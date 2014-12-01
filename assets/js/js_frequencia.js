@@ -19,10 +19,14 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
         };
 		ng.chamaraulas = function(){ 
 					
-			aj.get('service/temposAula').success(function (data) { 
+			/*aj.get('service/temposAula').success(function (data) {
 				ng.aulaList = data;
 				
-			});
+			});*/
+            aj.get('Lists/DiasletivosList.html').success(function (data) {
+                ng.aulaList = data;
+
+            });
  
 		};	
 		
@@ -30,11 +34,9 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 			
 	}
 );
-lol = function()
+var lol = function()
 {
- //ng.chamaraulas();
- 		frequenciaModule.start();
-    frequenciaModule.hey();
+    TemposAulaCtrl.hey();
 };
 frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	var 
