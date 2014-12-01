@@ -49,9 +49,10 @@ function validar_numero(valor){
   *		Método que faz com que o login também possa ser efetuado ao ser pressionada a tecla Enter.
   */
   
+
 function LoginInput_OnKeyDown(event, user, pass) {
 	if (event.keyCode == 13) {
-		validar(user, pass);
+		validar(user, pass);                     
 	}
 }
 
