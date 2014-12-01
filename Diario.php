@@ -30,6 +30,7 @@
 		
 		<!-- Notas -->
 		<script type = "text/javascript" src = "assets/js/notas.js"></script>
+		<script type = "text/javascript" src = "assets/js/js_notas.js"></script>
 		
 		<script type="text/javascript" src="assets/js/desabilitandoBotoes.js"></script>		
 		<script type="text/javascript" src="assets/js/button-selection.js"></script>

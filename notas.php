@@ -9,6 +9,7 @@
 		</form>
 	</section>
 </section>  -->
+
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<thead class="warning">
 			<th>#</th>
@@ -21,17 +22,18 @@
 			<th>Paralela</th>
 			<th>MF</th>
 		</thead>
-	
+	<article ng-controller = "notasCtrl">
 		<tbody ng-repeat="aluno in alunos" class="{{obj.statusLinha}}">
 				<td>{{aluno.numero}}</td>
 				<td>{{aluno.matricula}}</td>
 				<td>{{aluno.nome}}</td> 
-				<td ng-repeat="av in colCtrl.lstColAvs" class={{aluno.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="aluno.nota1" class="{{aluno.statusInputNota1}}"> </input></td>
+				<td ng-repeat="av in notasList" class={{aluno.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="aluno.nota1" class="{{aluno.statusInputNota1}}"> </input></td>
 				<td style="width: 24px"></td>
 				<td style="width: 24px"></td>
 				<td class={{aluno.statusM}}>{{aluno.mparcial}}</td>
 				<td class={{aluno.statusMP}}><input maxlength="4" onkeypress="return isNumberKey(event)" value="{{aluno.mparalela}}" class = "{{aluno.statusInputMP}}"/></td>
 				<td class={{aluno.statusMF}}> {{aluno.mfinal}} </td> 
 		</tbody> 
+		</article>
 	</table>
 </section>

@@ -2,7 +2,7 @@
 var notasModule = angular.module('notasModule', ['ngRoute']);
 
 //Para pegar notas do BD
-notasModule.controller('NotasCtrl', function($scope, $http)
+notasModule.controller('notasCtrl', function($scope, $http)
 	{
 		var 
 			$ = jQuery,

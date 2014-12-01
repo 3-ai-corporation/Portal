@@ -76,7 +76,7 @@ $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroll
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
 });
->>>>>>> master
+
 $app->run();
 
 ?>
