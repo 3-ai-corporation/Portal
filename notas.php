@@ -10,6 +10,7 @@
 	</section>
 </section>  
 
+<section class="quadroNotas" ng-controller="AppController as appCtrl" style="margin-top: 15px;">
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<thead class="warning">
 			<th>#</th>
@@ -21,7 +22,6 @@
 			<th>MP</th>
 			<th>Paralela</th>
 			<th>MF</th>
-
 		</thead>
 	<article ng-controller = "notasCtrl">
 		<tbody ng-repeat="aluno in alunos" class="{{obj.statusLinha}}">
@@ -36,5 +36,6 @@
 				<td class={{aluno.statusMF}}> {{aluno.mfinal}} </td> 
 		</tbody> 
 		</article>
-	</table>
+	</table>					
+</section>
 </section>
