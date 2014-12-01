@@ -165,6 +165,7 @@ class ProfessoresController {
 		return $retorno;
 	}
 	
+	//Atualiza a senha do banco
 	public function updateSenha($matricula, $senha)
 	{
 		$update = UsuariosModel::find($matricula);

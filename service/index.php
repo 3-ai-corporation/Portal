@@ -89,6 +89,7 @@ $app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
 {
 	echo json_encode($pcontroller->getEmail($matricula));
 });
+//Recebe os parametros e envia-os para o professor controller
 $app->get('/Mudarsenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller){
 	echo json_encode($pcontroller->updateSenha($matricula, $senha));
 });

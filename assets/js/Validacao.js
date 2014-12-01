@@ -130,6 +130,7 @@ function validarSenha(matricula, novaSenha, senha){
 						else{					
 							if(novaSenha == senha)
 							{
+								//chama a função para mudar a senha do banco com os parametros "matricula" e "senha"
 								var usuario;
 								$.ajax(
 									{
