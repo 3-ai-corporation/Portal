@@ -453,17 +453,4 @@ var diasLetivos = [
 */
 //Fim do módulo de frequência
 
-//Responsável por fazer as trocas entre módulos:
-angular.element(document).ready(function() {
-  var tabpage_1 = document.getElementById("tabpage_1");
-  angular.bootstrap(tabpage_1, ["frequenciaModule"]);
 
-  var tabpage_2 = document.getElementById("tabpage_2");
-  angular.bootstrap(tabpage_2, ["notasModule"]);
-  
-  var tabpage_3 = document.getElementById("tabpage_3");
-  angular.bootstrap(tabpage_3, ["planoModule"]);
-  
-  var planoaula_exportar = document.getElementById("planoaula-exportar");
-  angular.bootstrap(planoaula_exportar, ["planoModule"]);
-});

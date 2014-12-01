@@ -41,8 +41,8 @@
 		<!-- <script type = "text/javascript" src = "assets/js/notas.js"></script> -->
 		<!-- <script type="text/javascript" src="assets/js/app.js"></script> -->
 		<!-- <script type = "text/javascript" src = "assets/js/frequencia.js"></script> -->
-		<script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
-		
+		<!--<script type="text/javascript" src="assets/js/modulos.js"></script>  Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
+		<script type="text/javascript" src="assets/js/js_notas.js"></script>
 		<!-- Relativo ao 'toggler' -->
 		
 		<!--Relacionado ao calendário-->
