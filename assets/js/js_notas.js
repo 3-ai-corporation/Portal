@@ -15,15 +15,15 @@ notasModule.controller('NotasCtrl', function($scope, $http)
 		};
 		
 		ng.chamarNotas = function()
-		{
-		aj.get('Lists/notasList.html').success(function(data){
-			ng.alunosList = data;
-		});	
-		alert("oi");
+			{
+			aj.get('Lists/notasList.html').success(function(data){
+				ng.alunosList = data; 
+			});	
 		};
 		ng.comecar();
 	}
 );
+
 notasModule.controller('ColumnCtrl', function($scope, $http)
 	{
 		var 
@@ -64,7 +64,8 @@ notasModule.controller('ColumnCtrl', function($scope, $http)
         }; */
 	
 	}
-	);
+);
+	
 	//Responsável por fazer as trocas entre módulos:
 angular.element(document).ready(function() {
   var tabpage_1 = document.getElementById("tabpage_1");

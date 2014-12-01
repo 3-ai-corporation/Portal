@@ -1,7 +1,10 @@
 <?php
 
-require 'vendor/autoload.php';
 require_once 'model/NotasModel.php';
+require_once 'model/MateriasModel.php';
+require_once 'model/AlunosModel.php';
+require_once 'model/AvaliacoesModel.php';
+
 //require 'AvaliacoesController.php';
 
 //library\Slim\Slim::registerAutoloader();
@@ -9,30 +12,23 @@ require_once 'model/NotasModel.php';
 
 class NotasController {
 
-	public function create ($notas){
-		//if(AvaliacoesController.create($avalicacao)){
-			$notas = $this->object_to_array($notas);
-			$notas = NotasModel::create($notas);
+	//Função que retorna notas de alunos de acordo com a turma
+	public function retrieveNotas($turmaId){				
+		$join = 'JOIN tb_alunos ON tb_notas.aluno_id = tb_alunos.matricula';
+		$sel = 'tb_notas.valor AS valor, tb_alunos.matricula AS matricula';
+		$alunos = NotasModel::find('all', array('joins' => $join, 
+						'select' => $sel, 
+						'conditions' => array('tb_alunos.turma_id = ?', $turmaId),
+						'order' => 'valor'));																															
 		
-			return $notas->to_array();
-		//}
-	}
-	
-	public function retrieve ($notas){
-		$notas = NotasModel::find('all', array('order' => 'id'); 
 		$retorno = array();
-		
-		foreach($notas as $key => $value){
-			$obj['id'] = $value->id;
-			$obj['valor'] = $value->valor;
-			$obj['status'] = $value->status;
-			$obj['materia_id'] = $value->materia_id;
-			$obj['aluno_id'] = $value->aluno_id;
-			$obj['avalicacao_id'] = $value->avalicacao_id;
-			
+		foreach ($alunos as $key => $value) {
+			$obj['matricula'] = $value->matricula;
+			$obj['valor'] = $value->valor;			
 			$retorno[] = $obj;
 		}
-		return $retorno;	
+		
+		return $retorno;
 	}
 	
 	public function update ($notas){
@@ -55,7 +51,7 @@ class NotasController {
 			}
 		}
 		
-		return $Class
+		return $Class;
 	}
 	
 	function getConn()
@@ -69,7 +65,5 @@ class NotasController {
 		$notas = $stmt->fetchAll(PDO::FETCH_OBJ);
 		return $notas;
 	}
-
 }
-
 ?>
