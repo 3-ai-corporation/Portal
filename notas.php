@@ -10,7 +10,7 @@
 	</section>
 </section> -->
 
-<article class="quadroNotas" ng-controller="NotasCtrl as appCtrl" style="margin-top: 15px;">
+<article class="quadroNotas" ng-controller="NotasCtrl" style="margin-top: 15px;">
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<tr class="warning">
 			<th>#</th>
@@ -24,19 +24,18 @@
 			<th>MF</th>
 		</tr>
 	
-		<tr ng-repeat="obj in appCtrl.alunosList" class="{{obj.statusLinha}}" >
-				<td>{{obj.numero}}</td>
-				<td>{{obj.matricula}}</td>
-				<td>{{obj.nome}}</td> 
-				<td ng-repeat="notas in notasList" class={{obj.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="obj.nota1" class="{{obj.statusInputNota1}}"> </input></td>
+		<tr ng-repeat="aluno in alunosList" class="{{obj.statusLinha}}">
+				<td>{{aluno.numero}}</td>
+				<td>{{aluno.matricula}}</td>
+				<td>{{aluno.nome}}</td> 
+				<td ng-repeat="av in colCtrl.lstColAvs" class={{aluno.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="aluno.nota1" class="{{aluno.statusInputNota1}}"> </input></td>
 				<td style="width: 24px"></td>
 				<td style="width: 24px"></td>
-				<td class={{obj.statusM}}>{{obj.mparcial}}</td>
-				<td class={{obj.statusMP}}><input maxlength="4" onkeypress="return isNumberKey(event)" value="{{obj.mparalela}}" class = "{{obj.statusInputMP}}"/></td>
-				<td class={{obj.statusMF}}> {{obj.mfinal}} </td>
+				<td class={{aluno.statusM}}>{{aluno.mparcial}}</td>
+				<td class={{aluno.statusMP}}><input maxlength="4" onkeypress="return isNumberKey(event)" value="{{aluno.mparalela}}" class = "{{aluno.statusInputMP}}"/></td>
+				<td class={{aluno.statusMF}}> {{aluno.mfinal}} </td> 
 		</tr> 
-	</table>
-	
+	</table>	
 </article>
 
 </section>

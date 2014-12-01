@@ -1,0 +1,8 @@
+[{"matricula":"120378","valor":3.5},{"matricula":"110076","valor":4},{"matricula":"120388","valor":5},
+{"matricula":"120807","valor":5.5},{"matricula":"120390","valor":5.5},{"matricula":"120385","valor":5.5},
+{"matricula":"120398","valor":5.5},{"matricula":"110206","valor":5.5},{"matricula":"120391","valor":6},{"matricula":"120392","valor":6},
+{"matricula":"120380","valor":6},{"matricula":"120387","valor":6},{"matricula":"120374","valor":6},{"matricula":"120373","valor":6},
+{"matricula":"110051","valor":6},{"matricula":"120389","valor":6},{"matricula":"120393","valor":6.5},{"matricula":"120384","valor":6.5},
+{"matricula":"120382","valor":6.5},{"matricula":"120827","valor":6.5},{"matricula":"120394","valor":6.5},{"matricula":"120802","valor":7},
+{"matricula":"120834","valor":7},{"matricula":"120381","valor":7},{"matricula":"120376","valor":7.5},
+{"matricula":"110045","valor":7.5},{"matricula":"120379","valor":8},{"matricula":"120801","valor":9.5}] 

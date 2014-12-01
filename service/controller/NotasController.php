@@ -1,6 +1,10 @@
 <?php
 
 require_once 'model/NotasModel.php';
+require_once 'model/MateriasModel.php';
+require_once 'model/AlunosModel.php';
+require_once 'model/AvaliacoesModel.php';
+
 //require 'AvaliacoesController.php';
 
 //library\Slim\Slim::registerAutoloader();

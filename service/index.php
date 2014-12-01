@@ -65,27 +65,6 @@ $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($p
  	echo json_encode($pcontroller->teste());
  });
 
-$app->get('/notas', function() use ($ncontroller) {
-    echo json_encode($ncontroller->retrieveNotas(33));
-});
-
-$app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
-    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
-	echo $email;
-});
-
-$app->get('/retonar_email', function($matricula,$email,$senha) use ($pcontroller) {
-	echo json_encode($pcontroller->changePassword($matricula,$email,$senha));
-});
-
-$app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
-	echo json_encode($pcontroller->login($matricula,$senha));
-});
-
-$app->get('/teste',function() use ($pcontroller) {
-	echo json_encode($pcontroller->teste());
-});
-
 $app->run();
 
 ?>

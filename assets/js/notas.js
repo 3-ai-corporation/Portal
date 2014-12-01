@@ -15,7 +15,6 @@
 	
 	ng.init = function(){
 		ng.read();
-		ng.alunosList = alunos;
 	};
 
 	ng.read = function(){
@@ -24,7 +23,7 @@
 		});		
 	};
 
-	ng.init();
+	
  
 	var arredondar = function(){
 			for (var i = 0; i < alunos.length; i++){
@@ -143,7 +142,6 @@
 						alunos[i].statusInputMP = 'input_danger';
 					} else {
 						alunos[i].statusMP = 'active';
-						//alunos[i].statusInputMP= 'input_active';
 					}
 				}
 				
@@ -153,8 +151,10 @@
 									
 			}
 		};
+		
+	ng.init();
 	
-});
+}); 
 		
  function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
