@@ -42,7 +42,7 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 });
 
 $app->get('/temposAula',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieve(1,33,5));
+    echo json_encode($aulascontroller->retrieveByIds(1,33,5));
 });
 
 $app->get('/alunosTurma',function() use ($alunocontroller) {
