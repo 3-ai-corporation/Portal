@@ -1,5 +1,5 @@
 <section ng-app="notasModule">
-<section class="quadroNotas" ng-controller="AppController as appCtrl">
+<section class="quadroNotas" >
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<tr class="warning">
 			<th>#</th>
@@ -13,10 +13,10 @@
 			<th>MF</th>
 		</tr>
 										
-		<tr ng-repeat="obj in appCtrl.alunos" class="{{obj.statusLinha}}" >
-			<td>{{obj.numero}}</td>
-			<td>{{obj.matricula}}</td>
-			<td>{{obj.nome}}</td>
+		<tr ng-controller="AlunosCtrl" ng-repeat="aluno in alunosList" class="{{obj.statusLinha}}" >
+			<td>{{$index+1}}</td>
+			<td>{{aluno.matricula}}</td>
+			<td>{{aluno.nome}}</td>
 			<td ng-repeat="av in colCtrl.lstColAvs" class={{obj.statusNota1}}> <input maxlength="4" onkeypress="return isNumberKey(event)" type="text" ng-model="obj.nota1" class="{{obj.statusInputNota1}}"> </input></td>
 			<td style="width: 24px"></td>
 			<td style="width: 24px"></td>

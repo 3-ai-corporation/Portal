@@ -1,16 +1,36 @@
+var app = angular.module('notasModule', ['ngRoute']);
+
+notasModule.controller('AlunosCtrl', function($scope, $http) {
+	var 
+		$ = jQuery,
+		ng = $scope,
+		aj = $http
+	;
+
+	ng.init = function(){
+		ng.read();
+	};
+
+	ng.read = function(){
+		aj.get('service/alunosTurma').success(function(data){
+			ng.alunosList = data;
+		});	
+	};
+
+	ng.init();
+});
+
 (function(){ 
-	var app = angular.module('Notas', []);
+	
 	
 	app.controller('AppController', function(){
 		var calculoMedia = '(AV1)';
-		this.alunos = alunos;
 		generateNotas();
 		setmediaparcial();
 		generateParalelas();
 		setmediafinal(1);
 		arredondar();
 		setStatus();
-		carlos();
 	});
 
 	
@@ -118,24 +138,6 @@
 			return value === this.button;
 			};
 			
-		var carlos = function(){
-			alunos[4].status = 'active';
-			alunos[4].statusNota1 = 'active';
-			alunos[4].statusInputNota1 = 'input_active';
-			alunos[4].statusNota2 = 'active';
-			alunos[4].statusInputNota2 = 'input_active';
-			alunos[4].statusMP = 'active';
-			alunos[4].statusInputMP = 'input_active';
-			alunos[4].statusMF = 'active';
-			alunos[4].statusM = 'active';
-			alunos[4].statusLinha = 'active';
-			alunos[4].nota1 = 0.0;
-			alunos[4].nota2 = 0.0;
-			alunos[4].mparalela = 0.0;
-			alunos[4].mparcial = 0.0;
-			alunos[4].mfinal = 0.0;
-		}
-	
 		var setStatus = function(){
 			for (i = 0; i<28; i++){
 				if (i % 2 === 0) {
@@ -193,7 +195,7 @@
 			}
 		};
 	
-	var alunos = [
+	/*var alunos = [
 	{ numero: 1, matricula: 120802, nome: 'AMANDA COSTA CUNHA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 2, matricula: 120376, nome: 'ANA CLARA ALBUQUERQUE MARQUES',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 3, matricula: 110045, nome: 'ANA KAROLINY MACHADO MACEDO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: ' ', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
@@ -222,7 +224,7 @@
 	{ numero: 26, matricula: 120801, nome: 'THIAGO SANTOS FIGUEIRA',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 27, matricula: 120391, nome: 'TIMOTEO FONSECA SANTOS',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '},
 	{ numero: 28, matricula: 120380, nome: 'YASMIM GABRIELLA DOS SANTOS LIBORIO',nota1: 0.0 , statusNota1: '', statusInputNota1: '', nota2: 0.0, statusNota2: '', statusInputNota2: '', mparcial : 0.0, statusM: '', statusInputM: '', mparalela: 0.0 , statusMP: '', statusInputMP: '', mfinal: 0.0, statusMF: '', statusInputMF: '', statusLinha: ' '}
-	];
+	];*/
 
 })(); 
 
