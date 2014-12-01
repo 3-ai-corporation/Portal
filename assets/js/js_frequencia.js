@@ -7,12 +7,13 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http)
 			ng = $scope,
 			aj = $http
 		;
-
+		
 		ng.init = function()
 		{
 			ng.chamaraulas();
 		};
 
+	  alert(String(Ids_pegar[ "IdSerie" ]));
 		ng.chamaraulas = function(){ 
 			aj.get('service/temposAula').success(function (data) { 
 				ng.aulaList = data;

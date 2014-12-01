@@ -9,7 +9,7 @@ class DiasLetivosController
 {
 	public function retrieve () 
 	{
-	
+		//		$sel = 'tb_dia_letivos.id AS id, tb_dia_letivos.data AS datas, tb_dia_letivos.numero_dia AS numero_dia';
 		$sel = 'tb_dia_letivos.id AS id, 	DATE_FORMAT(tb_dia_letivos.data, "%d-%m-%Y") AS datas, tb_dia_letivos.numero_dia AS numero_dia';
 		$diaAula = DiasLetivosModel::find('all', array('select'=>$sel, 'order'=>'datas'));
 		$retorno = array();
@@ -23,7 +23,7 @@ class DiasLetivosController
 		}
 		return $retorno;
 	}
-
+	
 		// Função que retorna os tempos -> ajeitar posteriormente
 	  	/*
 		public function retrieveByIds ($Idsestrangeiro) 
@@ -48,6 +48,26 @@ class DiasLetivosController
 		return $retorno;
 	}
 	*/
+	public function retrieve_by_filtro ( $obj ) 
+	{
+	
+		$sel = 'tb_dia_letivos.id AS id, DATE_FORMAT(tb_dia_letivos.data, "%Y-%m-%d") AS datas, tb_dia_letivos.numero_dia AS numero_dia';
+		$diaAula = DiasLetivosModel::find( 'all', 
+			array(
+					'select'=>$sel,
+					'conditions' => array( 'name=? or id > ?', $obj.name, $obj.id ),
+					 'order'=>'datas'));
+		$retorno = array();
+		
+		foreach($diaAula as $key => $value) {
+			$obj[ 'id' ] = $value->id; 
+			$obj[ 'datas' ] = $value->datas;//.date("d - m - y") ;
+			$obj[ 'numero_dia' ] = $value->numero_dia;						
+			
+			$retorno[] = $obj;
+		}
+		return $retorno;
+	}
 
 	public function retrieve_by_filtro ( $obj ) 
 	{
