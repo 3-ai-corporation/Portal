@@ -1,20 +1,15 @@
+// Método responsável por verificar se um objeto tem a sclasse;
 var hasClash = function(elemento, classe) {
 	return (' ' + elemento.className + ' ').indexOf(' ' + classe + ' ') > -1;
 }
 
+// Métodos responsável por disciplinas
 var criandoOpcoes = function() {
 	var buttonDisciplina = '';
-	
+
 	var isSelected = function(nome) {
 		return hasClash(document.getElementById(nome), 'buttonCursoSelected');
 	}
-
-    var serieSelecionada = function() {
-        if (document.getElementById('checkPrimeiro').checked) return 0;
-        if (document.getElementById('checkSegundo').checked) return 1;
-        if (document.getElementById('checkTerceiro').checked) return 2;
-        return -1;
-    }();
 
     var cursoSelecionado = function() {
         if (isSelected('btnAE')) return 'ae';
@@ -24,23 +19,32 @@ var criandoOpcoes = function() {
         return 'x_x';
     }();
 
-    var materiasVetor = getMateriasByTurma(serieSelecionada, cursoSelecionado);
+    var serieSelecionada = function() {
+        if (document.getElementById('checkPrimeiro').checked) return 0;
+        if (document.getElementById('checkSegundo').checked) return 1;
+        if (document.getElementById('checkTerceiro').checked) return 2;
+        return -1;
+    }();
+
+    // Esta variável recebe a lista de matérias, de acordo com a série e o curso selecionados. Esses dois são retornados pelos dois métodos anteriores;
+    var vetorMaterias = getMateriasByTurma(serieSelecionada, cursoSelecionado);
 
     var id = 0;
-    var botoesVetor = [];
+    var vetorBotoes = [];
 
-    for (var materiaId in materiasVetor) {
-        botoesVetor[id] = {};
-
-        botoesVetor[id].id = 'btnDisciplina' + id;
-        botoesVetor[id].nome = materiasVetor[materiaId];
+    // Preenchendo o 'vetorBotoes' com as disciplinas que a variável 'vetorMaterias' recebe;
+    for (var materiaId in vetorMaterias) {
+        vetorBotoes[id] = {};
+        vetorBotoes[id].id = 'btnDisciplina' + id;
+        vetorBotoes[id].nome = vetorMaterias[materiaId];
         ++id;
     }
 
+    // Variável responsável por indicar se o botão foi selecionado pela primeira vez ou não;
     var first = true;
 
-    for (var botaoId in botoesVetor) {
-        var botaoElem = botoesVetor[botaoId];
+    for (var botaoId1 in vetorBotoes) {
+        var botaoElem = vetorBotoes[botaoId1];
 
         var classValue = 'disciplinaBotao';
 
@@ -51,19 +55,19 @@ var criandoOpcoes = function() {
 
         var otherIds = '';
 
-        for (var botaoId2 in botoesVetor) {
-            if (botaoId2 !== botaoId) {
+        for (var botaoId2 in vetorBotoes) {
+            if (botaoId2 !== botaoId1) {
                 if (otherIds === '') {
-                    otherIds = '"' + botoesVetor[botaoId2].id + '"';
+                    otherIds = '"' + vetorBotoes[botaoId2].id + '"';
                 }
                 else {
-                    otherIds += ',"' + botoesVetor[botaoId2].id + '"';
+                    otherIds += ',"' + vetorBotoes[botaoId2].id + '"';
                 }
             }
         }
 
-        buttonDisciplina += "<li id='" + botaoElem.id + "' class='" + classValue +
-            "' onclick=" + "'" + 'highlightTwo("' + botaoElem.id + '", [' + otherIds + "]);'><h4>" + botaoElem.nome + "</h4></li>";
+        buttonDisciplina += "<li id = '" + botaoElem.id + "' class = '" + classValue +
+            "'onclick = " + "'" + 'highlightTwo("' + botaoElem.id + '", [ ' + otherIds + "]);'><h4>" + botaoElem.nome + "</h4></li>";
     }
 
     var disciplina = document.getElementById('lstDisciplinas');

@@ -1,6 +1,6 @@
 <section ng-app="notasModule" >
 
- <!-- <section id="calculoMedia" ng-controller="RbuttonController" >
+ <section id="calculoMedia" ng-controller="RbuttonController" >
 	<section>
 		<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
 		<form style="margin-top: 15px;">
@@ -8,7 +8,7 @@
 			<input type="Radio" Name="Operacao" Value="MediaAritim" style="margin-left: 5px;"> Média aritmética</input>
 		</form>
 	</section>
-</section>  -->
+</section>  
 
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<thead class="warning">

@@ -7,7 +7,7 @@ class BimestresController {
 
     public function retrieve($data){
         $bimestre = BimestresModel::find('all');
-
+		  $retorno = array();
         foreach($bimestre as $key => $value) {
             $inicio = DiasLetivosModel::find($value->data_inicio_id);
             $fim = DiasLetivosModel::find($value->data_fim_id);
@@ -16,5 +16,5 @@ class BimestresController {
                 return $value->id;
         }
     }
-}
+} 
 ?>

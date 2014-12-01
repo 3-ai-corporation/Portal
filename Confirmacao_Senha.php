@@ -16,6 +16,8 @@
 	    <div class="imgLogo">
 		     <img class="P"src = "assets/img/Logo_Fundacao.jpg"></img>
 		</div>
+
+	<div id= "DadosSenha">
 	  <form>
 		<ul class= "listItem">
 			<li>

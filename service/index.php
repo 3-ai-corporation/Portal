@@ -19,9 +19,6 @@ $alunocontroller = new AlunosController;
 $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
 
-/*$app->get('/',function() use ($pcontroller) {
-    echo json_encode($pcontroller->retrieveTurmas(134567, true));
-});*/
 
 $app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
@@ -40,8 +37,19 @@ $app->get('/notify-portal',function() use ($pcontroller) {
 $app->get('/temposAula',function() use ($aulascontroller) {
     echo json_encode($aulascontroller->retrieve());
 });
+
 $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
+});
+$app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($pcontroller) {
+    echo json_encode($pcontroller->retrieveSenha($matricula, $senha));	
+});
+$app->get('/TrocarSenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller)
+{
+	echo json_encode($pcontroller->changePassword($matricula, $senha));
+});
+$app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
+	echo json_encode($pcontroller->login($matricula,$senha));
 });
 
 $app->get('/notas', function() use ($ncontroller) {
@@ -64,19 +72,7 @@ $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($p
  $app->get('/teste',function() use ($pcontroller) {
  	echo json_encode($pcontroller->teste());
  });
-
-//serviço que retorna o email do usuário através da matrícula
-$app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
-{
-	echo json_encode($pcontroller->getEmail($matricula));
-});
-$app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
-	echo json_encode($pcontroller->login($matricula,$senha));
-});
-$app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
-    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
-});
-
+ 
 $app->run();
 
 ?>
