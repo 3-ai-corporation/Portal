@@ -9,6 +9,7 @@ require_once 'controller/TemposController.php';
 require_once 'controller/DiasLetivosController.php';
 require_once 'controller/BimestresController.php';
 require_once 'controller/FrequenciasController.php';
+require_once 'controller/CursosController.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -20,6 +21,7 @@ $temposcontroller = new TemposController;
 $aulascontroller = new DiasLetivosController;
 $bimcontroller = new BimestresController;
 $frequenciascontroller = new FrequenciasController;
+$cursoscontroller = new CursosController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
