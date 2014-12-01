@@ -40,6 +40,7 @@ $app->get('/notify-alunos',function() use ($pcontroller) {
 $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
 });
+
 $app->get('/temposAula',function() use ($aulascontroller) {
     echo json_encode($aulascontroller->retrieve(1,33,5));
 });
@@ -49,7 +50,7 @@ $app->get('/alunosTurma',function() use ($alunocontroller) {
 });
 
 $app->get('/filtrarTempos',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieveByIds(1));
+    echo json_encode($aulascontroller->retrieve(1));
 });
 
 $app->get('/frequenciasAula',function() use ($frequenciascontroller) {
