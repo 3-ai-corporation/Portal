@@ -24,6 +24,16 @@ class ProfessoresController {
         }
         return $retorno;
     }
+    
+    public function getNome($matricula) { //método que retorna o nome do usuário atual
+        $professores = ProfessoresModel::find('all',array("conditions" => "professor_matricula = " . $matricula));
+        $retorno = array();
+        foreach($professores as $key => $value ) {
+            $obj['nome'] = $value->nome;
+            $retorno[] = $obj;
+        }
+        return $retorno;
+    }
 
 	public function login($matricula,$senha){
 		$professor = UsuariosModel::all(array('conditions' => array('matricula = ? AND senha = ?',$matricula,$senha)));
