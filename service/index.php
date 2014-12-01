@@ -49,8 +49,8 @@ $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
 });
 
-$app->get('/filtrarTempos',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieve(1));
+$app->get('/filtrarTempos',function() use ($temposcontroller) {
+    echo json_encode($temposcontroller->retrievebyDay(1));
 });
 
 $app->get('/frequenciasAula',function() use ($frequenciascontroller) {
