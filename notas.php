@@ -26,16 +26,4 @@
 		</tr>	
 	</table>					
 </section>
-
-<section id="calculoMedia" ng-controller="RbuttonController as RController" style="float:right;">
-	<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
-	<div style="color:black;">
-		<tr class="warning">
-			<th style="width:50px;"> <input value="(AV1)"/></th>
-		</tr>
-		<tr>
-			<button type="button"> OK </button>
-		</tr>
-	</div>	
-</section>
 </section>
