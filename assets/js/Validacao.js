@@ -61,7 +61,7 @@ function LoginInput_OnKeyDown(event, user, pass) {
 */
 function ConfirmarInput_OnKeyDown(event, codigo, pass, confirmPass) {
 if (event.keyCode == 13) {
-		validarSenha(codigo, newpass, ConfirmNewPass);
+		validarSenha(codigo, pass, confirmPass);
 	}
 }
 
@@ -80,9 +80,70 @@ function validar_codigo(codigo){
 *Created by Yasmim Libório on 24/11/2014
  * Método que faz a validação do codigo, nova senha e confirmacao da nova senha digitado pelo usuario 
 */
-function validarSenha(codigo, newpass, ConfirmNewPass){
-
-
+function validarSenha(matricula, novaSenha, senha){
+	var regra = /^[0-9]+$/;
+	if(matricula === "" && novaSenha === "" && senha === ""){
+		showAlert('error','Preencha todos os campos!');
+	}
+	else
+	{
+		if(matricula === ""){
+			showAlert('error','Digite a matricula!');
+		}
+		
+		else{	
+			if(matricula.length < 6){
+			 showAlert('error','Formato da matrícula incorreta!');
+			}
+			else
+			{
+				if(novaSenha === ""){
+				  showAlert('error','Confirme a senha!');
+				}
+				else
+				{
+					if(novaSenha === ""){
+					  showAlert('error','Digite a nova senha!');
+					}
+					else
+					{
+						if (!matricula.match(regra)) {
+							showAlert('error', 'Somente números na matrícula!');
+							validar_matricula(matricula.value);
+						}
+						else{					
+							if(novaSenha == senha)
+							{
+								//chama a função para mudar a senha do banco com os parametros "matricula" e "senha"
+								var usuario;
+								$.ajax(
+									{
+										type:"GET",
+										url: 'service/Mudarsenha/' + matricula + '/' + senha,
+										success: function(data) {
+											usuario = jQuery.parseJSON(data);
+											if(usuario)
+											{
+												showAlert('erro', 'A senha foi alterada no banco com sucesso!');
+											}
+											else
+											{		  
+											showAlert('erro', 'Matrícula não cadastrado no banco!');
+											}  
+										}										
+									}
+								);	
+							}
+							else
+							{
+								showAlert('error', 'Senhas divergentes!');
+							}
+						}
+					}
+				}
+			}
+	}
+}
 
 
 }
@@ -190,6 +251,8 @@ function ValidarEsqueceuSenha(user, mail)
 													  if(usuario)
 													  {
 														showAlert('erro', 'O e-mail foi enviado com sucesso!');
+														window.location.href = 'Confirmacao_Senha.php';
+														
 													  }
 													  else
 													  {		  

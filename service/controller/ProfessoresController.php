@@ -164,4 +164,26 @@ class ProfessoresController {
         }
 		return $retorno;
 	}
+	
+	//Atualiza a senha do banco
+	public function updateSenha($matricula, $senha)
+	{
+		$update = UsuariosModel::find($matricula);
+		if($update != null)
+		{    
+			$update->senha = $senha;
+			$update->save();
+			
+			if($this->Login($matricula, $senha))
+			{
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
 }
