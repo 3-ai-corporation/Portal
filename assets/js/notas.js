@@ -1,6 +1,7 @@
-	var notasModule = angular.module('notasModule', ['ngRoute']);
+var notasModule = angular.module('notasModule', ['ngRoute']);
 	
-	notasModule.controller('NotasCtrl', function($scope, $http){
+	notasModule.controller('notasCtrl', function($scope, $http)
+	{
 		var 
 		$ = jQuery, 
 		ng = $scope,
@@ -154,7 +155,8 @@
 		
 	ng.init();
 	
-}); 
+	}
+); 
 		
  function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -163,16 +165,18 @@
     return true;
 }; 
 
-	notasModule.controller('ColumnController', function($scope, $http){
+	notasModule.controller('ColumnController', function($scope, $http)
+	{
 	var 
 		$ = jQuery, 
 		ng = $scope,
 		aj = $http;
 		this.lstColAvs = [{title:"AV1", value:"10"}];
+		this.alunos = alunos;
 
         this.setColumn = function(){
 			this.column = this.column +1;
-			if ((this.lstColAvs.length ) < 10) {
+			if ((this.lstColAvs.length ) < 3) {
 				var newAv = {};
 				newAv.title = "AV" + (this.lstColAvs.length + 1);
                 newAv.value = 10;
@@ -195,4 +199,17 @@
                 return false;
             }
         };
-	});
+		
+		ng.init = function(){
+			ng.read();
+		};
+
+	ng.read = function(){
+		aj.get('service/notas').success(function(data){
+			ng.notasList = data;
+		});		
+	};
+	
+	ng.init();
+	}
+);
