@@ -45,14 +45,14 @@
 					
 					<td> {{aluno.nome}} </td>
 					
-					<td id="tempos" ng-repeat="tempo in temposList"> 
+					<td id="tempos" ng-repeat="tempo in temposList" > 
 						<!--<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in freqCtrl.objetos.tempos_dia">
 							<input style="color: #1E657F" type = "checkbox" id = "chk_falta" name="chk" value = "falta" CHECKED 
 							ng-controller="checkcontroller as checkCtrl" ng-click="checkCtrl.alterarCheckbox(obj, this)"> {{tempos+"º"}}
-						</section> -->
-						tempos
+							</section> -->
+						tempos :D
 					</td>
-					<td id="num_faltas">  1 </td>	
+					<td id="num_faltas">0</td>	
 					<td id="faltas_bim">  1 </td>	
 				</tr>
 			</tbody>

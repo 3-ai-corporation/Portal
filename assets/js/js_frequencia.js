@@ -62,5 +62,31 @@ frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 
 });
 
+frequenciaModule.controller('checkcontroller', function() {
+	this.alterarCheckbox = function(obj, elem, elemParent) { 
+		var celulaFaltas = document.getElementById('num_faltas'); 			
+			
+		if(obj.faltas > 0) { 
+			if(!elem.checked) {  
+				obj.faltas = obj.faltas+1;
+				elem.checked = true;
+				celulaFaltas = obj.faltas;
+			} 
+			else{  
+				elem.checked = false;
+			   obj.faltas = obj.faltas-1;
+			   celulaFaltas = obj.faltas;
+			} 
+		} 
+		else {
+			if(!elem.checked) { 
+				elem.checked = true;
+				obj.faltas = obj.faltas+1;
+				celulaFaltas = obj.faltas;
+			} 
+		}
+	};			
+});
+
 
 
