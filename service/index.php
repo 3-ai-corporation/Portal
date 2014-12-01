@@ -26,7 +26,7 @@ $cursoscontroller = new CursosController;
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
-$app->post('/service/plano-aula/update/',function($id) use ($temposcontroller) {
+$app->post('/plano-aula',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
 

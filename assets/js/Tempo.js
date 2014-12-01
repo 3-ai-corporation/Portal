@@ -8,3 +8,20 @@ function Tempo(cp, ca, v, r) {
     this.visible = v;
     this.reposicao = r;
 }
+
+/*
+Rúben Olha Aqui
+Mas eu não sei essa parte do angular 
+angular.module('startScreen', ['ui.bootstrap']);
+
+angular.module('startScreen').controller('notifController', function ($scope, $modal, $log) {
+ $.ajax({
+          type: "POST",
+          url: 'service/plano-aula',
+          async: false,
+          success: function(data) {
+            $scope.items = jQuery.parseJSON(data);
+          }
+    });
+	}
+*/
