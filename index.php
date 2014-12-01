@@ -35,7 +35,7 @@
 					<li>
 						<div id="iMatricula">
 						<p class="lblLogin">Matrícula: </p>
-						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = " validar_matricula2(matricula);" maxlength = "6"/>
+						<input onkeydown="LoginInput_OnKeyDown(event, matricula.value, senha.value);" class="txtLogin" type="text" name="matricula" onkeypress = "validar_matricula2(matricula);" maxlength = "6"/>
 						</div>
 					</li>
 						<li>
