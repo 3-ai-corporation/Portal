@@ -1,13 +1,13 @@
 <section ng-app="frequenciaModule">
 
-<article ng-controller="TemposAulaCtrl">
-<label class="dados_cabecalho"> Série: 3°</label>
-<label id="freq_curso" class="dados_cabecalho"> Curso: Informática </label>
+<article ng-controller="CabecalhoCtrl" >
+<label class="dados_cabecalho"> Série: {{serie}}°</label>
+<label id="freq_curso" class="dados_cabecalho"> Curso: {{curso}} </label>
 <label id="freq_aulas" class="dados_cabecalho"> Aulas no mês: </label>
-	<select id="index" name="index" ng-model="selectedItem" ng-change="pegarData()"> 
+	<select id="index" ng-controller="TemposAulaCtrl" name="index" ng-model="selectedItem" ng-change="pegarData()"> 
 		 <option ng-repeat="aula in aulaList" class="dados_cabecalho"  selected value="{{aula.id}}" >Aula {{aula.numero_dia}} - {{aula.datas}}</option>	
 	</select>
-<label class="dados_cabecalho" style="display: block"> Matéria: Tópicos Especiais </label>
+<label class="dados_cabecalho" style="display: block"> Matéria: {{materia}} </label>
 <label class="dados_cabecalho" style="display:block"> Data: 17/10/2014 </label>		
 </article>
 
@@ -15,8 +15,6 @@
 <button id="AulaAnt"> 
 	<img src="assets/img/arrow-left.png" width="30px" height="30px" color="white">
 </button>
-					
-
 					
 <button id="AulaProx" style="margin-left: 70.7em"> 
 	<img src="assets/img/arrow-right.png" width="30px" height="30px" color="white">

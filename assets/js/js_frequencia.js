@@ -62,8 +62,6 @@ frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 		aj = $http
 	;
 
-	ng.alunos = {};
-
 	ng.init = function(){
 		ng.read();
 	};
@@ -72,14 +70,37 @@ frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 		aj.get('service/alunosTurma').success(function(data){
 			ng.alunosList = data;
 		});	
-
-
-		
 	};
 
 	ng.init();
 
 });
+
+
+frequenciaModule.controller('CabecalhoCtrl', function($scope, $http) {
+	var 
+		$ = jQuery,
+		ng = $scope,
+		aj = $http
+	;
+
+	ng.init = function(){
+		ng.read();
+	};
+
+	ng.read = function(){
+		aj.get('service/cabecalhoFreq').success(function(data){
+			alert(data.serie);
+			ng.serie = data.serie;
+			ng.curso = data.curso;
+			ng.materia = data.materia;
+		});		
+	};
+
+	ng.init();
+
+});
+
 
 frequenciaModule.controller('checkcontroller', function() {
 	this.alterarCheckbox = function(obj, elem, elemParent) { 
