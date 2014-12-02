@@ -1,4 +1,3 @@
-
 <section ng-app="bimestreModule">
     <article ng-controller="bimestreCtrl">
         <div id = "etapaLabel">

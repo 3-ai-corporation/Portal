@@ -60,7 +60,7 @@ class DiasLetivosController
 			$objMateriaTurma['id'] = $value->id;
 		}
 		/*---------------------------------------*/
-	
+		
 		//pesquisa dos tempos que possuam o id de Materia_turmas pesquisado
 		$sel_tempos = 'tb_tempos.id AS id, tb_tempos.letivos_id AS dia_letivo';
 		$tempos = TemposModel::find('all',array('select'=>$sel_tempos,'conditions'=>array('tb_tempos.materia_turma_id = ?',$objMateriaTurma['id'])));

@@ -10,6 +10,7 @@ require_once 'controller/DiasLetivosController.php';
 require_once 'controller/BimestresController.php';
 require_once 'controller/FrequenciasController.php';
 require_once 'controller/CursosController.php';
+require_once 'controller/TurmasController.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -23,11 +24,7 @@ $bimcontroller = new BimestresController;
 $frequenciascontroller = new FrequenciasController;
 $cursoscontroller = new CursosController;
 
-//parâmetros
-$turma = 33;
-$materia = 5;
-$bimestre = 1;
-$login = 123456;
+$turmascontroller  = new TurmasController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
@@ -56,12 +53,17 @@ $app->get('/TrocarSenha/:matricula/:senha', function($matricula, $senha) use ($p
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->login($matricula,$senha));
 });
+
 $app->get('/temposAula',function() use ($aulascontroller) {
-    echo json_encode($aulascontroller->retrieveByIds($bimestre,$turma,$materia));
+    echo json_encode($aulascontroller->retrieveByIds(2,33,2));
 });
 
 $app->get('/alunosTurma',function() use ($alunocontroller) {
-    echo json_encode($alunocontroller->retrieveAlunos($turma));
+    echo json_encode($alunocontroller->retrieveAlunos(33));
+});
+
+$app->get('/cabecalhoFreq', function() use ($turmascontroller){
+	echo json_encode($turmascontroller->retrieveCabecalho(2,33));
 });
 
 $app->get('/filtrarTempos',function() use ($temposcontroller) {
@@ -104,6 +106,10 @@ $app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
 {
 	echo json_encode($pcontroller->getEmail($matricula));
 });
+//Recebe os parametros e envia-os para o professor controller
+$app->get('/Mudarsenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller){
+	echo json_encode($pcontroller->updateSenha($matricula, $senha));
+});
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->login($matricula,$senha));
 });
@@ -113,6 +119,12 @@ $app->get('/teste',function() use ($pcontroller) {
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
 });
+
+$app->get('/temposAula/', 'updateTempo'); 
+function updateTempo( $tempo ){ 
+	echo json_encode($temposcontroller->update( $tempo ));
+}
+
 //Chamada no bd, por meio de um método controller;
 //Get e uma função Slim, pedindo2 parãmetros:1 - string com endereço do http....
 //2-função que conrreponde à outra função do doc. controller.
@@ -121,5 +133,11 @@ $app->get('/bimestres/:data', function($data) use ($bimcontroller){
 });
 $app->get('/bimestresall', function() use ($bimcontroller){
     echo json_encode($bimcontroller->retrieve_all());
+});
+$app->get('/sendMail/:nome/:email/:codigo', function($nome, $email,$codigo) use ($pcontroller){
+    echo json_encode($pcontroller->sendMail($nome, $email,$codigo));
+});
+$app->get('/getName/:matricula', function($matricula) use ($pcontroller){
+    echo json_encode($pcontroller->getNome($matricula));
 });
 $app->run();

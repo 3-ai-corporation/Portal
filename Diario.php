@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	if(! isset($_SESSION['ematricula']))
@@ -19,7 +18,6 @@
 		<link type="text/css" rel="stylesheet" href="assets/css/tabstyle.css"/> <!-- CSS das abas -->
 		<link rel = "stylesheet" type="text/css" href="assets/css/notas.css"/> <!-- CSS da aba 'Notas' -->
 		<link rel = "stylesheet" type="text/css" href="assets/css/stylesheet_frequencia.css"/> <!--Css da Frequência-->
-
 		<script type="text/javascript" src="assets/js/angular.js"></script>
 		<script type="text/javascript" src="assets/angular/angular.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>

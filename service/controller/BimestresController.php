@@ -4,7 +4,6 @@ require_once 'model/BimestresModel.php';
 
 class BimestresController {
 
-
     public function retrieve($data){
         $bimestre = BimestresModel::find('all');
 
