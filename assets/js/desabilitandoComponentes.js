@@ -1,22 +1,21 @@
 /**
  * Created by AnaKa on 24/10/2014.
 */
-
-
 var materia = [];
 materia[0] = {};
+materia[1] = {};
+materia[2] = {};
+
 materia[0]['ae'] = [];
 materia[0]['ai'] = ['ED', 'aaa', 'bbb'];
 materia[0]['am'] = [];
 materia[0]['at'] = [];
 
-materia[1] = {};
 materia[1]['ae'] = [];
 materia[1]['ai'] = [];
 materia[1]['am'] = [];
 materia[1]['at'] = [];
 
-materia[2] = {};
 materia[2]['ae'] = [];
 materia[2]['ai'] = ['LPIII', 'ccc'];
 materia[2]['am'] = [];
@@ -116,67 +115,73 @@ var getTodayDate = function() {
 
     if(dd<10) {
         dd='0'+dd
-    } 
+    }
 
     if(mm<10) {
         mm='0'+mm
-    } 
-    //alert(yyyy+'-'+mm+'-'+dd);alert("oi");
-    //alert(yyyy+'-'+mm+'-'+dd + ' 00:00:00');
-    //var date = new DateTime(yyyy+'-'+mm+'-'+dd + ' 00:00:00');
-    //alert(date);
-    //alert(yyyy+'-'+mm+'-'+dd + ' 00:00:00');
-    return yyyy+'-'+mm+'-'+dd + ' 00:00:00';// mm+'/'+dd+'/'+yyyy;
+    }
+
+    return yyyy+'-'+mm+'-'+dd;
 }
 
-$.ajax( { 
-    type:'Get',
-    url:'service/Bimestres' + '/' +getTodayDate() /* + '/' + '2014-03-27 03:04:05'*/,
-    data:{date: getTodayDate()},
-    async: false,
-    success:function(data) {
-        alert(data);
-        bimestreAtualID = data;        
-    }    
-});
+var initializeVariables = function() {
+    $.ajax( {
+        type:'Get',
+        url:'service/bimestres' + '/' +getTodayDate(),
+        data:{date: getTodayDate()},
+        async: false,
+        success:function(data) {
+            bimestreAtualID = data;
+        },
+        error:function(){alert('f');}
+    });
+};
 
 var desativandoButtonsBimestres = function(){
-    jQuery.ajax();
-    alert(bimestreAtualID);
-    switch (bimestreAtualID){
-        case 1:
-            var btnBim01 = document.getElementById('btnUm');
-            var btnBim02 = document.getElementById('btnDois');
-            var btnBim03 = document.getElementById('btnTres');
-            var btnBim04 = document.getElementById('btnQuatro');
-            var btnBim05 = document.getElementById('btnRec');
-            btnBim01.className = btnBim01.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
-            btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-            btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-            btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-        case 2:
-            var btnBim02 = document.getElementById('btnDois');
-            var btnBim03 = document.getElementById('btnTres');
-            var btnBim04 = document.getElementById('btnQuatro');
-            var btnBim05 = document.getElementById('btnRec');
-            btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
-            btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-            btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-        case 3:
-            var btnBim03 = document.getElementById('btnTres');
-            var btnBim04 = document.getElementById('btnQuatro');
-            var btnBim05 = document.getElementById('btnRec');
-            btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
-            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-            btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-        case 4:
-            var btnBim04 = document.getElementById('btnQuatro');
-            var btnRec = document.getElementById('btnRec');
-            btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonCursoSelected');
-            btnRec.className = btnRec.className.replace(/buttonCursoBasic(?!\S)/g , 'buttonDesativado');
-        case 5:
-        default:
+    if(bimestreAtualID == 1) {
+        var btnBim01 = document.getElementById('btnUm');
+        var btnBim02 = document.getElementById('btnDois');
+        var btnBim03 = document.getElementById('btnTres');
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnBim05 = document.getElementById('btnRec');
+        btnBim01.className = btnBim01.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 2) {
+        var btnBim02 = document.getElementById('btnDois');
+        var btnBim03 = document.getElementById('btnTres');
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnBim05 = document.getElementById('btnRec');
+        btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 3) {
+        var btnBim03 = document.getElementById('btnTres');
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnBim05 = document.getElementById('btnRec');
+        btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 4) {
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnRec = document.getElementById('btnRec');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnRec.className = btnRec.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 5) {
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnRec = document.getElementById('btnRec');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnRec.className = btnRec.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
     }
 };

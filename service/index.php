@@ -41,8 +41,7 @@ $app->get('/alunosTurma',function() use ($alunocontroller) {
     echo json_encode($alunocontroller->retrieveAlunos(33));
 });
 //serviço que retorna o email do usuário através da matrícula
-$app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
-{
+$app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller){
     echo json_encode($pcontroller->getEmail($matricula));
 });
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
@@ -54,9 +53,9 @@ $app->get('/teste',function() use ($pcontroller) {
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
     echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));
 });
-//Chamada no bd, por meio de um método controller;
-//Get e uma função Slim, pedindo2 parãmetros:1 - string com endereço do http....
-//2-função que conrreponde à outra função do doc. controller.
+$app->get('/pegarDisciplinas/:matricula/:bool', function($matricula,$bool) use ($pcontroller){
+   echo json_encode($pcontroller->retrieveDisciplinas($matricula,$bool));
+});
 $app->get('/bimestres/:data', function($data) use ($bimcontroller){
     echo json_encode($bimcontroller->retrieve($data));
 });

@@ -27,7 +27,8 @@
                     onclick="highlight('btnAI', ['btnAE', 'btnAM', 'btnAT'], 'informatica-icon.png');criandoOpcoes();">
                     <h4>AI</h4>
                 </li>
-                <li id = "btnAM" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado" onclick="highlight('btnAM', ['btnAE', 'btnAI', 'btnAT'], 'mecatronica-icon.png');criandoOpcoes();">
+                <li id = "btnAM" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado"
+                    onclick="highlight('btnAM', ['btnAE', 'btnAI', 'btnAT'], 'mecatronica-icon.png');criandoOpcoes();">
                     <h4>AM</h4>
                 </li>
                 <li id = "btnAT" class="buttonCurso buttonCursoBasic buttonCursoClicked buttonAtivado"
@@ -40,4 +41,4 @@
             <h2 id="turmaLabel"></h2>
         </div>
     </div>
-</div>]
+</div>

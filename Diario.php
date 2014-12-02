@@ -9,7 +9,7 @@ if(! isset($_SESSION['ematricula']))
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" id = "<?php echo $_SESSION['ematricula']?>">
 <head>
     <meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
     <link type="text/css" rel="stylesheet" href="assets/css/stylesheet_Menu.css"/> <!-- CSS do Diário -->
@@ -38,9 +38,9 @@ if(! isset($_SESSION['ematricula']))
     <link rel="stylesheet" type="text/css" href="assets/angular/docs/components/bootstrap-3.1.1/css/bootstrap.min.css" />
     <title>Diário Escolar</title>
 </head>
-<body onload="highlightAE(); desativandoChecks(); criandoOpcoes(); setFiltroVisible(true);
-            beginTabs(); desativandoButtonsCurso(document.getElementById('checkPrimeiro'));
-            desativandoButtonsBimestres(); IniciarSelecao();">
+<body onload="highlightAE(); initializeVariables(); desativandoChecks(); criandoOpcoes(); setFiltroVisible(true);
+            beginTabs(); IniciarSelecao(); desativandoButtonsCurso(document.getElementById('checkPrimeiro'));
+            desativandoButtonsBimestres(); ">
 <div id = "main">
     <?php
     include ("menu.php")
