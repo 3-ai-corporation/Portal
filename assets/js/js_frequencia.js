@@ -25,17 +25,6 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http) {
 			var selectbox = document.getElementById("index").selectedIndex;
 			var selectText = document.getElementById("index").options;			
 			
-<<<<<<< HEAD
-			/*
-			aj.get('service/filtrarTempos/:'+selectText[selectbox].value).success(function (data) { 
-=======
-
-			aj.get('service/filtrarTempos/:selectText[selectbox].value').success(function (data) { 
->>>>>>> origin/master
-			
-			});
-			*/
-			
 		};
 			
 		ng.init();
