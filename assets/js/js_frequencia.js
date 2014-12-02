@@ -23,11 +23,11 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http) {
 			var selectbox = document.getElementById("index").selectedIndex;
 			var selectText = document.getElementById("index").options;			
 			
-			alert("INDEX: " + selectText[selectbox].index + "  ID: " + selectText[selectbox].value);
-			
-			aj.get('service/filtrarTempos/:selectText[selectbox].value').success(function (data) { 
+			/*
+			aj.get('service/filtrarTempos/:'+selectText[selectbox].value).success(function (data) { 
 			
 			});
+			*/
 			
 		};
 			
@@ -48,6 +48,7 @@ frequenciaModule.controller('TemposCtrl', function($scope, $http) {
 	ng.read = function(){
 		aj.get('service/filtrarTempos').success(function(data){
 			ng.temposList = data;
+			
 		});	
 	};
 
