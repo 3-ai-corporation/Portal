@@ -220,7 +220,14 @@ function ValidarEsqueceuSenha(user, mail)
 {
     var matricula = user;
 	var email = mail;
-	
+	var nome = "";
+	$.ajax({
+		type: "GET",
+		url: 'service/getName/' + matricula,
+		success: function(data) {
+			nome = JQuery.parseJSON(data);
+		}		    
+	  });
 	if(matricula == "" && email == ""){
 	   showAlert('error','Preencha todos os campos!');
 	}
@@ -245,7 +252,7 @@ function ValidarEsqueceuSenha(user, mail)
 													usuario = jQuery.parseJSON(data);
 													  if(usuario)
 													  {
-													  	if(sendMail(matricula,email)){
+													  	if(sendMail(nome,matricula,email)){
 															showAlert('erro','Email enviado com sucesso!');
 															window.location.href = 'Confirmacao_Senha.php';
 														}else{
@@ -286,12 +293,12 @@ function showAlert(type,message) {
 	function closeAlert(tipo) {
 	  $('#alert' + tipo).fadeOut();
 	}
-function sendMail(matricula,email) {
+function sendMail(nome,matricula,email) {
 	var code = Math.floor((Math.random()*9999999999)+1000000000);
 
 	  $.ajax({
 		type: "GET",
-		url: 'service/sendMail/' + 'nome' + '/' +email + '/' + code,
+		url: 'service/sendMail/' + nome + '/' +email + '/' + code,
 		success: function(data) {
 			var foi = jQuery.parseJSON(data);
 			if(foi){
