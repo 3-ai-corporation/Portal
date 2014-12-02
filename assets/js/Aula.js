@@ -5,3 +5,13 @@
  	this.dia = d;
  	this.tempos = tempos;
 }
+
+function AtualizarPrevisto(){
+	alert('parada');
+	
+	//funcao do banco
+}
+
+function AtualizarAplicado(){
+	alert('parada1');
+}

@@ -21,19 +21,19 @@
 			<li>
 				<div id = "iCodigo">
 					<p class= "lblConfirmar_Senha">Código: </p>
-					<input onkeydown="ConfirmarInput_OnKeyDown(event, codigo.value, novaSenha.value, confirmarSenha.value);" class="txtConfirmar_Senha" type="text" name="codigo" onkeypress= "validar_codigo(codigo);" maxlength = "4"/>
+					<input onkeydown="ConfirmarInput_OnKeyDown(event, codigo.value, novaSenha.value, confirmarSenha.value);" class="txtConfirmar_Senha" type="text" name="codigo" onkeypress = "validar_codigo(codigo);" maxlength = "6"/>
 				</div>	
 			</li>
 			<li>
 				<div id = "iNovaSenha">
 					<p class= "lblConfirmar_Senha">Nova Senha: </p>
-					<input onkeydown="ConfirmarInput_OnKeyDown(event, codigo.value, novaSenha.value, confirmarSenha.value);" class="txtConfirmar_Senha" type="password" name="novaSenha"  maxlength = "10"/>
+					<input onkeydown="ConfirmarInput_OnKeyDown(event, codigo.value, novaSenha.value, confirmarSenha.value);" class="txtConfirmar_Senha" type="password" name="novaSenha" onkeypress = "validar_senha(novaSenha);" maxlength = "10"/>
 				</div>	
 			</li>
 			<li>
 				<div id = "iConfirmarNovaSenha">
 					<p class= "lblConfirmar_Senha">Confirmar nova senha: </p>
-					<input onkeydown="ConfirmarInput_OnKeyDown(event, codigo.value, novaSenha.value, confirmarSenha.value);" class="txtConfirmar_Senha" type="password" name="confirmarSenha" maxlength = "10"/>
+					<input onkeydown="ConfirmarInput_OnKeyDown(event, codigo.value, novaSenha.value, confirmarSenha.value);" class="txtConfirmar_Senha" type="password" name="confirmarSenha" onkeypress = "validar_senha(confirmarSenha);" maxlength = "10"/>
 				</div>	
 			</li>
 			            <li>                        

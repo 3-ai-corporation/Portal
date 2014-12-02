@@ -24,6 +24,16 @@ class ProfessoresController {
         }
         return $retorno;
     }
+    
+    public function getNome($matricula) { //método que retorna o nome do usuário atual
+        $professores = ProfessoresModel::find('all',array("conditions" => "professor_matricula = " . $matricula));
+        $retorno = array();
+        foreach($professores as $key => $value ) {
+            $obj['nome'] = $value->nome;
+            $retorno[] = $obj;
+        }
+        return $retorno;
+    }
 
 	public function login($matricula,$senha){
 		$professor = UsuariosModel::all(array('conditions' => array('matricula = ? AND senha = ?',$matricula,$senha)));
@@ -58,40 +68,34 @@ class ProfessoresController {
         }
         return $retorno;
     }
+
     // Função responsável por retornas as turmas lecionadas por um professor
     public function retrieveTurmas($matriculaProfessor, $returnDisciplina) {
         // Vai retornar os registros da tabela tb_professor_turmas de acordo com a Matricula do professor
-        
-        $prof_materias = ProfessorMateriasModel::find("all",array('conditions' => 'professor_matricula = ' . $matriculaProfessor ));
 
+        $prof_materias = ProfessorMateriasModel::find("all",array('conditions' => 'professor_matricula = ' . $matriculaProfessor ));
         $retorno = array();
         foreach($prof_materias as $key => $value ) {
             // Busca de turmas a partir do id
             $materias_turmas = MateriaTurmasModel::find($value->materia_turmas_id);
-
             $turma = TurmasModel::find($materias_turmas->turma_id);
-
             $result['serie'] = $turma->serie;
             $result['ano'] = $turma->ano;
-            
             $curso = CursosModel::find($turma->cursos_id);
             $result['cursos'] = $curso->curso;
-
             if($returnDisciplina)
             {
                 $materias = MateriasModel::find($materias_turmas->materia_id);
                 $result['materia'] = $materias->nome;
             }
-
             $retorno[] = $result;
-
         }
         return $retorno;
     }
 
-    public function retrieveDisciplinas($professorMatricula, $bool ) {
-
-        return retrieveTurmas($professorMatricula, $bool);
+    public function retrieveDisciplinas($professorMatricula, $bool)
+    {
+        return $this->retrieveTurmas($professorMatricula, $bool);
     }
 
     /*public function retrieveMaterias($series = array(), $id) {
@@ -164,4 +168,83 @@ class ProfessoresController {
         }
 		return $retorno;
 	}
+	
+	//Atualiza a senha do banco
+	public function updateSenha($matricula, $senha)
+	{
+		$update = UsuariosModel::find($matricula);
+		if($update != null)
+		{    
+			$update->senha = $senha;
+			$update->save();
+			
+			if($this->Login($matricula, $senha))
+			{
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+     public function sendMail($nome,$email,$codigo)
+    {
+        require("phpmailer/class.phpmailer.php");
+        require("phpmailer/PHPMailerAutoload.php");
+
+        $mail = new PHPMailer(); 
+        // Define os dados do servidor e tipo de conexão
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        $mail->IsSMTP(); // Define que a mensagem será SMTP
+        $mail->Host = "smtp.gmail.com"; // Endereço do servidor SMTP (caso queira utilizar a autenticação, utilize o host smtp.seudomínio.com.br)
+        $mail->SMTPAuth = true; // Usar autenticação SMTP (obrigatório para smtp.seudomínio.com.br)
+        $mail->Username = 'portalfundacaonokia@gmail.com'; // Usuário do servidor SMTP (endereço de email)
+        $mail->Password = 'masterkey123'; // Senha do servidor SMTP (senha do email usado)
+        $mail->SMTPSecure = "tls";
+        //$mail->Host = "smtp.gmail.com";
+        $mail->Port = "25";
+        // Define o remetente
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        $mail->From = "portalfundacaonokia@gmail.com"; // Seu e-mail
+        $mail->Sender = "portalfundacaonokia@gmail.com"; // Seu e-mail
+        $mail->FromName = "Portal FUNDACAO NOKIA"; // Seu nome
+
+        // Define os destinatário(s)
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        $mail->AddAddress($email, $nome);
+        //$mail->AddCC('ciclano@site.net', 'Ciclano'); // Copia
+        //$mail->AddBCC('fulano@dominio.com.br', 'Fulano da Silva'); // Cópia Oculta
+
+        // Define os dados técnicos da Mensagem
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        $mail->IsHTML(true); // Define que o e-mail será enviado como HTML
+        $mail->CharSet = 'utf-8'; // Charset da mensagem (opcional)
+
+        // Define a mensagem (Texto e Assunto)
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        $mail->Subject  = "Recuperação de Senha"; // Assunto da mensagem
+        $mail->Body = 'O código para recuperação de senha é ' + $codigo + "<br> Vá até a página de recuperação de senha e cole este código no local indicado </br>";
+        $mail->AltBody = 'O código para recuperação de senha é ' + $codigo + "/n Vá até a página de recuperação de senha e cole este código no local indicado";
+
+        // Define os anexos (opcional)
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        //$mail->AddAttachment("/home/login/documento.pdf", "novo_nome.pdf");  // Insere um anexo
+
+        // Envia o e-mail
+        $enviado = $mail->Send();
+
+        // Limpa os destinatários e os anexos
+        $mail->ClearAllRecipients();
+        $mail->ClearAttachments();
+
+        // Exibe uma mensagem de resultado
+        if ($enviado) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

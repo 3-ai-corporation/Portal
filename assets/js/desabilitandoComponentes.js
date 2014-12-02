@@ -1,33 +1,32 @@
 /**
  * Created by AnaKa on 24/10/2014.
 */
-
-//Criando um array estático (Como se o webservice - php - tivesse retornado esses valores);
 var materia = [];
 materia[0] = {};
+materia[1] = {};
+materia[2] = {};
+
 materia[0]['ae'] = [];
 materia[0]['ai'] = ['ED', 'aaa', 'bbb'];
 materia[0]['am'] = [];
 materia[0]['at'] = [];
 
-materia[1] = {};
 materia[1]['ae'] = [];
 materia[1]['ai'] = [];
 materia[1]['am'] = [];
 materia[1]['at'] = [];
 
-materia[2] = {};
 materia[2]['ae'] = [];
 materia[2]['ai'] = ['LPIII', 'ccc'];
 materia[2]['am'] = [];
 materia[2]['at'] = ['CD'];
 
-//Criando uma função que tem como parâmetros 'série' e 'turma', retornando disciplina;
+var bimestreAtualID;
+
 var getMateriasByTurma = function(s, c){
     return materia[s][c];
 };
 
-//pegar o ano selecionado, o curso selecionado. Pegar o vetor de matéria e verificar se o array é vazio ou não.
 var desativandoChecks = function(){
     var vazio = true;
 
@@ -60,7 +59,6 @@ var desativandoChecks = function(){
 };
 
 var desativandoButtonsCurso = function(serie) {
-    var vazio = true;
     var serieSelecionada;
 
     if (serie.id === 'checkPrimeiro')
@@ -106,5 +104,84 @@ var desativandoButtonsCurso = function(serie) {
     else {
         var turma = document.getElementById('btnAT');
         turma.className = "buttonDesativado";
+    }
+};
+
+var getTodayDate = function() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd
+    }
+
+    if(mm<10) {
+        mm='0'+mm
+    }
+
+    return yyyy+'-'+mm+'-'+dd;
+}
+
+var initializeVariables = function() {
+    $.ajax( {
+        type:'Get',
+        url:'service/bimestres' + '/' +getTodayDate(),
+        data:{date: getTodayDate()},
+        async: false,
+        success:function(data) {
+            bimestreAtualID = data;
+        },
+        error:function(){alert('f');}
+    });
+};
+
+var desativandoButtonsBimestres = function(){
+    if(bimestreAtualID == 1) {
+        var btnBim01 = document.getElementById('btnUm');
+        var btnBim02 = document.getElementById('btnDois');
+        var btnBim03 = document.getElementById('btnTres');
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnBim05 = document.getElementById('btnRec');
+        btnBim01.className = btnBim01.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 2) {
+        var btnBim02 = document.getElementById('btnDois');
+        var btnBim03 = document.getElementById('btnTres');
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnBim05 = document.getElementById('btnRec');
+        btnBim02.className = btnBim02.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 3) {
+        var btnBim03 = document.getElementById('btnTres');
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnBim05 = document.getElementById('btnRec');
+        btnBim03.className = btnBim03.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+        btnBim05.className = btnBim05.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 4) {
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnRec = document.getElementById('btnRec');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnRec.className = btnRec.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
+    }
+
+    if(bimestreAtualID == 5) {
+        var btnBim04 = document.getElementById('btnQuatro');
+        var btnRec = document.getElementById('btnRec');
+        btnBim04.className = btnBim04.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonCursoSelected');
+        btnRec.className = btnRec.className.replace(/buttonCursoBasic(?!\S)/g, 'buttonDesativado');
     }
 };
