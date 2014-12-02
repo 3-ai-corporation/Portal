@@ -6,7 +6,7 @@
 			<th>#</th>
 			<th>RA</th>
 			<th>Nome</th>
-			<th ng-repeat="av in colCtrl.lstColAvs"><a class="tooltips">{{av.title}}</a></th>
+			<th ng-repeat="av in colCtrl.lstColAvs">{{av.title}}</th>
 			<th ng-click="colCtrl.setColumn()"><a class="btnNewCollumn"> <img class="imgMenu" src="assets/img/adicionar.png" style="height: 24px; width:24px"/> </a></th>
 			<th ng-click="colCtrl.unsetColumn()"><a class="btnDelCollumn"> <img class="imgMenu" src="assets/img/minus.png" style="height: 24px; width:24px"/> </a></th>
 			<th>MP</th>

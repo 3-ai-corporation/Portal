@@ -34,10 +34,10 @@
 		<script type="text/javascript" src="assets/js/tabs_old.js"></script>
 		<script type="text/javascript" src="assets/js/Tempo.js"></script>
 		<script type="text/javascript" src = "assets/angular/angular-route.min.js"></script>
-		<script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Os arquivos notas.js, app.js e frequencia.js estão unidos neste 'modulos.js' -->
-        <script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
+		<script src="assets/jquery-ui-1.8.24/jquery-1.8.2.js"></script>
 		<script type="text/javascript" src="assets/angular/docs/components/jquery-1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/modulos.js"></script> <!-- Todos os três arquivos acima comentados estão unidos neste 'modulos.js' -->
+		<script type="text/javascript" src="assets/js/notas.js"></script>
+		<script type="text/javascript" src="assets/js/modulos.js"></script>		
 		<link rel="stylesheet" type="text/css" href="assets/angular/docs/components/bootstrap-3.1.1/css/bootstrap.min.css" />
 		<title>Diário Escolar</title>
     </head>

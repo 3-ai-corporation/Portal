@@ -104,7 +104,7 @@ var turmas = ["1AE","1AI","1AM","1AT","2AE","2AI","2AM","2AT","3AE","3AI","3AM",
 
 //Fim do módulo de plano de aula
 
-//Início do módulo de notas
+/*Início do módulo de notas
 var notasModule = angular.module('notasModule', []);
 
 
@@ -326,7 +326,7 @@ var alunos = [
 ];
 
 //Fim do módulo de notas
-
+*/
 //Início do módulo de frequência
 /*var frequenciaModule = angular.module('frequenciaModule', ['ngRoute']); //cria um módulo e associa a aplicacao
 		// rotas: como numerospaces do C#
