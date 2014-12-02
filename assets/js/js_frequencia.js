@@ -52,6 +52,26 @@ frequenciaModule.controller('TemposCtrl', function($scope, $http) {
 	};
 
 	ng.init();
+	
+	
+	ng.valida = function(){
+	
+		var celulaFaltas = document.getElementById('num_faltas').value; 	
+		
+		var aChk = document.getElementsByName("chk");
+		
+		var cont = 0;
+		
+		for (var i=0 ; i < aChk.length ; i++)
+		{
+			if (aChk[i].checked == false){ 
+				cont = cont + 1;
+			}
+		}
+		
+		document.getElementById('num_faltas').innerHTML = "<input style = 'color: #1E657F' id = 'faltas_aluno' name = 'faltas' value = '" + (celulaFaltas = cont) + "'/>";
+
+	}
 
 });
 
@@ -71,6 +91,12 @@ frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	ng.read = function(){
 		aj.get('service/alunosTurma').success(function(data){
 			ng.alunosList = data;
+			
+			/*for(var alunoId in ng.alunosList){
+				var aluno = ng.alunosList[alunoId];
+				aluno.numfaltas = 0;
+			};*/
+			
 		});	
 
 
