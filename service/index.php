@@ -11,6 +11,7 @@ require_once 'controller/BimestresController.php';
 require_once 'controller/FrequenciasController.php';
 require_once 'controller/CursosController.php';
 require_once 'controller/TurmasController.php';
+require_once 'controller/NotasController.php';
 
 \Slim\Slim::registerAutoloader();
 
@@ -29,6 +30,7 @@ $ncontroller = new NotasController;
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
 });*/
+
 $app->post('/plano-aula',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
