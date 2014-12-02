@@ -6,13 +6,15 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http) {
 			$ = jQuery,
 			ng = $scope,
 			aj = $http
-		;
-		
+		;	
 		ng.init = function()
 		{
 			ng.chamaraulas();
 		};
-
+        ng.hey = function()
+        {
+            console.log("teste");
+        };
 		ng.chamaraulas = function(){ 
 			aj.get('service/temposAula').success(function (data) { 
 				ng.aulaList = data;				
@@ -23,8 +25,7 @@ frequenciaModule.controller('TemposAulaCtrl', function($scope, $http) {
 			var selectbox = document.getElementById("index").selectedIndex;
 			var selectText = document.getElementById("index").options;			
 			
-			alert("INDEX: " + selectText[selectbox].index + "  ID: " + selectText[selectbox].value);
-			
+
 			aj.get('service/filtrarTempos/:selectText[selectbox].value').success(function (data) { 
 			
 			});
@@ -55,13 +56,32 @@ frequenciaModule.controller('TemposCtrl', function($scope, $http) {
 
 });
 
-frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
+frequenciaModule.controller('TemposCtrl', function($scope, $http) {
 	var 
 		$ = jQuery,
 		ng = $scope,
 		aj = $http
 	;
 
+	ng.init = function(){
+		ng.read();
+	};
+
+	ng.read = function(){
+		aj.get('service/filtrarTempos').success(function(data){
+			ng.temposList = data;
+		});	
+	};
+
+	ng.init();
+
+});
+frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
+	var 
+		$ = jQuery,
+		ng = $scope,
+		aj = $http
+	;
 	ng.init = function(){
 		ng.read();
 	};
@@ -101,7 +121,6 @@ frequenciaModule.controller('CabecalhoCtrl', function($scope, $http) {
 
 });
 
-
 frequenciaModule.controller('checkcontroller', function() {
 	this.alterarCheckbox = function(obj, elem, elemParent) { 
 		var celulaFaltas = document.getElementById('num_faltas'); 			
@@ -124,6 +143,3 @@ frequenciaModule.controller('checkcontroller', function() {
 		}
 	};			
 });
-
-
-

@@ -8,6 +8,7 @@ function validar_matricula(matricula){
 	 return false;
 }
 
+
 /**
  *Created by Yasmim Libório on 24/10/2014
  * validação que verifica o tamanho de caracteres na matrícula
@@ -115,11 +116,7 @@ function validarSenha(matricula, novaSenha, senha){
 											if(usuario)
 											{
 												showAlert('erro', 'A senha foi alterada no banco com sucesso!');
-												$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
-														.done(function (data) {
-															if ( data == 'ok' )
-																window.location.href = 'TelaInicial.php';
-														});
+
 											}
 											else
 											{		  
@@ -139,6 +136,36 @@ function validarSenha(matricula, novaSenha, senha){
 			}
 	}
 }
+
+
+}
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz com que o login também possa ser efetuado ao ser pressionada a tecla Enter.
+*/
+function ConfirmarInput_OnKeyDown(event, codigo, pass, confirmPass) {
+if (event.keyCode == 13) {
+		validarSenha(codigo, newpass, ConfirmNewPass);
+	}
+}
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz a validação do codigo digitado pelo usuario 
+*/
+function validar_codigo(codigo){
+		return true;
+}
+//djsaokd
+
+
+
+/**
+*Created by Yasmim Libório on 24/11/2014
+ * Método que faz a validação do codigo, nova senha e confirmacao da nova senha digitado pelo usuario 
+*/
+function validarSenha(codigo, newpass, ConfirmNewPass){
 
 
 }
@@ -170,7 +197,6 @@ function validar(user,pass){
 		if(mtrForm === ""){
 			showAlert('error','Digite a matrícula!');
 		}
-		
 		else{	
 		  if(mtrForm.length < 6){
 			 showAlert('error','Formato da matrícula incorreta!');
@@ -253,10 +279,10 @@ function ValidarEsqueceuSenha(user, mail)
 													  if(usuario)
 													  {
 													  	if(sendMail(nome,matricula,email)){
-															showAlert('erro','Email enviado com sucesso!');
+															showAlert('erro','Email enviado com sucesso!')
 															window.location.href = 'Confirmacao_Senha.php';
 														}else{
-															showAlert('erro','Houve problema no envio do email!');
+															showAlert('erro','Houve problema no envio do email. Tente novamente mais tarde')
 														}														
 													  }
 													  else
@@ -294,7 +320,7 @@ function showAlert(type,message) {
 	  $('#alert' + tipo).fadeOut();
 	}
 function sendMail(nome,matricula,email) {
-	var code = Math.floor((Math.random()*9999999999)+1000000000);
+	int code = Math.floor((Math.random()*9999999999)+1000000000;
 
 	  $.ajax({
 		type: "GET",

@@ -15,4 +15,5 @@ class BimestresModel extends ActiveRecord\Model{
 
 
 }
+
 ?>
