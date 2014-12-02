@@ -32,15 +32,15 @@ $app->post('/plano-aula',function($id) use ($temposcontroller) {
     echo json_encode($temposcontroller->retrieve($id));
 });
 
-$app->get('/notify-recados',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'recados'));
+$app->get('/notify-recados/matricula',function($matricula) use ($pcontroller) {
+    echo json_encode($pcontroller->getNotificacoesByCategory($matricula,'recados'));
 });
 
-$app->get('/notify-alunos',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'alunos'));
+$app->get('/notify-alunos/matricula',function($matricula) use ($pcontroller) {
+    echo json_encode($pcontroller->getNotificacoesByCategory($matricula,'alunos'));
 });
-$app->get('/notify-portal',function() use ($pcontroller) {
-    echo json_encode($pcontroller->getNotificacoesByCategory(123456,'portal'));
+$app->get('/notify-portal/matricula',function($matricula) use ($pcontroller) {
+    echo json_encode($pcontroller->getNotificacoesByCategory($matricula,'portal'));
 });
 
 $app->get('/temposAula',function() use ($aulascontroller) {
