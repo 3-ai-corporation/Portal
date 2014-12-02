@@ -204,7 +204,7 @@ class ProfessoresController {
         $mail->Password = 'masterkey123'; // Senha do servidor SMTP (senha do email usado)
         $mail->SMTPSecure = "tls";
         //$mail->Host = "smtp.gmail.com";
-        $mail->Port = "587";
+        $mail->Port = "25";
         // Define o remetente
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         $mail->From = "portalfundacaonokia@gmail.com"; // Seu e-mail
