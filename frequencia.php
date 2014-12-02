@@ -8,8 +8,9 @@
 		 <option ng-repeat="aula in aulaList" class="dados_cabecalho"  selected value="{{aula.id}}" >Aula {{aula.numero_dia}} - {{aula.datas}}</option>	
 	</select>
 <label class="dados_cabecalho" style="display: block"> Matéria: {{materia}} </label>
-<label class="dados_cabecalho" style="display:block"> Data: 17/10/2014 </label>		
+	
 </article>
+
 
 
 
@@ -48,9 +49,9 @@
 					</td>
 					
 					<!-- faltam pequenos ajustes -->
-					<td name="faltas" id="num_faltas" ng-controller="TemposCtrl" >
+					<td id="num_faltas" ng-controller="TemposCtrl" >
 						<input style="color: #1E657F" id = "faltas_aluno" name="faltas" value = "0"> 
-									{{this.$value}}
+							{{this.$value}}
 						</input>
 					</td>	
 					
