@@ -142,4 +142,9 @@ $app->get('/sendMail/:nome/:email/:codigo', function($nome, $email,$codigo) use 
 $app->get('/getName/:matricula', function($matricula) use ($pcontroller){
     echo json_encode($pcontroller->getNome($matricula));
 });
+
+//Serviço que retorna notas do Banco de Dados
+$app->get('/notas', function() use ($ncontroller) {
+    echo json_encode($ncontroller->retrieveNotas(33));
+});
 $app->run();
