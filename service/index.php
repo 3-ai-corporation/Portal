@@ -48,7 +48,7 @@ $app->get('/temposAula',function() use ($aulascontroller) {
 });
 
 $app->get('/alunosTurma',function() use ($alunocontroller) {
-    echo json_encode($alunocontroller->retrieveAlunos(33));
+    echo json_encode($alunocontroller->retrieveAlunosFreq(33,5,2));
 });
 
 $app->get('/cabecalhoFreq', function() use ($turmascontroller){

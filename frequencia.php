@@ -50,7 +50,7 @@
 
 					</td>
 					<td id="num_faltas">0</td>	
-					<td id="faltas_bim">  1 </td>	
+					<td id="faltas_bim"> {{aluno.faltas_bimestre}} </td>	
 				</tr>
 			</tbody>
 		</table>
