@@ -24,6 +24,16 @@ class ProfessoresController {
         }
         return $retorno;
     }
+    
+    public function getNome($matricula) { //método que retorna o nome do usuário atual
+        $professores = ProfessoresModel::find('all',array("conditions" => "professor_matricula = " . $matricula));
+        $retorno = array();
+        foreach($professores as $key => $value ) {
+            $obj['nome'] = $value->nome;
+            $retorno[] = $obj;
+        }
+        return $retorno;
+    }
 
 	public function login($matricula,$senha){
 		$professor = UsuariosModel::all(array('conditions' => array('matricula = ? AND senha = ?',$matricula,$senha)));
@@ -58,40 +68,34 @@ class ProfessoresController {
         }
         return $retorno;
     }
+
     // Função responsável por retornas as turmas lecionadas por um professor
     public function retrieveTurmas($matriculaProfessor, $returnDisciplina) {
         // Vai retornar os registros da tabela tb_professor_turmas de acordo com a Matricula do professor
-        
-        $prof_materias = ProfessorMateriasModel::find("all",array('conditions' => 'professor_matricula = ' . $matriculaProfessor ));
 
+        $prof_materias = ProfessorMateriasModel::find("all",array('conditions' => 'professor_matricula = ' . $matriculaProfessor ));
         $retorno = array();
         foreach($prof_materias as $key => $value ) {
             // Busca de turmas a partir do id
             $materias_turmas = MateriaTurmasModel::find($value->materia_turmas_id);
-
             $turma = TurmasModel::find($materias_turmas->turma_id);
-
             $result['serie'] = $turma->serie;
             $result['ano'] = $turma->ano;
-            
             $curso = CursosModel::find($turma->cursos_id);
             $result['cursos'] = $curso->curso;
-
             if($returnDisciplina)
             {
                 $materias = MateriasModel::find($materias_turmas->materia_id);
                 $result['materia'] = $materias->nome;
             }
-
             $retorno[] = $result;
-
         }
         return $retorno;
     }
 
-    public function retrieveDisciplinas($professorMatricula, $bool ) {
-
-        return retrieveTurmas($professorMatricula, $bool);
+    public function retrieveDisciplinas($professorMatricula, $bool)
+    {
+        return $this->retrieveTurmas($professorMatricula, $bool);
     }
 
     /*public function retrieveMaterias($series = array(), $id) {

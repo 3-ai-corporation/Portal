@@ -24,6 +24,7 @@ $bimcontroller = new BimestresController;
 $frequenciascontroller = new FrequenciasController;
 $cursoscontroller = new CursosController;
 $turmascontroller  = new TurmasController;
+$ncontroller = new NotasController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));
@@ -52,7 +53,7 @@ $app->get('/alunosTurma',function() use ($alunocontroller) {
 });
 
 $app->get('/cabecalhoFreq', function() use ($turmascontroller){
-	echo json_encode($turmascontroller->retrieveCabecalho(2,33));
+    echo json_encode($turmascontroller->retrieveCabecalho(2,33));
 });
 
 $app->get('/filtrarTempos',function() use ($temposcontroller) {
@@ -61,52 +62,55 @@ $app->get('/filtrarTempos',function() use ($temposcontroller) {
 
 $app->get('/frequenciasAula',function() use ($frequenciascontroller) {
     echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120388));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110045));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110051));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110076));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110206));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120373));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120374));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120376));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120378));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120379));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120380));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120381));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120382));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120384));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120385));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120387));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120389));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120390));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120391));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120392));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120393));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120394));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120398));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120801));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120802));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120807));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120827));
-	echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120834));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110045));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110051));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110076));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 110206));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120373));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120374));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120376));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120378));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120379));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120380));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120381));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120382));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120384));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120385));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120387));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120389));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120390));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120391));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120392));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120393));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120394));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120398));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120801));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120802));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120807));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120827));
+    echo json_encode($frequenciascontroller->retrieveFrequencias(1, 120834));
 });
 
 //serviço que retorna o email do usuário através da matrícula
-$app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller)
-{
-	echo json_encode($pcontroller->getEmail($matricula));
+$app->get('/retonar_email/:matricula', function($matricula) use ($pcontroller){
+    echo json_encode($pcontroller->getEmail($matricula));
 });
 //Recebe os parametros e envia-os para o professor controller
 $app->get('/Mudarsenha/:matricula/:senha', function($matricula, $senha) use ($pcontroller){
-	echo json_encode($pcontroller->updateSenha($matricula, $senha));
+    echo json_encode($pcontroller->updateSenha($matricula, $senha));
 });
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
-	echo json_encode($pcontroller->login($matricula,$senha));
+    echo json_encode($pcontroller->login($matricula,$senha));
 });
 $app->get('/teste',function() use ($pcontroller) {
-	echo json_encode($pcontroller->teste());
+    echo json_encode($pcontroller->teste());
 });
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula,$email) use ($pcontroller) {
-    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));	
+    echo json_encode($pcontroller->EsqueceuSenha($matricula,$email));
+});
+
+$app->get('/pegarDisciplinas/:matricula/:bool', function($matricula,$bool) use ($pcontroller){
+    echo json_encode($pcontroller->retrieveDisciplinas($matricula,$bool));
 });
 //Chamada no bd, por meio de um método controller;
 //Get e uma função Slim, pedindo2 parãmetros:1 - string com endereço do http....
@@ -118,6 +122,14 @@ $app->get('/bimestresall', function() use ($bimcontroller){
     echo json_encode($bimcontroller->retrieve_all());
 });
 $app->get('/sendMail/:nome/:email/:codigo', function($nome, $email,$codigo) use ($pcontroller){
-    echo json_encode($pcontroller->sendMail($nome, $email,$codigo));
+    echo json_encode($pcontroller->sendMail($nome,$email,$codigo));
+});
+$app->get('/getName/:matricula', function($matricula) use ($pcontroller){
+    echo json_encode($pcontroller->getNome($matricula));
+});
+
+//Serviço que retorna notas do Banco de Dados
+$app->get('/notas', function() use ($ncontroller) {
+    echo json_encode($ncontroller->retrieveNotas(33));
 });
 $app->run();

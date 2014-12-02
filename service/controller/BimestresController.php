@@ -1,19 +1,21 @@
 <?php
 
 require_once 'model/BimestresModel.php';
+require_once 'model/DiasLetivosModel.php';
 
 class BimestresController {
 
     public function retrieve($data){
+        $nData = new DateTime($data . ' 00:00:00');
+        $data = $nData;
         $bimestre = BimestresModel::find('all');
-
         foreach($bimestre as $key => $value) {
-            $inicio = DiasLetivosModel::find($value->data_inicio_id);
-            $fim = DiasLetivosModel::find($value->data_fim_id);
-
-            if( ($inicio->data >= $data) && ($data <= $fim->data) )
+            if($data->format('Y-m-d') >= $value->data_inicio_id->format('Y-m-d')  &&
+                $data->format('Y-m-d') <= $value->data_fim_id->format('Y-m-d') ) {
                 return $value->id;
+            }
         }
+        return 4;
     }
 
     public function retrieve_all(){
@@ -44,4 +46,3 @@ class BimestresController {
     }
 }
 ?>
-

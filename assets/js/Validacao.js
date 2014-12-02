@@ -49,9 +49,10 @@ function validar_numero(valor){
   *		Método que faz com que o login também possa ser efetuado ao ser pressionada a tecla Enter.
   */
   
+
 function LoginInput_OnKeyDown(event, user, pass) {
 	if (event.keyCode == 13) {
-		validar(user, pass);
+		validar(user, pass);                     
 	}
 }
 
@@ -64,17 +65,6 @@ if (event.keyCode == 13) {
 		validarSenha(codigo, pass, confirmPass);
 	}
 }
-
-/**
-*Created by Yasmim Libório on 24/11/2014
- * Método que faz a validação do codigo digitado pelo usuario 
-*/
-function validar_codigo(codigo){
-		return true;
-}
-//djsaokd
-
-
 
 /**
 *Created by Yasmim Libório on 24/11/2014
@@ -125,6 +115,11 @@ function validarSenha(matricula, novaSenha, senha){
 											if(usuario)
 											{
 												showAlert('erro', 'A senha foi alterada no banco com sucesso!');
+												$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
+														.done(function (data) {
+															if ( data == 'ok' )
+																window.location.href = 'TelaInicial.php';
+														});
 											}
 											else
 											{		  
@@ -225,7 +220,14 @@ function ValidarEsqueceuSenha(user, mail)
 {
     var matricula = user;
 	var email = mail;
-	
+	var nome = "";
+	$.ajax({
+		type: "GET",
+		url: 'service/getName/' + matricula,
+		success: function(data) {
+			nome = JQuery.parseJSON(data);
+		}		    
+	  });
 	if(matricula == "" && email == ""){
 	   showAlert('error','Preencha todos os campos!');
 	}
@@ -250,11 +252,11 @@ function ValidarEsqueceuSenha(user, mail)
 													usuario = jQuery.parseJSON(data);
 													  if(usuario)
 													  {
-													  	if(sendMail(matricula,email)){
-															showAlert('erro','Email enviado com sucesso!')
+													  	if(sendMail(nome,matricula,email)){
+															showAlert('erro','Email enviado com sucesso!');
 															window.location.href = 'Confirmacao_Senha.php';
 														}else{
-															showAlert('erro','Houve problema no envio do email. Tente novamente mais tarde')
+															showAlert('erro','Houve problema no envio do email!');
 														}														
 													  }
 													  else
@@ -291,12 +293,12 @@ function showAlert(type,message) {
 	function closeAlert(tipo) {
 	  $('#alert' + tipo).fadeOut();
 	}
-function sendMail(matricula,email) {
-	int code = Math.floor((Math.random()*9999999999)+1000000000;
+function sendMail(nome,matricula,email) {
+	var code = Math.floor((Math.random()*9999999999)+1000000000);
 
 	  $.ajax({
 		type: "GET",
-		url: 'service/sendMail/' + 'nome' + '/' +email + '/' + code,
+		url: 'service/sendMail/' + nome + '/' +email + '/' + code,
 		success: function(data) {
 			var foi = jQuery.parseJSON(data);
 			if(foi){
@@ -309,3 +311,29 @@ function sendMail(matricula,email) {
 			return foi;
 		}		    
 	  });
+}
+
+function getCookie(cname) { //função do W3 Schools que retorna o cookie a partir do nome. Ver mais em: http://www.w3schools.com/js/js_cookies.asp
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+function validar_codigo(codigo){
+	var code = getCookie("recoveryCode");
+    if (code !== "") { //quer dizer que o COOKIE do código está preenchido
+        if(codigo == parseInt(code)){
+			document.cookie = "recoveryCode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+			return true;
+		}else{
+			return false;              
+		}
+    } else {
+       showalert('erro','O código não existe ou expirou. Por favor, solicite novo envio e insira o código dentro de 15 minutos.');
+    }
+}

@@ -52,7 +52,7 @@ var highlight = function(highlightId, otherIds, imageId) {
 };
 
 var highlightAE = function() {
-	highlight('btnAE', ['btnAI', 'btnAM', 'btnAT'], 'eletronica-icon.png');
+	highlight('btnAI', ['btnAE', 'btnAM', 'btnAT'], 'informatica-icon.png');
 };
 
 var highlightTwo = function(highlightId, otherIds) {
