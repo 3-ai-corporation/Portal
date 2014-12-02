@@ -19,11 +19,12 @@
 
         this.setColumn = function(){
 			// this.column = this.column +1;
-			if ((this.lstColAvs.length ) < 10) {
+			if (this.lstColAvs.length  < 5) {
 				var newAv = {};
 				newAv.title = "AV" + (this.lstColAvs.length + 1);
                 newAv.value = 10;
 				this.lstColAvs.push(newAv);
+				this.lstColAvs.length += 1;
 			}
 		};
 		
@@ -42,11 +43,6 @@
                 return false;
             }
         };
-
-        /* this.setTooltip = function (value) {
-            this.selectedAv = value;
-        }; */
-	
 	});
 	
 	
@@ -90,7 +86,6 @@
 				}	
 			
 		};
-	
 		
 		var setmediafinal = function(value){
 			if (value === 1){
