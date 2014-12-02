@@ -1,5 +1,6 @@
 <section ng-app="notasModule">
-<section class="quadroNotas" ng-controller="AppController as appCtrl">
+
+<article class="quadroNotas" ng-controller="AppController as appCtrl">
 	<table id="rowAluno" class="table table-bordered"  ng-controller="ColumnController as colCtrl">
 		<tr class="warning">
 			<th>#</th>
@@ -25,17 +26,18 @@
 			<td class={{obj.statusMF}}> {{obj.mfinal}} </td>
 		</tr>	
 	</table>					
-</section>
+</article>
 
-<section id="calculoMedia" ng-controller="RbuttonController as RController" style="float:right;">
-	<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
-	<div style="color:black;">
-		<tr class="warning">
-			<th style="width:50px;"> <input value="(AV1)"/></th>
-		</tr>
-		<tr>
-			<button type="button"> OK </button>
-		</tr>
-	</div>	
-</section>
+<!-- Seção para cálculo de notas -->
+  <section id="calculoMedia" ng-controller="RbuttonController">
+	<section>
+		<span style="color:black;font-size:1.2em;">Calculo da Média:</span>
+		<form style="margin-top: 15px;">
+			<input type="Radio" Name="Operacao" Value="Soma" style="margin-left: 5px;"> Somatória</input>
+			<input type="Radio" Name="Operacao" Value="MediaAritim" style="margin-left: 5px;"> Média aritmética</input>
+		</form>
+	</section>
+</section>  
+<!-- Fim da seção para cálculo de notas -->
+
 </section>
