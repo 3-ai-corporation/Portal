@@ -6,7 +6,7 @@ class PlanosModel extends ActiveRecord\Model {
 	static $table_name = 'tb_planos';
 	
 	static $belongs_to = array(
-	    array("MateriasTurmasModel")/*, array("BimestresModel")*/ 
+	    array("MateriaTurmasModel")/*, array("BimestresModel")*/ 
 	);
 	
 	static $has_one = array(

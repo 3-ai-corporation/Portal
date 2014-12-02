@@ -6,7 +6,7 @@ class TemposModel extends ActiveRecord\Model {
 	static $table_name = 'tb_tempos';
 	
 	static $belongs_to = array(
-	    array("DiasLetivosModel"), array("PlanosModel") , array("MateriasTurmasModel")
+	    array("DiasLetivosModel"), array("PlanosModel") , array("MateriaTurmasModel")
 	);
 	
 	static $has_one = array(

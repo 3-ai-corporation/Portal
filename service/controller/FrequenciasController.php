@@ -18,8 +18,8 @@ class FrequenciasController{
 			$retorno[] = $obj;
 		}		
 		return $retorno;
-	}	
-
+	}		
+	
 	private function object_to_array(stdClass $Class){
 		$Class = (array)$Class;
 		foreach($Class as $key => $value){

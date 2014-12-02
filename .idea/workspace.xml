@@ -23,18 +23,7 @@
     <favorites_list name="Portal" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="desabilitandoComponentes.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/js/desabilitandoComponentes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9411765" vertical-offset="2312" max-vertical-offset="3281">
-              <caret line="168" column="31" selection-start-line="168" selection-start-column="31" selection-end-line="168" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -62,15 +51,15 @@
         <option value="$PROJECT_DIR$/assets/css/stylesheet.css" />
         <option value="$PROJECT_DIR$/service/controller/AvaliacoesController.php" />
         <option value="$PROJECT_DIR$/service/controller/NotasController.php" />
-        <option value="$PROJECT_DIR$/service/controller/DiasLetivosController.php" />
         <option value="$PROJECT_DIR$/assets/js/button-selection.js" />
-        <option value="$PROJECT_DIR$/turmaFiltro.php" />
-        <option value="$PROJECT_DIR$/service/index.php" />
         <option value="$PROJECT_DIR$/service/controller/BimestresController.php" />
         <option value="$PROJECT_DIR$/bimestres.php" />
         <option value="$PROJECT_DIR$/service/controller/ProfessoresController.php" />
         <option value="$PROJECT_DIR$/Diario.php" />
         <option value="$PROJECT_DIR$/assets/js/desabilitandoComponentes.js" />
+        <option value="$PROJECT_DIR$/service/controller/DiasLetivosController.php" />
+        <option value="$PROJECT_DIR$/service/index.php" />
+        <option value="$PROJECT_DIR$/turmaFiltro.php" />
       </list>
     </option>
   </component>
@@ -439,16 +428,16 @@
       <workItem from="1417389802228" duration="1788000" />
       <workItem from="1417433933373" duration="8642000" />
       <workItem from="1417453491120" duration="13897000" />
-      <workItem from="1417481798985" duration="1120000" />
+      <workItem from="1417481798985" duration="3333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107485000" />
+    <option name="totallyTimeSpent" value="109698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="736" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -468,7 +457,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21405493" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21405493" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -804,23 +793,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/controller/DiasLetivosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96103895" vertical-offset="1216" max-vertical-offset="1836">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/controller/CursosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -846,16 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/turmaFiltro.php">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66233766" vertical-offset="0" max-vertical-offset="850">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/button-selection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029411765" vertical-offset="255" max-vertical-offset="1207">
@@ -878,17 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/index.php">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="655" max-vertical-offset="1207">
-          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Diario.php">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -908,11 +862,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service/controller/CursosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4311594" vertical-offset="0" max-vertical-offset="935">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/controller/DiasLetivosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2261">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/index.php">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30253622" vertical-offset="1737" max-vertical-offset="2295">
+          <caret line="112" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/turmaFiltro.php">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18923934" vertical-offset="0" max-vertical-offset="867">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/desabilitandoComponentes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9411765" vertical-offset="2312" max-vertical-offset="3281">
-          <caret line="168" column="31" selection-start-line="168" selection-start-column="31" selection-end-line="168" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="0.1764706" vertical-offset="0" max-vertical-offset="714">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#488#517#0" expanded="false" />
+            <element signature="e#554#1394#0" expanded="false" />
+            <element signature="e#1443#2790#0" expanded="false" />
+            <element signature="e#2823#3083#0" expanded="false" />
+            <element signature="e#3122#3399#0" expanded="false" />
+            <element signature="e#3446#6252#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

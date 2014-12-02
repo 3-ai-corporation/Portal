@@ -8,3 +8,6 @@ service/controller/BimestresController.php
 service/controller/BimestresController.php
 turmaFiltro.php
 service/index.php
+service/index.php
+turmaFiltro.php
+service/controller/DiasLetivosController.php
