@@ -228,6 +228,7 @@ function ValidarEsqueceuSenha(user, mail)
 			nome = JQuery.parseJSON(data);
 		}		    
 	  });
+	showalert(matricula + " " + email + " " + nome);
 	if(matricula == "" && email == ""){
 	   showAlert('error','Preencha todos os campos!');
 	}
@@ -328,7 +329,7 @@ function validar_codigo(codigo){
 	var code = getCookie("recoveryCode");
     if (code !== "") { //quer dizer que o COOKIE do código está preenchido
         if(codigo == parseInt(code)){
-			document.cookie = "recoveryCode=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+			document.cookie = "recoveryCode=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; //expire already
 			return true;
 		}else{
 			return false;              
