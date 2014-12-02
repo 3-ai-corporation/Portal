@@ -25,6 +25,7 @@ $bimcontroller = new BimestresController;
 $frequenciascontroller = new FrequenciasController;
 $cursoscontroller = new CursosController;
 $turmascontroller  = new TurmasController;
+$ncontroller = new NotasController;
 
 /*$app->get('/',function() use ($pcontroller) {
     echo json_encode($pcontroller->retrieveTurmas(134567, true));

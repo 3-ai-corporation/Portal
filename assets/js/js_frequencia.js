@@ -110,7 +110,7 @@ frequenciaModule.controller('CabecalhoCtrl', function($scope, $http) {
 
 	ng.read = function(){
 		aj.get('service/cabecalhoFreq').success(function(data){
-			alert(data.serie);
+			//alert(data.serie);
 			ng.serie = data.serie;
 			ng.curso = data.curso;
 			ng.materia = data.materia;
