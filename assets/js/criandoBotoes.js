@@ -35,9 +35,10 @@ var criandoOpcoes = function() {
     // Preenchendo o 'vetorBotoes' com as disciplinas que a variável 'vetorMaterias' recebe;
     for (var materiaId in vetorMaterias) {
         vetorBotoes[id] = {};
-        vetorBotoes[id].id = 'btnDisciplina' + id;
+        vetorBotoes[id].id = 'btnDisciplina' + String(id+1);
+        vetorBotoes[id].value = id+1;
         vetorBotoes[id].nome = vetorMaterias[materiaId];
-        ++id;
+        id++;
     }
 
     // Variável responsável por indicar se o botão foi selecionado pela primeira vez ou não;
@@ -45,7 +46,6 @@ var criandoOpcoes = function() {
 
     for (var botaoId1 in vetorBotoes) {
         var botaoElem = vetorBotoes[botaoId1];
-
         var classValue = 'disciplinaBotao';
 
         if (first) {
@@ -67,7 +67,7 @@ var criandoOpcoes = function() {
         }
 
         buttonDisciplina += "<li id = '" + botaoElem.id + "' class = '" + classValue +
-            "'onclick = " + "'" + 'highlightTwo("' + botaoElem.id + '", [ ' + otherIds + "]);'><h4>" + botaoElem.nome + "</h4></li>";
+            "'onclick = " + "'" + 'highlightTwo("' + botaoElem.id + '", [ ' + otherIds + "]); Selected_Materia(this)' value='"+botaoElem.value+"' ><h4>" + botaoElem.nome + "</h4></li>";
     }
 
     var disciplina = document.getElementById('lstDisciplinas');

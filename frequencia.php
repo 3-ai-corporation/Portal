@@ -12,13 +12,6 @@
 </article>
 
 
-<button id="AulaAnt"> 
-	<img src="assets/img/arrow-left.png" width="30px" height="30px" color="white">
-</button>
-					
-<button id="AulaProx" style="margin-left: 70.7em"> 
-	<img src="assets/img/arrow-right.png" width="30px" height="30px" color="white">
-</button>
 
 
 <article id="tabela_frequencia" ng-controller="AlunosCtrl"> 
@@ -44,6 +37,7 @@
 					
 					<td> {{aluno.nome}} </td>
 					
+
 					<td id="tempos" ng-controller="TemposCtrl"> 
 						<section id="div_tempos" style="display:inline-block" ng-repeat="tempos in temposList">
 							<input style="color: #1E657F" type = "checkbox" 

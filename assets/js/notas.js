@@ -1,5 +1,5 @@
-(function(){ 
-	var app = angular.module('Notas', []);
+(function(){   
+	var app = angular.module('Notas', ['ngRoute']);
 	
 	app.controller('AppController', function(){
 		var calculoMedia = '(AV1)';
@@ -19,7 +19,7 @@
 
         this.setColumn = function(){
 			// this.column = this.column +1;
-			if ((this.lstColAvs.length ) < 10) {
+			if (this.lstColAvs.length < 2) {
 				var newAv = {};
 				newAv.title = "AV" + (this.lstColAvs.length + 1);
                 newAv.value = 10;
@@ -52,8 +52,8 @@
 	
 		var generateNotas = function(){
 			for (var i = 0; i < alunos.length; i++){
-				alunos[i].nota1 = Math.floor((Math.random() * 9)) + 1.75;
-				alunos[i].nota2= Math.floor((Math.random() * 9)) + 1.75;
+				alunos[i].nota1 = 0;
+				alunos[i].nota2 = 0;
 			}
 		};
 		
@@ -80,15 +80,14 @@
 		var setmediaparcial = function(value){
 				 for (i = 0; i < alunos.length; i++){
 					
-					alunos[i].mparcial = alunos[i].nota1;
-					
+					alunos[i].mparcial = alunos[i].nota1 + alunos[i].nota2;
+					$('#'+alunos[i].matricula).html(String(alunos[i].mparcial));
 					if (alunos[i].mparcial >= 6) {
 						alunos[i].mfinal = alunos[i].mparcial;
 						alunos[i].mparalela = null;
 					}
 					
 				}	
-			
 		};
 	
 		
