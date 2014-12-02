@@ -124,7 +124,7 @@ $app->get('/bimestresall', function() use ($bimcontroller){
     echo json_encode($bimcontroller->retrieve_all());
 });
 $app->get('/sendMail/:nome/:email/:codigo', function($nome, $email,$codigo) use ($pcontroller){
-    echo json_encode($pcontroller->sendMail($nome, $email,$codigo));
+    echo json_encode($pcontroller->sendMail($nome,$email,$codigo));
 });
 $app->get('/getName/:matricula', function($matricula) use ($pcontroller){
     echo json_encode($pcontroller->getNome($matricula));

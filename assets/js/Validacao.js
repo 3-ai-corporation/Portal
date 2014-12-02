@@ -115,6 +115,11 @@ function validarSenha(matricula, novaSenha, senha){
 											if(usuario)
 											{
 												showAlert('erro', 'A senha foi alterada no banco com sucesso!');
+												$.post( "Login.php?acao=logar", { ematricula: mtrForm  })
+														.done(function (data) {
+															if ( data == 'ok' )
+																window.location.href = 'TelaInicial.php';
+														});
 											}
 											else
 											{		  
@@ -241,10 +246,10 @@ function ValidarEsqueceuSenha(user, mail)
 													  if(usuario)
 													  {
 													  	if(sendMail(matricula,email)){
-															showAlert('erro','Email enviado com sucesso!')
+															showAlert('erro','Email enviado com sucesso!');
 															window.location.href = 'Confirmacao_Senha.php';
 														}else{
-															showAlert('erro','Houve problema no envio do email. Tente novamente mais tarde')
+															showAlert('erro','Houve problema no envio do email!');
 														}														
 													  }
 													  else
@@ -282,7 +287,7 @@ function showAlert(type,message) {
 	  $('#alert' + tipo).fadeOut();
 	}
 function sendMail(matricula,email) {
-	int code = Math.floor((Math.random()*9999999999)+1000000000;
+	var code = Math.floor((Math.random()*9999999999)+1000000000);
 
 	  $.ajax({
 		type: "GET",

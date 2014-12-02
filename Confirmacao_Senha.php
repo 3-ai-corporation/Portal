@@ -20,7 +20,7 @@
 		<ul class= "listItem">
 			<li>
 				<div id = "iCodigo">
-					<p class= "lblConfirmar_Senha">Matrícula: </p>
+					<p class= "lblConfirmar_Senha">Código: </p>
 					<input onkeydown="ConfirmarInput_OnKeyDown(event, codigo.value, novaSenha.value, confirmarSenha.value);" class="txtConfirmar_Senha" type="text" name="codigo" onkeypress = "validar_codigo(codigo);" maxlength = "6"/>
 				</div>	
 			</li>
