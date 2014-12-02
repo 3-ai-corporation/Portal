@@ -66,5 +66,5 @@ function atualizar_ids()
 	//ordem serie>bimestre>curso>materia;
     $('#ids_diario').html(stringid);
 	indices = $('#ids_diario').html();
-    alert(indices);
+    //alert(indices);
 }

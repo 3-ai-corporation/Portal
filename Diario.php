@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	if(! isset($_SESSION['ematricula']))
@@ -49,6 +48,7 @@
                 <?php
                     include ("menu.php")
                 ?>
+
                 <div id = "filtro">
                     <?php
                         include("turmaFiltro.php")

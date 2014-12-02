@@ -16,7 +16,7 @@ simulacaoModule.controller('simulacaoCtrl', function($scope, $http)
         ng.hey = function()
         {
             indices = $('#ids_diario').html();
-            alert(String(indices));
+            //alert(String(indices));
         };
         ng.chamardados = function(){
             aj.get('Lists/DiasletivosList.html').success(function (data) {

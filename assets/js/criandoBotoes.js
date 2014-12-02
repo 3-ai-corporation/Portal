@@ -67,7 +67,6 @@ var criandoOpcoes = function() {
         }
 
         buttonDisciplina += "<li id = '" + botaoElem.id + "' class = '" + classValue +
-
             "'onclick = " + "'" + 'highlightTwo("' + botaoElem.id + '", [ ' + otherIds + "]); Selected_Materia(this)' value='"+botaoElem.value+"' ><h4>" + botaoElem.nome + "</h4></li>";
     }
 

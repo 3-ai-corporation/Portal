@@ -81,7 +81,6 @@ class DiasLetivosController
 			$objDia['id'] = $value->id; 
 			$objDia['datas'] = $value->datas;
 			$objDia['numero_dia'] = $value->numero_dia;	
-
 			$data = explode('-',$objDia['datas']);
 			$data = implode('_',$data);			
 
@@ -110,7 +109,6 @@ class DiasLetivosController
 		return $retorno;
 	
 	}
-
 
 	private function object_to_array($Class)
 	{

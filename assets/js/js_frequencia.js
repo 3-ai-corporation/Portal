@@ -76,6 +76,7 @@ frequenciaModule.controller('TemposCtrl', function($scope, $http) {
 	ng.init();
 
 });
+
 frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	var 
 		$ = jQuery,

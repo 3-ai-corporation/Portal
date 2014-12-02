@@ -1,7 +1,6 @@
 <?php
 
 require_once 'model/BimestresModel.php';
-require_once 'model/DiasLetivosModel.php';
 
 class BimestresController {
 

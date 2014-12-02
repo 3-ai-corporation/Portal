@@ -116,7 +116,6 @@ function validarSenha(matricula, novaSenha, senha){
 											if(usuario)
 											{
 												showAlert('erro', 'A senha foi alterada no banco com sucesso!');
-
 											}
 											else
 											{		  
@@ -166,6 +165,7 @@ function validar_codigo(codigo){
  * Método que faz a validação do codigo, nova senha e confirmacao da nova senha digitado pelo usuario 
 */
 function validarSenha(codigo, newpass, ConfirmNewPass){
+
 
 
 }

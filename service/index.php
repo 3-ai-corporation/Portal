@@ -11,7 +11,6 @@ require_once 'controller/BimestresController.php';
 require_once 'controller/FrequenciasController.php';
 require_once 'controller/CursosController.php';
 require_once 'controller/TurmasController.php';
-
 \Slim\Slim::registerAutoloader();
 
 $app = new Slim\Slim();
@@ -23,9 +22,6 @@ $aulascontroller = new DiasLetivosController;
 $bimcontroller = new BimestresController;
 $frequenciascontroller = new FrequenciasController;
 $cursoscontroller = new CursosController;
-$turmascontroller  = new TurmasController;
-$ncontroller = new NotasController;
-
 $turmascontroller  = new TurmasController;
 
 /*$app->get('/',function() use ($pcontroller) {
@@ -44,8 +40,8 @@ $app->get('/notify-alunos',function() use ($pcontroller) {
 });
 $app->get('/notify-portal',function() use ($pcontroller) {
     echo json_encode($pcontroller->getNotificacoesByCategory($login,'portal'));
-});
 
+});
 $app->get('/EsqueceuSenha/:matricula/:email',function($matricula, $senha) use ($pcontroller) {
     echo json_encode($pcontroller->retrieveSenha($matricula, $senha));	
 });
@@ -56,6 +52,7 @@ $app->get('/TrocarSenha/:matricula/:senha', function($matricula, $senha) use ($p
 $app->get('/Login/:matricula/:senha',function($matricula,$senha) use ($pcontroller) {
 	echo json_encode($pcontroller->login($matricula,$senha));
 });
+
 $app->get('/temposAula',function() use ($aulascontroller) {
     echo json_encode($aulascontroller->retrieveByIds(2,33,2));
 });

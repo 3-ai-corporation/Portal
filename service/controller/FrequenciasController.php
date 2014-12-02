@@ -29,5 +29,4 @@ class FrequenciasController{
 		}
 		return $Class;
 	}
-
 }
