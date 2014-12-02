@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 require_once 'model/NotasModel.php';
 //require 'AvaliacoesController.php';
 
@@ -29,7 +29,7 @@ class NotasController {
 	}
 	
 	public function retrieve ($notas){
-		$notas = NotasModel::find('all', array('order' => 'id'); 
+		$notas = NotasModel::find('all', array('order' => 'id')); 
 		$retorno = array();
 		
 		foreach($notas as $key => $value){
@@ -65,7 +65,7 @@ class NotasController {
 			}
 		}
 		
-		return $Class
+		return $Class;
 	}
 	
 	function getConn()
