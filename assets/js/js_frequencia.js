@@ -89,12 +89,6 @@ frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	ng.read = function(){
 		aj.get('service/alunosTurma').success(function(data){
 			ng.alunosList = data;
-			
-			/*for(var alunoId in ng.alunosList){
-				var aluno = ng.alunosList[alunoId];
-				aluno.numfaltas = 0;
-			};*/
-			
 		});	
 	};
 
