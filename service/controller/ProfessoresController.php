@@ -143,7 +143,7 @@ class ProfessoresController {
 	   return $retorno;
     }
 	
-	public function retrieveSenha($matricula, $email) {
+	public function retrieveSenha($matricula, $email) {         
 		$esqueceu = UsuariosModel::find("all", array("conditions" => "matricula = ? AND email = ? ",$matricula, $email));
 		
 		if($esqueceu != null)
