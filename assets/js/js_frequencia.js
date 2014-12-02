@@ -76,47 +76,6 @@ frequenciaModule.controller('TemposCtrl', function($scope, $http) {
 
 });
 
-frequenciaModule.controller('TemposCtrl', function($scope, $http) {
-	var 
-		$ = jQuery,
-		ng = $scope,
-		aj = $http
-	;
-
-	ng.init = function(){
-		ng.read();
-	};
-
-	ng.read = function(){
-		aj.get('service/filtrarTempos').success(function(data){
-			ng.temposList = data;
-		});	
-	};
-
-	ng.init();
-	
-	
-	ng.valida = function(){
-	
-		var celulaFaltas = document.getElementById('num_faltas').value; 	
-		
-		var aChk = document.getElementsByName("chk");
-		
-		var cont = 0;
-		
-		for (var i=0 ; i < aChk.length ; i++)
-		{
-			if (aChk[i].checked == false){ 
-				cont = cont + 1;
-			}
-		}
-		
-		document.getElementById('num_faltas').innerHTML = "<input style = 'color: #1E657F' id = 'faltas_aluno' name = 'faltas' value = '" + (celulaFaltas = cont) + "'/>";
-
-	}
-
-});
-
 frequenciaModule.controller('AlunosCtrl', function($scope, $http) {
 	var 
 		$ = jQuery,
