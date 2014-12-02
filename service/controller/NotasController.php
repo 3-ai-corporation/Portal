@@ -9,13 +9,23 @@ require_once 'model/NotasModel.php';
 
 class NotasController {
 
-	public function create ($notas){
-		//if(AvaliacoesController.create($avalicacao)){
-			$notas = $this->object_to_array($notas);
-			$notas = NotasModel::create($notas);
+	//Função que retorna notas de alunos de acordo com a turma
+	public function retrieveNotas($turmaId){				
+		$join = 'JOIN tb_alunos ON tb_notas.aluno_id = tb_alunos.matricula';
+		$sel = 'tb_notas.valor AS valor, tb_alunos.matricula AS matricula';
+		$alunos = NotasModel::find('all', array('joins' => $join, 
+						'select' => $sel, 
+						'conditions' => array('tb_alunos.turma_id = ?', $turmaId),
+						'order' => 'valor'));																															
 		
-			return $notas->to_array();
-		//}
+		$retorno = array();
+		foreach ($alunos as $key => $value) {
+			$obj['matricula'] = $value->matricula;
+			$obj['valor'] = $value->valor;			
+			$retorno[] = $obj;
+		}
+		
+		return $retorno;
 	}
 	
 	public function retrieve ($notas){
