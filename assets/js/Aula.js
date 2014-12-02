@@ -7,11 +7,31 @@
 }
 
 function AtualizarPrevisto(){
-	alert('parada');
+	 $.ajax({
+        type: 'PUT',
+        contentType: 'application/json',
+        url: 'service/' ,
+        dataType: "json",
+        data: Aula(),
+        success: {
+        },
+        error: {
+        }
+    });
 	
 	//funcao do banco
 }
 
 function AtualizarAplicado(){
-	alert('parada1');
+	 $.ajax({
+        type: 'PUT',
+        contentType: 'application/json',
+        url: 'service/' ,
+        dataType: "json",
+        data: Aula(),
+        success: {
+        },
+        error: {
+        }
+    });
 }

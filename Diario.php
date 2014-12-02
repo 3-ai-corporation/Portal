@@ -63,13 +63,6 @@
                             include("disciplinas.php")
                         ?>
                     </div>
-
-                    <div id="planoaula-exportar" class="modelDialog" ng-controller="ExportController as export">
-                    <?php
-                        include ("planoExportar.php")
-                    ?>
-                    </div>
-
                 </div>
 
                 <?php
@@ -80,9 +73,9 @@
                         <ul>
                             <li id="tabHeader_1">Frequência</li>
                             <li id="tabHeader_2">Notas</li>
-                            <li id="tabHeader_3">Plano</li>
+                            <!-- <li id="tabHeader_3">Plano</li> -->
                         </ul>
-                        <a id="tabExportar" href="#planoaula-exportar">Exportar</a>
+                       <!-- <a id="tabExportar" href="#planoaula-exportar">Exportar</a> -->
                     </div>
                     <div id="tabscontent">
                       <div class="tabpage" id="tabpage_1">
@@ -95,11 +88,11 @@
                             include ("notas.php")
                         ?>
                       </div>
-                      <div class="tabpage" id="tabpage_3" >
+                     <!-- <div class="tabpage" id="tabpage_3" >
                         <?php
                             include ("planoTabela.php")
                         ?>
-                      </div>
+                      </div> -->
                     </div>
                 </div>
         </div>
